@@ -168,7 +168,7 @@
   </header>
 
   <!-- PALCO PRINCIPAL DE JOGO (CENÁRIO ILUSTRADO + BUSTO + DIÁLOGO) -->
-  <main class="flex-1 w-full max-w-6xl mx-auto flex flex-col justify-between items-center relative overflow-hidden px-2 sm:px-6 pb-2 sm:pb-4 z-20 rounded-3xl border {isLight ? 'border-[#cfbfab]' : 'border-white/8'} shadow-2xl">
+  <main class="flex-1 w-full max-w-6xl mx-auto flex flex-col justify-end items-center relative overflow-hidden px-2 sm:px-6 pb-2 sm:pb-3 z-20 rounded-3xl border {isLight ? 'border-[#cfbfab]' : 'border-white/8'} shadow-2xl">
     
     <!-- CENÁRIO ILUSTRADO DE FUNDO (QUARTO, PORTÕES, SALA DO GRÊMIO, PÁTIO) -->
     <SceneryBackground 
@@ -185,8 +185,8 @@
       ></div>
     {/if}
 
-    <!-- ÁREA VISUAL DO PERSONAGEM (SOBREPOSTO AO CENÁRIO) -->
-    <div class="flex-1 w-full flex items-end justify-center pb-1 sm:pb-3 z-10">
+    <!-- CAMADA DO PERSONAGEM (ABSOLUTA, ANCORADA NA BASE, NUNCA DESLOCA OU CORTA O DIÁLOGO) -->
+    <div class="absolute inset-x-0 bottom-0 top-10 flex items-end justify-center pointer-events-none z-10 overflow-hidden">
       <CharacterSprite 
         speaker={currentNode.speaker}
         speakerName={currentNode.speaker_name}
@@ -195,8 +195,8 @@
       />
     </div>
 
-    <!-- CAIXA DE DIÁLOGO E ESCOLHAS -->
-    <div class="w-full z-20">
+    <!-- CAIXA DE DIÁLOGO E ESCOLHAS (ESTÁVEL NA BASE DO PALCO, Z-INDEX 20) -->
+    <div class="w-full z-20 pointer-events-auto">
       <DialogueBox 
         node={currentNode}
         onSelectChoice={handleSelectChoice}

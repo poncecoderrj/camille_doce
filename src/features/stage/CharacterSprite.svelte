@@ -58,7 +58,7 @@
 {#if isProtagonist}
   <!-- PROTAGONISTA PAPERDOLL AO VIVO COM ROUPAS EM CAMADAS SOBREPOSTAS -->
   <div class="relative flex flex-col items-center justify-end select-none pointer-events-none transition-all duration-700">
-    <div class="relative w-80 sm:w-96 md:w-[420px] h-[480px] sm:h-[540px] md:h-[600px] flex flex-col items-center justify-end">
+    <div class="relative w-72 sm:w-80 md:w-96 lg:w-[410px] h-[50vh] sm:h-[58vh] md:h-[66vh] max-h-[600px] flex flex-col items-center justify-end">
       <div class="w-full h-full flex items-center justify-center">
         <AnimeProtagonistDisplay 
           outfit={gameState.equippedOutfit} 

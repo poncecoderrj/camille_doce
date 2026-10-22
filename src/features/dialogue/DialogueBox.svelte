@@ -155,7 +155,7 @@
           <span class="text-[10px] {isLight ? 'text-[#7d6c59]' : 'text-zinc-500'} italic">Toda decisão tem consequências</span>
         </div>
 
-        <div class="grid grid-cols-1 gap-2.5">
+        <div class="grid grid-cols-1 gap-2.5 max-h-[30vh] sm:max-h-[36vh] overflow-y-auto pr-1.5 custom-scrollbar">
           {#each node.choices as choice}
             <button 
               onclick={(e) => {
@@ -188,3 +188,19 @@
 
   </div>
 </div>
+
+<style>
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(217, 119, 6, 0.35);
+    border-radius: 9999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(217, 119, 6, 0.6);
+  }
+</style>

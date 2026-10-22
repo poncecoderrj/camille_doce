@@ -67,7 +67,7 @@
 {#if manifest}
   <!-- ATOR PAPERDOLL 2D — 100% TRANSPARENTE, SEM CAIXA, COM MICROANIMAÇÃO A 60FPS -->
   <div 
-    class="relative w-80 sm:w-96 md:w-[420px] h-[520px] sm:h-[580px] md:h-[640px] flex items-end justify-center select-none pointer-events-none paperdoll-actor {customClass}"
+    class="relative w-72 sm:w-80 md:w-96 lg:w-[410px] h-[50vh] sm:h-[58vh] md:h-[66vh] max-h-[600px] flex items-end justify-center select-none pointer-events-none paperdoll-actor {customClass}"
     style="transform: scale({scale}) {flipHorizontal ? 'scaleX(-1)' : ''};"
   >
     

@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "src/features/dialogue/DialogueBox.svelte": {
-    "mtime": 1792705923.2336404,
-    "seen": 1792706151.533809,
-    "ast_hash": "e97156235a5b1b3fe2f910c5702f2573",
+    "mtime": 1792711444.8336284,
+    "seen": 1792711537.340138,
+    "ast_hash": "09649a267d2108ad9f4057d90c181b26",
     "semantic_hash": ""
   },
   "src/features/dialogue/narrative.schema.ts": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "src/features/stage/CharacterSprite.svelte": {
-    "mtime": 1792711245.3766873,
-    "seen": 1792711286.069641,
-    "ast_hash": "af76b37cdef953491426da8c9feb14c3",
+    "mtime": 1792711475.76641,
+    "seen": 1792711537.340138,
+    "ast_hash": "7c9bd6c9e76c525bb375e983112c265d",
     "semantic_hash": ""
   },
   "src/features/stage/SceneryBackground.svelte": {
@@ -78,9 +78,9 @@
     "semantic_hash": ""
   },
   "src/layout/DualStage.svelte": {
-    "mtime": 1792707186.3628175,
-    "seen": 1792707254.9817574,
-    "ast_hash": "b7b8bd3ea77071e0b2052c7e63248c1e",
+    "mtime": 1792711411.0213692,
+    "seen": 1792711537.340138,
+    "ast_hash": "eb966ab0b1353484aed459d99726f0aa",
     "semantic_hash": ""
   },
   "src/main.ts": {
@@ -210,9 +210,9 @@
     "semantic_hash": ""
   },
   "src/features/characters/PaperdollActor.svelte": {
-    "mtime": 1792711006.361866,
-    "seen": 1792711286.069641,
-    "ast_hash": "55f58267e00dc7e085ccfd5e941c7373",
+    "mtime": 1792711468.7739975,
+    "seen": 1792711537.340138,
+    "ast_hash": "0b5f08dd0e8cd5b4c5e72060c97abbdc",
     "semantic_hash": ""
   },
   "src/features/characters/character-manifest.ts": {
