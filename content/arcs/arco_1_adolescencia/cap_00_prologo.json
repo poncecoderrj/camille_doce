@@ -67,6 +67,13 @@
           "tipo": "Prioridade",
           "set_flags": { "estilo_escolhido": "vintage", "traje_vintage": true },
           "next_node_id": "node_00_mochila"
+        },
+        {
+          "id": "c0_abrir_closet_interativo",
+          "text": "✨ Abrir o Closet Completo (Experimentar e sobrepor roupas, cabelo, calçados e acessórios no provador)",
+          "tipo": "Ação",
+          "set_flags": { "abriu_closet_interativo": true },
+          "next_node_id": "node_00_mochila"
         }
       ]
     },

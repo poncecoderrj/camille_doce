@@ -80,20 +80,23 @@ export class GameState {
     }
   ]);
 
-  // Customização da Protagonista
+  // Customização da Protagonista & Provador
+  isWardrobeOpen = $state<boolean>(false);
   equippedOutfit = $state<EquippedOutfit>({
     skin_color: 'pele_clara',
     eye_color: 'olhos_castanhos',
-    mouth_expression: 'boca_neutra',
-    hair_front: 'cabelo_franja_onda_frente',
+    mouth_expression: 'boca_sorriso',
+    hair_front: 'cabelo_franja_onda',
     hair_back: 'cabelo_longo_onda_tras',
     hair_color: '#4a2c11',
-    blush: false,
+    blush: true,
     top: 'camisa_uniforme_lotus',
     bottom: 'saia_pregueada_azul',
-    jacket: 'blazer_marinho',
-    shoes: 'mocassim_marrom',
-    socks: 'meia_3_4_branca'
+    jacket: 'blazer_marinho_lotus',
+    shoes: 'mocassim_marrom_lotus',
+    socks: 'meia_3_4_branca',
+    necklace: 'cordao_perola_delicado',
+    bag: 'mochila_couro_vintage'
   });
 
   // Configurações
@@ -155,6 +158,30 @@ export class GameState {
       title,
       content
     });
+  }
+
+  // Ações do Guarda-Roupa / Provador
+  openWardrobe() {
+    this.isWardrobeOpen = true;
+  }
+
+  closeWardrobe() {
+    this.isWardrobeOpen = false;
+  }
+
+  toggleWardrobe() {
+    this.isWardrobeOpen = !this.isWardrobeOpen;
+  }
+
+  equipPiece(category: keyof EquippedOutfit, itemId?: string) {
+    (this.equippedOutfit as any)[category] = itemId;
+  }
+
+  applyPreset(presetPieces: Partial<EquippedOutfit>) {
+    this.equippedOutfit = {
+      ...this.equippedOutfit,
+      ...presetPieces
+    };
   }
 
   // Modificadores de Afinidade

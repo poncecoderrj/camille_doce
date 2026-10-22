@@ -5,9 +5,11 @@
   import PhoneShell from '../features/smartphone/PhoneShell.svelte';
   import SceneryBackground from '../features/stage/SceneryBackground.svelte';
   import CampusMapModal from '../features/campus-map/CampusMapModal.svelte';
+  import WardrobeModal from '../features/wardrobe/WardrobeModal.svelte';
+  import { OUTFIT_PRESETS } from '../features/wardrobe/wardrobe.catalog';
   import cap00Data from '../../content/arcs/arco_1_adolescencia/cap_00_prologo.json';
   import type { DialogueNode, Choice } from '../features/dialogue/narrative.schema';
-  import { Smartphone, RotateCcw, Sparkles, Sun, Moon, Map } from 'lucide-svelte';
+  import { Smartphone, RotateCcw, Sparkles, Sun, Moon, Map, Shirt } from 'lucide-svelte';
 
   const nodes = cap00Data.nodes as unknown as Record<string, DialogueNode>;
   let currentNode = $derived(nodes[gameState.currentNodeId] || nodes['node_01_portao']);
@@ -16,6 +18,15 @@
   let isMapOpen = $state(false);
 
   function handleSelectChoice(choice: Choice) {
+    if (choice.id === 'c0_abrir_closet_interativo') {
+      gameState.openWardrobe();
+    } else if (choice.id === 'c0_traje_classico') {
+      gameState.applyPreset(OUTFIT_PRESETS[0].pieces);
+    } else if (choice.id === 'c0_traje_rock') {
+      gameState.applyPreset(OUTFIT_PRESETS[1].pieces);
+    } else if (choice.id === 'c0_traje_vintage') {
+      gameState.applyPreset(OUTFIT_PRESETS[2].pieces);
+    }
     gameState.applyChoice(choice, currentNode);
   }
 
@@ -31,8 +42,11 @@
       gameState.togglePhone();
     } else if (e.key === 'm' || e.key === 'M') {
       isMapOpen = !isMapOpen;
+    } else if (e.key === 'c' || e.key === 'C') {
+      gameState.toggleWardrobe();
     } else if (e.key === 'Escape') {
-      if (isMapOpen) isMapOpen = false;
+      if (gameState.isWardrobeOpen) gameState.isWardrobeOpen = false;
+      else if (isMapOpen) isMapOpen = false;
       else if (gameState.isPhoneRaised) gameState.isPhoneRaised = false;
     }
   }
@@ -108,6 +122,16 @@
         <Sparkles class="w-3.5 h-3.5" />
         <span>◈ {gameState.coins}</span>
       </div>
+
+      <!-- BOTÃO GUARDA-ROUPA / CLOSET (C) -->
+      <button 
+        onclick={() => gameState.toggleWardrobe()}
+        title="Abrir Closet & Provador da Protagonista (C)"
+        class="px-3 py-1.5 rounded-xl border transition-all active:scale-95 text-xs flex items-center gap-1.5 font-cinzel font-semibold {isLight ? 'bg-[#e0d6c4] hover:bg-[#d5c9b4] border-[#baa991] text-[#3d3126]' : 'bg-[#181a24] hover:bg-[#202330] border-white/8 text-zinc-200'}"
+      >
+        <Shirt class="w-3.5 h-3.5 text-amber-500" />
+        <span class="hidden sm:inline">Closet</span>
+      </button>
 
       <!-- BOTÃO MAPA DO CAMPUS -->
       <button 
@@ -214,6 +238,11 @@
   <!-- MODAL MAPA DO CAMPUS (TELA S03) -->
   {#if isMapOpen}
     <CampusMapModal onClose={() => isMapOpen = false} />
+  {/if}
+
+  <!-- MODAL GUARDA-ROUPA / PROVADOR EM CAMADAS DA PROTAGONISTA -->
+  {#if gameState.isWardrobeOpen}
+    <WardrobeModal onClose={() => gameState.closeWardrobe()} />
   {/if}
 
 </div>

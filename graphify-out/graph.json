@@ -17,69 +17,17 @@
       "source_location": "L5"
     },
     {
-      "id": "src_features_stage_scenerybackground_props",
-      "label": "Props",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "props",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L2"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_chapter",
-      "label": "Chapter",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "chapter",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L57"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_dresscodecriteria",
-      "label": "DressCodeCriteria",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "dresscodecriteria",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L66"
-    },
-    {
       "id": "src_features_dialogue_narrative_schema_personagemid",
       "label": "PersonagemId",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "personagemid",
       "source_file": "src/features/dialogue/narrative.schema.ts",
       "source_location": "L18"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_tom",
-      "label": "Tom",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "tom",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L4"
     },
     {
       "id": "src_features_stage_charactersprite_props",
@@ -88,50 +36,50 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_features_stage_scenerybackground_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "SceneryBackground.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L2"
+    },
+    {
+      "id": "src_features_wardrobe_paperdollavatar_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
       "source_location": "L5"
     },
     {
-      "id": "src_features_game_state_gamestate_svelte_diaryentry",
-      "label": "DiaryEntry",
+      "id": "src_features_wardrobe_wardrobe_schema_outfitpreset",
+      "label": "OutfitPreset",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "WardrobeModal.svelte",
       "file_type": "code",
-      "norm_label": "diaryentry",
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_features_game_state_gamestate_svelte_historyentry",
-      "label": "HistoryEntry",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "historyentry",
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L4"
-    },
-    {
-      "id": "src_features_wardrobe_wardrobe_schema_equippedoutfit",
-      "label": "EquippedOutfit",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "equippedoutfit",
+      "norm_label": "outfitpreset",
       "source_file": "src/features/wardrobe/wardrobe.schema.ts",
-      "source_location": "L56"
+      "source_location": "L61"
     },
     {
       "id": "src_features_wardrobe_wardrobe_schema_wardrobecategory",
@@ -140,7 +88,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "WardrobeModal.svelte",
       "file_type": "code",
       "norm_label": "wardrobecategory",
       "source_file": "src/features/wardrobe/wardrobe.schema.ts",
@@ -153,11 +101,24 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 3,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "WardrobeModal.svelte",
       "file_type": "code",
       "norm_label": "wardrobeitem",
       "source_file": "src/features/wardrobe/wardrobe.schema.ts",
-      "source_location": "L34"
+      "source_location": "L37"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L27"
     },
     {
       "id": "src_features_smartphone_phoneshell_props",
@@ -186,6 +147,19 @@
       "source_location": "L6"
     },
     {
+      "id": "src_features_dialogue_narrative_schema_chapter",
+      "label": "Chapter",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "chapter",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L57"
+    },
+    {
       "id": "src_features_dialogue_narrative_schema_choice",
       "label": "Choice",
       "_callable": true,
@@ -212,17 +186,82 @@
       "source_location": "L47"
     },
     {
-      "id": "src_features_game_state_gamestate_svelte_gamestate",
-      "label": "gameState",
+      "id": "src_features_dialogue_narrative_schema_dresscodecriteria",
+      "label": "DressCodeCriteria",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
       "community_name": "DialogueBox.svelte",
       "file_type": "code",
+      "norm_label": "dresscodecriteria",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L66"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_tom",
+      "label": "Tom",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "tom",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_diaryentry",
+      "label": "DiaryEntry",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "diaryentry",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_historyentry",
+      "label": "HistoryEntry",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "historyentry",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate",
+      "label": "gameState",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
       "norm_label": "gamestate",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L207"
+      "source_location": "L234"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobe_schema_equippedoutfit",
+      "label": "EquippedOutfit",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": "equippedoutfit",
+      "source_file": "src/features/wardrobe/wardrobe.schema.ts",
+      "source_location": "L59"
     },
     {
       "id": "src_features_campus_map_campusmapmodal_travelto",
@@ -246,7 +285,7 @@
       "file_type": "code",
       "norm_label": "handlekeydown()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L29"
+      "source_location": "L40"
     },
     {
       "id": "src_layout_dualstage_handleselectchoice",
@@ -258,7 +297,7 @@
       "file_type": "code",
       "norm_label": "handleselectchoice()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L18"
+      "source_location": "L20"
     },
     {
       "id": "src_layout_dualstage_restartchapter",
@@ -270,7 +309,79 @@
       "file_type": "code",
       "norm_label": "restartchapter()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L22"
+      "source_location": "L33"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_applypreset",
+      "label": "applyPreset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "applypreset()",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L173"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_confirmoutfit",
+      "label": "confirmOutfit()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "confirmoutfit()",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L197"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_equipitem",
+      "label": "equipItem()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "equipitem()",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L139"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_isequipped",
+      "label": "isEquipped()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "isequipped()",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L169"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_resettosaved",
+      "label": "resetToSaved()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "resettosaved()",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L193"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_stripall",
+      "label": "stripAll()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "stripall()",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L180"
     },
     {
       "id": "src_features_smartphone_phoneshell_handlesavediary",
@@ -321,18 +432,6 @@
       "source_location": "L46"
     },
     {
-      "id": "src_features_game_state_gamestate_svelte_gamestate_adddiarynote",
-      "label": ".addDiaryNote()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": ".adddiarynote()",
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L149"
-    },
-    {
       "id": "src_features_game_state_gamestate_svelte_gamestate_applychoice",
       "label": ".applyChoice()",
       "_callable": true,
@@ -342,19 +441,7 @@
       "file_type": "code",
       "norm_label": ".applychoice()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L178"
-    },
-    {
-      "id": "src_features_game_state_gamestate_svelte_gamestate_getaffinitytier",
-      "label": ".getAffinityTier()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": ".getaffinitytier()",
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L169"
+      "source_location": "L205"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_modifyaffinity",
@@ -366,91 +453,175 @@
       "file_type": "code",
       "norm_label": ".modifyaffinity()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L161"
+      "source_location": "L188"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_adddiarynote",
+      "label": ".addDiaryNote()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".adddiarynote()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L152"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_applypreset",
+      "label": ".applyPreset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".applypreset()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L180"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_closewardrobe",
+      "label": ".closeWardrobe()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".closewardrobe()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L168"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_equippiece",
+      "label": ".equipPiece()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".equippiece()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L176"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_getaffinitytier",
+      "label": ".getAffinityTier()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".getaffinitytier()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L196"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_openphoneapp",
       "label": ".openPhoneApp()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
+      "community": 9,
+      "community_name": "gameState",
       "file_type": "code",
       "norm_label": ".openphoneapp()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L113"
+      "source_location": "L116"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_openwardrobe",
+      "label": ".openWardrobe()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".openwardrobe()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L164"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_pressphonehome",
       "label": ".pressPhoneHome()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
+      "community": 9,
+      "community_name": "gameState",
       "file_type": "code",
       "norm_label": ".pressphonehome()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L121"
+      "source_location": "L124"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_toggleflashlight",
       "label": ".toggleFlashlight()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
+      "community": 9,
+      "community_name": "gameState",
       "file_type": "code",
       "norm_label": ".toggleflashlight()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L133"
+      "source_location": "L136"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_togglehotspot",
       "label": ".toggleHotspot()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
+      "community": 9,
+      "community_name": "gameState",
       "file_type": "code",
       "norm_label": ".togglehotspot()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L137"
+      "source_location": "L140"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_togglephone",
       "label": ".togglePhone()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
+      "community": 9,
+      "community_name": "gameState",
       "file_type": "code",
       "norm_label": ".togglephone()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L106"
+      "source_location": "L109"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_toggletheme",
       "label": ".toggleTheme()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
+      "community": 9,
+      "community_name": "gameState",
       "file_type": "code",
       "norm_label": ".toggletheme()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L129"
+      "source_location": "L132"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_togglewardrobe",
+      "label": ".toggleWardrobe()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".togglewardrobe()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L172"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_triggercloudbackup",
       "label": ".triggerCloudBackup()",
       "_callable": true,
       "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
+      "community": 9,
+      "community_name": "gameState",
       "file_type": "code",
       "norm_label": ".triggercloudbackup()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L141"
+      "source_location": "L144"
     },
     {
       "id": "lucide_svelte",
@@ -508,50 +679,6 @@
       "source_location": "L9"
     },
     {
-      "id": "src_features_stage_scenerybackground",
-      "label": "SceneryBackground.svelte",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "scenerybackground.svelte",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_stage_scenerybackground_activeimg",
-      "label": "activeImg",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "activeimg",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_features_stage_scenerybackground_backgroundimages",
-      "label": "backgroundImages",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "backgroundimages",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L11"
-    },
-    {
-      "id": "src_features_stage_scenerybackground_location_timeofday_manha_islight_false",
-      "label": "{ location, timeOfDay = 'manha', isLight = false }",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "{ location, timeofday = 'manha', islight = false }",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L8"
-    },
-    {
       "id": "src_layout_dualstage",
       "label": "DualStage.svelte",
       "_origin": "ast",
@@ -571,7 +698,7 @@
       "file_type": "code",
       "norm_label": "activebg",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L55"
+      "source_location": "L69"
     },
     {
       "id": "src_layout_dualstage_currentnode",
@@ -582,7 +709,7 @@
       "file_type": "code",
       "norm_label": "currentnode",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L13"
+      "source_location": "L15"
     },
     {
       "id": "src_layout_dualstage_darkbackgrounds",
@@ -593,7 +720,7 @@
       "file_type": "code",
       "norm_label": "darkbackgrounds",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L49"
+      "source_location": "L63"
     },
     {
       "id": "src_layout_dualstage_islight",
@@ -604,7 +731,7 @@
       "file_type": "code",
       "norm_label": "islight",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L15"
+      "source_location": "L17"
     },
     {
       "id": "src_layout_dualstage_ismapopen",
@@ -615,7 +742,7 @@
       "file_type": "code",
       "norm_label": "ismapopen",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L16"
+      "source_location": "L18"
     },
     {
       "id": "src_layout_dualstage_lightbackgrounds",
@@ -626,7 +753,7 @@
       "file_type": "code",
       "norm_label": "lightbackgrounds",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L42"
+      "source_location": "L56"
     },
     {
       "id": "src_layout_dualstage_nodes",
@@ -637,7 +764,7 @@
       "file_type": "code",
       "norm_label": "nodes",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L12"
+      "source_location": "L14"
     },
     {
       "id": "ref_lucide_svelte",
@@ -651,88 +778,11 @@
       "source_location": "L28"
     },
     {
-      "id": "src_features_dialogue_narrative_schema",
-      "label": "narrative.schema.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "narrative.schema.ts",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_chapterschema",
-      "label": "ChapterSchema",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "chapterschema",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L49"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_choiceschema",
-      "label": "ChoiceSchema",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "choiceschema",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_dialoguenodeschema",
-      "label": "DialogueNodeSchema",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "dialoguenodeschema",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_dresscodecriteriaschema",
-      "label": "DressCodeCriteriaSchema",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "dresscodecriteriaschema",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L59"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_personagemenum",
-      "label": "PersonagemEnum",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "personagemenum",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_tomenum",
-      "label": "TomEnum",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "tomenum",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L3"
-    },
-    {
       "id": "src_features_stage_charactersprite",
       "label": "CharacterSprite.svelte",
       "_origin": "ast",
       "community": 1,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "charactersprite.svelte",
       "source_file": "src/features/stage/CharacterSprite.svelte",
@@ -743,66 +793,132 @@
       "label": "characterProfiles",
       "_origin": "ast",
       "community": 1,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "characterprofiles",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "src_features_stage_charactersprite_charactersprites",
       "label": "characterSprites",
       "_origin": "ast",
       "community": 1,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "charactersprites",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "src_features_stage_charactersprite_islight",
       "label": "isLight",
       "_origin": "ast",
       "community": 1,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "islight",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L50"
+      "source_location": "L62"
+    },
+    {
+      "id": "src_features_stage_charactersprite_isprotagonist",
+      "label": "isProtagonist",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "isprotagonist",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L59"
     },
     {
       "id": "src_features_stage_charactersprite_profile",
       "label": "profile",
       "_origin": "ast",
       "community": 1,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "profile",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L49"
+      "source_location": "L61"
     },
     {
       "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutral_timeofday_manha",
       "label": "{ speaker, speakerName = '', expression = 'neutral', timeOfDay = 'manha' }",
       "_origin": "ast",
       "community": 1,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "{ speaker, speakername = '', expression = 'neutral', timeofday = 'manha' }",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L12"
+      "source_location": "L13"
     },
     {
       "id": "src_features_stage_charactersprite_spriteurl",
       "label": "spriteUrl",
       "_origin": "ast",
       "community": 1,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "spriteurl",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L48"
+      "source_location": "L60"
+    },
+    {
+      "id": "package_dependencies",
+      "label": "dependencies",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "dependencies",
+      "source_file": "package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "package_dependencies_dexie",
+      "label": "dexie",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "dexie",
+      "source_file": "package.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "package_dependencies_howler",
+      "label": "howler",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "howler",
+      "source_file": "package.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "package_dependencies_lucide_svelte",
+      "label": "lucide-svelte",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "lucide-svelte",
+      "source_file": "package.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "package_dependencies_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "dependencies",
+      "file_type": "code",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L29"
     },
     {
       "id": "readme",
@@ -920,6 +1036,50 @@
       "source_location": "L1"
     },
     {
+      "id": "src_features_stage_scenerybackground",
+      "label": "SceneryBackground.svelte",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "SceneryBackground.svelte",
+      "file_type": "code",
+      "norm_label": "scenerybackground.svelte",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_stage_scenerybackground_activeimg",
+      "label": "activeImg",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "SceneryBackground.svelte",
+      "file_type": "code",
+      "norm_label": "activeimg",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_features_stage_scenerybackground_backgroundimages",
+      "label": "backgroundImages",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "SceneryBackground.svelte",
+      "file_type": "code",
+      "norm_label": "backgroundimages",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_features_stage_scenerybackground_location_timeofday_manha_islight_false",
+      "label": "{ location, timeOfDay = 'manha', isLight = false }",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "SceneryBackground.svelte",
+      "file_type": "code",
+      "norm_label": "{ location, timeofday = 'manha', islight = false }",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L8"
+    },
+    {
       "id": "package",
       "label": "package.json",
       "_origin": "ast",
@@ -929,61 +1089,6 @@
       "norm_label": "package.json",
       "source_file": "package.json",
       "source_location": "L1"
-    },
-    {
-      "id": "package_dependencies",
-      "label": "dependencies",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "dependencies",
-      "source_file": "package.json",
-      "source_location": "L25"
-    },
-    {
-      "id": "package_dependencies_dexie",
-      "label": "dexie",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "dexie",
-      "source_file": "package.json",
-      "source_location": "L26"
-    },
-    {
-      "id": "package_dependencies_howler",
-      "label": "howler",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "howler",
-      "source_file": "package.json",
-      "source_location": "L27"
-    },
-    {
-      "id": "package_dependencies_lucide_svelte",
-      "label": "lucide-svelte",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "lucide-svelte",
-      "source_file": "package.json",
-      "source_location": "L28"
-    },
-    {
-      "id": "package_dependencies_zod",
-      "label": "zod",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "zod",
-      "source_file": "package.json",
-      "source_location": "L29"
     },
     {
       "id": "package_name",
@@ -1272,22 +1377,143 @@
       "source_location": "L23"
     },
     {
-      "id": "src_features_game_state_gamestate_svelte",
-      "label": "GameState.svelte.ts",
+      "id": "src_features_wardrobe_paperdollavatar",
+      "label": "PaperdollAvatar.svelte",
       "_origin": "ast",
       "community": 3,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "WardrobeModal.svelte",
       "file_type": "code",
-      "norm_label": "gamestate.svelte.ts",
-      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "norm_label": "paperdollavatar.svelte",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
       "source_location": "L1"
+    },
+    {
+      "id": "src_features_wardrobe_paperdollavatar_currenteye",
+      "label": "currentEye",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "currenteye",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_features_wardrobe_paperdollavatar_currenthair",
+      "label": "currentHair",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "currenthair",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L22"
+    },
+    {
+      "id": "src_features_wardrobe_paperdollavatar_currentskin",
+      "label": "currentSkin",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "currentskin",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_features_wardrobe_paperdollavatar_outfit_zoommode_corpo_inteiro_interactive_false_class_customclass",
+      "label": "{ \n    outfit, \n    zoomMode = 'corpo_inteiro', \n    interactive = false,\n    class: customClass = '' \n  }",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "{ \n    outfit, \n    zoommode = 'corpo_inteiro', \n    interactive = false,\n    class: customclass = '' \n  }",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_features_wardrobe_paperdollavatar_viewbox",
+      "label": "viewBox",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "viewbox",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobe_catalog",
+      "label": "wardrobe.catalog.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "wardrobe.catalog.ts",
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobe_catalog_eye_colors",
+      "label": "EYE_COLORS",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "eye_colors",
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L10"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobe_catalog_hair_colors",
+      "label": "HAIR_COLORS",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "hair_colors",
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobe_catalog_outfit_presets",
+      "label": "OUTFIT_PRESETS",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "outfit_presets",
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L494"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobe_catalog_skin_tones",
+      "label": "SKIN_TONES",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "skin_tones",
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobe_catalog_wardrobe_catalog",
+      "label": "WARDROBE_CATALOG",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "wardrobe_catalog",
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L26"
     },
     {
       "id": "src_features_wardrobe_wardrobe_schema",
       "label": "wardrobe.schema.ts",
       "_origin": "ast",
       "community": 3,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "WardrobeModal.svelte",
       "file_type": "code",
       "norm_label": "wardrobe.schema.ts",
       "source_file": "src/features/wardrobe/wardrobe.schema.ts",
@@ -1298,18 +1524,18 @@
       "label": "EquippedOutfitSchema",
       "_origin": "ast",
       "community": 3,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "WardrobeModal.svelte",
       "file_type": "code",
       "norm_label": "equippedoutfitschema",
       "source_file": "src/features/wardrobe/wardrobe.schema.ts",
-      "source_location": "L36"
+      "source_location": "L39"
     },
     {
       "id": "src_features_wardrobe_wardrobe_schema_wardrobecategoryenum",
       "label": "WardrobeCategoryEnum",
       "_origin": "ast",
       "community": 3,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "WardrobeModal.svelte",
       "file_type": "code",
       "norm_label": "wardrobecategoryenum",
       "source_file": "src/features/wardrobe/wardrobe.schema.ts",
@@ -1320,22 +1546,121 @@
       "label": "WardrobeItemSchema",
       "_origin": "ast",
       "community": 3,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "WardrobeModal.svelte",
       "file_type": "code",
       "norm_label": "wardrobeitemschema",
       "source_file": "src/features/wardrobe/wardrobe.schema.ts",
       "source_location": "L23"
     },
     {
-      "id": "ref_zod",
-      "label": "zod",
+      "id": "src_features_wardrobe_wardrobemodal",
+      "label": "WardrobeModal.svelte",
       "_origin": "ast",
       "community": 3,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "concept",
-      "norm_label": "zod",
-      "source_file": "package.json",
-      "source_location": "L29"
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "wardrobemodal.svelte",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_activetab",
+      "label": "activeTab",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "activetab",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_currentitems",
+      "label": "currentItems",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "currentitems",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L54"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_onclose",
+      "label": "{ onClose }",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "{ onclose }",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L31"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_previewoutfit",
+      "label": "previewOutfit",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "previewoutfit",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L34"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_reactions",
+      "label": "reactions",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "reactions",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L115"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_selectedstylefilter",
+      "label": "selectedStyleFilter",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "selectedstylefilter",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L39"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_stylescores",
+      "label": "styleScores",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "stylescores",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L72"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_tabs",
+      "label": "tabs",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "tabs",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L42"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobemodal_zoommode",
+      "label": "zoomMode",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "zoommode",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L37"
     },
     {
       "id": "tsconfig_node",
@@ -2064,6 +2389,105 @@
       "source_location": "L55"
     },
     {
+      "id": "src_features_dialogue_narrative_schema",
+      "label": "narrative.schema.ts",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "narrative.schema.ts",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_chapterschema",
+      "label": "ChapterSchema",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "chapterschema",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_choiceschema",
+      "label": "ChoiceSchema",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "choiceschema",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_dialoguenodeschema",
+      "label": "DialogueNodeSchema",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "dialoguenodeschema",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_dresscodecriteriaschema",
+      "label": "DressCodeCriteriaSchema",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "dresscodecriteriaschema",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L59"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_personagemenum",
+      "label": "PersonagemEnum",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "personagemenum",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_tomenum",
+      "label": "TomEnum",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "tomenum",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte",
+      "label": "GameState.svelte.ts",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "gamestate.svelte.ts",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "ref_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "concept",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L29"
+    },
+    {
       "id": "content_arcs_arco_1_adolescencia_cap_00_prologo",
       "label": "content_arcs_arco_1_adolescencia_cap_00_prologo",
       "_origin": "semantic",
@@ -2086,7 +2510,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L190",
+      "source_location": "L217",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate_applypreset",
+      "target": "src_features_wardrobe_wardrobe_schema_equippedoutfit",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "generic_arg",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L180",
       "weight": 1.0
     },
     {
@@ -2402,6 +2838,186 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_wardrobe_schema_equippedoutfit",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_wardrobe_catalog_eye_colors",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_wardrobe_catalog_hair_colors",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_wardrobe_catalog_skin_tones",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobe_catalog",
+      "target": "src_features_wardrobe_wardrobe_schema_outfitpreset",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobe_catalog",
+      "target": "src_features_wardrobe_wardrobe_schema_wardrobeitem",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_game_state_gamestate_svelte_gamestate",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobe_schema_equippedoutfit",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobe_catalog_eye_colors",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobe_catalog_hair_colors",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobe_catalog_outfit_presets",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobe_catalog_skin_tones",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobe_catalog_wardrobe_catalog",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
+      "target": "src_features_dialogue_narrative_schema_choice",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
+      "target": "src_features_dialogue_narrative_schema_dialoguenode",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
       "source": "src_layout_dualstage",
       "target": "src_features_game_state_gamestate_svelte_gamestate",
       "relation": "imports",
@@ -2415,19 +3031,7 @@
     },
     {
       "source": "src_layout_dualstage",
-      "target": "src_features_dialogue_narrative_schema_choice",
-      "relation": "imports",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
-      "source": "src_layout_dualstage",
-      "target": "src_features_dialogue_narrative_schema_dialoguenode",
+      "target": "src_features_wardrobe_wardrobe_catalog_outfit_presets",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2598,6 +3202,56 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_wardrobe_paperdollavatar",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_wardrobe_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L2",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_wardrobe_catalog",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobe_catalog",
+      "target": "src_features_wardrobe_wardrobe_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L1",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
       "source": "src_features_wardrobe_wardrobe_schema",
       "target": "ref_zod",
       "relation": "imports_from",
@@ -2610,6 +3264,92 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_paperdollavatar",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "ref_lucide_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_game_state_gamestate_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobe_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L3",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobe_catalog",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
+      "target": "content_arcs_arco_1_adolescencia_cap_00_prologo",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
+      "target": "src_features_dialogue_narrative_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L11",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
       "source": "src_layout_dualstage",
       "target": "ref_lucide_svelte",
       "relation": "imports_from",
@@ -2618,7 +3358,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L10",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -2695,7 +3435,7 @@
     },
     {
       "source": "src_layout_dualstage",
-      "target": "content_arcs_arco_1_adolescencia_cap_00_prologo",
+      "target": "src_features_wardrobe_wardrobemodal",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2707,7 +3447,7 @@
     },
     {
       "source": "src_layout_dualstage",
-      "target": "src_features_dialogue_narrative_schema",
+      "target": "src_features_wardrobe_wardrobe_catalog",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2715,7 +3455,6 @@
       "context": "import",
       "source_file": "src/layout/DualStage.svelte",
       "source_location": "L9",
-      "type_only": true,
       "weight": 1.0
     },
     {
@@ -2799,7 +3538,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L178",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -2811,7 +3550,19 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L178",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate_equippiece",
+      "target": "src_features_wardrobe_wardrobe_schema_equippedoutfit",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -3449,7 +4200,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L207",
+      "source_location": "L234",
       "weight": 1.0
     },
     {
@@ -3669,7 +4420,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -3680,7 +4431,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -3691,29 +4442,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
       "source": "src_features_stage_charactersprite",
-      "target": "src_features_stage_charactersprite_spriteurl",
+      "target": "src_features_stage_charactersprite_isprotagonist",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L48",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_stage_charactersprite",
-      "target": "src_features_stage_charactersprite_profile",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L49",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -3724,7 +4464,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L5",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_stage_charactersprite_spriteurl",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_stage_charactersprite_profile",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -3735,7 +4497,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L50",
+      "source_location": "L62",
       "weight": 1.0
     },
     {
@@ -3783,6 +4545,127 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_paperdollavatar_outfit_zoommode_corpo_inteiro_interactive_false_class_customclass",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_paperdollavatar_currentskin",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_paperdollavatar_currenteye",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_paperdollavatar_currenthair",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_paperdollavatar_viewbox",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_paperdollavatar_props",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/PaperdollAvatar.svelte",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobe_catalog",
+      "target": "src_features_wardrobe_wardrobe_catalog_eye_colors",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobe_catalog",
+      "target": "src_features_wardrobe_wardrobe_catalog_hair_colors",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobe_catalog",
+      "target": "src_features_wardrobe_wardrobe_catalog_wardrobe_catalog",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobe_catalog",
+      "target": "src_features_wardrobe_wardrobe_catalog_skin_tones",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobe_catalog",
+      "target": "src_features_wardrobe_wardrobe_catalog_outfit_presets",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L494",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_wardrobe_wardrobe_schema",
       "target": "src_features_wardrobe_wardrobe_schema_wardrobecategory",
       "relation": "contains",
@@ -3823,7 +4706,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/wardrobe.schema.ts",
-      "source_location": "L34",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -3834,7 +4717,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/wardrobe.schema.ts",
-      "source_location": "L36",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -3845,7 +4728,194 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/wardrobe.schema.ts",
-      "source_location": "L56",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobe_schema",
+      "target": "src_features_wardrobe_wardrobe_schema_outfitpreset",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/wardrobe.schema.ts",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_reactions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_equipitem",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_isequipped",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L169",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_applypreset",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L173",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_stripall",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L180",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_resettosaved",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L193",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_confirmoutfit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L197",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_props",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_onclose",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_previewoutfit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_zoommode",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_activetab",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_selectedstylefilter",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_tabs",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_currentitems",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_stylescores",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L72",
       "weight": 1.0
     },
     {
@@ -3856,7 +4926,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L12",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -3867,7 +4937,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L13",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -3878,7 +4948,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L15",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -3889,7 +4959,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L16",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -3900,7 +4970,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L18",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -3911,7 +4981,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L22",
+      "source_location": "L33",
       "weight": 1.0
     },
     {
@@ -3922,7 +4992,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L29",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -3933,7 +5003,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L42",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -3944,7 +5014,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L49",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -3955,7 +5025,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L55",
+      "source_location": "L69",
       "weight": 1.0
     },
     {
@@ -4336,6 +5406,15 @@
       "source_file": "src/features/smartphone/PhoneShell.svelte"
     },
     {
+      "source": "src_features_wardrobe_wardrobemodal",
+      "target": "lucide_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte"
+    },
+    {
       "source": "src_layout_dualstage",
       "target": "lucide_svelte",
       "relation": "imports_from",
@@ -4352,7 +5431,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L106",
+      "source_location": "L109",
       "weight": 1.0
     },
     {
@@ -4363,7 +5442,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L113",
+      "source_location": "L116",
       "weight": 1.0
     },
     {
@@ -4374,7 +5453,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L121",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -4385,7 +5464,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L129",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -4396,7 +5475,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L133",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -4407,7 +5486,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L137",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -4418,7 +5497,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L141",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -4429,7 +5508,62 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L149",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_openwardrobe",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_closewardrobe",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L168",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_togglewardrobe",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L172",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_equippiece",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L176",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_applypreset",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L180",
       "weight": 1.0
     },
     {
@@ -4440,7 +5574,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L161",
+      "source_location": "L188",
       "weight": 1.0
     },
     {
@@ -4451,7 +5585,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L169",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -4462,9 +5596,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L178",
+      "source_location": "L205",
       "weight": 1.0
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "df74bee4982b1cf6f88e350fcc966c5670541e4a"
 }

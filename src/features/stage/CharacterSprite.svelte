@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { PersonagemId } from '../dialogue/narrative.schema';
   import { gameState } from '../game-state/GameState.svelte';
+  import PaperdollAvatar from '../wardrobe/PaperdollAvatar.svelte';
 
   interface Props {
     speaker: PersonagemId;
@@ -38,6 +39,16 @@
       title: 'Artista Melancólico • 2º Ano',
       accentColor: '#059669'
     },
+    protagonista: {
+      name: 'Íris',
+      title: 'Protagonista • 1º Ano',
+      accentColor: '#d97706'
+    },
+    iris: {
+      name: 'Íris',
+      title: 'Protagonista • 1º Ano',
+      accentColor: '#d97706'
+    },
     narrador: {
       name: 'Narrador',
       title: '',
@@ -45,12 +56,39 @@
     }
   };
 
+  let isProtagonist = $derived(speaker === 'protagonista' || speaker === 'iris');
   let spriteUrl = $derived(characterSprites[speaker] || null);
   let profile = $derived(characterProfiles[speaker] || characterProfiles.narrador);
   let isLight = $derived(gameState.theme === 'light');
 </script>
 
-{#if speaker !== 'narrador' && spriteUrl}
+{#if isProtagonist}
+  <!-- PROTAGONISTA PAPERDOLL AO VIVO COM ROUPAS EM CAMADAS SOBREPOSTAS -->
+  <div class="relative flex flex-col items-center justify-end select-none pointer-events-none transition-all duration-700">
+    <div class="relative w-80 sm:w-96 md:w-[420px] h-[480px] sm:h-[540px] md:h-[600px] flex flex-col items-center justify-end animate-breathe">
+      <div class="w-full h-full flex items-center justify-center">
+        <PaperdollAvatar 
+          outfit={gameState.equippedOutfit} 
+          zoomMode="corpo_inteiro"
+          class="h-full"
+        />
+      </div>
+
+      <!-- Cartão de Identificação da Protagonista -->
+      <div 
+        class="absolute -bottom-2 z-20 px-5 py-2 rounded-2xl backdrop-blur-xl border shadow-xl flex flex-col items-center gap-0.5 transition-all duration-300 {isLight ? 'bg-[#ebe4d5]/95 border-[#c5b79f] text-[#2c241e]' : 'bg-[#0d0e14]/90 border-white/8 text-[#ededef]'}"
+      >
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+          <h2 class="text-sm font-cinzel font-bold tracking-wider">{profile.name}</h2>
+        </div>
+        <p class="text-[10px] font-sans-ui tracking-wide {isLight ? 'text-stone-500' : 'text-zinc-400'} font-medium">
+          {profile.title}
+        </p>
+      </div>
+    </div>
+  </div>
+{:else if speaker !== 'narrador' && spriteUrl}
   <div class="relative flex flex-col items-center justify-end select-none pointer-events-none transition-all duration-700">
     
     <!-- Container com Respiração Sutil (Animação de Câmera 60FPS) -->
