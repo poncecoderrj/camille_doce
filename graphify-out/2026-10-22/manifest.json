@@ -1,0 +1,188 @@
+{
+  ".vscode/extensions.json": {
+    "mtime": 1792703230.5702927,
+    "seen": 1792706151.533809,
+    "ast_hash": "200d2e103f19aa20cbc8eb59dd6079b1",
+    "semantic_hash": ""
+  },
+  "content/arcs/arco_1_adolescencia/cap_00_prologo.json": {
+    "mtime": 1792706231.3815598,
+    "seen": 1792706431.1903663,
+    "ast_hash": "b1a85c44ca482370ebbff550337b5646",
+    "semantic_hash": ""
+  },
+  "content/characters/characters.json": {
+    "mtime": 1792703356.3605547,
+    "seen": 1792706151.533809,
+    "ast_hash": "72790911ca1292e03a6b289d8372abb1",
+    "semantic_hash": ""
+  },
+  "package.json": {
+    "mtime": 1792703515.6067169,
+    "seen": 1792706151.533809,
+    "ast_hash": "da191cf1462df1a4342f968655e50d58",
+    "semantic_hash": ""
+  },
+  "src/App.svelte": {
+    "mtime": 1792705994.4781017,
+    "seen": 1792706151.533809,
+    "ast_hash": "b2d5305e8fab0557d2f1e7fed97497c1",
+    "semantic_hash": ""
+  },
+  "src/features/campus-map/CampusMapModal.svelte": {
+    "mtime": 1792706379.6433923,
+    "seen": 1792706431.1903663,
+    "ast_hash": "7f0b3fe0bc822a3106b03f89b7bf8934",
+    "semantic_hash": ""
+  },
+  "src/features/dialogue/DialogueBox.svelte": {
+    "mtime": 1792705923.2336404,
+    "seen": 1792706151.533809,
+    "ast_hash": "e97156235a5b1b3fe2f910c5702f2573",
+    "semantic_hash": ""
+  },
+  "src/features/dialogue/narrative.schema.ts": {
+    "mtime": 1792703273.9655862,
+    "seen": 1792706151.533809,
+    "ast_hash": "44955894f82522420df3b1e7b983afc6",
+    "semantic_hash": ""
+  },
+  "src/features/game-state/GameState.svelte.ts": {
+    "mtime": 1792706239.3133998,
+    "seen": 1792706431.1903663,
+    "ast_hash": "bbe75fe401e07388536e5ffe15fa9474",
+    "semantic_hash": ""
+  },
+  "src/features/smartphone/PhoneShell.svelte": {
+    "mtime": 1792705929.3001945,
+    "seen": 1792706151.533809,
+    "ast_hash": "3a9befd4a3a3dc6cc3bb3dc3f4cdddd5",
+    "semantic_hash": ""
+  },
+  "src/features/stage/CharacterSprite.svelte": {
+    "mtime": 1792706362.1400192,
+    "seen": 1792706431.1903663,
+    "ast_hash": "828e3ff45a3db9d1f5b349b58397481d",
+    "semantic_hash": ""
+  },
+  "src/features/stage/SceneryBackground.svelte": {
+    "mtime": 1792706286.8419018,
+    "seen": 1792706431.1903663,
+    "ast_hash": "21223480a8029036ed6133d178c55aa1",
+    "semantic_hash": ""
+  },
+  "src/features/wardrobe/wardrobe.schema.ts": {
+    "mtime": 1792703286.4615328,
+    "seen": 1792706151.533809,
+    "ast_hash": "104b573cf84bb7aefd3429aaf1537a43",
+    "semantic_hash": ""
+  },
+  "src/layout/DualStage.svelte": {
+    "mtime": 1792706246.535547,
+    "seen": 1792706431.1903663,
+    "ast_hash": "fad81c52300fb516d39ddc24e4a72f72",
+    "semantic_hash": ""
+  },
+  "src/main.ts": {
+    "mtime": 1792703231.5563097,
+    "seen": 1792706151.533809,
+    "ast_hash": "6754eb730810f7dd7273f4aea2c86474",
+    "semantic_hash": ""
+  },
+  "svelte.config.js": {
+    "mtime": 1792703230.5140753,
+    "seen": 1792706151.533809,
+    "ast_hash": "c75647575a823f80e9d2e5e8bfb8c8bc",
+    "semantic_hash": ""
+  },
+  "tsconfig.app.json": {
+    "mtime": 1792703230.7191122,
+    "seen": 1792706151.533809,
+    "ast_hash": "2361dacf68c6c20276a699fb3e4139f8",
+    "semantic_hash": ""
+  },
+  "tsconfig.json": {
+    "mtime": 1792703230.7584598,
+    "seen": 1792706151.533809,
+    "ast_hash": "a3d39fa780ebff65444de257f291ce6c",
+    "semantic_hash": ""
+  },
+  "tsconfig.node.json": {
+    "mtime": 1792703230.7943313,
+    "seen": 1792706151.533809,
+    "ast_hash": "f9cb81ddcea69ffdab672fc8c48dca66",
+    "semantic_hash": ""
+  },
+  "vite.config.ts": {
+    "mtime": 1792703535.1065564,
+    "seen": 1792706151.533809,
+    "ast_hash": "e0ae7dd2ab6a337b0ef738f2ee6fd8a6",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1792703230.9025495,
+    "seen": 1792706151.533809,
+    "ast_hash": "eb84709a4900985d89598dd3e2c25728",
+    "semantic_hash": ""
+  },
+  "index.html": {
+    "mtime": 1792703946.828715,
+    "seen": 1792706151.533809,
+    "ast_hash": "6ad3586ce2adface234bc2d102cab23e",
+    "semantic_hash": ""
+  },
+  "public/assets/backgrounds/patio_central.png": {
+    "mtime": 1792705689.206326,
+    "seen": 1792706151.533809,
+    "ast_hash": "2dacf87b7f0f5d1d52ca9dc34c575e8a",
+    "semantic_hash": ""
+  },
+  "public/assets/backgrounds/portao_escola.png": {
+    "mtime": 1792705643.6828735,
+    "seen": 1792706151.533809,
+    "ast_hash": "8ab4af9ea07ee300a17fefed15adde81",
+    "semantic_hash": ""
+  },
+  "public/assets/backgrounds/sala_gremio.png": {
+    "mtime": 1792705664.8959062,
+    "seen": 1792706151.533809,
+    "ast_hash": "b935e83cf12ab8fbc5f5010ddcd0abdc",
+    "semantic_hash": ""
+  },
+  "public/favicon.svg": {
+    "mtime": 1792703231.1142352,
+    "seen": 1792706151.533809,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": ""
+  },
+  "public/icons.svg": {
+    "mtime": 1792703231.1915555,
+    "seen": 1792706151.533809,
+    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
+    "semantic_hash": ""
+  },
+  "public/assets/backgrounds/quarto_protagonista.png": {
+    "mtime": 1792706224.79769,
+    "seen": 1792706431.1903663,
+    "ast_hash": "ddc590a8124166a00504694f58ca15c8",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante.png": {
+    "mtime": 1792706259.437574,
+    "seen": 1792706431.1903663,
+    "ast_hash": "e05bdf354818a7f5b84e7cda0efcb2a9",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas.png": {
+    "mtime": 1792706282.000942,
+    "seen": 1792706431.1903663,
+    "ast_hash": "f712244189bc8d527cbea60f6b079d2e",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo.png": {
+    "mtime": 1792706323.8139575,
+    "seen": 1792706431.1903663,
+    "ast_hash": "725de5dcbbfa13d507550426a89511de",
+    "semantic_hash": ""
+  }
+}

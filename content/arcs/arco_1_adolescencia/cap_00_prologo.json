@@ -1,0 +1,396 @@
+{
+  "id": "cap_00_prologo",
+  "arc_id": "arco_1_adolescencia",
+  "title": "Prólogo: O Primeiro Sinal",
+  "description": "O despertar matinal, a escolha do traje e a chegada na Academia Lótus.",
+  "initial_node_id": "node_00_despertador",
+  "nodes": {
+    "node_00_despertador": {
+      "id": "node_00_despertador",
+      "speaker": "narrador",
+      "expression": "neutral",
+      "text": "06:45. O alarme do celular toca sobre a mesa de cabeceira. Frestas de luz dourada cortam as cortinas do quarto, desenhando listras mornas sobre o edredom. Hoje é o seu primeiro dia na Academia Lótus.",
+      "location": "Quarto da Protagonista",
+      "time_of_day": "manha",
+      "bg_music": "morning_theme",
+      "choices": [
+        {
+          "id": "c0_pular_cama",
+          "text": "Desligar o alarme num salto e abrir as cortinas. Não posso me atrasar no primeiro dia!",
+          "tipo": "Ação",
+          "set_flags": { "rotina_matinal": "animada", "energia_inicial": "alta" },
+          "next_node_id": "node_00_guarda_roupa"
+        },
+        {
+          "id": "c0_cobertor",
+          "text": "Puxar o cobertor até o nariz por mais dois minutos... Por que a escola começa tão cedo?",
+          "tipo": "Tom",
+          "tom": "escapista",
+          "set_flags": { "rotina_matinal": "sonolenta", "energia_inicial": "baixa" },
+          "next_node_id": "node_00_guarda_roupa"
+        },
+        {
+          "id": "c0_respirar_fundo",
+          "text": "Sentar na beirada da cama em silêncio. Um colégio novo, pessoas novas... respira fundo.",
+          "tipo": "Tom",
+          "tom": "cuidadoso",
+          "set_flags": { "rotina_matinal": "reflexiva", "energia_inicial": "focada" },
+          "next_node_id": "node_00_guarda_roupa"
+        }
+      ]
+    },
+    "node_00_guarda_roupa": {
+      "id": "node_00_guarda_roupa",
+      "speaker": "narrador",
+      "expression": "neutral",
+      "text": "Diante do espelho do guarda-roupa, três opções de vestuário estão separadas. A primeira impressão na Academia Lótus vai ditar como as pessoas te enxergam pelos corredores.",
+      "location": "Quarto da Protagonista",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c0_traje_classico",
+          "text": "Blazer azul-marinho alinhado, camisa social branca engomada e saia pregueada clássica.",
+          "tipo": "Prioridade",
+          "set_flags": { "estilo_escolhido": "classico", "traje_classico": true },
+          "next_node_id": "node_00_mochila"
+        },
+        {
+          "id": "c0_traje_rock",
+          "text": "Camisa sob jaqueta de couro preta desabotoada, meias 3/4 e coturno cano médio.",
+          "tipo": "Prioridade",
+          "set_flags": { "estilo_escolhido": "rock", "traje_rock": true },
+          "next_node_id": "node_00_mochila"
+        },
+        {
+          "id": "c0_traje_vintage",
+          "text": "Suéter macio de tricô ocre sobre camisa de linho e saia longa esvoaçante.",
+          "tipo": "Prioridade",
+          "set_flags": { "estilo_escolhido": "vintage", "traje_vintage": true },
+          "next_node_id": "node_00_mochila"
+        }
+      ]
+    },
+    "node_00_mochila": {
+      "id": "node_00_mochila",
+      "speaker": "narrador",
+      "expression": "neutral",
+      "text": "Hora de arrumar a mochila sobre a escrivaninha. Além dos cadernos básicos, você decide colocar um item pessoal de destaque no bolso frontal.",
+      "location": "Quarto da Protagonista",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c0_item_fone_partitura",
+          "text": "Seus fones de ouvido acolchoados e algumas palhetas de guitarra que ganhou do seu primo.",
+          "tipo": "Ação",
+          "set_flags": { "item_mochila": "fones_musica" },
+          "next_node_id": "node_00_cozinha_cafe"
+        },
+        {
+          "id": "c0_item_pasta_organizada",
+          "text": "Pasta rígida com todas as vias da ficha de transferência e uma caneta de metal impecável.",
+          "tipo": "Ação",
+          "set_flags": { "item_mochila": "pasta_documentos" },
+          "next_node_id": "node_00_cozinha_cafe"
+        },
+        {
+          "id": "c0_item_sketchbook",
+          "text": "Caderno de desenho artesanal com capa de tecido e uma câmera analógica compacta.",
+          "tipo": "Ação",
+          "set_flags": { "item_mochila": "sketchbook_camera" },
+          "next_node_id": "node_00_cozinha_cafe"
+        }
+      ]
+    },
+    "node_00_cozinha_cafe": {
+      "id": "node_00_cozinha_cafe",
+      "speaker": "narrador",
+      "expression": "neutral",
+      "text": "Na cozinha, a cafeteira solta vapor quente. O relógio na parede marca 07:10. Qual será o combustível para encarar o primeiro dia?",
+      "location": "Quarto da Protagonista",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c0_cafe_puro",
+          "text": "Café preto e amargo na xícara de cerâmica. Sem açúcar, direto ao ponto.",
+          "tipo": "Revelação",
+          "unlock_memory_tag": "cafe_puro",
+          "set_flags": { "bebeu_cafe_puro": true },
+          "next_node_id": "node_01_portao"
+        },
+        {
+          "id": "c0_cha_doce",
+          "text": "Chá quente com duas colheres cheias de mel para acalmar o nervosismo.",
+          "tipo": "Ação",
+          "set_flags": { "bebeu_cha": true },
+          "next_node_id": "node_01_portao"
+        },
+        {
+          "id": "c0_suco_correndo",
+          "text": "Apenas um copo de água fresca, pegar a maçã e sair correndo para não perder o ônibus!",
+          "tipo": "Ação",
+          "set_flags": { "saiu_com_pressa": true },
+          "next_node_id": "node_01_portao"
+        }
+      ]
+    },
+    "node_01_portao": {
+      "id": "node_01_portao",
+      "speaker": "narrador",
+      "expression": "neutral",
+      "text": "O vento frio da manhã balança os galhos floridos das cerejeiras na entrada da Academia Lótus. O relógio da torre central marca 07:42. Seus sapatos novos rangem no paralelepípedo.",
+      "location": "Portões de Entrada",
+      "time_of_day": "manha",
+      "bg_music": "prologue_theme",
+      "choices": [
+        {
+          "id": "c1_respirar",
+          "text": "Ajeitar a alça da mochila com firmeza. Cheguei.",
+          "tipo": "Ação",
+          "set_flags": { "atitude_inicial": "otimista" },
+          "next_node_id": "node_02_esbarrao"
+        },
+        {
+          "id": "c1_hesitar",
+          "text": "Conferir o mapa da escola no celular pela terceira vez. Por que tudo aqui parece tão imenso?",
+          "tipo": "Tom",
+          "tom": "cuidadoso",
+          "set_flags": { "atitude_inicial": "cautelosa" },
+          "next_node_id": "node_02_esbarrao"
+        }
+      ]
+    },
+    "node_02_esbarrao": {
+      "id": "node_02_esbarrao",
+      "speaker": "narrador",
+      "expression": "surprised",
+      "text": "Passos pesados e apressados cortam o eco dos portões. Antes que você consiga dar mais três passos, alguém vira o canto do muro de alvenaria em velocidade máxima.",
+      "location": "Portões de Entrada",
+      "time_of_day": "manha",
+      "sfx": "crash_books",
+      "choices": [
+        {
+          "id": "c2_desviar",
+          "text": "Tentar desviar para a direita no último segundo!",
+          "tipo": "Ação",
+          "next_node_id": "node_03_encontro_dante"
+        },
+        {
+          "id": "c2_proteger",
+          "text": "Segurar firme seus pertences e encarar o impacto.",
+          "tipo": "Ação",
+          "next_node_id": "node_03_encontro_dante"
+        }
+      ]
+    },
+    "node_03_encontro_dante": {
+      "id": "node_03_encontro_dante",
+      "speaker": "dante",
+      "speaker_name": "Garoto com Jaqueta de Couro",
+      "expression": "angry",
+      "text": "Ei! Olha por onde anda! ...Você é cega ou não viu que eu vinha virando?",
+      "location": "Portões de Entrada",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c3_dante_provocar",
+          "text": "Quem corre num corredor cego é você. Quer que eu adivinhe com bola de cristal?",
+          "tipo": "Tom",
+          "tom": "provocador",
+          "target_character": "dante",
+          "affinity_delta": 7,
+          "set_flags": { "conheceu_dante": true, "dante_desafiado": true },
+          "next_node_id": "node_04_dante_resposta_provocador"
+        },
+        {
+          "id": "c3_dante_sincero",
+          "text": "Eu sou nova aqui, estava distraída com o mapa. Foi sem querer.",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "target_character": "dante",
+          "affinity_delta": 5,
+          "set_flags": { "conheceu_dante": true },
+          "next_node_id": "node_04_dante_resposta_sincero"
+        },
+        {
+          "id": "c3_dante_escapista",
+          "text": "Desculpa, desculpa! Foi tudo culpa minha, já estou saindo...",
+          "tipo": "Tom",
+          "tom": "escapista",
+          "target_character": "dante",
+          "affinity_delta": -4,
+          "set_flags": { "conheceu_dante": true, "dante_irritado_submissao": true },
+          "next_node_id": "node_04_dante_resposta_escapista"
+        }
+      ]
+    },
+    "node_04_dante_resposta_provocador": {
+      "id": "node_04_dante_resposta_provocador",
+      "speaker": "dante",
+      "speaker_name": "Dante",
+      "expression": "smirk",
+      "text": "Bola de cristal? Haha. Pelo menos você tem reflexo e língua afiada. Sou o Dante. Se for pro terceiro ano, vê se não senta na primeira fila, aquele lugar dá azar.",
+      "location": "Portões de Entrada",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c4_seguir_gremio",
+          "text": "Anotado. Agora preciso achar o Grêmio Estudantil antes que tranquem a secretaria.",
+          "tipo": "Prioridade",
+          "next_node_id": "node_05_chegada_gremio"
+        }
+      ]
+    },
+    "node_04_dante_resposta_sincero": {
+      "id": "node_04_dante_resposta_sincero",
+      "speaker": "dante",
+      "speaker_name": "Dante",
+      "expression": "neutral",
+      "text": "Aluna nova? É, percebi pela cara de quem caiu de paraquedas. Sou o Dante. Guarda isso: a diretora Helena adora pegar quem chega dois minutos atrasado no portão.",
+      "location": "Portões de Entrada",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c4_agradecer_dante",
+          "text": "Obrigada pelo aviso. Vou correr pro Grêmio pra pegar minha ficha.",
+          "tipo": "Ação",
+          "next_node_id": "node_05_chegada_gremio"
+        }
+      ]
+    },
+    "node_04_dante_resposta_escapista": {
+      "id": "node_04_dante_resposta_escapista",
+      "speaker": "dante",
+      "speaker_name": "Dante",
+      "expression": "sigh",
+      "text": "Calma, ninguém aqui vai te morder. Odeio drama de manhã cedo... Tanto faz, sou o Dante. Tchau.",
+      "location": "Portões de Entrada",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c4_escapar_dante",
+          "text": "Apressar o passo em direção ao prédio principal sem olhar para trás.",
+          "tipo": "Ação",
+          "next_node_id": "node_05_chegada_gremio"
+        }
+      ]
+    },
+    "node_05_chegada_gremio": {
+      "id": "node_05_chegada_gremio",
+      "speaker": "narrador",
+      "expression": "neutral",
+      "text": "O corredor do Grêmio Estudantil cheira a café fresco e papel impresso. Atrás da mesa de mogno com placas organizadas, um garoto de camisa impecável ajusta os óculos finos ao ouvir seus passos.",
+      "location": "Sala do Grêmio",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c5_bater_porta",
+          "text": "Dar duas batidas leves no batente aberto da porta. 'Com licença?'",
+          "tipo": "Tom",
+          "tom": "cuidadoso",
+          "next_node_id": "node_06_encontro_lucas"
+        },
+        {
+          "id": "c5_entrar_direto",
+          "text": "Entrar confiante segurando o comprovante de transferência.",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "next_node_id": "node_06_encontro_lucas"
+        }
+      ]
+    },
+    "node_06_encontro_lucas": {
+      "id": "node_06_encontro_lucas",
+      "speaker": "lucas",
+      "speaker_name": "Lucas",
+      "expression": "polite",
+      "text": "Bom dia. Você deve ser a aluna transferida. Íris, correto? Sou Lucas, presidente do conselho estudantil. Seus documentos deveriam ter chegado ontem à tarde pela secretaria distrital, mas...",
+      "location": "Sala do Grêmio",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c6_lucas_ajudar",
+          "text": "Mas o sistema do distrito caiu, eu sei. Eu trouxe as vias impressas e autenticadas aqui comigo.",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "target_character": "lucas",
+          "affinity_delta": 7,
+          "set_flags": { "conheceu_lucas": true, "lucas_impressionado_prevencao": true },
+          "next_node_id": "node_07_lucas_aprovacao"
+        },
+        {
+          "id": "c6_lucas_provocar",
+          "text": "Mas a lendária eficiência da Academia Lótus também falha às vezes, presidente?",
+          "tipo": "Tom",
+          "tom": "provocador",
+          "target_character": "lucas",
+          "affinity_delta": -3,
+          "set_flags": { "conheceu_lucas": true, "lucas_irritado_ironia": true },
+          "next_node_id": "node_07_lucas_frieza"
+        },
+        {
+          "id": "c6_lucas_cuidadoso",
+          "text": "Se estiver muito ocupado agora, posso esperar no banco lá fora sem problemas.",
+          "tipo": "Tom",
+          "tom": "cuidadoso",
+          "target_character": "lucas",
+          "affinity_delta": 5,
+          "set_flags": { "conheceu_lucas": true },
+          "next_node_id": "node_07_lucas_aprovacao"
+        }
+      ]
+    },
+    "node_07_lucas_aprovacao": {
+      "id": "node_07_lucas_aprovacao",
+      "speaker": "lucas",
+      "speaker_name": "Lucas",
+      "expression": "smile",
+      "text": "Impecável. É raro ver alguém tão precavida logo no primeiro dia. Vou carimbar sua guia provisória e liberar seu armário. Seja bem-vinda à Lótus, Íris.",
+      "location": "Sala do Grêmio",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c7_fim_prologo",
+          "text": "Pegar a chave do armário com um sorriso. O primeiro sino está prestes a bater.",
+          "tipo": "Ação",
+          "set_flags": { "prologo_concluido": true },
+          "next_node_id": "node_08_fim_prologo"
+        }
+      ]
+    },
+    "node_07_lucas_frieza": {
+      "id": "node_07_lucas_frieza",
+      "speaker": "lucas",
+      "speaker_name": "Lucas",
+      "expression": "serious",
+      "text": "O sistema do ministério não está sob minha jurisdição. De qualquer forma, se você tem os comprovantes em mãos, posso despachar sua liberação. Armário número 42.",
+      "location": "Sala do Grêmio",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c7_fim_prologo_2",
+          "text": "Receber a chave e agradecer educadamente. Melhor não puxar mais a corda hoje.",
+          "tipo": "Ação",
+          "set_flags": { "prologo_concluido": true },
+          "next_node_id": "node_08_fim_prologo"
+        }
+      ]
+    },
+    "node_08_fim_prologo": {
+      "id": "node_08_fim_prologo",
+      "speaker": "narrador",
+      "expression": "neutral",
+      "text": "O som ressonante do sino da torre ecoa pelo pátio. Três badaladas graves anunciam o início das aulas. Seus passos agora têm destino certo. Sua história na Academia Lótus acabou de começar.",
+      "location": "Pátio Central",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c8_concluir",
+          "text": "Concluir Prólogo e abrir o Painel Principal",
+          "tipo": "Ação",
+          "set_flags": { "capitulo_00_terminado": true },
+          "next_node_id": "node_00_despertador"
+        }
+      ]
+    }
+  }
+}

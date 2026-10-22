@@ -1,0 +1,41 @@
+[
+  {
+    "id": "dante",
+    "name": "Dante",
+    "role": "Guitarrista rebelde",
+    "initial_affinity": 0,
+    "color": "#ef4444",
+    "avatar_bg": "linear-gradient(135deg, #7f1d1d, #450a0a)",
+    "description": "Cabelo preto revolto, jaqueta de couro e fones de ouvido. Não suporta atitudes artificiais ou submissão exagerada.",
+    "quote": "Bola de cristal? Haha. Pelo menos você tem reflexo e língua afiada.",
+    "preferred_tone": "provocador",
+    "disliked_tone": "escapista",
+    "preferred_style": "Rock"
+  },
+  {
+    "id": "lucas",
+    "name": "Lucas",
+    "role": "Presidente do Grêmio",
+    "initial_affinity": 0,
+    "color": "#3b82f6",
+    "avatar_bg": "linear-gradient(135deg, #1e3a8a, #172554)",
+    "description": "Postura impecável, óculos finos e camisa sempre alinhada. Valoriza sinceridade e planejamento, odeia cinismo.",
+    "quote": "Impecável. É raro ver alguém tão precavida logo no primeiro dia.",
+    "preferred_tone": "sincero",
+    "disliked_tone": "provocador",
+    "preferred_style": "Clássico"
+  },
+  {
+    "id": "theo",
+    "name": "Theo",
+    "role": "Artista Melancólico",
+    "initial_affinity": 0,
+    "color": "#10b981",
+    "avatar_bg": "linear-gradient(135deg, #064e3b, #022c22)",
+    "description": "Olhar distante, cachecol em tons outonais e caderno de rascunhos sempre à mão. Aprecia delicadeza e silêncio compartilhado.",
+    "quote": "Você não precisa dizer nada se não quiser. Às vezes o silêncio diz o suficiente.",
+    "preferred_tone": "cuidadoso",
+    "disliked_tone": "provocador",
+    "preferred_style": "Romântico"
+  }
+]
