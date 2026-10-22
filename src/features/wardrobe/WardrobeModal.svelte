@@ -8,7 +8,7 @@
     EYE_COLORS, 
     HAIR_COLORS 
   } from './wardrobe.catalog';
-  import PaperdollAvatar from './PaperdollAvatar.svelte';
+  import AnimeProtagonistDisplay from './AnimeProtagonistDisplay.svelte';
   import { 
     Sparkles, 
     X, 
@@ -301,9 +301,9 @@
           </div>
         </div>
 
-        <!-- RENDERIZADOR DO MANEQUIM PAPERDOLL EM CAMADAS -->
+        <!-- RENDERIZADOR ANIME DA PROTAGONISTA (ILUSTRAÇÃO REAL 2D, ZERO VETOR FEIO) -->
         <div class="flex-1 w-full max-h-[480px] flex items-center justify-center my-auto z-10">
-          <PaperdollAvatar 
+          <AnimeProtagonistDisplay 
             outfit={previewOutfit} 
             {zoomMode}
           />

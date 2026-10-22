@@ -33,10 +33,9 @@
     // Outfit selecionado
     const activeOutfit = manifest.outfits[outfit] || manifest.outfits['default'] || {};
 
-    // Expressão facial selecionada (fallback para neutro)
+    // Expressão facial selecionada (se houver variação diferente da base)
     const faceTexture = manifest.expressions[expression] 
       || manifest.expressions['neutro'] 
-      || Object.values(manifest.expressions)[0] 
       || '';
 
     return {
@@ -48,13 +47,21 @@
       dress: activeOutfit.dress,
       jacket: activeOutfit.jacket,
       necklace: activeOutfit.necklace,
-      face: faceTexture,
+      face: faceTexture !== manifest.baseBody ? faceTexture : undefined,
       blush: expression === 'timido' || expression === 'corado' || expression === 'blush',
       glasses: activeOutfit.glasses,
       hairFront: activeOutfit.hairFront,
       ...overrideLayers
     };
   });
+
+  function handleImgError(e: Event) {
+    // Esconde silenciosamente qualquer imagem que não exista sem deixar ícone de erro no DOM
+    const target = e.currentTarget as HTMLImageElement;
+    if (target) {
+      target.style.display = 'none';
+    }
+  }
 </script>
 
 {#if manifest}
@@ -72,6 +79,7 @@
       <img 
         src={resolvedLayers.hairBack} 
         alt="" 
+        onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-5"
       />
     {/if}
@@ -81,6 +89,7 @@
       <img 
         src={resolvedLayers.body} 
         alt={manifest.name} 
+        onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-10 drop-shadow-[0_12px_28px_rgba(0,0,0,0.55)]"
       />
     {/if}
@@ -90,6 +99,7 @@
       <img 
         src={resolvedLayers.shoes} 
         alt="" 
+        onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-20"
       />
     {/if}
@@ -99,6 +109,7 @@
       <img 
         src={resolvedLayers.bottom} 
         alt="" 
+        onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-30"
       />
     {/if}
@@ -108,6 +119,7 @@
       <img 
         src={resolvedLayers.top} 
         alt="" 
+        onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-40"
       />
     {/if}
@@ -117,6 +129,7 @@
       <img 
         src={resolvedLayers.dress} 
         alt="" 
+        onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-50"
       />
     {/if}
@@ -126,6 +139,7 @@
       <img 
         src={resolvedLayers.jacket} 
         alt="" 
+        onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-60"
       />
     {/if}
@@ -135,6 +149,7 @@
       <img 
         src={resolvedLayers.necklace} 
         alt="" 
+        onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-70"
       />
     {/if}
@@ -144,6 +159,7 @@
       <img 
         src={resolvedLayers.face} 
         alt="" 
+        onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-90 transition-opacity duration-200"
       />
     {/if}
@@ -161,6 +177,7 @@
       <img 
         src={resolvedLayers.glasses} 
         alt="" 
+        onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-100"
       />
     {/if}
@@ -170,6 +187,7 @@
       <img 
         src={resolvedLayers.hairFront} 
         alt="" 
+        onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-110"
       />
     {/if}

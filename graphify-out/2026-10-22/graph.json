@@ -17,30 +17,82 @@
       "source_location": "L5"
     },
     {
-      "id": "src_features_dialogue_narrative_schema_personagemid",
-      "label": "PersonagemId",
+      "id": "src_features_characters_characters_schema_boycharacterprops",
+      "label": "BoyCharacterProps",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "DanteAvatar.svelte",
       "file_type": "code",
-      "norm_label": "personagemid",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L18"
+      "norm_label": "boycharacterprops",
+      "source_file": "src/features/characters/characters.schema.ts",
+      "source_location": "L21"
     },
     {
-      "id": "src_features_stage_charactersprite_props",
+      "id": "src_features_characters_characters_schema_characterexpression",
+      "label": "CharacterExpression",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DanteAvatar.svelte",
+      "file_type": "code",
+      "norm_label": "characterexpression",
+      "source_file": "src/features/characters/characters.schema.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "src_features_characters_character_paperdoll_types_characterlayers",
+      "label": "CharacterLayers",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
+      "file_type": "code",
+      "norm_label": "characterlayers",
+      "source_file": "src/features/characters/character-paperdoll.types.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_characters_character_paperdoll_types_charactermanifest",
+      "label": "CharacterManifest",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
+      "file_type": "code",
+      "norm_label": "charactermanifest",
+      "source_file": "src/features/characters/character-paperdoll.types.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "src_features_characters_character_paperdoll_types_standardexpression",
+      "label": "StandardExpression",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
+      "file_type": "code",
+      "norm_label": "standardexpression",
+      "source_file": "src/features/characters/character-paperdoll.types.ts",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_features_characters_paperdollactor_props",
       "label": "Props",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 1,
-      "community_name": "CharacterSprite.svelte",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
       "file_type": "code",
       "norm_label": "props",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L6"
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L5"
     },
     {
       "id": "src_features_stage_scenerybackground_props",
@@ -199,6 +251,19 @@
       "source_location": "L66"
     },
     {
+      "id": "src_features_dialogue_narrative_schema_personagemid",
+      "label": "PersonagemId",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "personagemid",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L18"
+    },
+    {
       "id": "src_features_dialogue_narrative_schema_tom",
       "label": "Tom",
       "_callable": true,
@@ -236,6 +301,19 @@
       "norm_label": "historyentry",
       "source_file": "src/features/game-state/GameState.svelte.ts",
       "source_location": "L4"
+    },
+    {
+      "id": "src_features_stage_charactersprite_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L7"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate",
@@ -635,6 +713,17 @@
       "source_file": "lucide-svelte"
     },
     {
+      "id": "src_app",
+      "label": "App.svelte",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "app.svelte",
+      "source_file": "src/App.svelte",
+      "source_location": "L1"
+    },
+    {
       "id": "src_features_campus_map_campusmapmodal",
       "label": "CampusMapModal.svelte",
       "_origin": "ast",
@@ -767,6 +856,28 @@
       "source_location": "L14"
     },
     {
+      "id": "src_main",
+      "label": "main.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "main.ts",
+      "source_file": "src/main.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_main_app",
+      "label": "app",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "app",
+      "source_file": "src/main.ts",
+      "source_location": "L5"
+    },
+    {
       "id": "ref_lucide_svelte",
       "label": "lucide-svelte",
       "_origin": "ast",
@@ -778,147 +889,202 @@
       "source_location": "L28"
     },
     {
-      "id": "src_features_stage_charactersprite",
-      "label": "CharacterSprite.svelte",
+      "id": "ref_svelte",
+      "label": "svelte",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "concept",
+      "norm_label": "svelte",
+      "source_file": "package.json",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_features_characters_characters_schema",
+      "label": "characters.schema.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "DanteAvatar.svelte",
       "file_type": "code",
-      "norm_label": "charactersprite.svelte",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "norm_label": "characters.schema.ts",
+      "source_file": "src/features/characters/characters.schema.ts",
       "source_location": "L1"
     },
     {
-      "id": "src_features_stage_charactersprite_characterprofiles",
-      "label": "characterProfiles",
+      "id": "src_features_characters_characters_schema_characterexpressionenum",
+      "label": "CharacterExpressionEnum",
       "_origin": "ast",
       "community": 1,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "DanteAvatar.svelte",
       "file_type": "code",
-      "norm_label": "characterprofiles",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L22"
+      "norm_label": "characterexpressionenum",
+      "source_file": "src/features/characters/characters.schema.ts",
+      "source_location": "L3"
     },
     {
-      "id": "src_features_stage_charactersprite_charactersprites",
-      "label": "characterSprites",
+      "id": "src_features_characters_danteavatar",
+      "label": "DanteAvatar.svelte",
       "_origin": "ast",
       "community": 1,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "DanteAvatar.svelte",
       "file_type": "code",
-      "norm_label": "charactersprites",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L16"
+      "norm_label": "danteavatar.svelte",
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L1"
     },
     {
-      "id": "src_features_stage_charactersprite_islight",
-      "label": "isLight",
+      "id": "src_features_characters_danteavatar_expression_provocador_timeofday_manha_outfit_rock_padrao_class_customclass",
+      "label": "{ \n    expression = 'provocador', \n    timeOfDay = 'manha',\n    outfit = 'rock_padrao',\n    class: customClass = '' \n  }",
       "_origin": "ast",
       "community": 1,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "DanteAvatar.svelte",
       "file_type": "code",
-      "norm_label": "islight",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L62"
+      "norm_label": "{ \n    expression = 'provocador', \n    timeofday = 'manha',\n    outfit = 'rock_padrao',\n    class: customclass = '' \n  }",
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L4"
     },
     {
-      "id": "src_features_stage_charactersprite_isprotagonist",
-      "label": "isProtagonist",
+      "id": "src_features_characters_danteavatar_isangry",
+      "label": "isAngry",
       "_origin": "ast",
       "community": 1,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "DanteAvatar.svelte",
       "file_type": "code",
-      "norm_label": "isprotagonist",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L59"
+      "norm_label": "isangry",
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L14"
     },
     {
-      "id": "src_features_stage_charactersprite_profile",
-      "label": "profile",
+      "id": "src_features_characters_danteavatar_isblush",
+      "label": "isBlush",
       "_origin": "ast",
       "community": 1,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "DanteAvatar.svelte",
       "file_type": "code",
-      "norm_label": "profile",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L61"
-    },
-    {
-      "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutral_timeofday_manha",
-      "label": "{ speaker, speakerName = '', expression = 'neutral', timeOfDay = 'manha' }",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "CharacterSprite.svelte",
-      "file_type": "code",
-      "norm_label": "{ speaker, speakername = '', expression = 'neutral', timeofday = 'manha' }",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "norm_label": "isblush",
+      "source_file": "src/features/characters/DanteAvatar.svelte",
       "source_location": "L13"
     },
     {
-      "id": "src_features_stage_charactersprite_spriteurl",
-      "label": "spriteUrl",
+      "id": "src_features_characters_danteavatar_issmile",
+      "label": "isSmile",
       "_origin": "ast",
       "community": 1,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "DanteAvatar.svelte",
       "file_type": "code",
-      "norm_label": "spriteurl",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L60"
+      "norm_label": "issmile",
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L16"
     },
     {
-      "id": "package_dependencies",
-      "label": "dependencies",
+      "id": "src_features_characters_danteavatar_issmirk",
+      "label": "isSmirk",
       "_origin": "ast",
-      "community": 10,
-      "community_name": "dependencies",
+      "community": 1,
+      "community_name": "DanteAvatar.svelte",
       "file_type": "code",
-      "norm_label": "dependencies",
-      "source_file": "package.json",
-      "source_location": "L25"
+      "norm_label": "issmirk",
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L12"
     },
     {
-      "id": "package_dependencies_dexie",
-      "label": "dexie",
+      "id": "src_features_characters_danteavatar_issurprised",
+      "label": "isSurprised",
       "_origin": "ast",
-      "community": 10,
-      "community_name": "dependencies",
+      "community": 1,
+      "community_name": "DanteAvatar.svelte",
       "file_type": "code",
-      "norm_label": "dexie",
-      "source_file": "package.json",
-      "source_location": "L26"
+      "norm_label": "issurprised",
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L15"
     },
     {
-      "id": "package_dependencies_howler",
-      "label": "howler",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "howler",
-      "source_file": "package.json",
-      "source_location": "L27"
-    },
-    {
-      "id": "package_dependencies_lucide_svelte",
-      "label": "lucide-svelte",
-      "_origin": "ast",
-      "community": 10,
-      "community_name": "dependencies",
-      "file_type": "code",
-      "norm_label": "lucide-svelte",
-      "source_file": "package.json",
-      "source_location": "L28"
-    },
-    {
-      "id": "package_dependencies_zod",
+      "id": "ref_zod",
       "label": "zod",
       "_origin": "ast",
-      "community": 10,
-      "community_name": "dependencies",
-      "file_type": "code",
+      "community": 1,
+      "community_name": "DanteAvatar.svelte",
+      "file_type": "concept",
       "norm_label": "zod",
       "source_file": "package.json",
       "source_location": "L29"
+    },
+    {
+      "id": "src_features_characters_character_manifest",
+      "label": "character-manifest.ts",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
+      "file_type": "code",
+      "norm_label": "character-manifest.ts",
+      "source_file": "src/features/characters/character-manifest.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_characters_character_manifest_character_manifests",
+      "label": "CHARACTER_MANIFESTS",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
+      "file_type": "code",
+      "norm_label": "character_manifests",
+      "source_file": "src/features/characters/character-manifest.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_features_characters_character_paperdoll_types",
+      "label": "character-paperdoll.types.ts",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
+      "file_type": "code",
+      "norm_label": "character-paperdoll.types.ts",
+      "source_file": "src/features/characters/character-paperdoll.types.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_characters_paperdollactor",
+      "label": "PaperdollActor.svelte",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
+      "file_type": "code",
+      "norm_label": "paperdollactor.svelte",
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_characters_paperdollactor_characterid_expression_neutro_outfit_default_overridelayers_scale_1_fliphorizontal_false_class_customclass",
+      "label": "{ \n    characterId, \n    expression = 'neutro', \n    outfit = 'default', \n    overrideLayers = {}, \n    scale = 1, \n    flipHorizontal = false, \n    class: customClass = '' \n  }",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
+      "file_type": "code",
+      "norm_label": "{ \n    characterid, \n    expression = 'neutro', \n    outfit = 'default', \n    overridelayers = {}, \n    scale = 1, \n    fliphorizontal = false, \n    class: customclass = '' \n  }",
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_features_characters_paperdollactor_manifest",
+      "label": "manifest",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
+      "file_type": "code",
+      "norm_label": "manifest",
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L25"
+    },
+    {
+      "id": "src_features_characters_paperdollactor_resolvedlayers",
+      "label": "resolvedLayers",
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
+      "file_type": "code",
+      "norm_label": "resolvedlayers",
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L28"
     },
     {
       "id": "readme",
@@ -1091,6 +1257,61 @@
       "source_location": "L1"
     },
     {
+      "id": "package_dependencies",
+      "label": "dependencies",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "dependencies",
+      "source_file": "package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "package_dependencies_dexie",
+      "label": "dexie",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "dexie",
+      "source_file": "package.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "package_dependencies_howler",
+      "label": "howler",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "howler",
+      "source_file": "package.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "package_dependencies_lucide_svelte",
+      "label": "lucide-svelte",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "lucide-svelte",
+      "source_file": "package.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "package_dependencies_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L29"
+    },
+    {
       "id": "package_name",
       "label": "name",
       "_origin": "ast",
@@ -1190,39 +1411,6 @@
       "source_location": "L4"
     },
     {
-      "id": "src_app",
-      "label": "App.svelte",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "app.svelte",
-      "source_file": "src/App.svelte",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_main",
-      "label": "main.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "main.ts",
-      "source_file": "src/main.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_main_app",
-      "label": "app",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "app",
-      "source_file": "src/main.ts",
-      "source_location": "L5"
-    },
-    {
       "id": "vite_config",
       "label": "vite.config.ts",
       "_origin": "ast",
@@ -1254,17 +1442,6 @@
       "norm_label": "howler",
       "source_file": "package.json",
       "source_location": "L27"
-    },
-    {
-      "id": "ref_svelte",
-      "label": "svelte",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "concept",
-      "norm_label": "svelte",
-      "source_file": "package.json",
-      "source_location": "L18"
     },
     {
       "id": "ref_svelte_check",
@@ -2477,15 +2654,70 @@
       "source_location": "L1"
     },
     {
-      "id": "ref_zod",
-      "label": "zod",
+      "id": "src_features_stage_charactersprite",
+      "label": "CharacterSprite.svelte",
       "_origin": "ast",
       "community": 8,
       "community_name": "DialogueBox.svelte",
-      "file_type": "concept",
-      "norm_label": "zod",
-      "source_file": "package.json",
-      "source_location": "L29"
+      "file_type": "code",
+      "norm_label": "charactersprite.svelte",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_stage_charactersprite_characterprofiles",
+      "label": "characterProfiles",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "characterprofiles",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L16"
+    },
+    {
+      "id": "src_features_stage_charactersprite_islight",
+      "label": "isLight",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "islight",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L55"
+    },
+    {
+      "id": "src_features_stage_charactersprite_isprotagonist",
+      "label": "isProtagonist",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "isprotagonist",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L53"
+    },
+    {
+      "id": "src_features_stage_charactersprite_profile",
+      "label": "profile",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "profile",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L54"
+    },
+    {
+      "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutro_timeofday_manha",
+      "label": "{ speaker, speakerName = '', expression = 'neutro', timeOfDay = 'manha' }",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "{ speaker, speakername = '', expression = 'neutro', timeofday = 'manha' }",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L14"
     },
     {
       "id": "content_arcs_arco_1_adolescencia_cap_00_prologo",
@@ -2727,6 +2959,54 @@
       "context": "import",
       "source_file": "src/features/campus-map/CampusMapModal.svelte",
       "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_character_manifest",
+      "target": "src_features_characters_character_paperdoll_types_charactermanifest",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/character-manifest.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_danteavatar",
+      "target": "src_features_characters_characters_schema_boycharacterprops",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_paperdollactor",
+      "target": "src_features_characters_character_paperdoll_types_characterlayers",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_paperdollactor",
+      "target": "src_features_characters_character_manifest_character_manifests",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -3078,6 +3358,69 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_characters_character_manifest",
+      "target": "src_features_characters_character_paperdoll_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/character-manifest.ts",
+      "source_location": "L1",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_characters_schema",
+      "target": "ref_zod",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/characters.schema.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_danteavatar",
+      "target": "src_features_characters_characters_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L2",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_paperdollactor",
+      "target": "src_features_characters_character_paperdoll_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L2",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_paperdollactor",
+      "target": "src_features_characters_character_manifest",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_dialogue_dialoguebox",
       "target": "src_features_dialogue_narrative_schema",
       "relation": "imports_from",
@@ -3211,6 +3554,18 @@
       "context": "import",
       "source_file": "src/features/stage/CharacterSprite.svelte",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_characters_paperdollactor",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -3951,6 +4306,193 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_characters_character_manifest",
+      "target": "src_features_characters_character_manifest_character_manifests",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/character-manifest.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_character_paperdoll_types",
+      "target": "src_features_characters_character_paperdoll_types_characterlayers",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/character-paperdoll.types.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_character_paperdoll_types",
+      "target": "src_features_characters_character_paperdoll_types_standardexpression",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/character-paperdoll.types.ts",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_character_paperdoll_types",
+      "target": "src_features_characters_character_paperdoll_types_charactermanifest",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/character-paperdoll.types.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_characters_schema",
+      "target": "src_features_characters_characters_schema_characterexpression",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/characters.schema.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_characters_schema",
+      "target": "src_features_characters_characters_schema_boycharacterprops",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/characters.schema.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_characters_schema",
+      "target": "src_features_characters_characters_schema_characterexpressionenum",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/characters.schema.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_danteavatar",
+      "target": "src_features_characters_danteavatar_issmirk",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_danteavatar",
+      "target": "src_features_characters_danteavatar_isblush",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_danteavatar",
+      "target": "src_features_characters_danteavatar_isangry",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_danteavatar",
+      "target": "src_features_characters_danteavatar_issurprised",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_danteavatar",
+      "target": "src_features_characters_danteavatar_issmile",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_danteavatar",
+      "target": "src_features_characters_danteavatar_expression_provocador_timeofday_manha_outfit_rock_padrao_class_customclass",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/DanteAvatar.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_paperdollactor",
+      "target": "src_features_characters_paperdollactor_characterid_expression_neutro_outfit_default_overridelayers_scale_1_fliphorizontal_false_class_customclass",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_paperdollactor",
+      "target": "src_features_characters_paperdollactor_manifest",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_paperdollactor",
+      "target": "src_features_characters_paperdollactor_resolvedlayers",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_paperdollactor",
+      "target": "src_features_characters_paperdollactor_props",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_dialogue_dialoguebox",
       "target": "src_features_dialogue_dialoguebox_node_onselectchoice_ontogglephone_onopenhistory",
       "relation": "contains",
@@ -4414,24 +4956,13 @@
     },
     {
       "source": "src_features_stage_charactersprite",
-      "target": "src_features_stage_charactersprite_speaker_speakername_expression_neutral_timeofday_manha",
+      "target": "src_features_stage_charactersprite_speaker_speakername_expression_neutro_timeofday_manha",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L13",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_stage_charactersprite",
-      "target": "src_features_stage_charactersprite_charactersprites",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L16",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -4442,7 +4973,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L22",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -4453,29 +4984,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L59",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_stage_charactersprite",
-      "target": "src_features_stage_charactersprite_props",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L6",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_stage_charactersprite",
-      "target": "src_features_stage_charactersprite_spriteurl",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L60",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -4486,7 +4995,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L61",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -4497,7 +5006,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L62",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_stage_charactersprite_props",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -5601,5 +6121,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "df74bee4982b1cf6f88e350fcc966c5670541e4a"
+  "built_at_commit": "6ec3c1407bcbe775fe19495294c309d5b31eca6d"
 }

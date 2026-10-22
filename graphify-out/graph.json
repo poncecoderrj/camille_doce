@@ -17,6 +17,19 @@
       "source_location": "L5"
     },
     {
+      "id": "src_features_stage_scenerybackground_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L2"
+    },
+    {
       "id": "src_features_characters_characters_schema_boycharacterprops",
       "label": "BoyCharacterProps",
       "_callable": true,
@@ -95,17 +108,43 @@
       "source_location": "L5"
     },
     {
-      "id": "src_features_stage_scenerybackground_props",
+      "id": "src_features_dialogue_narrative_schema_personagemid",
+      "label": "PersonagemId",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "personagemid",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_features_stage_charactersprite_props",
       "label": "Props",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 14,
-      "community_name": "SceneryBackground.svelte",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "props",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L2"
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L4"
     },
     {
       "id": "src_features_wardrobe_paperdollavatar_props",
@@ -251,19 +290,6 @@
       "source_location": "L66"
     },
     {
-      "id": "src_features_dialogue_narrative_schema_personagemid",
-      "label": "PersonagemId",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "personagemid",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L18"
-    },
-    {
       "id": "src_features_dialogue_narrative_schema_tom",
       "label": "Tom",
       "_callable": true,
@@ -301,19 +327,6 @@
       "norm_label": "historyentry",
       "source_file": "src/features/game-state/GameState.svelte.ts",
       "source_location": "L4"
-    },
-    {
-      "id": "src_features_stage_charactersprite_props",
-      "label": "Props",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "props",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L7"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate",
@@ -388,6 +401,18 @@
       "norm_label": "restartchapter()",
       "source_file": "src/layout/DualStage.svelte",
       "source_location": "L33"
+    },
+    {
+      "id": "src_features_characters_paperdollactor_handleimgerror",
+      "label": "handleImgError()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 10,
+      "community_name": "PaperdollActor.svelte",
+      "file_type": "code",
+      "norm_label": "handleimgerror()",
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L58"
     },
     {
       "id": "src_features_wardrobe_wardrobemodal_applypreset",
@@ -713,17 +738,6 @@
       "source_file": "lucide-svelte"
     },
     {
-      "id": "src_app",
-      "label": "App.svelte",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "app.svelte",
-      "source_file": "src/App.svelte",
-      "source_location": "L1"
-    },
-    {
       "id": "src_features_campus_map_campusmapmodal",
       "label": "CampusMapModal.svelte",
       "_origin": "ast",
@@ -766,6 +780,50 @@
       "norm_label": "{ onclose }",
       "source_file": "src/features/campus-map/CampusMapModal.svelte",
       "source_location": "L9"
+    },
+    {
+      "id": "src_features_stage_scenerybackground",
+      "label": "SceneryBackground.svelte",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "scenerybackground.svelte",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_stage_scenerybackground_activeimg",
+      "label": "activeImg",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "activeimg",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_features_stage_scenerybackground_backgroundimages",
+      "label": "backgroundImages",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "backgroundimages",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_features_stage_scenerybackground_location_timeofday_manha_islight_false",
+      "label": "{ location, timeOfDay = 'manha', isLight = false }",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "{ location, timeofday = 'manha', islight = false }",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L8"
     },
     {
       "id": "src_layout_dualstage",
@@ -856,28 +914,6 @@
       "source_location": "L14"
     },
     {
-      "id": "src_main",
-      "label": "main.ts",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "main.ts",
-      "source_file": "src/main.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_main_app",
-      "label": "app",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "app",
-      "source_file": "src/main.ts",
-      "source_location": "L5"
-    },
-    {
       "id": "ref_lucide_svelte",
       "label": "lucide-svelte",
       "_origin": "ast",
@@ -887,17 +923,6 @@
       "norm_label": "lucide-svelte",
       "source_file": "package.json",
       "source_location": "L28"
-    },
-    {
-      "id": "ref_svelte",
-      "label": "svelte",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "concept",
-      "norm_label": "svelte",
-      "source_file": "package.json",
-      "source_location": "L18"
     },
     {
       "id": "src_features_characters_characters_schema",
@@ -1202,48 +1227,114 @@
       "source_location": "L1"
     },
     {
-      "id": "src_features_stage_scenerybackground",
-      "label": "SceneryBackground.svelte",
+      "id": "src_features_stage_charactersprite",
+      "label": "CharacterSprite.svelte",
       "_origin": "ast",
       "community": 14,
-      "community_name": "SceneryBackground.svelte",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
-      "norm_label": "scenerybackground.svelte",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "norm_label": "charactersprite.svelte",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
       "source_location": "L1"
     },
     {
-      "id": "src_features_stage_scenerybackground_activeimg",
-      "label": "activeImg",
+      "id": "src_features_stage_charactersprite_characterprofiles",
+      "label": "characterProfiles",
       "_origin": "ast",
       "community": 14,
-      "community_name": "SceneryBackground.svelte",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
-      "norm_label": "activeimg",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L18"
+      "norm_label": "characterprofiles",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L16"
     },
     {
-      "id": "src_features_stage_scenerybackground_backgroundimages",
-      "label": "backgroundImages",
+      "id": "src_features_stage_charactersprite_islight",
+      "label": "isLight",
       "_origin": "ast",
       "community": 14,
-      "community_name": "SceneryBackground.svelte",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
-      "norm_label": "backgroundimages",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L11"
+      "norm_label": "islight",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L55"
     },
     {
-      "id": "src_features_stage_scenerybackground_location_timeofday_manha_islight_false",
-      "label": "{ location, timeOfDay = 'manha', isLight = false }",
+      "id": "src_features_stage_charactersprite_isprotagonist",
+      "label": "isProtagonist",
       "_origin": "ast",
       "community": 14,
-      "community_name": "SceneryBackground.svelte",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
-      "norm_label": "{ location, timeofday = 'manha', islight = false }",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L8"
+      "norm_label": "isprotagonist",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L53"
+    },
+    {
+      "id": "src_features_stage_charactersprite_profile",
+      "label": "profile",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "profile",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L54"
+    },
+    {
+      "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutro_timeofday_manha",
+      "label": "{ speaker, speakerName = '', expression = 'neutro', timeOfDay = 'manha' }",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "{ speaker, speakername = '', expression = 'neutro', timeofday = 'manha' }",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay",
+      "label": "AnimeProtagonistDisplay.svelte",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "animeprotagonistdisplay.svelte",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_activeartpath",
+      "label": "activeArtPath",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "activeartpath",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_iscloseup",
+      "label": "isCloseUp",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "iscloseup",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L46"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_outfit_zoommode_corpo_inteiro_class_customclass",
+      "label": "{ \n    outfit, \n    zoomMode = 'corpo_inteiro', \n    class: customClass = '' \n  }",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "{ \n    outfit, \n    zoommode = 'corpo_inteiro', \n    class: customclass = '' \n  }",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L10"
     },
     {
       "id": "package",
@@ -1411,6 +1502,39 @@
       "source_location": "L4"
     },
     {
+      "id": "src_app",
+      "label": "App.svelte",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "app.svelte",
+      "source_file": "src/App.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_main",
+      "label": "main.ts",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "main.ts",
+      "source_file": "src/main.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_main_app",
+      "label": "app",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "app",
+      "source_file": "src/main.ts",
+      "source_location": "L5"
+    },
+    {
       "id": "vite_config",
       "label": "vite.config.ts",
       "_origin": "ast",
@@ -1442,6 +1566,17 @@
       "norm_label": "howler",
       "source_file": "package.json",
       "source_location": "L27"
+    },
+    {
+      "id": "ref_svelte",
+      "label": "svelte",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "concept",
+      "norm_label": "svelte",
+      "source_file": "package.json",
+      "source_location": "L18"
     },
     {
       "id": "ref_svelte_check",
@@ -2654,72 +2789,6 @@
       "source_location": "L1"
     },
     {
-      "id": "src_features_stage_charactersprite",
-      "label": "CharacterSprite.svelte",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "charactersprite.svelte",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_stage_charactersprite_characterprofiles",
-      "label": "characterProfiles",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "characterprofiles",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_features_stage_charactersprite_islight",
-      "label": "isLight",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "islight",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L55"
-    },
-    {
-      "id": "src_features_stage_charactersprite_isprotagonist",
-      "label": "isProtagonist",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "isprotagonist",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L53"
-    },
-    {
-      "id": "src_features_stage_charactersprite_profile",
-      "label": "profile",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "profile",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L54"
-    },
-    {
-      "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutro_timeofday_manha",
-      "label": "{ speaker, speakerName = '', expression = 'neutro', timeOfDay = 'manha' }",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "{ speaker, speakername = '', expression = 'neutro', timeofday = 'manha' }",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L14"
-    },
-    {
       "id": "content_arcs_arco_1_adolescencia_cap_00_prologo",
       "label": "content_arcs_arco_1_adolescencia_cap_00_prologo",
       "_origin": "semantic",
@@ -3115,6 +3184,18 @@
       "context": "import",
       "source_file": "src/features/stage/CharacterSprite.svelte",
       "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_wardrobe_schema_equippedoutfit",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -3546,7 +3627,7 @@
     },
     {
       "source": "src_features_stage_charactersprite",
-      "target": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_animeprotagonistdisplay",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3566,6 +3647,19 @@
       "context": "import",
       "source_file": "src/features/stage/CharacterSprite.svelte",
       "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_wardrobe_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L2",
+      "type_only": true,
       "weight": 1.0
     },
     {
@@ -3620,7 +3714,7 @@
     },
     {
       "source": "src_features_wardrobe_wardrobemodal",
-      "target": "src_features_wardrobe_paperdollavatar",
+      "target": "src_features_wardrobe_animeprotagonistdisplay",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4493,6 +4587,17 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_characters_paperdollactor",
+      "target": "src_features_characters_paperdollactor_handleimgerror",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/PaperdollActor.svelte",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_dialogue_dialoguebox",
       "target": "src_features_dialogue_dialoguebox_node_onselectchoice_ontogglephone_onopenhistory",
       "relation": "contains",
@@ -5062,6 +5167,50 @@
       "confidence_score": 1.0,
       "source_file": "src/features/stage/SceneryBackground.svelte",
       "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_outfit_zoommode_corpo_inteiro_class_customclass",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_activeartpath",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_props",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_iscloseup",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -6121,5 +6270,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "6ec3c1407bcbe775fe19495294c309d5b31eca6d"
+  "built_at_commit": "4fb3addbd62ce3269b3ff9152f26561775f739ad"
 }

@@ -20,22 +20,10 @@ export const CHARACTER_MANIFESTS: Record<string, CharacterManifest> = {
       blush: '/assets/characters/dante/rostos/timido.png'
     },
     hairs: {
-      rock_rebelde: {
-        back: '/assets/characters/dante/cabelos/tras.png',
-        front: '/assets/characters/dante/cabelos/frente.png'
-      }
+      rock_rebelde: {}
     },
     outfits: {
-      default: {
-        top: '/assets/characters/dante/roupas/camiseta_banda.png',
-        jacket: '/assets/characters/dante/roupas/jaqueta_couro.png',
-        bottom: '/assets/characters/dante/roupas/jeans_rasgado.png',
-        shoes: '/assets/characters/dante/roupas/coturno.png'
-      },
-      uniforme: {
-        top: '/assets/characters/dante/roupas/camisa_uniforme.png',
-        bottom: '/assets/characters/dante/roupas/calca_uniforme.png'
-      }
+      default: {}
     }
   },
 
@@ -56,17 +44,10 @@ export const CHARACTER_MANIFESTS: Record<string, CharacterManifest> = {
       surpreso: '/assets/characters/lucas/rostos/surpreso.png'
     },
     hairs: {
-      gremio_alinhado: {
-        back: '/assets/characters/lucas/cabelos/tras.png',
-        front: '/assets/characters/lucas/cabelos/frente.png'
-      }
+      gremio_alinhado: {}
     },
     outfits: {
-      default: {
-        top: '/assets/characters/lucas/roupas/camisa_social.png',
-        jacket: '/assets/characters/lucas/roupas/blazer_gremio.png',
-        glasses: '/assets/characters/lucas/roupas/oculos_dourados.png'
-      }
+      default: {}
     }
   },
 
@@ -86,17 +67,10 @@ export const CHARACTER_MANIFESTS: Record<string, CharacterManifest> = {
       sonhador: '/assets/characters/theo/rostos/sonhador.png'
     },
     hairs: {
-      ondas_artisticas: {
-        back: '/assets/characters/theo/cabelos/tras.png',
-        front: '/assets/characters/theo/cabelos/frente.png'
-      }
+      ondas_artisticas: {}
     },
     outfits: {
-      default: {
-        top: '/assets/characters/theo/roupas/sueter_trico.png',
-        jacket: '/assets/characters/theo/roupas/sobretudo_verde.png',
-        necklace: '/assets/characters/theo/roupas/cachecol_mostarda.png'
-      }
+      default: {}
     }
   }
 };

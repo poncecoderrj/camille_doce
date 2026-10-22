@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { PersonagemId } from '../dialogue/narrative.schema';
   import { gameState } from '../game-state/GameState.svelte';
-  import PaperdollAvatar from '../wardrobe/PaperdollAvatar.svelte';
+  import AnimeProtagonistDisplay from '../wardrobe/AnimeProtagonistDisplay.svelte';
   import PaperdollActor from '../characters/PaperdollActor.svelte';
 
   interface Props {
@@ -60,7 +60,7 @@
   <div class="relative flex flex-col items-center justify-end select-none pointer-events-none transition-all duration-700">
     <div class="relative w-80 sm:w-96 md:w-[420px] h-[480px] sm:h-[540px] md:h-[600px] flex flex-col items-center justify-end">
       <div class="w-full h-full flex items-center justify-center">
-        <PaperdollAvatar 
+        <AnimeProtagonistDisplay 
           outfit={gameState.equippedOutfit} 
           zoomMode="corpo_inteiro"
           class="h-full"
