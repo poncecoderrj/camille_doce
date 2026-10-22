@@ -17,10 +17,125 @@ export const EYE_COLORS = [
 
 export const HAIR_COLORS = [
   { id: '#4a2c11', name: 'Castanho Chocolate', color: '#4a2c11', highlight: '#73461d' },
-  { id: '#1a191f', name: 'Preto Ônix', color: '#1a191f', highlight: '#3a3945' },
-  { id: '#c99346', name: 'Loiro Mel', color: '#c99346', highlight: '#e6ba75' },
-  { id: '#9c381e', name: 'Ruivo Acobreado', color: '#9c381e', highlight: '#c45335' },
-  { id: '#d46a8a', name: 'Rosa Algodão Doce', color: '#d46a8a', highlight: '#f09ab5' }
+  { id: '#18181b', name: 'Preto Ônix', color: '#18181b', highlight: '#3f3f46' },
+  { id: '#d97706', name: 'Loiro Mel Dourado', color: '#d97706', highlight: '#fcd34d' },
+  { id: '#b91c1c', name: 'Ruivo Acobreado', color: '#b91c1c', highlight: '#f87171' },
+  { id: '#ec4899', name: 'Rosa Algodão Doce', color: '#ec4899', highlight: '#fbcfe8' },
+  { id: '#3b82f6', name: 'Azul Meia-Noite', color: '#3b82f6', highlight: '#93c5fd' },
+  { id: '#8b5cf6', name: 'Roxo Lavanda Ametista', color: '#8b5cf6', highlight: '#c4b5fd' },
+  { id: '#10b981', name: 'Verde Esmeralda', color: '#10b981', highlight: '#6ee7b7' },
+  { id: '#e2e8f0', name: 'Platinado Glacial', color: '#e2e8f0', highlight: '#ffffff' },
+  { id: '#881337', name: 'Vinho Borgonha Cereja', color: '#881337', highlight: '#e11d48' }
+];
+
+export interface BodyMorphologyPreset {
+  id: string;
+  name: string;
+  description: string;
+  height: number;
+  body_build: number;
+  muscle_tone: number;
+  curve_ratio: number;
+  badge: string;
+}
+
+export const BODY_PRESETS: BodyMorphologyPreset[] = [
+  {
+    id: 'delicada_petit',
+    name: 'Delicada & Mignon',
+    description: 'Estatura menor (1.55m) e compleição magra e delicada. Estilo gracioso e jovial.',
+    height: 1.55,
+    body_build: -30,
+    muscle_tone: 15,
+    curve_ratio: -10,
+    badge: '1.55m • Petit'
+  },
+  {
+    id: 'natural_media',
+    name: 'Natural & Clássica',
+    description: 'Proporção equilibrada padrão de heroína de anime romântico e escolar.',
+    height: 1.65,
+    body_build: 0,
+    muscle_tone: 25,
+    curve_ratio: 0,
+    badge: '1.65m • Padrão'
+  },
+  {
+    id: 'atletica_fitness',
+    name: 'Atlética & Firme',
+    description: 'Estatura elegante com definição muscular evidente e postura tonificada.',
+    height: 1.70,
+    body_build: 10,
+    muscle_tone: 85,
+    curve_ratio: 15,
+    badge: '1.70m • Atlética'
+  },
+  {
+    id: 'curvy_plussize',
+    name: 'Curvilínea & Encorpada',
+    description: 'Silhueta generosa com curvas acentuadas e presença acolhedora e marcante.',
+    height: 1.62,
+    body_build: 40,
+    muscle_tone: 20,
+    curve_ratio: 28,
+    badge: '1.62m • Curvy'
+  },
+  {
+    id: 'alta_esbelta',
+    name: 'Alta & Esbelta',
+    description: 'Silhueta longilínea imponente estilo passarela, porte gracioso e confiante.',
+    height: 1.78,
+    body_build: -15,
+    muscle_tone: 35,
+    curve_ratio: 8,
+    badge: '1.78m • Alta'
+  }
+];
+
+export interface HairStyleOption {
+  id: string;
+  name: string;
+  description: string;
+  tag: string;
+}
+
+export const HAIR_STYLES: HairStyleOption[] = [
+  {
+    id: 'longo_onda',
+    name: 'Ondulado Longo Romântico',
+    description: 'Fios longos em ondas suaves e naturais que repousam graciosamente pelos ombros.',
+    tag: 'Romântico'
+  },
+  {
+    id: 'bob_curto',
+    name: 'Bob Cut Chanel Moderno',
+    description: 'Corte curto geométrico e polido, moderno, prático e muito sofisticado.',
+    tag: 'Clássico'
+  },
+  {
+    id: 'rabo_cavalo',
+    name: 'Rabo de Cavalo Alto',
+    description: 'Penteado dinâmico e enérgico, perfeito para quem tem atitude e determinação.',
+    tag: 'Rock'
+  },
+  {
+    id: 'coque_duplo',
+    name: 'Coques Duplos (Odango)',
+    description: 'Dois coques esféricos joviais no topo da cabeça, estilo anime descontraído.',
+    tag: 'Casual'
+  },
+  {
+    id: 'tranca_lateral',
+    name: 'Trança Lateral Romântica',
+    description: 'Trança volumosa repousando sobre um dos ombros com toque poético e meigo.',
+    tag: 'Romântico'
+  },
+  {
+    id: 'repicado_rock',
+    name: 'Repicado Grunge Rebelde',
+    description: 'Camadas assimétricas e pontas desfiadas com atitude rock and roll.',
+    tag: 'Rock'
+  }
 ];
 
 export const WARDROBE_CATALOG: WardrobeItem[] = [

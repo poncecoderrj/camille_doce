@@ -6,7 +6,9 @@
     OUTFIT_PRESETS, 
     SKIN_TONES, 
     EYE_COLORS, 
-    HAIR_COLORS 
+    HAIR_COLORS,
+    BODY_PRESETS,
+    HAIR_STYLES
   } from './wardrobe.catalog';
   import AnimeProtagonistDisplay from './AnimeProtagonistDisplay.svelte';
   import { 
@@ -21,7 +23,11 @@
     Glasses, 
     SlidersHorizontal,
     ShoppingBag,
-    Eye
+    Eye,
+    User,
+    Ruler,
+    Activity,
+    Palette
   } from 'lucide-svelte';
 
   interface Props {
@@ -35,12 +41,13 @@
 
   // Controles de Visualização
   let zoomMode = $state<'corpo_inteiro' | 'busto'>('corpo_inteiro');
-  let activeTab = $state<'presets' | 'rosto' | 'superior' | 'inferior' | 'vestido' | 'casaco' | 'calcado' | 'acessorios'>('presets');
+  let activeTab = $state<'presets' | 'corpo' | 'rosto' | 'superior' | 'inferior' | 'vestido' | 'casaco' | 'calcado' | 'acessorios'>('presets');
   let selectedStyleFilter = $state<string>('todos');
 
   // Categorias de Abas
   const tabs = [
     { id: 'presets', label: 'Looks Prontos', icon: Sparkles },
+    { id: 'corpo', label: 'Corpo & Físico', icon: User },
     { id: 'rosto', label: 'Cabelo & Rosto', icon: Smile },
     { id: 'superior', label: 'Partes de Cima', icon: ShoppingBag },
     { id: 'inferior', label: 'Partes de Baixo', icon: SlidersHorizontal },
@@ -113,7 +120,7 @@
 
   // Reações Estimadas dos Rapazes
   let reactions = $derived.by(() => {
-    const { dominant, dante, lucas, theo } = styleScores;
+    const { dominant } = styleScores;
     let danteComment = 'Roupa estilosa. Tem atitude.';
     let lucasComment = 'Apresentação refinada e de acordo com a Lótus.';
     let theoComment = 'Cores poéticas... combinam com seu olhar.';
@@ -139,13 +146,13 @@
   function equipItem(item: (typeof WARDROBE_CATALOG)[0]) {
     if (item.category === 'superior') {
       previewOutfit.top = item.id;
-      previewOutfit.dress = undefined; // Vestido desequipado
+      previewOutfit.dress = undefined;
     } else if (item.category === 'inferior') {
       previewOutfit.bottom = item.id;
       previewOutfit.dress = undefined;
     } else if (item.category === 'vestido') {
       previewOutfit.dress = item.id;
-      previewOutfit.top = undefined; // Top e Bottom desequipados
+      previewOutfit.top = undefined;
       previewOutfit.bottom = undefined;
     } else if (item.category === 'casaco') {
       previewOutfit.jacket = previewOutfit.jacket === item.id ? undefined : item.id;
@@ -201,8 +208,8 @@
   }
 </script>
 
-<!-- MODAL COMPLETO DE GUARDA-ROUPA / PROVADOR -->
-<div class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-black/80 backdrop-blur-xl animate-fade-in select-none">
+<!-- MODAL COMPLETO DE GUARDA-ROUPA / PROVADOR COM MOTOR THE SIMS -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-6 bg-black/85 backdrop-blur-xl animate-fade-in select-none">
   <div class="w-full max-w-6xl h-[92vh] flex flex-col rounded-3xl border border-white/10 bg-[#12131a] text-zinc-100 shadow-2xl overflow-hidden">
     
     <!-- CABEÇALHO DO PROVADOR -->
@@ -213,10 +220,10 @@
         </div>
         <div>
           <h2 class="text-base sm:text-lg font-cinzel font-bold tracking-wide text-zinc-100">
-            Provador & Closet da Protagonista
+            Provador & Personalização de Personagem
           </h2>
           <p class="text-xs text-zinc-400">
-            Monte looks sobrepondo camadas individuais e veja a reação dos rapazes em tempo real
+            Customize corpo, altura, cabelo, roupas e veja a reação em tempo real
           </p>
         </div>
       </div>
@@ -264,15 +271,22 @@
               class="px-2.5 py-1 rounded-lg flex items-center gap-1.5 transition-colors {zoomMode === 'corpo_inteiro' ? 'bg-amber-500 text-stone-950 font-bold' : 'text-zinc-400 hover:text-white'}"
             >
               <ZoomOut class="w-3.5 h-3.5" />
-              <span>Corpo Inteiro</span>
+              <span>Corpo</span>
             </button>
             <button 
               onclick={() => zoomMode = 'busto'}
               class="px-2.5 py-1 rounded-lg flex items-center gap-1.5 transition-colors {zoomMode === 'busto' ? 'bg-amber-500 text-stone-950 font-bold' : 'text-zinc-400 hover:text-white'}"
             >
               <ZoomIn class="w-3.5 h-3.5" />
-              <span>Busto (Zoom)</span>
+              <span>Zoom</span>
             </button>
+          </div>
+
+          <!-- Indicador Numérico de Altura & Massa em Tempo Real -->
+          <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-xl bg-black/40 border border-white/10 text-[11px] font-mono text-zinc-300">
+            <span>📏 {(previewOutfit.height ?? 1.65).toFixed(2)}m</span>
+            <span class="text-zinc-600">|</span>
+            <span>⚖️ {(previewOutfit.body_build ?? 0) > 0 ? `+${previewOutfit.body_build}` : (previewOutfit.body_build ?? 0)}</span>
           </div>
 
           <!-- Expressão do Rosto -->
@@ -301,7 +315,7 @@
           </div>
         </div>
 
-        <!-- RENDERIZADOR ANIME DA PROTAGONISTA (ILUSTRAÇÃO REAL 2D, ZERO VETOR FEIO) -->
+        <!-- RENDERIZADOR ANIME DA PROTAGONISTA (ILUSTRAÇÃO REAL 2D COM MOTOR MORFOLÓGICO THE SIMS) -->
         <div class="flex-1 w-full max-h-[480px] flex items-center justify-center my-auto z-10">
           <AnimeProtagonistDisplay 
             outfit={previewOutfit} 
@@ -316,7 +330,7 @@
             class="flex items-center gap-1.5 hover:text-white transition-colors"
           >
             <RotateCcw class="w-3.5 h-3.5" />
-            <span>Restaurar Atual</span>
+            <span>Restaurar Salvo</span>
           </button>
           <button 
             onclick={stripAll}
@@ -327,7 +341,7 @@
         </div>
       </div>
 
-      <!-- ================= COLUNA DIREITA: CATÁLOGO DE ROUPAS & CATEGORIAS ================= -->
+      <!-- ================= COLUNA DIREITA: CATÁLOGO, MORFOLOGIA E ROUPAS ================= -->
       <div class="flex-1 flex flex-col overflow-hidden bg-[#101117]">
         
         <!-- ABAS DE NAVEGAÇÃO -->
@@ -344,7 +358,7 @@
         </div>
 
         <!-- FILTROS DE ESTILO (ROCK, CLÁSSICO, ROMÂNTICO, TODOS) -->
-        {#if activeTab !== 'rosto' && activeTab !== 'presets'}
+        {#if activeTab !== 'rosto' && activeTab !== 'presets' && activeTab !== 'corpo'}
           <div class="px-5 py-2.5 flex items-center gap-2 border-b border-white/5 bg-black/10 text-xs">
             <span class="text-zinc-400">Filtrar Estilo:</span>
             {#each ['todos', 'Clássico', 'Rock', 'Romântico', 'Casual'] as filter}
@@ -358,7 +372,7 @@
           </div>
         {/if}
 
-        <!-- CONTEÚDO DAS ABAS (GRID DE ITENS) -->
+        <!-- CONTEÚDO DAS ABAS (GRID DE ITENS / CONTROLES THE SIMS) -->
         <div class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
           
           <!-- 1. ABA: LOOKS PRONTOS (PRESETS) -->
@@ -397,10 +411,294 @@
               {/each}
             </div>
 
-          <!-- 2. ABA: CABELO & ROSTO -->
+          <!-- 2. ABA: CORPO & FÍSICO (MOTOR THE SIMS COMPLETO) -->
+          {:else if activeTab === 'corpo'}
+            <div class="space-y-6">
+              
+              <!-- CARD INFORMATIVO DO MOTOR THE SIMS -->
+              <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                <div>
+                  <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                    <User class="w-4 h-4 text-amber-400" />
+                    <span>Personalização de Físico & Morfologia (Estilo The Sims)</span>
+                  </h3>
+                  <p class="text-xs text-zinc-400 mt-0.5">
+                    Modifique a compleição de massa, altura e tônus muscular com feedback visual a 60FPS
+                  </p>
+                </div>
+                <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold font-mono">
+                  <span>{(previewOutfit.height ?? 1.65).toFixed(2)}m</span>
+                  <span>•</span>
+                  <span>{(previewOutfit.body_build ?? 0) > 15 ? 'Curvy' : (previewOutfit.body_build ?? 0) < -15 ? 'Petit' : 'Equilibrada'}</span>
+                </div>
+              </div>
+
+              <!-- PRESETS RÁPIDOS DE BIOTIPO (1 CLIQUE) -->
+              <div>
+                <h4 class="text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2.5 flex items-center gap-2">
+                  <Sparkles class="w-3.5 h-3.5 text-amber-400" />
+                  <span>Biotipos Rápidos Prontos</span>
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                  {#each BODY_PRESETS as preset}
+                    {@const isCurrent = Math.abs((previewOutfit.height ?? 1.65) - preset.height) < 0.02 && Math.abs((previewOutfit.body_build ?? 0) - preset.body_build) < 5}
+                    <button 
+                      onclick={() => {
+                        previewOutfit.height = preset.height;
+                        previewOutfit.body_build = preset.body_build;
+                        previewOutfit.muscle_tone = preset.muscle_tone;
+                        previewOutfit.curve_ratio = preset.curve_ratio;
+                      }}
+                      class="p-3 rounded-2xl border text-left flex flex-col justify-between transition-all {isCurrent ? 'border-amber-400 bg-amber-500/15 ring-1 ring-amber-400/30' : 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/8'}"
+                    >
+                      <div>
+                        <div class="flex items-center justify-between mb-1">
+                          <span class="text-xs font-bold text-white">{preset.name}</span>
+                          <span class="px-2 py-0.5 rounded-md bg-white/10 text-[10px] font-semibold text-amber-300">
+                            {preset.badge}
+                          </span>
+                        </div>
+                        <p class="text-[11px] text-zinc-400 line-clamp-2">{preset.description}</p>
+                      </div>
+                      <div class="mt-2.5 pt-2 border-t border-white/5 flex items-center justify-between text-[10px] text-zinc-400">
+                        <span>Massa: {preset.body_build > 0 ? `+${preset.body_build}` : preset.body_build}</span>
+                        <span>Músculo: {preset.muscle_tone}%</span>
+                      </div>
+                    </button>
+                  {/each}
+                </div>
+              </div>
+
+              <!-- SLIDERS DE AJUSTE FINO (THE SIMS MORPHOLOGY ENGINE) -->
+              <div class="space-y-5 p-5 rounded-2xl bg-white/5 border border-white/10">
+                <h4 class="text-xs font-bold text-zinc-200 uppercase tracking-wider flex items-center gap-2">
+                  <SlidersHorizontal class="w-3.5 h-3.5 text-amber-400" />
+                  <span>Ajustes Finos de Morfologia Corporal</span>
+                </h4>
+
+                <!-- 1. SLIDER DE ALTURA -->
+                <div class="space-y-1.5">
+                  <div class="flex items-center justify-between text-xs">
+                    <label for="height-slider" class="font-semibold text-zinc-200 flex items-center gap-1.5 cursor-pointer">
+                      <Ruler class="w-3.5 h-3.5 text-amber-400" />
+                      <span>Estatura / Altura</span>
+                    </label>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-zinc-400">
+                        {#if (previewOutfit.height ?? 1.65) < 1.58}
+                          Estatura Baixa / Mignon (Dante +{((1.82 - (previewOutfit.height ?? 1.65)) * 100).toFixed(0)}cm)
+                        {:else if (previewOutfit.height ?? 1.65) > 1.72}
+                          Estatura Alta / Esbelta (Theo +{((1.76 - (previewOutfit.height ?? 1.65)) * 100).toFixed(0)}cm)
+                        {:else}
+                          Estatura Média Equilibrada (Lucas +{((1.80 - (previewOutfit.height ?? 1.65)) * 100).toFixed(0)}cm)
+                        {/if}
+                      </span>
+                      <span class="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-300 font-bold font-mono">
+                        {(previewOutfit.height ?? 1.65).toFixed(2)} m
+                      </span>
+                    </div>
+                  </div>
+                  <input 
+                    id="height-slider"
+                    type="range" 
+                    min="1.50" 
+                    max="1.82" 
+                    step="0.01" 
+                    bind:value={previewOutfit.height}
+                    class="w-full accent-amber-500 h-2 bg-zinc-700 rounded-lg cursor-pointer"
+                  />
+                  <div class="flex justify-between text-[10px] text-zinc-400">
+                    <span>1.50m (Baixa / Petit)</span>
+                    <span>1.65m (Padrão)</span>
+                    <span>1.82m (Alta / Imponente)</span>
+                  </div>
+                </div>
+
+                <!-- 2. SLIDER DE COMPLEIÇÃO / MASSA CORPORAL -->
+                <div class="space-y-1.5">
+                  <div class="flex items-center justify-between text-xs">
+                    <label for="mass-slider" class="font-semibold text-zinc-200 flex items-center gap-1.5 cursor-pointer">
+                      <Activity class="w-3.5 h-3.5 text-rose-400" />
+                      <span>Compleição Física / Massa</span>
+                    </label>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-zinc-400">
+                        {#if (previewOutfit.body_build ?? 0) <= -20}
+                          Magra / Delicada
+                        {:else if (previewOutfit.body_build ?? 0) >= 20}
+                          Encorpada / Curvy Plus
+                        {:else}
+                          Média / Equilibrada
+                        {/if}
+                      </span>
+                      <span class="px-2 py-0.5 rounded-md bg-rose-500/20 text-rose-300 font-bold font-mono">
+                        {(previewOutfit.body_build ?? 0) > 0 ? `+${previewOutfit.body_build}` : (previewOutfit.body_build ?? 0)}
+                      </span>
+                    </div>
+                  </div>
+                  <input 
+                    id="mass-slider"
+                    type="range" 
+                    min="-50" 
+                    max="50" 
+                    step="1" 
+                    bind:value={previewOutfit.body_build}
+                    class="w-full accent-rose-500 h-2 bg-zinc-700 rounded-lg cursor-pointer"
+                  />
+                  <div class="flex justify-between text-[10px] text-zinc-400">
+                    <span>-50 (Esguia / Magra)</span>
+                    <span>0 (Natural)</span>
+                    <span>+50 (Curvy / Plus Size)</span>
+                  </div>
+                </div>
+
+                <!-- 3. SLIDER DE DEFINIÇÃO MUSCULAR -->
+                <div class="space-y-1.5">
+                  <div class="flex items-center justify-between text-xs">
+                    <label for="muscle-slider" class="font-semibold text-zinc-200 flex items-center gap-1.5 cursor-pointer">
+                      <Sparkles class="w-3.5 h-3.5 text-blue-400" />
+                      <span>Definição Muscular & Tonificação</span>
+                    </label>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-zinc-400">
+                        {#if (previewOutfit.muscle_tone ?? 20) <= 25}
+                          Suave / Macia
+                        {:else if (previewOutfit.muscle_tone ?? 20) >= 70}
+                          Firme / Atlética
+                        {:else}
+                          Tonificada
+                        {/if}
+                      </span>
+                      <span class="px-2 py-0.5 rounded-md bg-blue-500/20 text-blue-300 font-bold font-mono">
+                        {previewOutfit.muscle_tone ?? 20}%
+                      </span>
+                    </div>
+                  </div>
+                  <input 
+                    id="muscle-slider"
+                    type="range" 
+                    min="0" 
+                    max="100" 
+                    step="1" 
+                    bind:value={previewOutfit.muscle_tone}
+                    class="w-full accent-blue-500 h-2 bg-zinc-700 rounded-lg cursor-pointer"
+                  />
+                  <div class="flex justify-between text-[10px] text-zinc-400">
+                    <span>0% (Suave)</span>
+                    <span>50% (Tonificada)</span>
+                    <span>100% (Atlética / Firme)</span>
+                  </div>
+                </div>
+
+                <!-- 4. SLIDER DE CURVATURA DA SILHUETA -->
+                <div class="space-y-1.5">
+                  <div class="flex items-center justify-between text-xs">
+                    <label for="curve-slider" class="font-semibold text-zinc-200 flex items-center gap-1.5 cursor-pointer">
+                      <SlidersHorizontal class="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Curvatura da Silhueta</span>
+                    </label>
+                    <div class="flex items-center gap-2">
+                      <span class="text-[11px] text-zinc-400">
+                        {#if (previewOutfit.curve_ratio ?? 0) <= -12}
+                          Linha Reta / Tubular
+                        {:else if (previewOutfit.curve_ratio ?? 0) >= 12}
+                          Curvilínea / Ampulheta
+                        {:else}
+                          Harmônica
+                        {/if}
+                      </span>
+                      <span class="px-2 py-0.5 rounded-md bg-emerald-500/20 text-emerald-300 font-bold font-mono">
+                        {(previewOutfit.curve_ratio ?? 0) > 0 ? `+${previewOutfit.curve_ratio}` : (previewOutfit.curve_ratio ?? 0)}
+                      </span>
+                    </div>
+                  </div>
+                  <input 
+                    id="curve-slider"
+                    type="range" 
+                    min="-30" 
+                    max="30" 
+                    step="1" 
+                    bind:value={previewOutfit.curve_ratio}
+                    class="w-full accent-emerald-500 h-2 bg-zinc-700 rounded-lg cursor-pointer"
+                  />
+                  <div class="flex justify-between text-[10px] text-zinc-400">
+                    <span>-30 (Reta)</span>
+                    <span>0 (Padrão)</span>
+                    <span>+30 (Ampulheta Acentuada)</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          <!-- 3. ABA: CABELO & ROSTO -->
           {:else if activeTab === 'rosto'}
             <div class="space-y-6">
               
+              <!-- Penteados / Cortes de Cabelo (The Sims Style) -->
+              <div>
+                <h4 class="text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2 flex items-center gap-2">
+                  <Sparkles class="w-3.5 h-3.5 text-amber-400" />
+                  <span>Estilos de Corte & Penteado</span>
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
+                  {#each HAIR_STYLES as style}
+                    {@const isCurrent = (previewOutfit.hair_style ?? 'longo_onda') === style.id}
+                    <button 
+                      onclick={() => previewOutfit.hair_style = style.id}
+                      class="p-3 rounded-2xl border text-left flex flex-col justify-between transition-all {isCurrent ? 'border-amber-400 bg-amber-500/15 ring-1 ring-amber-400/30' : 'border-white/10 bg-white/5 hover:border-white/20'}"
+                    >
+                      <div>
+                        <div class="flex items-center justify-between mb-1">
+                          <span class="text-xs font-bold text-white">{style.name}</span>
+                          <span class="px-1.5 py-0.5 rounded text-[9px] font-semibold bg-white/10 text-amber-300">{style.tag}</span>
+                        </div>
+                        <p class="text-[11px] text-zinc-400 line-clamp-2">{style.description}</p>
+                      </div>
+                      {#if isCurrent}
+                        <div class="mt-2 text-right">
+                          <span class="inline-flex items-center gap-1 text-[10px] font-bold text-amber-400">
+                            <Check class="w-3 h-3 stroke-[3]" /> Equipado
+                          </span>
+                        </div>
+                      {/if}
+                    </button>
+                  {/each}
+                </div>
+              </div>
+
+              <!-- Cor do Cabelo (Paleta 10 Cores Anime + Seletor Hexadecimal) -->
+              <div>
+                <div class="flex items-center justify-between mb-2">
+                  <h4 class="text-xs font-bold text-zinc-300 uppercase tracking-wider flex items-center gap-2">
+                    <Palette class="w-3.5 h-3.5 text-amber-400" />
+                    <span>Cor do Cabelo</span>
+                  </h4>
+                  <!-- Color Picker Customizado -->
+                  <div class="flex items-center gap-2">
+                    <label for="custom-hair-color" class="text-[11px] text-zinc-400 cursor-pointer">Cor Personalizada:</label>
+                    <input 
+                      id="custom-hair-color"
+                      type="color" 
+                      bind:value={previewOutfit.hair_color}
+                      class="w-6 h-6 rounded-md border border-white/20 bg-transparent cursor-pointer"
+                    />
+                    <span class="text-[10px] font-mono text-zinc-400">{previewOutfit.hair_color}</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
+                  {#each HAIR_COLORS as hair}
+                    <button 
+                      onclick={() => previewOutfit.hair_color = hair.id}
+                      class="p-2.5 rounded-xl border flex items-center gap-2.5 transition-all {previewOutfit.hair_color === hair.id ? 'border-amber-400 bg-amber-500/10' : 'border-white/10 hover:border-white/30'}"
+                    >
+                      <span class="w-4 h-4 rounded-full border border-black/30 shrink-0" style="background-color: {hair.color};"></span>
+                      <span class="text-xs text-zinc-200 truncate">{hair.name}</span>
+                    </button>
+                  {/each}
+                </div>
+              </div>
+
               <!-- Tom de Pele -->
               <div>
                 <h4 class="text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2">Tom de Pele</h4>
@@ -410,7 +708,7 @@
                       onclick={() => previewOutfit.skin_color = skin.id}
                       class="p-2.5 rounded-xl border flex items-center gap-2.5 transition-all {previewOutfit.skin_color === skin.id ? 'border-amber-400 bg-amber-500/10' : 'border-white/10 hover:border-white/30'}"
                     >
-                      <span class="w-5 h-5 rounded-full border border-black/30 shadow-sm" style="background-color: {skin.fill};"></span>
+                      <span class="w-5 h-5 rounded-full border border-black/30 shadow-sm shrink-0" style="background-color: {skin.fill};"></span>
                       <span class="text-xs text-zinc-200">{skin.name}</span>
                     </button>
                   {/each}
@@ -426,47 +724,8 @@
                       onclick={() => previewOutfit.eye_color = eye.id}
                       class="p-2.5 rounded-xl border flex items-center gap-2.5 transition-all {previewOutfit.eye_color === eye.id ? 'border-amber-400 bg-amber-500/10' : 'border-white/10 hover:border-white/30'}"
                     >
-                      <span class="w-4 h-4 rounded-full border border-black/30" style="background-color: {eye.color};"></span>
+                      <span class="w-4 h-4 rounded-full border border-black/30 shrink-0" style="background-color: {eye.color};"></span>
                       <span class="text-xs text-zinc-200">{eye.name}</span>
-                    </button>
-                  {/each}
-                </div>
-              </div>
-
-              <!-- Cor do Cabelo -->
-              <div>
-                <h4 class="text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2">Cor do Cabelo</h4>
-                <div class="grid grid-cols-2 sm:grid-cols-5 gap-2">
-                  {#each HAIR_COLORS as hair}
-                    <button 
-                      onclick={() => previewOutfit.hair_color = hair.id}
-                      class="p-2.5 rounded-xl border flex items-center gap-2.5 transition-all {previewOutfit.hair_color === hair.id ? 'border-amber-400 bg-amber-500/10' : 'border-white/10 hover:border-white/30'}"
-                    >
-                      <span class="w-4 h-4 rounded-full border border-black/30" style="background-color: {hair.color};"></span>
-                      <span class="text-xs text-zinc-200">{hair.name}</span>
-                    </button>
-                  {/each}
-                </div>
-              </div>
-
-              <!-- Estilos de Penteado -->
-              <div>
-                <h4 class="text-xs font-bold text-zinc-300 uppercase tracking-wider mb-2">Corte / Penteado</h4>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {#each currentItems as item}
-                    <button 
-                      onclick={() => equipItem(item)}
-                      class="p-3 rounded-2xl border text-left flex items-start justify-between transition-all {previewOutfit.hair_front === item.id ? 'border-amber-400 bg-amber-500/10' : 'border-white/10 bg-white/5 hover:border-white/30'}"
-                    >
-                      <div>
-                        <p class="text-xs font-bold text-white">{item.name}</p>
-                        <p class="text-[11px] text-zinc-400 mt-0.5">{item.description}</p>
-                      </div>
-                      {#if previewOutfit.hair_front === item.id}
-                        <span class="w-5 h-5 rounded-full bg-amber-500 text-stone-950 flex items-center justify-center shrink-0">
-                          <Check class="w-3.5 h-3.5 stroke-[3]" />
-                        </span>
-                      {/if}
                     </button>
                   {/each}
                 </div>
@@ -474,7 +733,7 @@
 
             </div>
 
-          <!-- 3. ABAS DE PEÇAS DE ROUPA (SUPERIOR, INFERIOR, VESTIDOS, CASACOS, ETC.) -->
+          <!-- 4. ABAS DE PEÇAS DE ROUPA (SUPERIOR, INFERIOR, VESTIDOS, CASACOS, ETC.) -->
           {:else}
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {#each currentItems as item}
@@ -544,10 +803,10 @@
       <!-- BOTÃO DE CONFIRMAR VISUAL -->
       <button 
         onclick={confirmOutfit}
-        class="w-full sm:w-auto px-8 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-sm flex items-center justify-center gap-2 shadow-xl hover:shadow-amber-500/20 transition-all active:scale-95"
+        class="w-full sm:w-auto px-8 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-sm flex items-center justify-center gap-2 shadow-xl hover:shadow-amber-500/20 transition-all active:scale-95 cursor-pointer"
       >
         <Check class="w-4 h-4 stroke-[3]" />
-        <span>Confirmar e Sair do Closet</span>
+        <span>Confirmar e Salvar Visual</span>
       </button>
 
     </footer>

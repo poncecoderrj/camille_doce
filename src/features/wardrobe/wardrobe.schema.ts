@@ -40,9 +40,14 @@ export const EquippedOutfitSchema = z.object({
   skin_color: z.string().default('pele_clara'),
   eye_color: z.string().default('olhos_castanhos'),
   mouth_expression: z.string().default('boca_sorriso'),
-  hair_front: z.string().default('cabelo_franja_onda_frente'),
+  hair_front: z.string().default('cabelo_franja_onda'),
   hair_back: z.string().default('cabelo_longo_onda_tras'),
   hair_color: z.string().default('#4a2c11'),
+  hair_style: z.string().default('longo_onda'),
+  height: z.number().default(1.65), // 1.50m a 1.82m
+  body_build: z.number().default(0), // -50 (magra) a +50 (plus size/encorpada)
+  muscle_tone: z.number().default(20), // 0 a 100 (suave a atlética)
+  curve_ratio: z.number().default(0), // -30 a +30 (curvas da silhueta)
   blush: z.boolean().default(true),
   top: z.string().optional(),
   bottom: z.string().optional(),

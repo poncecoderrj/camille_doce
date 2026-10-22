@@ -44,50 +44,168 @@
   });
 
   let isCloseUp = $derived(zoomMode === 'busto');
+
+  // ================= MOTOR DE MORFOLOGIA THE SIMS 2D =================
+  // 1. Altura (Normalizada em 1.65m): 1.50m até 1.82m
+  let heightRatio = $derived(((outfit.height ?? 1.65) / 1.65));
+
+  // 2. Massa Corporal: -50 (magra/delicada) a +50 (encorpada/plus-size)
+  let massRatio = $derived(1 + ((outfit.body_build ?? 0) / 220));
+
+  // 3. Curvatura da Silhueta: -30 (reta) a +30 (ampulheta)
+  let curveRatio = $derived(1 + ((outfit.curve_ratio ?? 0) / 500));
+
+  // Escalas finais combinadas
+  let scaleX = $derived((massRatio * curveRatio).toFixed(3));
+  let scaleY = $derived(heightRatio.toFixed(3));
+
+  // 4. Definição Muscular (contraste sutil para realçar sombras anatômicas a 60FPS)
+  let muscleContrast = $derived((100 + ((outfit.muscle_tone ?? 20) - 20) * 0.15).toFixed(1));
+
+  // Largura dinâmica da sombra de piso
+  let shadowWidth = $derived(Math.max(140, Math.min(280, 200 + (outfit.body_build ?? 0) * 0.8)));
+
+  // Sistema de Tintura de Cabelo
+  let hasCustomHairColor = $derived(Boolean(outfit.hair_color && outfit.hair_color !== '#4a2c11'));
+  let isLightHair = $derived.by(() => {
+    if (!outfit.hair_color) return false;
+    const lightTones = ['#d97706', '#ec4899', '#e2e8f0', '#c99346', '#fcd34d', '#ffffff'];
+    return lightTones.some(tone => outfit.hair_color?.toLowerCase().startsWith(tone.toLowerCase()));
+  });
 </script>
 
-<!-- EXIBIÇÃO ILUSTRADA ANIME DE ALTA RESOLUÇÃO DA PROTAGONISTA NO PROVADOR -->
+<!-- EXIBIÇÃO ILUSTRADA ANIME DE ALTA RESOLUÇÃO DA PROTAGONISTA COM MORFOLOGIA DINÂMICA -->
 <div class="relative w-full h-full flex items-center justify-center select-none pointer-events-none {customClass}">
   
-  <!-- CONTÊINER COM ANIMAÇÃO DE CÂMERA (ZOOM DE BUSTO / CORPO INTEIRO) E RESPIRAÇÃO -->
+  <!-- CONTÊINER EXTERNO COM CÂMERA DE ZOOM (BUSTO / CORPO INTEIRO) -->
   <div 
     class="relative w-80 sm:w-96 md:w-[420px] h-[520px] sm:h-[580px] md:h-[640px] flex items-end justify-center transition-all duration-500 origin-top"
     style="transform: {isCloseUp ? 'scale(1.45) translateY(12%)' : 'scale(1) translateY(0)'};"
   >
-    <!-- SOMBRA NO PISO -->
-    <div class="absolute -bottom-2 w-48 sm:w-60 h-6 bg-black/40 rounded-full blur-md pointer-events-none z-0"></div>
-
-    <!-- ILUSTRAÇÃO ANIME DA PROTAGONISTA (100% TRANSPARENTE, SEM FUNDO, RECORTADA) -->
-    <img 
-      src={activeArtPath} 
-      alt="Íris" 
-      class="w-full h-full object-contain object-bottom drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)] vn-breath-anim z-10 transition-all duration-300"
-    />
-
-    <!-- OVERLAY: RUBOR / BLUSH REATIVO NAS BOCHECHAS -->
-    {#if outfit.blush}
+    <!-- CONTÊINER MORFOLÓGICO THE SIMS (ESCALA X/Y, DEFINIÇÃO MUSCULAR E ALTURA) -->
+    <div 
+      class="relative w-full h-full flex items-end justify-center transition-transform duration-300 origin-bottom"
+      style="
+        transform: scale({scaleX}, {scaleY});
+        filter: contrast({muscleContrast}%);
+      "
+    >
+      <!-- SOMBRA NO PISO DINÂMICA COM O CORPO -->
       <div 
-        class="absolute inset-0 w-full h-full pointer-events-none z-20 transition-opacity duration-300 vn-breath-anim"
-        style="background: radial-gradient(circle at 50% 23%, rgba(244, 63, 94, 0.28) 0%, rgba(244, 63, 94, 0.08) 10%, transparent 18%); mix-blend-mode: color-burn;"
+        class="absolute -bottom-2 h-6 bg-black/45 rounded-full blur-md pointer-events-none z-0 transition-all duration-300"
+        style="width: {shadowWidth}px;"
       ></div>
-    {/if}
 
-    <!-- OVERLAY: ÓCULOS DE LEITURA METÁLICOS DOURADOS -->
-    {#if outfit.glasses === 'oculos_redondos_dourados'}
-      <div 
-        class="absolute inset-0 w-full h-full pointer-events-none z-30 flex items-center justify-center vn-breath-anim"
-        style="transform: translateY(-26.8%);"
-      >
-        <svg viewBox="0 0 100 40" class="w-24 h-10 drop-shadow-md">
-          <circle cx="34" cy="20" r="14" stroke="#f59e0b" stroke-width="2.2" fill="rgba(255, 255, 255, 0.12)" />
-          <circle cx="66" cy="20" r="14" stroke="#f59e0b" stroke-width="2.2" fill="rgba(255, 255, 255, 0.12)" />
-          <path d="M 48 20 Q 50 16 52 20" stroke="#f59e0b" stroke-width="2.2" fill="none" />
-          <line x1="20" y1="20" x2="6" y2="18" stroke="#f59e0b" stroke-width="2" />
-          <line x1="80" y1="20" x2="94" y2="18" stroke="#f59e0b" stroke-width="2" />
-        </svg>
-      </div>
-    {/if}
+      <!-- ILUSTRAÇÃO ANIME DA PROTAGONISTA (100% TRANSPARENTE, RECORTADA E CEL-SHADED) -->
+      <img 
+        src={activeArtPath} 
+        alt="Íris" 
+        class="w-full h-full object-contain object-bottom drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)] vn-breath-anim z-10 transition-all duration-300"
+      />
 
+      <!-- CAMADA DE TINTURA DINÂMICA DE CABELO (SISTEMA MULTICOLOR THE SIMS) -->
+      {#if hasCustomHairColor}
+        <!-- Tonalização de Cor Base -->
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-15 vn-breath-anim transition-all duration-300"
+          style="
+            background: {outfit.hair_color};
+            mix-blend-mode: color;
+            opacity: 0.85;
+            mask-image: radial-gradient(ellipse 52% 28% at 50% 16%, black 50%, rgba(0,0,0,0.3) 78%, transparent 95%);
+            -webkit-mask-image: radial-gradient(ellipse 52% 28% at 50% 16%, black 50%, rgba(0,0,0,0.3) 78%, transparent 95%);
+          "
+        ></div>
+
+        <!-- Brilho para cabelos claros (Loiro, Platinado, Rosa Pastel) -->
+        {#if isLightHair}
+          <div 
+            class="absolute inset-0 w-full h-full pointer-events-none z-16 vn-breath-anim transition-all duration-300"
+            style="
+              background: {outfit.hair_color};
+              mix-blend-mode: screen;
+              opacity: 0.38;
+              mask-image: radial-gradient(ellipse 46% 25% at 50% 15%, black 45%, transparent 85%);
+              -webkit-mask-image: radial-gradient(ellipse 46% 25% at 50% 15%, black 45%, transparent 85%);
+            "
+          ></div>
+        {/if}
+      {/if}
+
+      <!-- DETALHES VISUAIS DE PENTEADOS (THE SIMS HAIR CUSTOMIZATION) -->
+      {#if outfit.hair_style === 'rabo_cavalo'}
+        <!-- Elástico & Laço de Rabo de Cavalo Alto -->
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          style="transform: translate(22%, -34%);"
+        >
+          <span class="w-4 h-4 rounded-full bg-rose-500 shadow-md ring-2 ring-white/50 animate-pulse"></span>
+        </div>
+      {:else if outfit.hair_style === 'coque_duplo'}
+        <!-- Coques Duplos Espaciais (Odango) -->
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          style="transform: translate(-22%, -35%);"
+        >
+          <span class="w-5 h-5 rounded-full bg-amber-400/90 shadow-md ring-2 ring-amber-200"></span>
+        </div>
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          style="transform: translate(22%, -35%);"
+        >
+          <span class="w-5 h-5 rounded-full bg-amber-400/90 shadow-md ring-2 ring-amber-200"></span>
+        </div>
+      {:else if outfit.hair_style === 'bob_curto'}
+        <!-- Presilha Elegante Pérola Chanel -->
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          style="transform: translate(16%, -30%);"
+        >
+          <span class="px-2 py-0.5 rounded-full bg-white/95 text-[9px] font-bold text-stone-800 shadow-md border border-stone-200">✦</span>
+        </div>
+      {:else if outfit.hair_style === 'tranca_lateral'}
+        <!-- Laço Romântico de Trança Lateral -->
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          style="transform: translate(18%, -24%);"
+        >
+          <span class="w-3.5 h-3.5 rounded-sm bg-pink-400 rotate-45 shadow-sm ring-1 ring-white/60"></span>
+        </div>
+      {:else if outfit.hair_style === 'repicado_rock'}
+        <!-- Grampos Metálicos Rebeldes -->
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          style="transform: translate(-17%, -31%);"
+        >
+          <span class="text-xs text-zinc-100 font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">⚔️</span>
+        </div>
+      {/if}
+
+      <!-- OVERLAY: RUBOR / BLUSH REATIVO NAS BOCHECHAS -->
+      {#if outfit.blush}
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-20 transition-opacity duration-300 vn-breath-anim"
+          style="background: radial-gradient(circle at 50% 23%, rgba(244, 63, 94, 0.30) 0%, rgba(244, 63, 94, 0.08) 10%, transparent 18%); mix-blend-mode: color-burn;"
+        ></div>
+      {/if}
+
+      <!-- OVERLAY: ÓCULOS DE LEITURA METÁLICOS DOURADOS -->
+      {#if outfit.glasses === 'oculos_redondos_dourados'}
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-30 flex items-center justify-center vn-breath-anim"
+          style="transform: translateY(-26.8%);"
+        >
+          <svg viewBox="0 0 100 40" class="w-24 h-10 drop-shadow-md">
+            <circle cx="34" cy="20" r="14" stroke="#f59e0b" stroke-width="2.2" fill="rgba(255, 255, 255, 0.12)" />
+            <circle cx="66" cy="20" r="14" stroke="#f59e0b" stroke-width="2.2" fill="rgba(255, 255, 255, 0.12)" />
+            <path d="M 48 20 Q 50 16 52 20" stroke="#f59e0b" stroke-width="2.2" fill="none" />
+            <line x1="20" y1="20" x2="6" y2="18" stroke="#f59e0b" stroke-width="2" />
+            <line x1="80" y1="20" x2="94" y2="18" stroke="#f59e0b" stroke-width="2" />
+          </svg>
+        </div>
+      {/if}
+
+    </div>
   </div>
 </div>
 
