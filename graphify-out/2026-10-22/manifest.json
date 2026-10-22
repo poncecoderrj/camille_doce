@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "content/arcs/arco_1_adolescencia/cap_00_prologo.json": {
-    "mtime": 1792706231.3815598,
-    "seen": 1792706431.1903663,
-    "ast_hash": "b1a85c44ca482370ebbff550337b5646",
+    "mtime": 1792707147.4430974,
+    "seen": 1792707254.9817574,
+    "ast_hash": "d8b33bfe496ef03623043701c34c7184",
     "semantic_hash": ""
   },
   "content/characters/characters.json": {
@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "src/features/game-state/GameState.svelte.ts": {
-    "mtime": 1792706549.0110836,
-    "seen": 1792706694.1660416,
-    "ast_hash": "9860d4d2099d4ab230be27e3846393ec",
+    "mtime": 1792707004.1068609,
+    "seen": 1792707254.9817574,
+    "ast_hash": "ded3c44d042924a3128a7bf5c5e04bb4",
     "semantic_hash": ""
   },
   "src/features/smartphone/PhoneShell.svelte": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "src/features/stage/CharacterSprite.svelte": {
-    "mtime": 1792706362.1400192,
-    "seen": 1792706431.1903663,
-    "ast_hash": "828e3ff45a3db9d1f5b349b58397481d",
+    "mtime": 1792707224.8243692,
+    "seen": 1792707254.9817574,
+    "ast_hash": "0638afbb9d7c2e4be0b28590ed7ccd83",
     "semantic_hash": ""
   },
   "src/features/stage/SceneryBackground.svelte": {
@@ -72,15 +72,15 @@
     "semantic_hash": ""
   },
   "src/features/wardrobe/wardrobe.schema.ts": {
-    "mtime": 1792703286.4615328,
-    "seen": 1792706151.533809,
-    "ast_hash": "104b573cf84bb7aefd3429aaf1537a43",
+    "mtime": 1792706839.7194822,
+    "seen": 1792707254.9817574,
+    "ast_hash": "a8baf9da03656d5744b65125fc02f715",
     "semantic_hash": ""
   },
   "src/layout/DualStage.svelte": {
-    "mtime": 1792706675.4695182,
-    "seen": 1792706694.1660416,
-    "ast_hash": "95f89e867cc646cae9e30a8b98315f6f",
+    "mtime": 1792707186.3628175,
+    "seen": 1792707254.9817574,
+    "ast_hash": "b7b8bd3ea77071e0b2052c7e63248c1e",
     "semantic_hash": ""
   },
   "src/main.ts": {
@@ -183,6 +183,24 @@
     "mtime": 1792706323.8139575,
     "seen": 1792706431.1903663,
     "ast_hash": "725de5dcbbfa13d507550426a89511de",
+    "semantic_hash": ""
+  },
+  "src/features/wardrobe/PaperdollAvatar.svelte": {
+    "mtime": 1792706970.5365415,
+    "seen": 1792707254.9817574,
+    "ast_hash": "a5c633ea71be1b56dacbc62ec6c97a78",
+    "semantic_hash": ""
+  },
+  "src/features/wardrobe/WardrobeModal.svelte": {
+    "mtime": 1792707054.3820162,
+    "seen": 1792707254.9817574,
+    "ast_hash": "948b93f5ae2587f0c3f7349d504feb9e",
+    "semantic_hash": ""
+  },
+  "src/features/wardrobe/wardrobe.catalog.ts": {
+    "mtime": 1792706880.8187327,
+    "seen": 1792707254.9817574,
+    "ast_hash": "bc509b73520509f6bad663efc3751923",
     "semantic_hash": ""
   }
 }

@@ -2,6 +2,7 @@
   import type { PersonagemId } from '../dialogue/narrative.schema';
   import { gameState } from '../game-state/GameState.svelte';
   import PaperdollAvatar from '../wardrobe/PaperdollAvatar.svelte';
+  import PaperdollActor from '../characters/PaperdollActor.svelte';
 
   interface Props {
     speaker: PersonagemId;
@@ -10,14 +11,7 @@
     timeOfDay?: 'manha' | 'tarde' | 'entardecer' | 'noite';
   }
 
-  let { speaker, speakerName = '', expression = 'neutral', timeOfDay = 'manha' }: Props = $props();
-
-  // Mapeamento dos sprites reais ilustrados dos garotos
-  const characterSprites: Record<string, string> = {
-    dante: '/assets/characters/dante.png',
-    lucas: '/assets/characters/lucas.png',
-    theo: '/assets/characters/theo.png'
-  };
+  let { speaker, speakerName = '', expression = 'neutro', timeOfDay = 'manha' }: Props = $props();
 
   const characterProfiles: Record<string, {
     name: string;
@@ -57,7 +51,6 @@
   };
 
   let isProtagonist = $derived(speaker === 'protagonista' || speaker === 'iris');
-  let spriteUrl = $derived(characterSprites[speaker] || null);
   let profile = $derived(characterProfiles[speaker] || characterProfiles.narrador);
   let isLight = $derived(gameState.theme === 'light');
 </script>
@@ -65,7 +58,7 @@
 {#if isProtagonist}
   <!-- PROTAGONISTA PAPERDOLL AO VIVO COM ROUPAS EM CAMADAS SOBREPOSTAS -->
   <div class="relative flex flex-col items-center justify-end select-none pointer-events-none transition-all duration-700">
-    <div class="relative w-80 sm:w-96 md:w-[420px] h-[480px] sm:h-[540px] md:h-[600px] flex flex-col items-center justify-end animate-breathe">
+    <div class="relative w-80 sm:w-96 md:w-[420px] h-[480px] sm:h-[540px] md:h-[600px] flex flex-col items-center justify-end">
       <div class="w-full h-full flex items-center justify-center">
         <PaperdollAvatar 
           outfit={gameState.equippedOutfit} 
@@ -88,48 +81,28 @@
       </div>
     </div>
   </div>
-{:else if speaker !== 'narrador' && spriteUrl}
+{:else if speaker !== 'narrador' && ['dante', 'lucas', 'theo'].includes(speaker)}
+  <!-- RAPAZES (DANTE, LUCAS, THEO) — MOTOR PAPERDOLL ANIME 100% TRANSPARENTE COM MICROANIMAÇÕES -->
   <div class="relative flex flex-col items-center justify-end select-none pointer-events-none transition-all duration-700">
     
-    <!-- Container com Respiração Sutil (Animação de Câmera 60FPS) -->
-    <div class="relative w-80 sm:w-96 md:w-[420px] h-[480px] sm:h-[540px] md:h-[600px] flex flex-col items-center justify-end animate-breathe">
-      
-      <!-- BUSTO ILUSTRADO REAL ESTILO VISUAL NOVEL / TEARS OF THEMIS / AMOR DOCE -->
-      <img 
-        src={spriteUrl} 
-        alt={profile.name}
-        class="w-full h-full object-contain object-bottom drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)] transition-all duration-500 rounded-3xl"
-        style="-webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%); mask-image: linear-gradient(to bottom, black 85%, transparent 100%);"
-      />
+    <!-- ATOR PAPERDOLL TRANSPARENTE (ZERO MOLDURAS QUADRADAS, PISA DIRETO NO CENÁRIO) -->
+    <PaperdollActor 
+      characterId={speaker} 
+      {expression} 
+    />
 
-      <!-- Cartão Nobre de Identificação do Personagem -->
-      <div 
-        class="absolute -bottom-2 z-20 px-5 py-2 rounded-2xl backdrop-blur-xl border shadow-xl flex flex-col items-center gap-0.5 transition-all duration-300 {isLight ? 'bg-[#ebe4d5]/95 border-[#c5b79f] text-[#2c241e]' : 'bg-[#0d0e14]/90 border-white/8 text-[#ededef]'}"
-      >
-        <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full" style="background: {profile.accentColor};"></span>
-          <h2 class="text-sm font-cinzel font-bold tracking-wider">{profile.name}</h2>
-        </div>
-        <p class="text-[10px] font-sans-ui tracking-wide {isLight ? 'text-stone-500' : 'text-zinc-400'} font-medium">
-          {profile.title}
-        </p>
+    <!-- Cartão Elegante de Identificação do Personagem -->
+    <div 
+      class="absolute -bottom-2 z-20 px-5 py-2 rounded-2xl backdrop-blur-xl border shadow-xl flex flex-col items-center gap-0.5 transition-all duration-300 {isLight ? 'bg-[#ebe4d5]/95 border-[#c5b79f] text-[#2c241e]' : 'bg-[#0d0e14]/90 border-white/8 text-[#ededef]'}"
+    >
+      <div class="flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full" style="background: {profile.accentColor};"></span>
+        <h2 class="text-sm font-cinzel font-bold tracking-wider">{profile.name}</h2>
       </div>
-
+      <p class="text-[10px] font-sans-ui tracking-wide {isLight ? 'text-stone-500' : 'text-zinc-400'} font-medium">
+        {profile.title}
+      </p>
     </div>
+
   </div>
 {/if}
-
-<style>
-  @keyframes breathe {
-    0%, 100% {
-      transform: translateY(0px) scale(1);
-    }
-    50% {
-      transform: translateY(-4px) scale(1.006);
-    }
-  }
-
-  .animate-breathe {
-    animation: breathe 5s ease-in-out infinite;
-  }
-</style>

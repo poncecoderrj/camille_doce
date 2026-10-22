@@ -1,6 +1,6 @@
 {
   "0": "DualStage.svelte",
-  "1": "CharacterSprite.svelte",
+  "1": "DanteAvatar.svelte",
   "2": "package.json",
   "3": "WardrobeModal.svelte",
   "4": "compilerOptions",
@@ -9,7 +9,7 @@
   "7": "devDependencies",
   "8": "DialogueBox.svelte",
   "9": "gameState",
-  "10": "dependencies",
+  "10": "PaperdollActor.svelte",
   "11": "Svelte + TS + Vite",
   "12": "tsconfig.json",
   "13": "svelte.config.js",
