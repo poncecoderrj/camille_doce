@@ -1,11 +1,18 @@
 <script lang="ts">
   import { gameState } from '../game-state/GameState.svelte';
-  import type { EquippedOutfit, OutfitId, BodyArchetype } from './wardrobe.schema';
+  import type { 
+    EquippedOutfit, 
+    OutfitId, 
+    BodyArchetype, 
+    HairStyle, 
+    BackpackType 
+  } from './wardrobe.schema';
   import { 
     OUTFIT_OPTIONS, 
     BODY_ARCHETYPES, 
-    HAIR_COLORS, 
-    ACCESSORIES 
+    HAIR_STYLES, 
+    BACKPACK_OPTIONS, 
+    HAIR_COLORS 
   } from './wardrobe.catalog';
   import AnimeProtagonistDisplay, { type ProtagonistZoomMode } from './AnimeProtagonistDisplay.svelte';
   import { 
@@ -13,13 +20,11 @@
     X, 
     RotateCcw, 
     Check, 
-    Heart, 
-    Smile, 
-    Glasses, 
     User, 
-    Ruler, 
-    Activity, 
-    Palette 
+    Smile, 
+    Palette, 
+    Backpack, 
+    Glasses 
   } from 'lucide-svelte';
 
   interface Props {
@@ -28,84 +33,86 @@
 
   let { onClose }: Props = $props();
 
-  // Rascunho local para experimentar antes de salvar
+  // Rascunho local para experimentar livremente antes de salvar
   let previewOutfit = $state<EquippedOutfit>({ 
     ...gameState.equippedOutfit,
     outfit_id: gameState.equippedOutfit.outfit_id ?? 'uniforme_lotus',
     body_archetype: gameState.equippedOutfit.body_archetype ?? 'padrao',
+    hair_style: (gameState.equippedOutfit.hair_style as HairStyle) ?? 'ondulado_longo',
+    backpack: (gameState.equippedOutfit.backpack as BackpackType) ?? 'mochila_lotus',
+    hair_color: gameState.equippedOutfit.hair_color ?? '#4a2c11',
     glasses: Boolean(gameState.equippedOutfit.glasses),
     blush: gameState.equippedOutfit.blush ?? true
   });
 
   // Controle de Câmera & Abas
   let zoomMode = $state<ProtagonistZoomMode>('corpo_inteiro');
-  let activeTab = $state<'looks' | 'corpo' | 'cabelo' | 'acessorios'>('looks');
+  let activeTab = $state<'looks' | 'corpos' | 'cabelos' | 'cores' | 'mochilas'>('looks');
 
   const tabs = [
-    { id: 'looks', label: 'Looks & Trajes', icon: Sparkles },
-    { id: 'corpo', label: 'Físico & Biotipo', icon: User },
-    { id: 'cabelo', label: 'Cabelo & Rosto', icon: Smile },
-    { id: 'acessorios', label: 'Acessórios', icon: Glasses }
+    { id: 'looks', label: '1. Looks & Trajes', icon: Sparkles },
+    { id: 'corpos', label: '2. Tipos de Corpo (5)', icon: User },
+    { id: 'cabelos', label: '3. Penteados', icon: Smile },
+    { id: 'cores', label: '4. Cores do Cabelo', icon: Palette },
+    { id: 'mochilas', label: '5. Mochila & Bolsas', icon: Backpack }
   ];
 
   function selectTab(tabId: typeof activeTab) {
     activeTab = tabId;
-    if (tabId === 'cabelo') {
+    if (tabId === 'cabelos' || tabId === 'cores') {
       zoomMode = 'cabelo_rosto';
-    } else if (tabId === 'acessorios') {
-      zoomMode = 'cabelo_rosto';
-    } else if (tabId === 'corpo') {
-      zoomMode = 'corpo_inteiro';
+    } else if (tabId === 'mochilas') {
+      zoomMode = 'torso';
     } else {
       zoomMode = 'corpo_inteiro';
     }
   }
 
-  // Pontuação e Reações Dinâmicas dos Garotos
+  // Reações e Comentários Dinâmicos dos Garotos em Tempo Real
   let boyReactions = $derived.by(() => {
-    const outfit = previewOutfit.outfit_id;
-    if (outfit === 'look_rock') {
-      return {
-        dominant: 'dante',
-        danteScore: 12,
-        lucasScore: 2,
-        theoScore: 4,
-        comment: 'Dante: "Uau... Essa jaqueta de couro e essa postura combinam direto com o som da banda. Ficou incrível."'
-      };
+    let danteScore = 5;
+    let lucasScore = 5;
+    let theoScore = 5;
+
+    // Look
+    if (previewOutfit.outfit_id === 'look_rock') danteScore += 10;
+    else if (previewOutfit.outfit_id === 'look_romantico') theoScore += 10;
+    else lucasScore += 10;
+
+    // Mochila
+    if (previewOutfit.backpack === 'bolsa_rock') danteScore += 5;
+    else if (previewOutfit.backpack === 'tote_romantica') theoScore += 5;
+    else if (previewOutfit.backpack === 'mochila_lotus') lucasScore += 5;
+
+    let comment = 'Lucas: "Apresentação exemplar e impecavelmente alinhada aos padrões da Lótus."';
+    if (danteScore > lucasScore && danteScore > theoScore) {
+      comment = 'Dante: "Uau... Esse estilo tem atitude de sobra. Dá pra ver que você não tá aqui pra brincadeira."';
+    } else if (theoScore > lucasScore && theoScore > danteScore) {
+      comment = 'Theo: "Tons poéticos e acolhedores... Parece uma pintura feita à mão. Ficou muito lindo em você."';
     }
-    if (outfit === 'look_romantico') {
-      return {
-        dominant: 'theo',
-        danteScore: 4,
-        lucasScore: 5,
-        theoScore: 12,
-        comment: 'Theo: "Cores suaves e tecido aconchegante... Parece uma pintura feita em aquarela. Combina muito com você."'
-      };
-    }
-    return {
-      dominant: 'lucas',
-      danteScore: 3,
-      lucasScore: 10,
-      theoScore: 5,
-      comment: 'Lucas: "Impecável. Uma apresentação refinada e perfeitamente alinhada aos padrões de prestígio da Lótus."'
-    };
+
+    return { danteScore, lucasScore, theoScore, comment };
   });
 
   // Ações
   function setOutfit(id: OutfitId) {
     previewOutfit.outfit_id = id;
-    previewOutfit.body_archetype = 'padrao'; // Ao trocar de look completo, volta ao porte padrão para aquele look
   }
 
-  function setArchetype(arch: typeof BODY_ARCHETYPES[0]) {
-    previewOutfit.body_archetype = arch.id;
-    previewOutfit.height = arch.height;
-    previewOutfit.body_build = arch.body_build;
-    previewOutfit.muscle_tone = arch.muscle_tone;
+  function setBodyArchetype(id: BodyArchetype) {
+    previewOutfit.body_archetype = id;
+  }
+
+  function setHairStyle(id: HairStyle) {
+    previewOutfit.hair_style = id;
   }
 
   function setHairColor(colorHex: string) {
     previewOutfit.hair_color = colorHex;
+  }
+
+  function setBackpack(id: BackpackType) {
+    previewOutfit.backpack = id;
   }
 
   function resetToSaved() {
@@ -113,19 +120,21 @@
       ...gameState.equippedOutfit,
       outfit_id: gameState.equippedOutfit.outfit_id ?? 'uniforme_lotus',
       body_archetype: gameState.equippedOutfit.body_archetype ?? 'padrao',
+      hair_style: (gameState.equippedOutfit.hair_style as HairStyle) ?? 'ondulado_longo',
+      backpack: (gameState.equippedOutfit.backpack as BackpackType) ?? 'mochila_lotus',
+      hair_color: gameState.equippedOutfit.hair_color ?? '#4a2c11',
       glasses: Boolean(gameState.equippedOutfit.glasses),
       blush: gameState.equippedOutfit.blush ?? true
     };
   }
 
   function saveAndApply() {
-    // Aplica no estado oficial do jogo
     gameState.equippedOutfit = {
       ...gameState.equippedOutfit,
       ...previewOutfit
     };
 
-    // Concede bônus de afinidade baseado no look escolhido
+    // Bônus narrativo de afinidade
     if (previewOutfit.outfit_id === 'look_rock') {
       gameState.affinity.dante = (gameState.affinity.dante || 0) + 3;
     } else if (previewOutfit.outfit_id === 'look_romantico') {
@@ -138,7 +147,7 @@
   }
 </script>
 
-<!-- MODAL PRINCIPAL DO PROVADOR (PADRÃO AMOR DOCE & TEARS OF THEMIS) -->
+<!-- MODAL PRINCIPAL DO PROVADOR RECONSTRUÍDO DO ZERO (SEM SOBREPOSIÇÃO) -->
 <div class="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-200">
   
   <div class="relative w-full max-w-6xl h-[92vh] max-h-[860px] bg-[#12131a] border border-white/10 rounded-3xl shadow-2xl flex flex-col overflow-hidden">
@@ -150,12 +159,12 @@
           <Sparkles class="w-5 h-5" />
         </div>
         <div>
-          <h2 class="text-base font-bold text-white tracking-wide">Provador & Personalização da Íris</h2>
-          <p class="text-xs text-zinc-400">Escolha seu look, biotipo e estilo com visualização limpa em tempo real</p>
+          <h2 class="text-base font-bold text-white tracking-wide">Personalização Completa da Protagonista</h2>
+          <p class="text-xs text-zinc-400">Escolha look, 5 biotipos de corpo, penteados, cores e mochila</p>
         </div>
       </div>
 
-      <!-- BADGES DE AFINIDADE -->
+      <!-- BADGES DE AFINIDADE EM TEMPO REAL -->
       <div class="hidden md:flex items-center gap-2 text-xs font-semibold">
         <span class="px-2.5 py-1 rounded-xl bg-rose-500/15 border border-rose-500/30 text-rose-300">
           🎸 Dante +{boyReactions.danteScore}
@@ -168,17 +177,17 @@
         </span>
       </div>
 
-      <!-- FECHAR -->
+      <!-- BOTÃO FECHAR -->
       <button 
         onclick={onClose}
         class="p-2.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 hover:text-white transition-colors"
-        title="Fechar provador"
+        title="Fechar"
       >
         <X class="w-5 h-5" />
       </button>
     </header>
 
-    <!-- CORPO PRINCIPAL (PALCO CENTRAL À ESQUERDA + CONTROLES À DIREITA) -->
+    <!-- ÁREA PRINCIPAL (PALCO CENTRAL À ESQUERDA + CONTROLES À DIREITA) -->
     <div class="flex-1 flex flex-col md:flex-row overflow-hidden">
       
       <!-- ================= COLUNA ESQUERDA: PALCO DA PERSONAGEM ================= -->
@@ -206,7 +215,7 @@
               onclick={() => zoomMode = 'corpo_inteiro'}
               class="px-2.5 py-1 rounded-lg transition-all {zoomMode === 'corpo_inteiro' ? 'bg-amber-500 text-stone-950 font-bold shadow' : 'text-zinc-400 hover:text-white'}"
             >
-              🧍 Corpo Todo
+              🧍 Todo
             </button>
           </div>
 
@@ -224,13 +233,13 @@
           <AnimeProtagonistDisplay outfit={previewOutfit} {zoomMode} />
         </div>
 
-        <!-- REAÇÃO DO GAROTO EM TEMPO REAL -->
+        <!-- COMENTÁRIO DINÂMICO DOS PAQUERAS -->
         <div class="w-full p-3 rounded-2xl bg-black/60 border border-white/10 text-xs text-zinc-200 italic shadow-lg z-10">
           <p>{boyReactions.comment}</p>
         </div>
       </div>
 
-      <!-- ================= COLUNA DIREITA: CATÁLOGO DE CUSTOMIZAÇÃO ================= -->
+      <!-- ================= COLUNA DIREITA: AS 5 ETAPAS DE PERSONALIZAÇÃO ================= -->
       <div class="flex-1 flex flex-col overflow-hidden bg-[#101117]">
         
         <!-- ABAS DE NAVEGAÇÃO -->
@@ -246,20 +255,23 @@
           {/each}
         </div>
 
-        <!-- CONTEÚDO DAS ABAS -->
+        <!-- CONTEÚDO DAS 5 ABAS -->
         <div class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
           
-          <!-- 1. ABA: LOOKS & TRAJES COMPLETOS -->
+          <!-- 1. ABA: LOOKS & TRAJES -->
           {#if activeTab === 'looks'}
             <div class="space-y-4">
-              <p class="text-xs text-zinc-400">
-                Trajes completos ilustrados em estilo anime oficial, sem sobreposições estranhas ou recortes bugados:
-              </p>
+              <div>
+                <h3 class="text-sm font-bold text-white">Trajes Oficiais Completos</h3>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Escolha o look principal da personagem (ilustrado sem sobreposição de peças):
+                </p>
+              </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {#each OUTFIT_OPTIONS as look}
                   <div 
-                    class="p-4 rounded-2xl border transition-all flex flex-col justify-between {previewOutfit.outfit_id === look.id && previewOutfit.body_archetype === 'padrao' ? 'border-amber-500 bg-amber-500/10 shadow-lg' : 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/10'}"
+                    class="p-4 rounded-2xl border transition-all flex flex-col justify-between {previewOutfit.outfit_id === look.id ? 'border-amber-500 bg-amber-500/10 shadow-lg' : 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/10'}"
                   >
                     <div>
                       <div class="flex items-center justify-between mb-2">
@@ -270,15 +282,15 @@
                           +{look.affinityBonus} Afinidade
                         </span>
                       </div>
-                      <h3 class="text-sm font-bold text-white mb-1.5">{look.name}</h3>
+                      <h4 class="text-sm font-bold text-white mb-1">{look.name}</h4>
                       <p class="text-xs text-zinc-300 line-clamp-3 leading-relaxed">{look.description}</p>
                     </div>
 
                     <button 
                       onclick={() => setOutfit(look.id)}
-                      class="mt-4 w-full py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all {previewOutfit.outfit_id === look.id && previewOutfit.body_archetype === 'padrao' ? 'bg-emerald-500 text-white shadow' : 'bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-md'}"
+                      class="mt-4 w-full py-2.5 rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-all {previewOutfit.outfit_id === look.id ? 'bg-emerald-500 text-white shadow' : 'bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-md'}"
                     >
-                      {#if previewOutfit.outfit_id === look.id && previewOutfit.body_archetype === 'padrao'}
+                      {#if previewOutfit.outfit_id === look.id}
                         <Check class="w-4 h-4" />
                         <span>Vestindo Agora</span>
                       {:else}
@@ -290,24 +302,21 @@
               </div>
             </div>
 
-          <!-- 2. ABA: FÍSICO & BIOTIPO ANATÔMICO (THE SIMS 2D) -->
-          {:else if activeTab === 'corpo'}
-            <div class="space-y-6">
+          <!-- 2. ABA: OS 5 TIPOS DE CORPO -->
+          {:else if activeTab === 'corpos'}
+            <div class="space-y-4">
               <div>
-                <h3 class="text-sm font-bold text-white flex items-center gap-2">
-                  <User class="w-4 h-4 text-amber-400" />
-                  <span>Biotipos Anatômicos Desenhados à Mão</span>
-                </h3>
-                <p class="text-xs text-zinc-400 mt-1">
-                  Selecione variações corporais autênticas (traços de corpo cheinho, musculoso ou fino desenhados de verdade):
+                <h3 class="text-sm font-bold text-white">5 Biotipos Anatômicos da Personagem</h3>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Escolha como a estrutura física da protagonista é desenhada:
                 </p>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {#each BODY_ARCHETYPES as arch}
                   <button 
-                    onclick={() => setArchetype(arch)}
-                    class="p-4 rounded-2xl border text-left transition-all {previewOutfit.body_archetype === arch.id ? 'border-amber-500 bg-amber-500/10 shadow-lg' : 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/10'}"
+                    onclick={() => setBodyArchetype(arch.id)}
+                    class="p-4 rounded-2xl border text-left transition-all {previewOutfit.body_archetype === arch.id ? 'border-amber-500 bg-amber-500/15 shadow-xl ring-1 ring-amber-500/50' : 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/10'}"
                   >
                     <div class="flex items-center justify-between mb-1.5">
                       <span class="text-sm font-bold text-white">{arch.name}</span>
@@ -316,56 +325,60 @@
                       </span>
                     </div>
                     <p class="text-xs text-zinc-300 leading-relaxed">{arch.description}</p>
+                    <div class="mt-2.5 flex items-center gap-1.5 text-[11px] font-semibold text-amber-400">
+                      {#if previewOutfit.body_archetype === arch.id}
+                        <Check class="w-3.5 h-3.5" />
+                        <span>Biotipo Ativo</span>
+                      {:else}
+                        <span class="text-zinc-500">Clique para selecionar</span>
+                      {/if}
+                    </div>
                   </button>
                 {/each}
               </div>
+            </div>
 
-              <!-- SLIDERS ADICIONAIS FINOS THE SIMS -->
-              <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-4">
-                <h4 class="text-xs font-bold uppercase tracking-wider text-amber-400">Microajustes de Escala (The Sims)</h4>
-                
-                <div class="space-y-2">
-                  <div class="flex justify-between text-xs text-zinc-300">
-                    <span class="flex items-center gap-1.5"><Ruler class="w-3.5 h-3.5" /> Altura Corporal</span>
-                    <span class="font-mono text-amber-400">{previewOutfit.height?.toFixed(2)}m</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="1.50" 
-                    max="1.80" 
-                    step="0.01" 
-                    bind:value={previewOutfit.height}
-                    class="w-full accent-amber-500 bg-white/10 h-1.5 rounded-lg appearance-none cursor-pointer"
-                  />
-                </div>
+          <!-- 3. ABA: PENTEADOS / TIPOS DE CABELO -->
+          {:else if activeTab === 'cabelos'}
+            <div class="space-y-4">
+              <div>
+                <h3 class="text-sm font-bold text-white">Estilos e Penteados de Cabelo</h3>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Escolha o corte que expressa a atitude da sua personagem:
+                </p>
+              </div>
 
-                <div class="space-y-2">
-                  <div class="flex justify-between text-xs text-zinc-300">
-                    <span class="flex items-center gap-1.5"><Activity class="w-3.5 h-3.5" /> Tonificação Muscular</span>
-                    <span class="font-mono text-amber-400">{previewOutfit.muscle_tone}%</span>
-                  </div>
-                  <input 
-                    type="range" 
-                    min="0" 
-                    max="100" 
-                    step="5" 
-                    bind:value={previewOutfit.muscle_tone}
-                    class="w-full accent-amber-500 bg-white/10 h-1.5 rounded-lg appearance-none cursor-pointer"
-                  />
-                </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {#each HAIR_STYLES as hs}
+                  <button 
+                    onclick={() => setHairStyle(hs.id)}
+                    class="p-4 rounded-2xl border text-left transition-all {previewOutfit.hair_style === hs.id ? 'border-amber-500 bg-amber-500/15 shadow-lg' : 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/10'}"
+                  >
+                    <span class="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-white/10 text-amber-300 mb-2 inline-block">
+                      {hs.tag}
+                    </span>
+                    <h4 class="text-sm font-bold text-white mb-1">{hs.name}</h4>
+                    <p class="text-xs text-zinc-300 leading-relaxed mb-3">{hs.description}</p>
+                    <div class="text-[11px] font-semibold text-amber-400 flex items-center gap-1">
+                      {#if previewOutfit.hair_style === hs.id}
+                        <Check class="w-3.5 h-3.5" />
+                        <span>Equipado</span>
+                      {:else}
+                        <span class="text-zinc-500">Selecionar</span>
+                      {/if}
+                    </div>
+                  </button>
+                {/each}
               </div>
             </div>
 
-          <!-- 3. ABA: CABELO & ROSTO -->
-          {:else if activeTab === 'cabelo'}
+          <!-- 4. ABA: CORES DE CABELO & ROSTO -->
+          {:else if activeTab === 'cores'}
             <div class="space-y-6">
               <div>
-                <h3 class="text-sm font-bold text-white flex items-center gap-2">
-                  <Palette class="w-4 h-4 text-amber-400" />
-                  <span>Paleta Dinâmica de Cores de Cabelo (Tempo Real)</span>
-                </h3>
-                <p class="text-xs text-zinc-400 mt-1">
-                  Clique para alterar instantaneamente a cor dos fios da protagonista com iluminação harmonizada:
+                <h3 class="text-sm font-bold text-white">Paleta Dinâmica de Cores de Cabelo (Tempo Real)</h3>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Selecione qualquer tom para tingir suavemente os fios:
                 </p>
               </div>
 
@@ -384,63 +397,90 @@
                 {/each}
               </div>
 
-              <!-- RUBOR / BLUSH TOGGLE -->
-              <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
-                <div>
-                  <h4 class="text-sm font-bold text-white flex items-center gap-2">
-                    <span>🌸 Rubor Natural nas Bochechas</span>
-                  </h4>
-                  <p class="text-xs text-zinc-400">Ativa um toque rosado meigo no rosto para cenas emotivas</p>
+              <!-- ACESSÓRIOS DE ROSTO: BLUSH & ÓCULOS -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                  <div>
+                    <h4 class="text-sm font-bold text-white">🌸 Rubor Natural</h4>
+                    <p class="text-xs text-zinc-400">Blush rosado nas bochechas</p>
+                  </div>
+                  <button 
+                    onclick={() => previewOutfit.blush = !previewOutfit.blush}
+                    class="px-4 py-1.5 rounded-xl text-xs font-bold transition-all {previewOutfit.blush ? 'bg-rose-500 text-white shadow' : 'bg-white/10 text-zinc-400'}"
+                  >
+                    {previewOutfit.blush ? 'Ativado' : 'Desativado'}
+                  </button>
                 </div>
-                <button 
-                  onclick={() => previewOutfit.blush = !previewOutfit.blush}
-                  class="px-4 py-1.5 rounded-xl text-xs font-bold transition-all {previewOutfit.blush ? 'bg-rose-500 text-white shadow' : 'bg-white/10 text-zinc-400'}"
-                >
-                  {previewOutfit.blush ? 'Ativado' : 'Desativado'}
-                </button>
+
+                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+                  <div>
+                    <h4 class="text-sm font-bold text-white">👓 Óculos Redondos</h4>
+                    <p class="text-xs text-zinc-400">Armação clássica dourada</p>
+                  </div>
+                  <button 
+                    onclick={() => previewOutfit.glasses = !previewOutfit.glasses}
+                    class="px-4 py-1.5 rounded-xl text-xs font-bold transition-all {previewOutfit.glasses ? 'bg-amber-500 text-stone-950 font-bold shadow' : 'bg-white/10 text-zinc-400'}"
+                  >
+                    {previewOutfit.glasses ? 'Equipado' : 'Equipar'}
+                  </button>
+                </div>
               </div>
             </div>
 
-          <!-- 4. ABA: ACESSÓRIOS -->
-          {:else if activeTab === 'acessorios'}
-            <div class="space-y-6">
+          <!-- 5. ABA: MOCHILAS & BOLSAS -->
+          {:else if activeTab === 'mochilas'}
+            <div class="space-y-4">
               <div>
-                <h3 class="text-sm font-bold text-white flex items-center gap-2">
-                  <Glasses class="w-4 h-4 text-amber-400" />
-                  <span>Acessórios de Rosto & Cabeça</span>
-                </h3>
-                <p class="text-xs text-zinc-400 mt-1">
-                  Sobreponha acessórios desenhados com posicionamento anatômico exato:
+                <h3 class="text-sm font-bold text-white">Mochilas & Bolsas para a Escola</h3>
+                <p class="text-xs text-zinc-400 mt-0.5">
+                  Escolha o acessório que a protagonista carrega:
                 </p>
               </div>
 
-              <div class="p-4 rounded-2xl border transition-all flex items-center justify-between {previewOutfit.glasses ? 'border-amber-500 bg-amber-500/10' : 'border-white/10 bg-white/5'}">
-                <div class="flex items-center gap-3">
-                  <span class="text-2xl">👓</span>
-                  <div>
-                    <h4 class="text-sm font-bold text-white">Óculos Redondos de Grau</h4>
-                    <p class="text-xs text-zinc-400">Armação clássica de latão dourado polido (Afinidade com Lucas)</p>
-                  </div>
-                </div>
-
-                <button 
-                  onclick={() => previewOutfit.glasses = !previewOutfit.glasses}
-                  class="px-4 py-2 rounded-xl text-xs font-bold transition-all {previewOutfit.glasses ? 'bg-amber-500 text-stone-950 font-bold shadow' : 'bg-white/10 text-zinc-300 hover:bg-white/20'}"
-                >
-                  {previewOutfit.glasses ? 'Equipado' : 'Equipar'}
-                </button>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {#each BACKPACK_OPTIONS as bp}
+                  <button 
+                    onclick={() => setBackpack(bp.id)}
+                    class="p-4 rounded-2xl border text-left transition-all flex items-start gap-3.5 {previewOutfit.backpack === bp.id ? 'border-amber-500 bg-amber-500/15 shadow-lg' : 'border-white/10 bg-white/5 hover:border-white/20 hover:bg-white/10'}"
+                  >
+                    <span class="text-3xl p-2 rounded-xl bg-white/5 border border-white/10 shrink-0">
+                      {bp.icon}
+                    </span>
+                    <div class="flex-1">
+                      <div class="flex items-center justify-between">
+                        <h4 class="text-sm font-bold text-white">{bp.name}</h4>
+                        {#if bp.affinityTarget === 'lucas'}
+                          <span class="text-[10px] font-bold text-blue-300">👔 Lótus</span>
+                        {:else if bp.affinityTarget === 'dante'}
+                          <span class="text-[10px] font-bold text-rose-300">🎸 Rock</span>
+                        {:else if bp.affinityTarget === 'theo'}
+                          <span class="text-[10px] font-bold text-emerald-300">🎨 Poético</span>
+                        {/if}
+                      </div>
+                      <p class="text-xs text-zinc-300 mt-1 leading-relaxed">{bp.description}</p>
+                      <div class="mt-2 text-[11px] font-semibold text-amber-400 flex items-center gap-1">
+                        {#if previewOutfit.backpack === bp.id}
+                          <Check class="w-3.5 h-3.5" />
+                          <span>Equipada</span>
+                        {:else}
+                          <span class="text-zinc-500">Selecionar</span>
+                        {/if}
+                      </div>
+                    </div>
+                  </button>
+                {/each}
               </div>
             </div>
           {/if}
 
         </div>
 
-        <!-- RODAPÉ COM BOTÃO SALVAR E VESTIR -->
+        <!-- RODAPÉ FIXO COM SALVAR -->
         <footer class="h-18 px-6 border-t border-white/10 bg-black/40 flex items-center justify-between shrink-0">
           <div class="text-xs text-zinc-400 hidden sm:block">
-            <span>Look selecionado: </span>
+            <span>Visual: </span>
             <strong class="text-white">
-              {OUTFIT_OPTIONS.find(o => o.id === previewOutfit.outfit_id)?.name ?? 'Uniforme Lótus'}
+              {OUTFIT_OPTIONS.find(o => o.id === previewOutfit.outfit_id)?.name} • {BODY_ARCHETYPES.find(b => b.id === previewOutfit.body_archetype)?.name}
             </strong>
           </div>
 

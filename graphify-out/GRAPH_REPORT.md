@@ -1,23 +1,22 @@
 # Graph Report - entre-sinos  (2026-10-22)
 
 ## Corpus Check
-- 28 files · ~1,130,360 words
+- 28 files · ~1,131,326 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 2 file(s) not represented in the graph (top: (none) 1, .css 1)
 
 ## Summary
-- 261 nodes · 330 edges · 18 communities (12 shown, 6 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.85)
+- 267 nodes · 341 edges · 17 communities (11 shown, 6 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 5 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `33ac237d`
+- Built from commit: `ace531d7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - DualStage.svelte
-- zod
 - package.json
 - WardrobeModal.svelte
 - compilerOptions
@@ -49,23 +48,19 @@
 ## Import Cycles
 - None detected.
 
-## Communities (18 total, 6 thin omitted)
+## Communities (17 total, 6 thin omitted)
 
 ### Community 0 - "DualStage.svelte"
-Cohesion: 0.09
-Nodes (16): lucide-svelte, isLight, locations, { onClose }, Props, activeImg, backgroundImages, { location, timeOfDay = 'manha', isLight = false } (+8 more)
-
-### Community 1 - "zod"
-Cohesion: 0.40
-Nodes (4): zod, BoyCharacterProps, CharacterExpression, CharacterExpressionEnum
+Cohesion: 0.07
+Nodes (18): lucide-svelte, svelte, isLight, locations, { onClose }, Props, activeImg, backgroundImages (+10 more)
 
 ### Community 2 - "package.json"
 Cohesion: 0.07
-Nodes (28): dependencies, dexie, howler, lucide-svelte, zod, name, private, scripts (+20 more)
+Nodes (30): dependencies, dexie, howler, lucide-svelte, zod, name, private, scripts (+22 more)
 
 ### Community 3 - "WardrobeModal.svelte"
-Cohesion: 0.08
-Nodes (25): ACCESSORIES, BODY_ARCHETYPES, BODY_PRESETS, EYE_COLORS, HAIR_COLORS, HAIR_STYLES, OUTFIT_OPTIONS, OUTFIT_PRESETS (+17 more)
+Cohesion: 0.07
+Nodes (30): BACKPACK_OPTIONS, BODY_ARCHETYPES, BODY_PRESETS, EYE_COLORS, HAIR_COLORS, HAIR_STYLES, OUTFIT_OPTIONS, OUTFIT_PRESETS (+22 more)
 
 ### Community 4 - "compilerOptions"
 Cohesion: 0.12
@@ -104,28 +99,32 @@ Cohesion: 0.40
 Nodes (4): Need an official Svelte framework?, Recommended IDE Setup, Svelte + TS + Vite, Technical considerations
 
 ### Community 14 - "AnimeProtagonistDisplay.svelte"
-Cohesion: 0.13
-Nodes (19): cameraTransform, eyeBlinkProgress, hasCustomHairColor, heightRatio, masterIllustration, microMassRatio, mouthOpenAmount, muscleContrast (+11 more)
+Cohesion: 0.14
+Nodes (18): activeBackpackPath, cameraTransform, eyeBlinkProgress, hasCustomHairColor, masterIllustration, mouthOpenAmount, { 
+    outfit, 
+    zoomMode = 'corpo_inteiro', 
+    customClass = '' 
+  }, Props (+10 more)
 
 ## Knowledge Gaps
-- **158 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+153 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 193 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **157 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+152 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 194 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `lucide-svelte` connect `DualStage.svelte` to `DialogueBox.svelte`, `package.json`, `WardrobeModal.svelte`, `PhoneShell.svelte`?**
-  _High betweenness centrality (0.160) - this node is a cross-community bridge._
+  _High betweenness centrality (0.156) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _158 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _157 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `DualStage.svelte` be split into smaller, more focused modules?**
-  _Cohesion score 0.08666666666666667 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07389162561576355 - nodes in this community are weakly interconnected._
 - **Why does `gameState` connect `gameState` to `DualStage.svelte`, `WardrobeModal.svelte`, `PhoneShell.svelte`, `DialogueBox.svelte`, `PaperdollActor.svelte`, `AnimeProtagonistDisplay.svelte`?**
-  _High betweenness centrality (0.142) - this node is a cross-community bridge._
+  _High betweenness centrality (0.138) - this node is a cross-community bridge._
 - **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.06854838709677419 - nodes in this community are weakly interconnected._
-- **Why does `zod` connect `zod` to `DialogueBox.svelte`, `package.json`, `WardrobeModal.svelte`?**
-  _High betweenness centrality (0.077) - this node is a cross-community bridge._
+  _Cohesion score 0.06628787878787878 - nodes in this community are weakly interconnected._
+- **Why does `zod` connect `package.json` to `DialogueBox.svelte`, `WardrobeModal.svelte`?**
+  _High betweenness centrality (0.079) - this node is a cross-community bridge._
 - **Should `WardrobeModal.svelte` be split into smaller, more focused modules?**
-  _Cohesion score 0.0766488413547237 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06707317073170732 - nodes in this community are weakly interconnected._

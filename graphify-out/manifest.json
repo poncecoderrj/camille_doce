@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/features/wardrobe/wardrobe.schema.ts": {
-    "mtime": 1792718485.3077261,
-    "seen": 1792718702.0922577,
-    "ast_hash": "9984825928fb9a84bf7980d1db9110d0",
+    "mtime": 1792719192.0882318,
+    "seen": 1792719324.2225316,
+    "ast_hash": "f0a3e699b708043f3b0f34686d102cb4",
     "semantic_hash": ""
   },
   "src/layout/DualStage.svelte": {
@@ -168,15 +168,15 @@
     "semantic_hash": ""
   },
   "src/features/wardrobe/WardrobeModal.svelte": {
-    "mtime": 1792718570.8986585,
-    "seen": 1792718702.0922577,
-    "ast_hash": "edf3574ab96c733b49c79275202b3521",
+    "mtime": 1792719293.991589,
+    "seen": 1792719324.2225316,
+    "ast_hash": "8f5fd678b157bc7791fddecb272f1470",
     "semantic_hash": ""
   },
   "src/features/wardrobe/wardrobe.catalog.ts": {
-    "mtime": 1792718501.8689742,
-    "seen": 1792718702.0922577,
-    "ast_hash": "b709a53b1da98742e463b770dbc546df",
+    "mtime": 1792719213.4264624,
+    "seen": 1792719324.2225316,
+    "ast_hash": "7db7df7a5be37767beebb7d7e6307d76",
     "semantic_hash": ""
   },
   "src/features/characters/PaperdollActor.svelte": {
@@ -402,9 +402,9 @@
     "semantic_hash": ""
   },
   "src/features/wardrobe/AnimeProtagonistDisplay.svelte": {
-    "mtime": 1792718527.5351171,
-    "seen": 1792718702.0922577,
-    "ast_hash": "2497438b21da374c37c3e448fae0e4d9",
+    "mtime": 1792719245.126203,
+    "seen": 1792719324.2225316,
+    "ast_hash": "51a1c8ebb65681a654f2f704f1e69616",
     "semantic_hash": ""
   },
   "public/assets/characters/iris/base/corpo_neutro.png": {
@@ -495,6 +495,24 @@
     "mtime": 1792717455.9533617,
     "seen": 1792718702.093261,
     "ast_hash": "7ef543562631e08ed82457226e5ddea2",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/acessorios/bolsa_rock.png": {
+    "mtime": 1792719169.5569115,
+    "seen": 1792719324.2225316,
+    "ast_hash": "9f73bc9775ba1c8c7d641efe1a74b692",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/acessorios/mochila_lotus.png": {
+    "mtime": 1792719169.5267987,
+    "seen": 1792719324.2225316,
+    "ast_hash": "f25b963217dc22a7211fa3feaeac66a9",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/acessorios/tote_romantica.png": {
+    "mtime": 1792719169.5835087,
+    "seen": 1792719324.2225316,
+    "ast_hash": "a01f9138f1f09ade5b2770fc95a0b35f",
     "semantic_hash": ""
   }
 }

@@ -42,7 +42,6 @@
         const elapsed = now - startTime;
         const progress = Math.min(1, elapsed / blinkDuration);
 
-        // Curva seno suave de fechamento e abertura
         eyeBlinkProgress = Math.sin(progress * Math.PI);
 
         if (progress < 1) {
@@ -112,9 +111,9 @@
     };
   });
 
-  // ================= RESOLUÇÃO DA ARTE MESTRE (ZERO SOBREPOSIÇÃO) =================
+  // ================= RESOLUÇÃO DA ARTE MESTRE (5 TIPOS DE CORPO + LOOKS) =================
   let masterIllustration = $derived.by(() => {
-    // 1. Se um biotipo anatômico especial foi selecionado, ele tem prioridade visual
+    // Biotipos anatômicos desenhados
     if (outfit.body_archetype === 'curvy_plussize') {
       return '/assets/characters/iris/base/corpo_curvy_plussize.png';
     }
@@ -124,8 +123,8 @@
     if (outfit.body_archetype === 'atletica_musculosa') {
       return '/assets/characters/iris/base/corpo_atletica_musculosa.png';
     }
-
-    // 2. Se for o padrão ou tiver look temático escolhido
+    
+    // Look temático específico se estiver no biotipo padrão ou alta
     if (outfit.outfit_id === 'look_rock') {
       return '/assets/characters/iris/base/look_rock.png';
     }
@@ -136,7 +135,21 @@
     return '/assets/characters/iris/base/uniforme_lotus.png';
   });
 
-  // CÂMERA DINÂMICA INTELIGENTE (SMART AUTO-ZOOM CONTEXTUAL)
+  // Mochila ou bolsa ativa
+  let activeBackpackPath = $derived.by(() => {
+    if (outfit.backpack === 'mochila_lotus') {
+      return '/assets/characters/iris/acessorios/mochila_lotus.png';
+    }
+    if (outfit.backpack === 'bolsa_rock') {
+      return '/assets/characters/iris/acessorios/bolsa_rock.png';
+    }
+    if (outfit.backpack === 'tote_romantica') {
+      return '/assets/characters/iris/acessorios/tote_romantica.png';
+    }
+    return null;
+  });
+
+  // CÂMERA DINÂMICA INTELIGENTE (SMART AUTO-ZOOM)
   let cameraTransform = $derived.by(() => {
     switch (zoomMode) {
       case 'cabelo_rosto':
@@ -151,17 +164,13 @@
     }
   });
 
-  // SLIDERS MORFOLÓGICOS THE SIMS (MICROAJUSTES FINOS SUAVES)
-  let heightRatio = $derived(((outfit.height ?? 1.65) / 1.65));
-  let microMassRatio = $derived(1 + ((outfit.body_build ?? 0) / 450));
-  let scaleX = $derived(microMassRatio.toFixed(3));
-  let scaleY = $derived(heightRatio.toFixed(3));
-  let muscleContrast = $derived((100 + ((outfit.muscle_tone ?? 20) - 20) * 0.12).toFixed(1));
-
+  // ESCALA MORFOLÓGICA (AJUSTE FINO PARA O TIPO 5: ALTA/ESBELTA)
+  let scaleY = $derived(outfit.body_archetype === 'alta_esbelta' ? '1.065' : '1.000');
+  let scaleX = $derived(outfit.body_archetype === 'alta_esbelta' ? '0.985' : '1.000');
   let hasCustomHairColor = $derived(Boolean(outfit.hair_color && outfit.hair_color !== '#4a2c11'));
 </script>
 
-<!-- PALCO DO ATOR PROTAGONISTA 2D (LIMPO, CEL-SHADED, SEM SOBREPOSIÇÃO DE TECIDO) -->
+<!-- PALCO DO ATOR PROTAGONISTA 2D (LIMPO, SEM SOBREPOSIÇÃO DE TECIDO) -->
 <div class="relative w-full h-full flex items-center justify-center select-none pointer-events-none {customClass}">
   
   <!-- CONTÊINER EXTERNO COM CÂMERA DE SMART AUTO-ZOOM SUAVE -->
@@ -169,23 +178,29 @@
     class="relative w-80 sm:w-96 md:w-[440px] h-[520px] sm:h-[580px] md:h-[640px] flex items-end justify-center origin-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
     style="transform: {cameraTransform};"
   >
-    <!-- CONTÊINER MORFOLÓGICO THE SIMS (ESCALA X/Y E CONTRASTE MUSCULAR) -->
+    <!-- CONTÊINER MORFOLÓGICO ANATÔMICO -->
     <div 
       class="relative h-full aspect-[768/1344] max-w-full flex items-end justify-center transition-all duration-300 origin-bottom"
-      style="
-        transform: scale({scaleX}, {scaleY});
-        filter: contrast({muscleContrast}%);
-      "
+      style="transform: scale({scaleX}, {scaleY});"
     >
       <!-- SOMBRA SUAVE NO PISO -->
       <div class="absolute -bottom-2 w-52 h-6 bg-black/45 rounded-full blur-md pointer-events-none z-0 transition-all duration-300"></div>
 
-      <!-- ILUSTRAÇÃO ANIME MESTRE (100% LIMPA, SEM CORTES OU DUPLICAÇÃO) -->
+      <!-- ILUSTRAÇÃO ANIME MESTRE (100% LIMPA, ZERO SOBREPOSIÇÃO DE TECIDO) -->
       <img 
         src={masterIllustration} 
         alt="Íris" 
         class="w-full h-full object-contain object-bottom drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)] vn-breath-anim z-10 transition-all duration-300"
       />
+
+      <!-- ================= 5. MOCHILA / BOLSA MODULAR ================= -->
+      {#if activeBackpackPath}
+        <img 
+          src={activeBackpackPath} 
+          alt="Mochila" 
+          class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-45 vn-breath-anim transition-opacity duration-200"
+        />
+      {/if}
 
       <!-- ================= ACESSÓRIO: ÓCULOS REDONDOS DOURADOS ================= -->
       {#if outfit.glasses}
@@ -204,7 +219,7 @@
         ></div>
       {/if}
 
-      <!-- ================= TINTURA DINÂMICA DE CABELO THE SIMS ================= -->
+      <!-- ================= 3. TINTURA DINÂMICA DE CABELO THE SIMS ================= -->
       {#if hasCustomHairColor}
         <div 
           class="absolute inset-0 w-full h-full pointer-events-none z-80 vn-breath-anim vn-hair-sway transition-all duration-300"
@@ -216,6 +231,23 @@
             -webkit-mask-image: radial-gradient(ellipse 52% 28% at 50% 16%, black 50%, rgba(0,0,0,0.3) 78%, transparent 95%);
           "
         ></div>
+      {/if}
+
+      <!-- ================= 4. ACENTOS DO TIPO DE CABELO / PENTEADO ================= -->
+      {#if outfit.hair_style === 'rabo_cavalo'}
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-82 vn-breath-anim vn-hair-sway flex items-center justify-center"
+          style="transform: translate(22%, -34%);"
+        >
+          <span class="w-4 h-4 rounded-full bg-rose-500 shadow-md ring-2 ring-white/60 animate-pulse"></span>
+        </div>
+      {:else if outfit.hair_style === 'bob_chanel'}
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-82 vn-breath-anim vn-hair-sway flex items-center justify-center"
+          style="transform: translate(16%, -30%);"
+        >
+          <span class="px-2 py-0.5 rounded-full bg-amber-400 text-[9px] font-bold text-stone-900 shadow-md ring-1 ring-amber-200">Chanel</span>
+        </div>
       {/if}
 
       <!-- ================= CAMADA LIVE 2D: PISCADA DE OLHOS NATURAL ================= -->
@@ -270,7 +302,6 @@
             height: 1.8%;
           "
         >
-          <!-- Boca Viva com Abertura Orgânica Sincronizada -->
           <div 
             class="rounded-full transition-transform duration-75 flex items-center justify-center overflow-hidden shadow-inner"
             style="
