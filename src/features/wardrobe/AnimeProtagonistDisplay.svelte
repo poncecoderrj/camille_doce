@@ -111,30 +111,8 @@
     return 'padrao';
   });
 
-  // Detecta o visual dominante da protagonista (Look x Arquétipo Anatômico Real)
-  let activeArtPath = $derived.by(() => {
-    const isRock = 
-      outfit.top === 'camiseta_rock_banda' || 
-      outfit.jacket === 'jaqueta_couro_perfecto' || 
-      outfit.bottom === 'saia_xadrez_grunge' ||
-      outfit.shoes === 'coturno_rock_militar';
-
-    if (isRock && activeArchetype === 'padrao') {
-      return '/assets/characters/iris/base/look_rock.png';
-    }
-
-    const isRomantico = 
-      outfit.top === 'sueter_trico_creme' || 
-      outfit.jacket === 'cardiga_nobre_marfim' || 
-      outfit.bottom === 'saia_midi_plissada' ||
-      outfit.hat === 'boina_feltro_ocre' ||
-      outfit.dress === 'vestido_floral_primavera' ||
-      outfit.necklace === 'cachecol_volumoso_mostarda';
-
-    if (isRomantico && activeArchetype === 'padrao') {
-      return '/assets/characters/iris/base/look_romantico.png';
-    }
-
+  // ================= RESOLUÇÃO DAS CAMADAS PAPERDOLL MODULARES (AMOR DOCE 2D) =================
+  let resolvedBody = $derived.by(() => {
     if (activeArchetype === 'curvy_plussize') {
       return '/assets/characters/iris/base/corpo_curvy_plussize.png';
     }
@@ -144,8 +122,91 @@
     if (activeArchetype === 'atletica_musculosa') {
       return '/assets/characters/iris/base/corpo_atletica_musculosa.png';
     }
+    return '/assets/characters/iris/base/corpo_manequim_padrao.png';
+  });
 
-    return '/assets/characters/iris/base/uniforme_lotus.png';
+  // Peça Superior (Top) Modular
+  let resolvedTop = $derived.by(() => {
+    if (outfit.top === 'camiseta_rock_banda') {
+      return '/assets/characters/iris/roupas/superior/camiseta_rock_banda.png';
+    }
+    if (outfit.top === 'sueter_trico_creme') {
+      return '/assets/characters/iris/roupas/superior/sueter_trico_creme.png';
+    }
+    if (outfit.top === 'camisa_uniforme_lotus') {
+      return '/assets/characters/iris/roupas/superior/camisa_uniforme_lotus.png';
+    }
+    if (!outfit.dress && activeArchetype === 'padrao') {
+      return '/assets/characters/iris/roupas/superior/camisa_uniforme_lotus.png';
+    }
+    return null;
+  });
+
+  // Peça Inferior (Bottom) Modular
+  let resolvedBottom = $derived.by(() => {
+    if (outfit.dress) return null;
+    if (outfit.bottom === 'saia_xadrez_grunge') {
+      return '/assets/characters/iris/roupas/inferior/saia_xadrez_grunge.png';
+    }
+    if (outfit.bottom === 'saia_midi_plissada') {
+      return '/assets/characters/iris/roupas/inferior/saia_midi_plissada.png';
+    }
+    if (outfit.bottom === 'saia_pregueada_azul') {
+      return '/assets/characters/iris/roupas/inferior/saia_uniforme_lotus.png';
+    }
+    if (activeArchetype === 'padrao') {
+      return '/assets/characters/iris/roupas/inferior/saia_uniforme_lotus.png';
+    }
+    return null;
+  });
+
+  // Casaco / Terceira Peça (Jacket) Modular
+  let resolvedJacket = $derived.by(() => {
+    if (outfit.jacket === 'jaqueta_couro_perfecto') {
+      return '/assets/characters/iris/roupas/casacos/jaqueta_couro_perfecto.png';
+    }
+    return null;
+  });
+
+  // Calçados & Meias (Shoes) Modulares
+  let resolvedShoes = $derived.by(() => {
+    if (outfit.shoes === 'coturno_rock_militar') {
+      return '/assets/characters/iris/roupas/calcados/coturno_rock_militar.png';
+    }
+    if (outfit.shoes === 'sapatilhas_veludo_vinho' || outfit.shoes === 'sapatilha_romantica') {
+      return '/assets/characters/iris/roupas/calcados/sapatilha_romantica.png';
+    }
+    if (outfit.shoes === 'mocassim_marrom_lotus' || activeArchetype === 'padrao') {
+      return '/assets/characters/iris/roupas/calcados/sapatos_uniforme_lotus.png';
+    }
+    return null;
+  });
+
+  // Penteado (Hair) Modular
+  let resolvedHair = $derived.by(() => {
+    if (outfit.hair_front === 'cabelo_bob_chanel' || outfit.hair_style === 'bob_curto') {
+      return '/assets/characters/iris/cabelos/cabelo_bob_chanel.png';
+    }
+    if (outfit.hair_front === 'cabelo_rabo_cavalo' || outfit.hair_style === 'rabo_cavalo') {
+      return '/assets/characters/iris/cabelos/cabelo_rabo_cavalo.png';
+    }
+    return '/assets/characters/iris/cabelos/cabelo_ondulado_base.png';
+  });
+
+  // Acessório de Cabeça (Hat) Modular
+  let resolvedHat = $derived.by(() => {
+    if (outfit.hat === 'boina_feltro_ocre') {
+      return '/assets/characters/iris/roupas/acessorios/boina_feltro_ocre.png';
+    }
+    return null;
+  });
+
+  // Óculos (Glasses) Modulares
+  let resolvedGlasses = $derived.by(() => {
+    if (outfit.glasses === 'oculos_redondos_dourados' || outfit.glasses === 'oculos_intelectuais') {
+      return '/assets/characters/iris/roupas/acessorios/oculos_redondos_dourados.png';
+    }
+    return null;
   });
 
   // CÂMERA DINÂMICA INTELIGENTE (SMART AUTO-ZOOM CONTEXTUAL)
@@ -223,16 +284,108 @@
         style="width: {shadowWidth}px;"
       ></div>
 
-      <!-- ILUSTRAÇÃO ANIME DA PROTAGONISTA (100% TRANSPARENTE, RECORTADA E CEL-SHADED) -->
+      <!-- ================= CAMADA PAPERDOLL 2D MODULAR (PADRÃO AMOR DOCE) ================= -->
+      
+      <!-- Z: 10 — CORPO BASE / BIOTIPO ILUSTRADO ANIME -->
       <img 
-        src={activeArtPath} 
+        src={resolvedBody} 
         alt="Íris" 
         class="w-full h-full object-contain object-bottom drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)] vn-breath-anim z-10 transition-all duration-300"
       />
 
+      <!-- Z: 20 — CALÇADOS & MEIAS MODULARES -->
+      {#if resolvedShoes}
+        <img 
+          src={resolvedShoes} 
+          alt="Calçados" 
+          class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-20 vn-breath-anim transition-all duration-200"
+        />
+      {/if}
+
+      <!-- Z: 30 — PARTE INFERIOR (SAIA / CALÇA) MODULAR -->
+      {#if resolvedBottom}
+        <img 
+          src={resolvedBottom} 
+          alt="Saia" 
+          class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-30 vn-breath-anim transition-all duration-200"
+        />
+      {/if}
+
+      <!-- Z: 40 — PARTE SUPERIOR (BLUSA / CAMISA / SUÉTER) MODULAR -->
+      {#if resolvedTop}
+        <img 
+          src={resolvedTop} 
+          alt="Blusa" 
+          class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-40 vn-breath-anim transition-all duration-200"
+        />
+      {/if}
+
+      <!-- Z: 50 — CASACO / JAQUETA DE COURO MODULAR -->
+      {#if resolvedJacket}
+        <img 
+          src={resolvedJacket} 
+          alt="Jaqueta" 
+          class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-50 vn-breath-anim transition-all duration-200"
+        />
+      {/if}
+
+      <!-- Z: 70 — ÓCULOS REDONDOS DOURADOS MODULARES -->
+      {#if resolvedGlasses}
+        <img 
+          src={resolvedGlasses} 
+          alt="Óculos" 
+          class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-70 vn-breath-anim transition-all duration-200"
+        />
+      {/if}
+
+      <!-- Z: 80 — CABELO COM MÁSCARA DINÂMICA DE COR THE SIMS -->
+      {#if resolvedHair}
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-80 vn-breath-anim vn-hair-sway">
+          <img 
+            src={resolvedHair} 
+            alt="Cabelo" 
+            class="w-full h-full object-contain object-bottom"
+          />
+          {#if hasCustomHairColor}
+            <div 
+              class="absolute inset-0 w-full h-full mix-blend-color pointer-events-none transition-all duration-300"
+              style="
+                background-color: {outfit.hair_color};
+                opacity: 0.88;
+                mask-image: url({resolvedHair});
+                -webkit-mask-image: url({resolvedHair});
+                mask-size: contain;
+                -webkit-mask-size: contain;
+                mask-position: bottom;
+                -webkit-mask-position: bottom;
+                mask-repeat: no-repeat;
+                -webkit-mask-repeat: no-repeat;
+              "
+            ></div>
+          {/if}
+        </div>
+      {/if}
+
+      <!-- Z: 90 — ACESSÓRIO DE CABEÇA (BOINA) MODULAR -->
+      {#if resolvedHat}
+        <img 
+          src={resolvedHat} 
+          alt="Boina" 
+          class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-90 vn-breath-anim vn-hair-sway transition-all duration-200"
+        />
+      {/if}
+
+      <!-- OVERLAY: RUBOR / BLUSH REATIVO NAS BOCHECHAS -->
+      {#if outfit.blush}
+        <div 
+          class="absolute inset-0 w-full h-full pointer-events-none z-75 transition-opacity duration-300 vn-breath-anim"
+          style="background: radial-gradient(circle at 50% 23%, rgba(244, 63, 94, 0.30) 0%, rgba(244, 63, 94, 0.08) 10%, transparent 18%); mix-blend-mode: color-burn;"
+        ></div>
+      {/if}
+
       <!-- ================= CAMADA LIVE 2D: PISCADA DE OLHOS NATURAL ================= -->
       {#if eyeBlinkProgress > 0.02}
-        <div class="absolute inset-0 w-full h-full pointer-events-none z-24 vn-breath-anim">
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-93 vn-breath-anim">
           <!-- Pálpebra Olho Esquerdo -->
           <div 
             class="absolute overflow-hidden"
@@ -274,7 +427,7 @@
       <!-- ================= CAMADA LIVE 2D: LIP-SYNC LABIAL DE FALA ================= -->
       {#if gameState.isSpeaking && mouthOpenAmount > 0.05}
         <div 
-          class="absolute pointer-events-none z-26 vn-breath-anim flex items-center justify-center"
+          class="absolute pointer-events-none z-94 vn-breath-anim flex items-center justify-center"
           style="
             left: {metrics.mouthX - metrics.mouthWidth / 2}%; 
             top: {metrics.mouthY}%; 
@@ -295,33 +448,6 @@
             <div class="w-1.5 h-1 bg-rose-400 rounded-full mt-1 opacity-80"></div>
           </div>
         </div>
-      {/if}
-
-      <!-- CAMADA DE TINTURA DINÂMICA DE CABELO (SISTEMA MULTICOLOR THE SIMS) -->
-      {#if hasCustomHairColor}
-        <div 
-          class="absolute inset-0 w-full h-full pointer-events-none z-15 vn-breath-anim vn-hair-sway transition-all duration-300"
-          style="
-            background: {outfit.hair_color};
-            mix-blend-mode: color;
-            opacity: 0.85;
-            mask-image: radial-gradient(ellipse 52% 28% at 50% 16%, black 50%, rgba(0,0,0,0.3) 78%, transparent 95%);
-            -webkit-mask-image: radial-gradient(ellipse 52% 28% at 50% 16%, black 50%, rgba(0,0,0,0.3) 78%, transparent 95%);
-          "
-        ></div>
-
-        {#if isLightHair}
-          <div 
-            class="absolute inset-0 w-full h-full pointer-events-none z-16 vn-breath-anim vn-hair-sway transition-all duration-300"
-            style="
-              background: {outfit.hair_color};
-              mix-blend-mode: screen;
-              opacity: 0.38;
-              mask-image: radial-gradient(ellipse 46% 25% at 50% 15%, black 45%, transparent 85%);
-              -webkit-mask-image: radial-gradient(ellipse 46% 25% at 50% 15%, black 45%, transparent 85%);
-            "
-          ></div>
-        {/if}
       {/if}
 
       <!-- DETALHES VISUAIS DE PENTEADOS (COM FÍSICA SECUNDÁRIA) -->
