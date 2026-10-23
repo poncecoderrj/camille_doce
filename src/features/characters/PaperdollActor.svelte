@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { CharacterLayers } from './character-paperdoll.types';
   import { CHARACTER_MANIFESTS } from './character-manifest';
+  import { gameState } from '../game-state/GameState.svelte';
 
   interface Props {
     characterId: string;
@@ -23,6 +24,73 @@
   }: Props = $props();
 
   let manifest = $derived(CHARACTER_MANIFESTS[characterId] || null);
+
+  // ================= MOTOR LIVE 2D: PISCADA NATURAL AUTÔNOMA =================
+  let eyeBlinkProgress = $state<number>(0);
+  let blinkTimer: any = null;
+
+  function triggerBlinkCycle() {
+    let start = performance.now();
+    const durationClose = 65;
+    const durationHold = 35;
+    const durationOpen = 85;
+    const total = durationClose + durationHold + durationOpen;
+
+    const animate = (time: number) => {
+      const elapsed = time - start;
+      if (elapsed < durationClose) {
+        eyeBlinkProgress = elapsed / durationClose;
+        requestAnimationFrame(animate);
+      } else if (elapsed < durationClose + durationHold) {
+        eyeBlinkProgress = 1;
+        requestAnimationFrame(animate);
+      } else if (elapsed < total) {
+        eyeBlinkProgress = 1 - ((elapsed - durationClose - durationHold) / durationOpen);
+        requestAnimationFrame(animate);
+      } else {
+        eyeBlinkProgress = 0;
+        scheduleNextBlink();
+      }
+    };
+    requestAnimationFrame(animate);
+  }
+
+  function scheduleNextBlink() {
+    const isDoubleBlink = Math.random() < 0.20;
+    const delay = isDoubleBlink ? 200 : 3000 + Math.random() * 2800;
+    blinkTimer = setTimeout(() => {
+      triggerBlinkCycle();
+    }, delay);
+  }
+
+  $effect(() => {
+    scheduleNextBlink();
+    return () => {
+      if (blinkTimer) clearTimeout(blinkTimer);
+    };
+  });
+
+  // ================= MOTOR LIVE 2D: LIP-SYNC DE FALA =================
+  let mouthOpenAmount = $state<number>(0);
+  let mouthTimer: any = null;
+
+  $effect(() => {
+    if (gameState.isSpeaking) {
+      let step = 0;
+      const phonemes = [0.8, 0.35, 1.0, 0.5, 0.1, 0.65, 0.2];
+      mouthTimer = setInterval(() => {
+        step++;
+        mouthOpenAmount = phonemes[step % phonemes.length];
+      }, 125);
+    } else {
+      if (mouthTimer) clearInterval(mouthTimer);
+      mouthOpenAmount = 0;
+    }
+
+    return () => {
+      if (mouthTimer) clearInterval(mouthTimer);
+    };
+  });
 
   // Resolver camadas ativas
   let resolvedLayers = $derived.by<CharacterLayers>(() => {
@@ -162,6 +230,72 @@
         onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-90 transition-opacity duration-200"
       />
+    {/if}
+
+    <!-- Z: 93 — CAMADA LIVE 2D: PISCADA DE OLHOS DOS PERSONAGENS -->
+    {#if eyeBlinkProgress > 0.02}
+      <div class="absolute inset-0 w-full h-full pointer-events-none z-93">
+        <!-- Pálpebra Olho Esquerdo -->
+        <div 
+          class="absolute overflow-hidden"
+          style="
+            left: 45.3%; 
+            top: 20.8%; 
+            width: 3.9%; 
+            height: 2.1%; 
+            transform-origin: top center;
+            transform: scaleY({eyeBlinkProgress});
+          "
+        >
+          <div 
+            class="w-full h-full rounded-b-full shadow-sm"
+            style="background: #fee5d5; border-bottom: 2px solid #1a1512;"
+          ></div>
+        </div>
+
+        <!-- Pálpebra Olho Direito -->
+        <div 
+          class="absolute overflow-hidden"
+          style="
+            left: 50.8%; 
+            top: 20.8%; 
+            width: 3.9%; 
+            height: 2.1%; 
+            transform-origin: top center;
+            transform: scaleY({eyeBlinkProgress});
+          "
+        >
+          <div 
+            class="w-full h-full rounded-b-full shadow-sm"
+            style="background: #fee5d5; border-bottom: 2px solid #1a1512;"
+          ></div>
+        </div>
+      </div>
+    {/if}
+
+    <!-- Z: 94 — CAMADA LIVE 2D: LIP-SYNC LABIAL DURANTE A FALA -->
+    {#if gameState.isSpeaking && mouthOpenAmount > 0.05}
+      <div 
+        class="absolute pointer-events-none z-94 flex items-center justify-center"
+        style="
+          left: 48.7%; 
+          top: 24.8%; 
+          width: 2.8%; 
+          height: 1.8%;
+        "
+      >
+        <div 
+          class="rounded-full transition-transform duration-75 flex items-center justify-center overflow-hidden shadow-inner"
+          style="
+            width: 100%;
+            height: {Math.max(2, mouthOpenAmount * 8)}px;
+            background-color: #57161f;
+            border: 1px solid #2e0b11;
+          "
+        >
+          <div class="w-1.5 h-1 bg-rose-400 rounded-full mt-0.5 opacity-75"></div>
+        </div>
+      </div>
     {/if}
 
     <!-- Z: 92 — BLUSH / RUBOR REATIVO -->

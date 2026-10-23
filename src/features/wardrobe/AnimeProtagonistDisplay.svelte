@@ -1,5 +1,7 @@
 <script lang="ts">
   import type { EquippedOutfit } from './wardrobe.schema';
+  import { gameState } from '../game-state/GameState.svelte';
+  import { SKIN_TONES } from './wardrobe.catalog';
 
   export type ProtagonistZoomMode = 'corpo_inteiro' | 'cabelo_rosto' | 'torso' | 'pernas_pes';
 
@@ -15,30 +17,99 @@
     class: customClass = '' 
   }: Props = $props();
 
+  // Tom de pele dinâmico para as pálpebras anatômicas
+  let skinToneFill = $derived.by(() => {
+    const tone = SKIN_TONES.find(s => s.id === outfit.skin_color);
+    return tone ? tone.fill : '#fee5d5';
+  });
+
+  // ================= MOTOR LIVE 2D: PISCADA NATURAL AUTÔNOMA =================
+  let eyeBlinkProgress = $state<number>(0); // 0 = aberto, 1 = totalmente fechado
+  let blinkTimer: any = null;
+
+  function triggerBlinkCycle() {
+    let start = performance.now();
+    const durationClose = 65;
+    const durationHold = 35;
+    const durationOpen = 85;
+    const total = durationClose + durationHold + durationOpen;
+
+    const animate = (time: number) => {
+      const elapsed = time - start;
+      if (elapsed < durationClose) {
+        eyeBlinkProgress = elapsed / durationClose;
+        requestAnimationFrame(animate);
+      } else if (elapsed < durationClose + durationHold) {
+        eyeBlinkProgress = 1;
+        requestAnimationFrame(animate);
+      } else if (elapsed < total) {
+        eyeBlinkProgress = 1 - ((elapsed - durationClose - durationHold) / durationOpen);
+        requestAnimationFrame(animate);
+      } else {
+        eyeBlinkProgress = 0;
+        scheduleNextBlink();
+      }
+    };
+    requestAnimationFrame(animate);
+  }
+
+  function scheduleNextBlink() {
+    // 22% de chance de piscada dupla orgânica de anime
+    const isDoubleBlink = Math.random() < 0.22;
+    const delay = isDoubleBlink ? 180 : 2800 + Math.random() * 2600;
+    blinkTimer = setTimeout(() => {
+      triggerBlinkCycle();
+    }, delay);
+  }
+
+  $effect(() => {
+    scheduleNextBlink();
+    return () => {
+      if (blinkTimer) clearTimeout(blinkTimer);
+    };
+  });
+
+  // ================= MOTOR LIVE 2D: LIP-SYNC LABIAL EM TEMPO REAL =================
+  let mouthOpenAmount = $state<number>(0); // 0 = fechado, 1 = aberto
+  let mouthTimer: any = null;
+
+  $effect(() => {
+    if (gameState.isSpeaking) {
+      let step = 0;
+      const phonemes = [0.8, 0.3, 1.0, 0.45, 0.15, 0.65, 0.25];
+      mouthTimer = setInterval(() => {
+        step++;
+        mouthOpenAmount = phonemes[step % phonemes.length];
+      }, 125);
+    } else {
+      if (mouthTimer) clearInterval(mouthTimer);
+      mouthOpenAmount = 0;
+    }
+
+    return () => {
+      if (mouthTimer) clearInterval(mouthTimer);
+    };
+  });
+
   // DETERMINAÇÃO DO ARQUÉTIPO ANATÔMICO REAL DESENHADO (AMOR DOCE ARCHETYPES)
   let activeArchetype = $derived.by(() => {
     const mass = outfit.body_build ?? 0;
     const muscle = outfit.muscle_tone ?? 20;
 
-    // Se o jogador configurou compleição encorpada / plus size:
     if (mass >= 22) {
       return 'curvy_plussize';
     }
-    // Se o jogador configurou compleição magra / delicada:
     if (mass <= -22) {
       return 'delicada_magra';
     }
-    // Se o jogador configurou alta definição muscular:
     if (muscle >= 70) {
       return 'atletica_musculosa';
     }
-    // Caso padrão: proporção equilibrada
     return 'padrao';
   });
 
   // Detecta o visual dominante da protagonista (Look x Arquétipo Anatômico Real)
   let activeArtPath = $derived.by(() => {
-    // 1. Estilo Rock / Rebelde (Afinidade com Dante)
     const isRock = 
       outfit.top === 'camiseta_rock_banda' || 
       outfit.jacket === 'jaqueta_couro_perfecto' || 
@@ -49,7 +120,6 @@
       return '/assets/characters/iris/base/look_rock.png';
     }
 
-    // 2. Estilo Romântico & Poético (Afinidade com Theo)
     const isRomantico = 
       outfit.top === 'sueter_trico_creme' || 
       outfit.jacket === 'cardiga_nobre_marfim' || 
@@ -62,7 +132,6 @@
       return '/assets/characters/iris/base/look_romantico.png';
     }
 
-    // 3. Arquétipos Anatômicos Desenhados com Traços Reais de Gordura / Curvas / Músculos
     if (activeArchetype === 'curvy_plussize') {
       return '/assets/characters/iris/base/corpo_curvy_plussize.png';
     }
@@ -73,7 +142,6 @@
       return '/assets/characters/iris/base/corpo_atletica_musculosa.png';
     }
 
-    // 4. Padrão: Uniforme Oficial da Academia Lótus
     return '/assets/characters/iris/base/uniforme_lotus.png';
   });
 
@@ -81,26 +149,20 @@
   let cameraTransform = $derived.by(() => {
     switch (zoomMode) {
       case 'cabelo_rosto':
-        // Zoom cinematográfico no rosto, franja, corte e olhos
         return 'scale(2.1) translateY(24%)';
       case 'torso':
-        // Zoom focado no tronco, jaqueta, blusa e acessórios
         return 'scale(1.42) translateY(10%)';
       case 'pernas_pes':
-        // Zoom focado na saia, meia e calçados
         return 'scale(1.42) translateY(-14%)';
       case 'corpo_inteiro':
       default:
-        // Enquadramento de passarela da cabeça aos pés sobre o chão
         return 'scale(1.0) translateY(0)';
     }
   });
 
   // ================= MOTOR DE MORFOLOGIA THE SIMS 2D =================
-  // 1. Altura (Normalizada em 1.65m): 1.50m até 1.82m
   let heightRatio = $derived(((outfit.height ?? 1.65) / 1.65));
 
-  // 2. Micro-ajuste Contínuo de Massa Corporal dentro do Arquétipo
   let microMassRatio = $derived.by(() => {
     const mass = outfit.body_build ?? 0;
     if (activeArchetype === 'curvy_plussize') {
@@ -115,17 +177,11 @@
     return 1 + (mass / 260);
   });
 
-  // 3. Curvatura da Silhueta: -30 (reta) a +30 (ampulheta)
   let curveRatio = $derived(1 + ((outfit.curve_ratio ?? 0) / 500));
-
-  // Escalas finais combinadas
   let scaleX = $derived((microMassRatio * curveRatio).toFixed(3));
   let scaleY = $derived(heightRatio.toFixed(3));
-
-  // 4. Definição Muscular (contraste sutil para realçar sombras anatômicas a 60FPS)
   let muscleContrast = $derived((100 + ((outfit.muscle_tone ?? 20) - 20) * 0.15).toFixed(1));
 
-  // Largura dinâmica da sombra de piso proporcional ao biotipo
   let shadowWidth = $derived.by(() => {
     let baseShadow = 200;
     if (activeArchetype === 'curvy_plussize') baseShadow = 235;
@@ -134,7 +190,6 @@
     return Math.max(140, Math.min(290, baseShadow + (outfit.body_build ?? 0) * 0.5));
   });
 
-  // Sistema de Tintura de Cabelo
   let hasCustomHairColor = $derived(Boolean(outfit.hair_color && outfit.hair_color !== '#4a2c11'));
   let isLightHair = $derived.by(() => {
     if (!outfit.hair_color) return false;
@@ -143,7 +198,7 @@
   });
 </script>
 
-<!-- EXIBIÇÃO ILUSTRADA ANIME DE ALTA RESOLUÇÃO DA PROTAGONISTA COM MORFOLOGIA DINÂMICA -->
+<!-- EXIBIÇÃO ILUSTRADA LIVE 2D DA PROTAGONISTA (COM PISCADA, LIP-SYNC E FÍSICA) -->
 <div class="relative w-full h-full flex items-center justify-center select-none pointer-events-none {customClass}">
   
   <!-- CONTÊINER EXTERNO COM CÂMERA DE SMART AUTO-ZOOM SUAVE -->
@@ -172,11 +227,77 @@
         class="w-full h-full object-contain object-bottom drop-shadow-[0_15px_30px_rgba(0,0,0,0.6)] vn-breath-anim z-10 transition-all duration-300"
       />
 
+      <!-- ================= CAMADA LIVE 2D: PISCADA DE OLHOS NATURAL ================= -->
+      {#if eyeBlinkProgress > 0.02}
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-24 vn-breath-anim">
+          <!-- Pálpebra Olho Esquerdo -->
+          <div 
+            class="absolute overflow-hidden"
+            style="
+              left: 45.3%; 
+              top: 20.9%; 
+              width: 3.9%; 
+              height: 2.1%; 
+              transform-origin: top center;
+              transform: scaleY({eyeBlinkProgress});
+            "
+          >
+            <div 
+              class="w-full h-full rounded-b-full shadow-sm"
+              style="background: {skinToneFill}; border-bottom: 2px solid #231610;"
+            ></div>
+          </div>
+
+          <!-- Pálpebra Olho Direito -->
+          <div 
+            class="absolute overflow-hidden"
+            style="
+              left: 50.8%; 
+              top: 20.9%; 
+              width: 3.9%; 
+              height: 2.1%; 
+              transform-origin: top center;
+              transform: scaleY({eyeBlinkProgress});
+            "
+          >
+            <div 
+              class="w-full h-full rounded-b-full shadow-sm"
+              style="background: {skinToneFill}; border-bottom: 2px solid #231610;"
+            ></div>
+          </div>
+        </div>
+      {/if}
+
+      <!-- ================= CAMADA LIVE 2D: LIP-SYNC LABIAL DE FALA ================= -->
+      {#if gameState.isSpeaking && mouthOpenAmount > 0.05}
+        <div 
+          class="absolute pointer-events-none z-26 vn-breath-anim flex items-center justify-center"
+          style="
+            left: 48.6%; 
+            top: 24.9%; 
+            width: 2.9%; 
+            height: 1.8%;
+          "
+        >
+          <!-- Boca Viva com Abertura Orgânica Sincronizada -->
+          <div 
+            class="rounded-full transition-transform duration-75 flex items-center justify-center overflow-hidden shadow-inner"
+            style="
+              width: 100%;
+              height: {Math.max(2.5, mouthOpenAmount * 8.5)}px;
+              background-color: #5c1822;
+              border: 1px solid #330b12;
+            "
+          >
+            <div class="w-1.5 h-1 bg-rose-400 rounded-full mt-1 opacity-80"></div>
+          </div>
+        </div>
+      {/if}
+
       <!-- CAMADA DE TINTURA DINÂMICA DE CABELO (SISTEMA MULTICOLOR THE SIMS) -->
       {#if hasCustomHairColor}
-        <!-- Tonalização de Cor Base -->
         <div 
-          class="absolute inset-0 w-full h-full pointer-events-none z-15 vn-breath-anim transition-all duration-300"
+          class="absolute inset-0 w-full h-full pointer-events-none z-15 vn-breath-anim vn-hair-sway transition-all duration-300"
           style="
             background: {outfit.hair_color};
             mix-blend-mode: color;
@@ -186,10 +307,9 @@
           "
         ></div>
 
-        <!-- Brilho para cabelos claros (Loiro, Platinado, Rosa Pastel) -->
         {#if isLightHair}
           <div 
-            class="absolute inset-0 w-full h-full pointer-events-none z-16 vn-breath-anim transition-all duration-300"
+            class="absolute inset-0 w-full h-full pointer-events-none z-16 vn-breath-anim vn-hair-sway transition-all duration-300"
             style="
               background: {outfit.hair_color};
               mix-blend-mode: screen;
@@ -201,49 +321,44 @@
         {/if}
       {/if}
 
-      <!-- DETALHES VISUAIS DE PENTEADOS (THE SIMS HAIR CUSTOMIZATION) -->
+      <!-- DETALHES VISUAIS DE PENTEADOS (COM FÍSICA SECUNDÁRIA) -->
       {#if outfit.hair_style === 'rabo_cavalo'}
-        <!-- Elástico & Laço de Rabo de Cavalo Alto -->
         <div 
-          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim vn-hair-sway flex items-center justify-center"
           style="transform: translate(22%, -34%);"
         >
           <span class="w-4 h-4 rounded-full bg-rose-500 shadow-md ring-2 ring-white/50 animate-pulse"></span>
         </div>
       {:else if outfit.hair_style === 'coque_duplo'}
-        <!-- Coques Duplos Espaciais (Odango) -->
         <div 
-          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim vn-hair-sway flex items-center justify-center"
           style="transform: translate(-22%, -35%);"
         >
           <span class="w-5 h-5 rounded-full bg-amber-400/90 shadow-md ring-2 ring-amber-200"></span>
         </div>
         <div 
-          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim vn-hair-sway flex items-center justify-center"
           style="transform: translate(22%, -35%);"
         >
           <span class="w-5 h-5 rounded-full bg-amber-400/90 shadow-md ring-2 ring-amber-200"></span>
         </div>
       {:else if outfit.hair_style === 'bob_curto'}
-        <!-- Presilha Elegante Pérola Chanel -->
         <div 
-          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim vn-hair-sway flex items-center justify-center"
           style="transform: translate(16%, -30%);"
         >
           <span class="px-2 py-0.5 rounded-full bg-white/95 text-[9px] font-bold text-stone-800 shadow-md border border-stone-200">✦</span>
         </div>
       {:else if outfit.hair_style === 'tranca_lateral'}
-        <!-- Laço Romântico de Trança Lateral -->
         <div 
-          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim vn-hair-sway flex items-center justify-center"
           style="transform: translate(18%, -24%);"
         >
           <span class="w-3.5 h-3.5 rounded-sm bg-pink-400 rotate-45 shadow-sm ring-1 ring-white/60"></span>
         </div>
       {:else if outfit.hair_style === 'repicado_rock'}
-        <!-- Grampos Metálicos Rebeldes -->
         <div 
-          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim flex items-center justify-center"
+          class="absolute inset-0 w-full h-full pointer-events-none z-22 vn-breath-anim vn-hair-sway flex items-center justify-center"
           style="transform: translate(-17%, -31%);"
         >
           <span class="text-xs text-zinc-100 font-bold drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">⚔️</span>
@@ -279,7 +394,7 @@
 </div>
 
 <style>
-  /* MICROANIMAÇÃO SENOIDAL ORGÂNICA A 60FPS */
+  /* MICROANIMAÇÃO SENOIDAL ORGÂNICA A 60FPS — RESPIRAÇÃO VIVA */
   @keyframes vn-breath-smooth {
     0%, 100% {
       transform: translateY(0px) scaleY(1.000);
@@ -289,9 +404,28 @@
     }
   }
 
+  /* FÍSICA HARMÔNICA DE BALANÇO DE CABELO COM DEFASAGEM DE FASE */
+  @keyframes vn-hair-sway-anim {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(0.8deg);
+    }
+    75% {
+      transform: rotate(-0.8deg);
+    }
+  }
+
   .vn-breath-anim {
     animation: vn-breath-smooth 3.4s ease-in-out infinite;
     transform-origin: bottom center;
+    will-change: transform;
+  }
+
+  .vn-hair-sway {
+    animation: vn-hair-sway-anim 4.8s ease-in-out infinite;
+    transform-origin: top center;
     will-change: transform;
   }
 </style>

@@ -19,6 +19,11 @@
 
   let isLight = $derived(gameState.theme === 'light');
 
+  // Sincroniza a fala em tempo real com o motor de animação labial (Lip-Sync)
+  $effect(() => {
+    gameState.isSpeaking = isTyping;
+  });
+
   // Digitação suave progressiva
   $effect(() => {
     const fullText = node.text;

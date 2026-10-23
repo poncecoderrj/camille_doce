@@ -192,9 +192,9 @@
     "semantic_hash": ""
   },
   "src/features/wardrobe/WardrobeModal.svelte": {
-    "mtime": 1792713717.9637675,
-    "seen": 1792713831.0789323,
-    "ast_hash": "709bd353c23b897c3eb9784876236837",
+    "mtime": 1792715418.1547244,
+    "seen": 1792715454.755228,
+    "ast_hash": "aea7d7fdc504c56f099e7980f194542d",
     "semantic_hash": ""
   },
   "src/features/wardrobe/wardrobe.catalog.ts": {
@@ -432,9 +432,9 @@
     "semantic_hash": ""
   },
   "src/features/wardrobe/AnimeProtagonistDisplay.svelte": {
-    "mtime": 1792713801.0996077,
-    "seen": 1792713831.0789323,
-    "ast_hash": "ec947430c97853a7a11232f499e09a1f",
+    "mtime": 1792715326.6371028,
+    "seen": 1792715454.755228,
+    "ast_hash": "9b0aab92c72cff02736fd953f27ab034",
     "semantic_hash": ""
   },
   "public/assets/characters/iris.png": {
@@ -507,6 +507,24 @@
     "mtime": 1792711166.8181443,
     "seen": 1792711286.0706472,
     "ast_hash": "d2bf7a4647136fa2f081e61246962eb6",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/base/corpo_atletica_musculosa.png": {
+    "mtime": 1792715281.5180006,
+    "seen": 1792715454.755228,
+    "ast_hash": "8fdb15ea6816201df03a41d8f6736870",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/base/corpo_curvy_plussize.png": {
+    "mtime": 1792715279.9998994,
+    "seen": 1792715454.755228,
+    "ast_hash": "509be2b0bcf532cc0203e91a9f354d4b",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/base/corpo_delicada_magra.png": {
+    "mtime": 1792715280.727435,
+    "seen": 1792715454.755228,
+    "ast_hash": "9e2380911bdb564906235d4da8fd8590",
     "semantic_hash": ""
   }
 }

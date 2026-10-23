@@ -29,6 +29,9 @@ export class GameState {
   currentLocation = $state<string>('Quarto da Protagonista');
   timeOfDay = $state<'manha' | 'tarde' | 'entardecer' | 'noite'>('manha');
   
+  // Animação Facial em Tempo Real (Lip-Sync e Fala)
+  isSpeaking = $state<boolean>(false);
+  
   // Afinidade / Luvômetro (-100 a +100)
   affinity = $state<Record<string, number>>({
     dante: 0,
