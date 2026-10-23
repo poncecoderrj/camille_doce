@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { CharacterLayers } from './character-paperdoll.types';
   import { CHARACTER_MANIFESTS } from './character-manifest';
+  import { CHARACTER_FACIAL_METRICS } from './character-paperdoll.types';
   import { gameState } from '../game-state/GameState.svelte';
 
   interface Props {
@@ -24,6 +25,7 @@
   }: Props = $props();
 
   let manifest = $derived(CHARACTER_MANIFESTS[characterId] || null);
+  let metrics = $derived(CHARACTER_FACIAL_METRICS[characterId] || CHARACTER_FACIAL_METRICS.dante);
 
   // ================= MOTOR LIVE 2D: PISCADA NATURAL AUTÔNOMA =================
   let eyeBlinkProgress = $state<number>(0);
@@ -133,9 +135,9 @@
 </script>
 
 {#if manifest}
-  <!-- ATOR PAPERDOLL 2D — 100% TRANSPARENTE, SEM CAIXA, COM MICROANIMAÇÃO A 60FPS -->
+  <!-- ATOR PAPERDOLL 2D LIVE — 100% TRANSPARENTE COM CALIBRAÇÃO ANATÔMICA INDIVIDUAL -->
   <div 
-    class="relative w-72 sm:w-80 md:w-96 lg:w-[410px] h-[50vh] sm:h-[58vh] md:h-[66vh] max-h-[600px] flex items-end justify-center select-none pointer-events-none paperdoll-actor {customClass}"
+    class="relative h-[50vh] sm:h-[58vh] md:h-[66vh] max-h-[600px] aspect-[768/1344] flex items-end justify-center select-none pointer-events-none paperdoll-actor {customClass}"
     style="transform: scale({scale}) {flipHorizontal ? 'scaleX(-1)' : ''};"
   >
     
@@ -232,24 +234,24 @@
       />
     {/if}
 
-    <!-- Z: 93 — CAMADA LIVE 2D: PISCADA DE OLHOS DOS PERSONAGENS -->
+    <!-- Z: 93 — CAMADA LIVE 2D: PISCADA DE OLHOS CALIBRADA DO PERSONAGEM -->
     {#if eyeBlinkProgress > 0.02}
       <div class="absolute inset-0 w-full h-full pointer-events-none z-93">
         <!-- Pálpebra Olho Esquerdo -->
         <div 
           class="absolute overflow-hidden"
           style="
-            left: 45.3%; 
-            top: 20.8%; 
-            width: 3.9%; 
-            height: 2.1%; 
+            left: {metrics.eyeLeftX - metrics.eyeWidth / 2}%; 
+            top: {metrics.eyeY - metrics.eyeHeight / 2}%; 
+            width: {metrics.eyeWidth}%; 
+            height: {metrics.eyeHeight}%; 
             transform-origin: top center;
             transform: scaleY({eyeBlinkProgress});
           "
         >
           <div 
             class="w-full h-full rounded-b-full shadow-sm"
-            style="background: #fee5d5; border-bottom: 2px solid #1a1512;"
+            style="background: {metrics.skinTone}; border-bottom: 2px solid #1a1512;"
           ></div>
         </div>
 
@@ -257,30 +259,30 @@
         <div 
           class="absolute overflow-hidden"
           style="
-            left: 50.8%; 
-            top: 20.8%; 
-            width: 3.9%; 
-            height: 2.1%; 
+            left: {metrics.eyeRightX - metrics.eyeWidth / 2}%; 
+            top: {metrics.eyeY - metrics.eyeHeight / 2}%; 
+            width: {metrics.eyeWidth}%; 
+            height: {metrics.eyeHeight}%; 
             transform-origin: top center;
             transform: scaleY({eyeBlinkProgress});
           "
         >
           <div 
             class="w-full h-full rounded-b-full shadow-sm"
-            style="background: #fee5d5; border-bottom: 2px solid #1a1512;"
+            style="background: {metrics.skinTone}; border-bottom: 2px solid #1a1512;"
           ></div>
         </div>
       </div>
     {/if}
 
-    <!-- Z: 94 — CAMADA LIVE 2D: LIP-SYNC LABIAL DURANTE A FALA -->
+    <!-- Z: 94 — CAMADA LIVE 2D: LIP-SYNC LABIAL CALIBRADO DO PERSONAGEM -->
     {#if gameState.isSpeaking && mouthOpenAmount > 0.05}
       <div 
         class="absolute pointer-events-none z-94 flex items-center justify-center"
         style="
-          left: 48.7%; 
-          top: 24.8%; 
-          width: 2.8%; 
+          left: {metrics.mouthX - metrics.mouthWidth / 2}%; 
+          top: {metrics.mouthY}%; 
+          width: {metrics.mouthWidth}%; 
           height: 1.8%;
         "
       >

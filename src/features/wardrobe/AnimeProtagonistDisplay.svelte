@@ -2,6 +2,7 @@
   import type { EquippedOutfit } from './wardrobe.schema';
   import { gameState } from '../game-state/GameState.svelte';
   import { SKIN_TONES } from './wardrobe.catalog';
+  import { CHARACTER_FACIAL_METRICS } from '../characters/character-paperdoll.types';
 
   export type ProtagonistZoomMode = 'corpo_inteiro' | 'cabelo_rosto' | 'torso' | 'pernas_pes';
 
@@ -16,6 +17,8 @@
     zoomMode = 'corpo_inteiro', 
     class: customClass = '' 
   }: Props = $props();
+
+  const metrics = CHARACTER_FACIAL_METRICS.iris;
 
   // Tom de pele dinâmico para as pálpebras anatômicas
   let skinToneFill = $derived.by(() => {
@@ -208,7 +211,7 @@
   >
     <!-- CONTÊINER MORFOLÓGICO THE SIMS (ESCALA X/Y, DEFINIÇÃO MUSCULAR E ALTURA) -->
     <div 
-      class="relative w-full h-full flex items-end justify-center transition-all duration-300 origin-bottom"
+      class="relative h-full aspect-[768/1344] max-w-full flex items-end justify-center transition-all duration-300 origin-bottom"
       style="
         transform: scale({scaleX}, {scaleY});
         filter: contrast({muscleContrast}%);
@@ -234,10 +237,10 @@
           <div 
             class="absolute overflow-hidden"
             style="
-              left: 45.3%; 
-              top: 20.9%; 
-              width: 3.9%; 
-              height: 2.1%; 
+              left: {metrics.eyeLeftX - metrics.eyeWidth / 2}%; 
+              top: {metrics.eyeY - metrics.eyeHeight / 2}%; 
+              width: {metrics.eyeWidth}%; 
+              height: {metrics.eyeHeight}%; 
               transform-origin: top center;
               transform: scaleY({eyeBlinkProgress});
             "
@@ -252,10 +255,10 @@
           <div 
             class="absolute overflow-hidden"
             style="
-              left: 50.8%; 
-              top: 20.9%; 
-              width: 3.9%; 
-              height: 2.1%; 
+              left: {metrics.eyeRightX - metrics.eyeWidth / 2}%; 
+              top: {metrics.eyeY - metrics.eyeHeight / 2}%; 
+              width: {metrics.eyeWidth}%; 
+              height: {metrics.eyeHeight}%; 
               transform-origin: top center;
               transform: scaleY({eyeBlinkProgress});
             "
@@ -273,9 +276,9 @@
         <div 
           class="absolute pointer-events-none z-26 vn-breath-anim flex items-center justify-center"
           style="
-            left: 48.6%; 
-            top: 24.9%; 
-            width: 2.9%; 
+            left: {metrics.mouthX - metrics.mouthWidth / 2}%; 
+            top: {metrics.mouthY}%; 
+            width: {metrics.mouthWidth}%; 
             height: 1.8%;
           "
         >
