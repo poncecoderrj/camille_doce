@@ -14,7 +14,7 @@ export interface HistoryEntry {
     affinity: Record<string, number>;
     flags: Record<string, boolean | number | string>;
     coins: number;
-    currentOutfit: 'uniforme_lotus' | 'look_rock' | 'look_romantico';
+    currentOutfit: 'uniforme_lotus' | 'look_rock' | 'look_romantico' | 'look_casual_street' | 'look_academico_chic';
     unlockedMemories: string[];
     interlocutorId: string | null;
   };
@@ -111,7 +111,7 @@ export class GameState {
   ]);
 
   // Visual Oficial da Protagonista (Look / Roupa Única - sem camadas duplicadas)
-  currentOutfit = $state<'uniforme_lotus' | 'look_rock' | 'look_romantico'>('uniforme_lotus');
+  currentOutfit = $state<'uniforme_lotus' | 'look_rock' | 'look_romantico' | 'look_casual_street' | 'look_academico_chic'>('uniforme_lotus');
   isWardrobeOpen = $state<boolean>(false);
 
   // Perfil de Personalidade (Signo, 5 Traços The Sims e Aspiração de 10 Anos)
@@ -157,7 +157,7 @@ export class GameState {
     return this.protagonistProfile.traits.includes(traitId);
   }
 
-  setOutfit(outfitId: 'uniforme_lotus' | 'look_rock' | 'look_romantico') {
+  setOutfit(outfitId: 'uniforme_lotus' | 'look_rock' | 'look_romantico' | 'look_casual_street' | 'look_academico_chic') {
     this.currentOutfit = outfitId;
   }
 

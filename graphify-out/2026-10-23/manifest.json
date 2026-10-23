@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "src/features/dialogue/DialogueBox.svelte": {
-    "mtime": 1792728740.0660596,
-    "seen": 1792729076.8828046,
-    "ast_hash": "a15526616e5cf1fc76f9de27d05cf120",
+    "mtime": 1792729515.3549006,
+    "seen": 1792729712.8882408,
+    "ast_hash": "215af6edaa53860bc02569769262b383",
     "semantic_hash": ""
   },
   "src/features/dialogue/narrative.schema.ts": {
@@ -48,21 +48,21 @@
     "semantic_hash": ""
   },
   "src/features/game-state/GameState.svelte.ts": {
-    "mtime": 1792727429.5884402,
-    "seen": 1792727650.1746473,
-    "ast_hash": "c69c8065e546ac381a3a5a41f6b53451",
+    "mtime": 1792729645.1937945,
+    "seen": 1792729712.8882408,
+    "ast_hash": "2980f80d883bd67e10ed0456d24631c1",
     "semantic_hash": ""
   },
   "src/features/smartphone/PhoneShell.svelte": {
-    "mtime": 1792706667.271975,
-    "seen": 1792706694.1660416,
-    "ast_hash": "d70986578ce6a6e7c5aa212f8e19a620",
+    "mtime": 1792729619.0694132,
+    "seen": 1792729712.8882408,
+    "ast_hash": "03b760b6dfa5d121d7d26abedc64cee6",
     "semantic_hash": ""
   },
   "src/features/stage/CharacterSprite.svelte": {
-    "mtime": 1792728754.0641363,
-    "seen": 1792729076.8828046,
-    "ast_hash": "494f301e0ba9d949e9ecf7511b360a07",
+    "mtime": 1792729458.4327807,
+    "seen": 1792729712.8882408,
+    "ast_hash": "f82272be14f4ac7f241ea72597d58bad",
     "semantic_hash": ""
   },
   "src/features/stage/SceneryBackground.svelte": {
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/layout/DualStage.svelte": {
-    "mtime": 1792727144.6506166,
-    "seen": 1792727252.2556372,
-    "ast_hash": "8bc556850cb0bca871410780aa30d85b",
+    "mtime": 1792729667.0746205,
+    "seen": 1792729712.8882408,
+    "ast_hash": "9e1582af23d294ead3616bbc9e1e7107",
     "semantic_hash": ""
   },
   "src/main.ts": {
@@ -510,9 +510,9 @@
     "semantic_hash": ""
   },
   "src/features/audio/audio-manager.ts": {
-    "mtime": 1792725243.8590212,
-    "seen": 1792725648.0142581,
-    "ast_hash": "6026718e12f07732ba067d53bb5f99b4",
+    "mtime": 1792729635.293272,
+    "seen": 1792729712.8882408,
+    "ast_hash": "bba58964c70d5f82ce0ed615a862078a",
     "semantic_hash": ""
   },
   "src/features/menu/TitleScreen.svelte": {

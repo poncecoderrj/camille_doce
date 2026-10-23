@@ -1,6 +1,6 @@
 {
   "0": "DualStage.svelte",
-  "1": "GameState.svelte.ts",
+  "1": "DialogueBox.svelte",
   "2": "package.json",
   "3": "ProtagonistCustomizerModal.svelte",
   "4": "compilerOptions",
@@ -19,5 +19,5 @@
   "17": "pil",
   "18": "CharacterProfileModal.svelte",
   "19": "audioManager",
-  "20": "DialogueBox.svelte"
+  "20": "CharacterSprite.svelte"
 }

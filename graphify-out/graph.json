@@ -56,13 +56,39 @@
       "source_location": "L6"
     },
     {
+      "id": "src_features_audio_audio_manager_audiosettings",
+      "label": "AudioSettings",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "audiosettings",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L7"
+    },
+    {
       "id": "src_features_dialogue_narrative_schema_chapter",
       "label": "Chapter",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "chapter",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -75,7 +101,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "choice",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -88,7 +114,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "dialoguenode",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -101,24 +127,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "dresscodecriteria",
       "source_file": "src/features/dialogue/narrative.schema.ts",
       "source_location": "L66"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_personagemid",
-      "label": "PersonagemId",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "personagemid",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L18"
     },
     {
       "id": "src_features_dialogue_narrative_schema_tom",
@@ -127,7 +140,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "tom",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -140,7 +153,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "diaryentry",
       "source_file": "src/features/game-state/GameState.svelte.ts",
@@ -153,7 +166,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "historyentry",
       "source_file": "src/features/game-state/GameState.svelte.ts",
@@ -166,24 +179,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "protagonistprofile",
       "source_file": "src/features/personality/personality.schema.ts",
       "source_location": "L72"
-    },
-    {
-      "id": "src_features_stage_charactersprite_props",
-      "label": "Props",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "props",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L7"
     },
     {
       "id": "src_features_characters_character_types_characterid",
@@ -261,20 +261,7 @@
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L39"
-    },
-    {
-      "id": "src_features_personality_characterprofilemodal_tabtype",
-      "label": "TabType",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "CharacterProfileModal.svelte",
-      "file_type": "code",
-      "norm_label": "tabtype",
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L46"
+      "source_location": "L42"
     },
     {
       "id": "src_features_personality_personality_schema_aspiration",
@@ -355,42 +342,29 @@
       "source_location": "L340"
     },
     {
-      "id": "src_features_audio_audio_manager_audiosettings",
-      "label": "AudioSettings",
+      "id": "src_features_dialogue_narrative_schema_personagemid",
+      "label": "PersonagemId",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 19,
-      "community_name": "audioManager",
+      "community": 20,
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
-      "norm_label": "audiosettings",
-      "source_file": "src/features/audio/audio-manager.ts",
-      "source_location": "L7"
+      "norm_label": "personagemid",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L18"
     },
     {
-      "id": "src_features_campus_map_campusmapmodal_props",
+      "id": "src_features_stage_charactersprite_props",
       "label": "Props",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 20,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "props",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
-      "source_location": "L5"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_props",
-      "label": "Props",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "props",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
       "source_location": "L7"
     },
     {
@@ -404,7 +378,7 @@
       "file_type": "code",
       "norm_label": "outfitid",
       "source_file": "src/features/customization/customization.schema.ts",
-      "source_location": "L9"
+      "source_location": "L11"
     },
     {
       "id": "src_features_customization_customization_schema_outfitoption",
@@ -417,7 +391,7 @@
       "file_type": "code",
       "norm_label": "outfitoption",
       "source_file": "src/features/customization/customization.schema.ts",
-      "source_location": "L11"
+      "source_location": "L13"
     },
     {
       "id": "src_features_customization_protagonistactor_props",
@@ -444,6 +418,19 @@
       "norm_label": "props",
       "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
       "source_location": "L10"
+    },
+    {
+      "id": "src_features_campus_map_campusmapmodal_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "PhoneShell.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L5"
     },
     {
       "id": "src_features_smartphone_phoneshell_props",
@@ -520,12 +507,24 @@
       "source_location": "L77"
     },
     {
+      "id": "src_features_dialogue_dialoguebox_completetextoradvance",
+      "label": "completeTextOrAdvance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "completetextoradvance()",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L61"
+    },
+    {
       "id": "src_features_game_state_gamestate_svelte_gamestate_applychoice",
       "label": ".applyChoice()",
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": ".applychoice()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
@@ -537,7 +536,7 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": ".modifyaffinity()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
@@ -556,6 +555,30 @@
       "source_location": "L29"
     },
     {
+      "id": "src_features_personality_characterprofilemodal_focustrait",
+      "label": "focusTrait()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "CharacterProfileModal.svelte",
+      "file_type": "code",
+      "norm_label": "focustrait()",
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L139"
+    },
+    {
+      "id": "src_features_personality_characterprofilemodal_gotostep",
+      "label": "goToStep()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "CharacterProfileModal.svelte",
+      "file_type": "code",
+      "norm_label": "gotostep()",
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L175"
+    },
+    {
       "id": "src_features_personality_characterprofilemodal_handlesaveprofile",
       "label": "handleSaveProfile()",
       "_callable": true,
@@ -565,7 +588,31 @@
       "file_type": "code",
       "norm_label": "handlesaveprofile()",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L132"
+      "source_location": "L215"
+    },
+    {
+      "id": "src_features_personality_characterprofilemodal_nextstep",
+      "label": "nextStep()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "CharacterProfileModal.svelte",
+      "file_type": "code",
+      "norm_label": "nextstep()",
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L186"
+    },
+    {
+      "id": "src_features_personality_characterprofilemodal_prevstep",
+      "label": "prevStep()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "CharacterProfileModal.svelte",
+      "file_type": "code",
+      "norm_label": "prevstep()",
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L206"
     },
     {
       "id": "src_features_personality_characterprofilemodal_selectaspiration",
@@ -577,7 +624,7 @@
       "file_type": "code",
       "norm_label": "selectaspiration()",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L122"
+      "source_location": "L165"
     },
     {
       "id": "src_features_personality_characterprofilemodal_selectoutfit",
@@ -589,7 +636,7 @@
       "file_type": "code",
       "norm_label": "selectoutfit()",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L127"
+      "source_location": "L170"
     },
     {
       "id": "src_features_personality_characterprofilemodal_selectzodiac",
@@ -601,7 +648,7 @@
       "file_type": "code",
       "norm_label": "selectzodiac()",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L97"
+      "source_location": "L134"
     },
     {
       "id": "src_features_personality_characterprofilemodal_toggletrait",
@@ -613,7 +660,7 @@
       "file_type": "code",
       "norm_label": "toggletrait()",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L102"
+      "source_location": "L144"
     },
     {
       "id": "src_features_audio_audio_manager_audiomanager_constructor",
@@ -760,30 +807,6 @@
       "source_location": "L68"
     },
     {
-      "id": "src_features_campus_map_campusmapmodal_travelto",
-      "label": "travelTo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "travelto()",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
-      "source_location": "L72"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_completetextoradvance",
-      "label": "completeTextOrAdvance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "completetextoradvance()",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L61"
-    },
-    {
       "id": "src_features_customization_customization_catalog_resolveprotagonistlookimage",
       "label": "resolveProtagonistLookImage()",
       "_callable": true,
@@ -793,7 +816,7 @@
       "file_type": "code",
       "norm_label": "resolveprotagonistlookimage()",
       "source_file": "src/features/customization/customization.catalog.ts",
-      "source_location": "L55"
+      "source_location": "L83"
     },
     {
       "id": "src_features_customization_protagonistactor_handleimgerror",
@@ -842,6 +865,18 @@
       "norm_label": "selectoutfit()",
       "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
       "source_location": "L30"
+    },
+    {
+      "id": "src_features_campus_map_campusmapmodal_travelto",
+      "label": "travelTo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "PhoneShell.svelte",
+      "file_type": "code",
+      "norm_label": "travelto()",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L72"
     },
     {
       "id": "src_features_smartphone_phoneshell_handlesavediary",
@@ -1536,11 +1571,132 @@
       "source_location": "L25"
     },
     {
+      "id": "src_features_audio_audio_manager",
+      "label": "audio-manager.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "audio-manager.ts",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox",
+      "label": "DialogueBox.svelte",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "dialoguebox.svelte",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_canrollback",
+      "label": "canRollback",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "canrollback",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L22"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_displayedtext",
+      "label": "displayedText",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "displayedtext",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_isalarmblocked",
+      "label": "isAlarmBlocked",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "isalarmblocked",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_islight",
+      "label": "isLight",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "islight",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_istyping",
+      "label": "isTyping",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "istyping",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_node_onselectchoice_ontogglephone_onopenhistory_onrollback",
+      "label": "{ node, onSelectChoice, onTogglePhone, onOpenHistory, onRollback }",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "{ node, onselectchoice, ontogglephone, onopenhistory, onrollback }",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_processedtext",
+      "label": "processedText",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "processedtext",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L31"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_speakeraccent",
+      "label": "speakerAccent",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "speakeraccent",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L79"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_speakeraccents",
+      "label": "speakerAccents",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "speakeraccents",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L70"
+    },
+    {
       "id": "src_features_dialogue_narrative_schema",
       "label": "narrative.schema.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "narrative.schema.ts",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1551,7 +1707,7 @@
       "label": "ChapterSchema",
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "chapterschema",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1562,7 +1718,7 @@
       "label": "ChoiceSchema",
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "choiceschema",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1573,7 +1729,7 @@
       "label": "DialogueNodeSchema",
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "dialoguenodeschema",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1584,7 +1740,7 @@
       "label": "DressCodeCriteriaSchema",
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "dresscodecriteriaschema",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1595,7 +1751,7 @@
       "label": "PersonagemEnum",
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "personagemenum",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1606,7 +1762,7 @@
       "label": "TomEnum",
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "tomenum",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1617,99 +1773,11 @@
       "label": "GameState.svelte.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "GameState.svelte.ts",
+      "community_name": "DialogueBox.svelte",
       "file_type": "code",
       "norm_label": "gamestate.svelte.ts",
       "source_file": "src/features/game-state/GameState.svelte.ts",
       "source_location": "L1"
-    },
-    {
-      "id": "src_features_stage_charactersprite",
-      "label": "CharacterSprite.svelte",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "charactersprite.svelte",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_stage_charactersprite_characterprofiles",
-      "label": "characterProfiles",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "characterprofiles",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L27"
-    },
-    {
-      "id": "src_features_stage_charactersprite_enterclass",
-      "label": "enterClass",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "enterclass",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L102"
-    },
-    {
-      "id": "src_features_stage_charactersprite_islight",
-      "label": "isLight",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "islight",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L79"
-    },
-    {
-      "id": "src_features_stage_charactersprite_isprotagonist",
-      "label": "isProtagonist",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "isprotagonist",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L80"
-    },
-    {
-      "id": "src_features_stage_charactersprite_motionanimclass",
-      "label": "motionAnimClass",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "motionanimclass",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L87"
-    },
-    {
-      "id": "src_features_stage_charactersprite_profile",
-      "label": "profile",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "profile",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L64"
-    },
-    {
-      "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutral_timeofday_manha_position_center_isactive_true_isspeaking_false",
-      "label": "{ \n    speaker, \n    speakerName = '', \n    expression = 'neutral', \n    timeOfDay = 'manha',\n    position = 'center',\n    isActive = true,\n    isSpeaking = false\n  }",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "GameState.svelte.ts",
-      "file_type": "code",
-      "norm_label": "{ \n    speaker, \n    speakername = '', \n    expression = 'neutral', \n    timeofday = 'manha',\n    position = 'center',\n    isactive = true,\n    isspeaking = false\n  }",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L17"
     },
     {
       "id": "readme",
@@ -1934,18 +2002,18 @@
       "file_type": "code",
       "norm_label": "activeaspirationdetails",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L87"
+      "source_location": "L99"
     },
     {
-      "id": "src_features_personality_characterprofilemodal_activetab",
-      "label": "activeTab",
+      "id": "src_features_personality_characterprofilemodal_activeoutfitdetails",
+      "label": "activeOutfitDetails",
       "_origin": "ast",
       "community": 18,
       "community_name": "CharacterProfileModal.svelte",
       "file_type": "code",
-      "norm_label": "activetab",
+      "norm_label": "activeoutfitdetails",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L47"
+      "source_location": "L123"
     },
     {
       "id": "src_features_personality_characterprofilemodal_activezodiacdetails",
@@ -1956,7 +2024,7 @@
       "file_type": "code",
       "norm_label": "activezodiacdetails",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L82"
+      "source_location": "L94"
     },
     {
       "id": "src_features_personality_characterprofilemodal_boyaccents",
@@ -1967,7 +2035,18 @@
       "file_type": "code",
       "norm_label": "boyaccents",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L156"
+      "source_location": "L127"
+    },
+    {
+      "id": "src_features_personality_characterprofilemodal_currentstep",
+      "label": "currentStep",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "CharacterProfileModal.svelte",
+      "file_type": "code",
+      "norm_label": "currentstep",
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L54"
     },
     {
       "id": "src_features_personality_characterprofilemodal_draftaspiration",
@@ -1978,7 +2057,7 @@
       "file_type": "code",
       "norm_label": "draftaspiration",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L53"
+      "source_location": "L60"
     },
     {
       "id": "src_features_personality_characterprofilemodal_draftname",
@@ -1989,7 +2068,7 @@
       "file_type": "code",
       "norm_label": "draftname",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L50"
+      "source_location": "L57"
     },
     {
       "id": "src_features_personality_characterprofilemodal_draftoutfit",
@@ -2000,7 +2079,7 @@
       "file_type": "code",
       "norm_label": "draftoutfit",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L54"
+      "source_location": "L61"
     },
     {
       "id": "src_features_personality_characterprofilemodal_drafttraits",
@@ -2011,7 +2090,7 @@
       "file_type": "code",
       "norm_label": "drafttraits",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L52"
+      "source_location": "L59"
     },
     {
       "id": "src_features_personality_characterprofilemodal_draftzodiac",
@@ -2022,7 +2101,7 @@
       "file_type": "code",
       "norm_label": "draftzodiac",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L51"
+      "source_location": "L58"
     },
     {
       "id": "src_features_personality_characterprofilemodal_filteredtraits",
@@ -2033,7 +2112,40 @@
       "file_type": "code",
       "norm_label": "filteredtraits",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L92"
+      "source_location": "L117"
+    },
+    {
+      "id": "src_features_personality_characterprofilemodal_focusedtraitdetails",
+      "label": "focusedTraitDetails",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "CharacterProfileModal.svelte",
+      "file_type": "code",
+      "norm_label": "focusedtraitdetails",
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L104"
+    },
+    {
+      "id": "src_features_personality_characterprofilemodal_focusedtraiticon",
+      "label": "FocusedTraitIcon",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "CharacterProfileModal.svelte",
+      "file_type": "code",
+      "norm_label": "focusedtraiticon",
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L108"
+    },
+    {
+      "id": "src_features_personality_characterprofilemodal_focusedtraitid",
+      "label": "focusedTraitId",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "CharacterProfileModal.svelte",
+      "file_type": "code",
+      "norm_label": "focusedtraitid",
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L64"
     },
     {
       "id": "src_features_personality_characterprofilemodal_iconmap",
@@ -2044,7 +2156,18 @@
       "file_type": "code",
       "norm_label": "iconmap",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L60"
+      "source_location": "L72"
+    },
+    {
+      "id": "src_features_personality_characterprofilemodal_isfocusedselected",
+      "label": "isFocusedSelected",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "CharacterProfileModal.svelte",
+      "file_type": "code",
+      "norm_label": "isfocusedselected",
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L112"
     },
     {
       "id": "src_features_personality_characterprofilemodal_onclose_mode_edit",
@@ -2055,7 +2178,18 @@
       "file_type": "code",
       "norm_label": "{ onclose, mode = 'edit' }",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L44"
+      "source_location": "L47"
+    },
+    {
+      "id": "src_features_personality_characterprofilemodal_steptitles",
+      "label": "stepTitles",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "CharacterProfileModal.svelte",
+      "file_type": "code",
+      "norm_label": "steptitles",
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L239"
     },
     {
       "id": "src_features_personality_characterprofilemodal_traitcategoryfilter",
@@ -2066,7 +2200,7 @@
       "file_type": "code",
       "norm_label": "traitcategoryfilter",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L56"
+      "source_location": "L68"
     },
     {
       "id": "src_features_personality_characterprofilemodal_traitlimitwarning",
@@ -2077,7 +2211,7 @@
       "file_type": "code",
       "norm_label": "traitlimitwarning",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L57"
+      "source_location": "L69"
     },
     {
       "id": "src_features_personality_personality_catalog",
@@ -2157,15 +2291,15 @@
       "source_location": "L4"
     },
     {
-      "id": "src_features_audio_audio_manager",
-      "label": "audio-manager.ts",
+      "id": "ref_zod",
+      "label": "zod",
       "_origin": "ast",
-      "community": 19,
-      "community_name": "audioManager",
-      "file_type": "code",
-      "norm_label": "audio-manager.ts",
-      "source_file": "src/features/audio/audio-manager.ts",
-      "source_location": "L1"
+      "community": 18,
+      "community_name": "CharacterProfileModal.svelte",
+      "file_type": "concept",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L29"
     },
     {
       "id": "package",
@@ -2476,180 +2610,92 @@
       "source_location": "L23"
     },
     {
-      "id": "lucide_svelte",
-      "label": "lucide-svelte",
+      "id": "src_features_stage_charactersprite",
+      "label": "CharacterSprite.svelte",
       "_origin": "ast",
       "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "confidence": "EXTRACTED",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
-      "norm_label": "lucide-svelte",
-      "source_file": "lucide-svelte"
-    },
-    {
-      "id": "src_features_campus_map_campusmapmodal",
-      "label": "CampusMapModal.svelte",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "campusmapmodal.svelte",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "norm_label": "charactersprite.svelte",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
       "source_location": "L1"
     },
     {
-      "id": "src_features_campus_map_campusmapmodal_islight",
+      "id": "src_features_stage_charactersprite_characterprofiles",
+      "label": "characterProfiles",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "characterprofiles",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_features_stage_charactersprite_enterclass",
+      "label": "enterClass",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "enterclass",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L102"
+    },
+    {
+      "id": "src_features_stage_charactersprite_islight",
       "label": "isLight",
       "_origin": "ast",
       "community": 20,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "islight",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
-      "source_location": "L11"
-    },
-    {
-      "id": "src_features_campus_map_campusmapmodal_locations",
-      "label": "locations",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "locations",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_features_campus_map_campusmapmodal_onclose",
-      "label": "{ onClose }",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "{ onclose }",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox",
-      "label": "DialogueBox.svelte",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "dialoguebox.svelte",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_canrollback",
-      "label": "canRollback",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "canrollback",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L22"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_displayedtext",
-      "label": "displayedText",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "displayedtext",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_isalarmblocked",
-      "label": "isAlarmBlocked",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "isalarmblocked",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L23"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_islight",
-      "label": "isLight",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "islight",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_istyping",
-      "label": "isTyping",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "istyping",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_node_onselectchoice_ontogglephone_onopenhistory_onrollback",
-      "label": "{ node, onSelectChoice, onTogglePhone, onOpenHistory, onRollback }",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "{ node, onselectchoice, ontogglephone, onopenhistory, onrollback }",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L15"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_processedtext",
-      "label": "processedText",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "processedtext",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L31"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_speakeraccent",
-      "label": "speakerAccent",
-      "_origin": "ast",
-      "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "speakeraccent",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
       "source_location": "L79"
     },
     {
-      "id": "src_features_dialogue_dialoguebox_speakeraccents",
-      "label": "speakerAccents",
+      "id": "src_features_stage_charactersprite_isprotagonist",
+      "label": "isProtagonist",
       "_origin": "ast",
       "community": 20,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
-      "norm_label": "speakeraccents",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L70"
+      "norm_label": "isprotagonist",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L80"
     },
     {
-      "id": "ref_lucide_svelte",
-      "label": "lucide-svelte",
+      "id": "src_features_stage_charactersprite_motionanimclass",
+      "label": "motionAnimClass",
       "_origin": "ast",
       "community": 20,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "concept",
-      "norm_label": "lucide-svelte",
-      "source_file": "package.json",
-      "source_location": "L28"
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "motionanimclass",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L87"
+    },
+    {
+      "id": "src_features_stage_charactersprite_profile",
+      "label": "profile",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "profile",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L64"
+    },
+    {
+      "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutral_timeofday_manha_position_center_isactive_true_isspeaking_false",
+      "label": "{ \n    speaker, \n    speakerName = '', \n    expression = 'neutral', \n    timeOfDay = 'manha',\n    position = 'center',\n    isActive = true,\n    isSpeaking = false\n  }",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "{ \n    speaker, \n    speakername = '', \n    expression = 'neutral', \n    timeofday = 'manha',\n    position = 'center',\n    isactive = true,\n    isspeaking = false\n  }",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L17"
     },
     {
       "id": "src_features_customization_customization_catalog",
@@ -2671,7 +2717,7 @@
       "file_type": "code",
       "norm_label": "boy_reactions",
       "source_file": "src/features/customization/customization.catalog.ts",
-      "source_location": "L33"
+      "source_location": "L51"
     },
     {
       "id": "src_features_customization_customization_catalog_outfit_options",
@@ -2804,17 +2850,6 @@
       "norm_label": "selectedoutfit",
       "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
       "source_location": "L16"
-    },
-    {
-      "id": "ref_zod",
-      "label": "zod",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ProtagonistCustomizerModal.svelte",
-      "file_type": "concept",
-      "norm_label": "zod",
-      "source_file": "package.json",
-      "source_location": "L29"
     },
     {
       "id": "tsconfig_node",
@@ -3004,6 +3039,61 @@
       "source_location": "L22"
     },
     {
+      "id": "lucide_svelte",
+      "label": "lucide-svelte",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "PhoneShell.svelte",
+      "confidence": "EXTRACTED",
+      "file_type": "code",
+      "norm_label": "lucide-svelte",
+      "source_file": "lucide-svelte"
+    },
+    {
+      "id": "src_features_campus_map_campusmapmodal",
+      "label": "CampusMapModal.svelte",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "PhoneShell.svelte",
+      "file_type": "code",
+      "norm_label": "campusmapmodal.svelte",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_campus_map_campusmapmodal_islight",
+      "label": "isLight",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "PhoneShell.svelte",
+      "file_type": "code",
+      "norm_label": "islight",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_features_campus_map_campusmapmodal_locations",
+      "label": "locations",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "PhoneShell.svelte",
+      "file_type": "code",
+      "norm_label": "locations",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_features_campus_map_campusmapmodal_onclose",
+      "label": "{ onClose }",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "PhoneShell.svelte",
+      "file_type": "code",
+      "norm_label": "{ onclose }",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L9"
+    },
+    {
       "id": "src_features_smartphone_phoneshell",
       "label": "PhoneShell.svelte",
       "_origin": "ast",
@@ -3178,6 +3268,17 @@
       "norm_label": "wallpapers",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
       "source_location": "L38"
+    },
+    {
+      "id": "ref_lucide_svelte",
+      "label": "lucide-svelte",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "PhoneShell.svelte",
+      "file_type": "concept",
+      "norm_label": "lucide-svelte",
+      "source_file": "package.json",
+      "source_location": "L28"
     },
     {
       "id": "tsconfig_app",
@@ -3770,6 +3871,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_personality_characterprofilemodal_nextstep",
+      "target": "src_features_personality_characterprofilemodal_handlesaveprofile",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L202",
+      "weight": 1.0
+    },
+    {
       "source": "tsconfig_app",
       "target": "ref_tsconfig_svelte_tsconfig_json",
       "relation": "extends",
@@ -4282,7 +4395,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L31",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -4294,7 +4407,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L32",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -4306,7 +4419,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L34",
+      "source_location": "L37",
       "weight": 1.0
     },
     {
@@ -4318,7 +4431,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L35",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -4330,7 +4443,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L35",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -4342,7 +4455,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L36",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -4354,7 +4467,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L36",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -4366,7 +4479,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L36",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -4378,7 +4491,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L37",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -4390,7 +4503,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L37",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -5010,7 +5123,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L31",
+      "source_location": "L34",
       "weight": 1.0
     },
     {
@@ -5022,7 +5135,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L32",
+      "source_location": "L35",
       "weight": 1.0
     },
     {
@@ -5034,7 +5147,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L33",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -5046,7 +5159,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L34",
+      "source_location": "L37",
       "type_only": true,
       "weight": 1.0
     },
@@ -5059,7 +5172,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L35",
+      "source_location": "L38",
       "weight": 1.0
     },
     {
@@ -5071,7 +5184,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L36",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -5083,7 +5196,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L37",
+      "source_location": "L40",
       "type_only": true,
       "weight": 1.0
     },
@@ -5975,7 +6088,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/customization/customization.catalog.ts",
-      "source_location": "L33",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -5986,7 +6099,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/customization/customization.catalog.ts",
-      "source_location": "L55",
+      "source_location": "L83",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_outfitid",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -5997,7 +6121,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/customization/customization.schema.ts",
-      "source_location": "L11",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -6009,17 +6133,6 @@
       "confidence_score": 1.0,
       "source_file": "src/features/customization/customization.schema.ts",
       "source_location": "L4",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_customization_customization_schema",
-      "target": "src_features_customization_customization_schema_outfitid",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/customization/customization.schema.ts",
-      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -6607,211 +6720,35 @@
     },
     {
       "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_toggletrait",
+      "target": "src_features_personality_characterprofilemodal_focusedtraitdetails",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L102",
+      "source_location": "L104",
       "weight": 1.0
     },
     {
       "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_selectaspiration",
+      "target": "src_features_personality_characterprofilemodal_focusedtraiticon",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L122",
+      "source_location": "L108",
       "weight": 1.0
     },
     {
       "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_selectoutfit",
+      "target": "src_features_personality_characterprofilemodal_isfocusedselected",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L127",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_handlesaveprofile",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L132",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_boyaccents",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L156",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_props",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L39",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_onclose_mode_edit",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L44",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_tabtype",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L46",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_activetab",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L47",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_draftname",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L50",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_draftzodiac",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L51",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_drafttraits",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L52",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_draftaspiration",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L53",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_draftoutfit",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L54",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_traitcategoryfilter",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L56",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_traitlimitwarning",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L57",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_iconmap",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L60",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_activezodiacdetails",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L82",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_personality_characterprofilemodal",
-      "target": "src_features_personality_characterprofilemodal_activeaspirationdetails",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L87",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -6822,7 +6759,29 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L92",
+      "source_location": "L117",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_activeoutfitdetails",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_boyaccents",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L127",
       "weight": 1.0
     },
     {
@@ -6833,7 +6792,260 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/personality/CharacterProfileModal.svelte",
-      "source_location": "L97",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_focustrait",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_toggletrait",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_selectaspiration",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_selectoutfit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L170",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_gotostep",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L175",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_nextstep",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_prevstep",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L206",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_handlesaveprofile",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_steptitles",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L239",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_props",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L42",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_onclose_mode_edit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_currentstep",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_draftname",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_draftzodiac",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_drafttraits",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_draftaspiration",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L60",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_draftoutfit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_focusedtraitid",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L64",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_traitcategoryfilter",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_traitlimitwarning",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_iconmap",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_activezodiacdetails",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_personality_characterprofilemodal",
+      "target": "src_features_personality_characterprofilemodal_activeaspirationdetails",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/personality/CharacterProfileModal.svelte",
+      "source_location": "L99",
       "weight": 1.0
     },
     {
@@ -8420,5 +8632,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2dd2bb255b71a40b7e9f2a51a7068d21cf9b2536"
+  "built_at_commit": "a434046cd00003ab70541464da03f380da281906"
 }

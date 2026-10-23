@@ -27,6 +27,24 @@ export const OUTFIT_OPTIONS: OutfitOption[] = [
     affinityBonus: 15,
     description: 'Vestido fluido em tons suaves com caimento poético. Theo diz que você parece uma pintura que acabou de ganhar vida.',
     image: '/assets/characters/iris/base/look_romantico.png'
+  },
+  {
+    id: 'look_casual_street',
+    name: 'Casual Streetwear Confortável',
+    styleTag: 'Casual',
+    affinityTarget: 'geral',
+    affinityBonus: 10,
+    description: 'Moletom oversized pastel descontraído, calça jeans reta vintage e tênis branco. Traz uma vibe espontânea e amigável.',
+    image: '/assets/characters/iris/base/look_casual_street.png'
+  },
+  {
+    id: 'look_academico_chic',
+    name: 'Dark Academia & Alfaiataria',
+    styleTag: 'Acadêmico',
+    affinityTarget: 'lucas',
+    affinityBonus: 15,
+    description: 'Colete de tricô marrom com camisa estruturada, saia xadrez e sapatos oxford. Passa um ar culto, refinado e estudioso.',
+    image: '/assets/characters/iris/base/look_academico_chic.png'
   }
 ];
 
@@ -49,6 +67,16 @@ export const BOY_REACTIONS: Record<OutfitId, {
     dante: 'Flores e vestido delicado? É bem diferente do som pesado que eu toco, mas admito que você ficou linda.',
     lucas: 'Um traje refinado e gracioso. Traz uma harmonia suave e acolhedora para o ambiente da escola.',
     theo: 'Parece uma aquarela que ganhou vida própria... Eu poderia passar a tarde inteira rascunhando esse movimento no meu caderno.'
+  },
+  look_casual_street: {
+    dante: 'Curti o estilo largado e autêntico. Sem frescura, pronta pra qualquer rolê depois da aula.',
+    lucas: 'Bem informal para o padrão da Lótus, mas preciso confessar que combina com sua espontaneidade natural.',
+    theo: 'Cores suaves e postura leve... Você passa a sensação de quem sabe encontrar paz em qualquer lugar.'
+  },
+  look_academico_chic: {
+    dante: 'Parece uma detetive ou professora de literatura... Um estilo misterioso que chama atenção.',
+    lucas: 'Alfaiataria impecável e sobriedade estudiosa. Parece pronta para presidir uma sessão solene comigo.',
+    theo: 'A paleta de marrons e o xadrez clássico me lembram bibliotecas antigas e café em dias de chuva.'
   }
 };
 
@@ -58,6 +86,10 @@ export function resolveProtagonistLookImage(outfitId: OutfitId | string): string
       return '/assets/characters/iris/base/look_rock.png';
     case 'look_romantico':
       return '/assets/characters/iris/base/look_romantico.png';
+    case 'look_casual_street':
+      return '/assets/characters/iris/base/look_casual_street.png';
+    case 'look_academico_chic':
+      return '/assets/characters/iris/base/look_academico_chic.png';
     case 'uniforme_lotus':
     default:
       return '/assets/characters/iris/base/uniforme_lotus.png';
