@@ -10,7 +10,7 @@
     BODY_PRESETS,
     HAIR_STYLES
   } from './wardrobe.catalog';
-  import AnimeProtagonistDisplay from './AnimeProtagonistDisplay.svelte';
+  import AnimeProtagonistDisplay, { type ProtagonistZoomMode } from './AnimeProtagonistDisplay.svelte';
   import { 
     Sparkles, 
     X, 
@@ -39,8 +39,8 @@
   // Cópia local de rascunho para experimentar antes de confirmar
   let previewOutfit = $state<EquippedOutfit>({ ...gameState.equippedOutfit });
 
-  // Controles de Visualização
-  let zoomMode = $state<'corpo_inteiro' | 'busto'>('corpo_inteiro');
+  // Controles de Câmera & Smart Auto-Zoom
+  let zoomMode = $state<ProtagonistZoomMode>('corpo_inteiro');
   let activeTab = $state<'presets' | 'corpo' | 'rosto' | 'superior' | 'inferior' | 'vestido' | 'casaco' | 'calcado' | 'acessorios'>('presets');
   let selectedStyleFilter = $state<string>('todos');
 
@@ -56,6 +56,22 @@
     { id: 'calcado', label: 'Sapatos & Meias', icon: SlidersHorizontal },
     { id: 'acessorios', label: 'Acessórios', icon: Glasses }
   ];
+
+  // Alternador de Abas com Smart Auto-Zoom Contextual da Câmera
+  function selectTab(tabId: typeof activeTab) {
+    activeTab = tabId;
+    if (tabId === 'rosto') {
+      zoomMode = 'cabelo_rosto'; // Zoom no rosto e cabelo
+    } else if (tabId === 'corpo') {
+      zoomMode = 'corpo_inteiro'; // Afasta para ver altura e físico completo
+    } else if (tabId === 'superior' || tabId === 'casaco') {
+      zoomMode = 'torso'; // Zoom no tronco e jaqueta
+    } else if (tabId === 'inferior' || tabId === 'calcado') {
+      zoomMode = 'pernas_pes'; // Pan para pernas, saia e calçados
+    } else {
+      zoomMode = 'corpo_inteiro';
+    }
+  }
 
   // Itens filtrados para a aba ativa
   let currentItems = $derived(
@@ -142,15 +158,26 @@
     return { danteComment, lucasComment, theoComment };
   });
 
-  // Ações de Equipar Peças
+  // Ações de Equipar Peças com Exclusividade de Slot e Prevenção de Conflitos
   function equipItem(item: (typeof WARDROBE_CATALOG)[0]) {
     if (item.category === 'superior') {
+      // Se estava de vestido, desequipa o vestido para não sobrepor
+      previewOutfit.dress = undefined;
       previewOutfit.top = item.id;
-      previewOutfit.dress = undefined;
+      // Garante que não fique sem saia/calça
+      if (!previewOutfit.bottom) {
+        previewOutfit.bottom = 'saia_pregueada_azul';
+      }
     } else if (item.category === 'inferior') {
-      previewOutfit.bottom = item.id;
+      // Se estava de vestido, desequipa o vestido
       previewOutfit.dress = undefined;
+      previewOutfit.bottom = item.id;
+      // Garante que não fique sem blusa
+      if (!previewOutfit.top) {
+        previewOutfit.top = 'camisa_uniforme_lotus';
+      }
     } else if (item.category === 'vestido') {
+      // Vestido é peça única de corpo inteiro: limpa top e bottom para evitar clipping
       previewOutfit.dress = item.id;
       previewOutfit.top = undefined;
       previewOutfit.bottom = undefined;
@@ -178,6 +205,18 @@
   }
 
   function applyPreset(preset: (typeof OUTFIT_PRESETS)[0]) {
+    // Limpa camadas externas anteriores antes de aplicar o preset completo
+    previewOutfit.top = undefined;
+    previewOutfit.bottom = undefined;
+    previewOutfit.dress = undefined;
+    previewOutfit.jacket = undefined;
+    previewOutfit.hat = undefined;
+    previewOutfit.glasses = undefined;
+    previewOutfit.necklace = undefined;
+    previewOutfit.bag = undefined;
+    previewOutfit.shoes = undefined;
+    previewOutfit.socks = undefined;
+
     previewOutfit = {
       ...previewOutfit,
       ...preset.pieces
@@ -203,8 +242,14 @@
 
   function confirmOutfit() {
     gameState.equippedOutfit = { ...previewOutfit };
+    gameState.flags.customizou_primeiro_dia = true;
     gameState.closeWardrobe();
     onClose();
+
+    // Se estiver no nó do prólogo matinal (guarda-roupa), avança automaticamente para a próxima cena
+    if (gameState.currentNodeId === 'node_00_guarda_roupa') {
+      gameState.currentNodeId = 'node_00_mochila';
+    }
   }
 </script>
 
@@ -256,41 +301,55 @@
     <!-- ÁREA PRINCIPAL DIVIDIDA (MANEQUIM À ESQUERDA + GUARDA-ROUPA À DIREITA) -->
     <div class="flex-1 flex flex-col md:flex-row overflow-hidden">
       
-      <!-- ================= COLUNA ESQUERDA: PALCO DO MANEQUIM ================= -->
-      <div class="w-full md:w-[420px] lg:w-[460px] h-72 md:h-full flex flex-col items-center justify-between p-4 border-b md:border-b-0 md:border-r border-white/10 bg-radial from-[#1e202b] to-[#0c0d12] relative overflow-hidden">
+      <!-- ================= COLUNA ESQUERDA: PALCO CENTRALIZADO DO MANEQUIM ================= -->
+      <div class="w-full md:w-[460px] lg:w-[500px] h-80 md:h-full flex flex-col items-center justify-between p-4 border-b md:border-b-0 md:border-r border-white/10 bg-radial from-[#1e202b] to-[#0c0d12] relative overflow-hidden shrink-0">
         
         <!-- HOLOFOTE DE LUZ SUAVE NO CHÃO -->
-        <div class="absolute bottom-12 w-64 h-16 bg-amber-400/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div class="absolute bottom-12 w-72 h-20 bg-amber-400/12 rounded-full blur-2xl pointer-events-none"></div>
 
-        <!-- CONTROLES SUPERIORES DO MANEQUIM -->
+        <!-- CONTROLES SUPERIORES DA CÂMERA INTELIGENTE -->
         <div class="w-full flex items-center justify-between z-10">
-          <!-- Alternador de Zoom (Corpo Inteiro / Busto) -->
-          <div class="flex items-center gap-1 p-1 rounded-xl bg-black/40 border border-white/10 text-xs">
+          <!-- Botoeira de Foco da Câmera (Auto & Manual) -->
+          <div class="flex items-center gap-1 p-1 rounded-xl bg-black/50 border border-white/10 text-xs shadow-md">
             <button 
-              onclick={() => zoomMode = 'corpo_inteiro'}
-              class="px-2.5 py-1 rounded-lg flex items-center gap-1.5 transition-colors {zoomMode === 'corpo_inteiro' ? 'bg-amber-500 text-stone-950 font-bold' : 'text-zinc-400 hover:text-white'}"
+              title="Focar no Cabelo e Rosto"
+              onclick={() => zoomMode = 'cabelo_rosto'}
+              class="px-2 py-1 rounded-lg flex items-center gap-1 transition-all {zoomMode === 'cabelo_rosto' ? 'bg-amber-500 text-stone-950 font-bold shadow' : 'text-zinc-400 hover:text-white'}"
             >
-              <ZoomOut class="w-3.5 h-3.5" />
-              <span>Corpo</span>
+              <span>👤 Rosto</span>
             </button>
             <button 
-              onclick={() => zoomMode = 'busto'}
-              class="px-2.5 py-1 rounded-lg flex items-center gap-1.5 transition-colors {zoomMode === 'busto' ? 'bg-amber-500 text-stone-950 font-bold' : 'text-zinc-400 hover:text-white'}"
+              title="Focar no Tronco e Camisa/Casaco"
+              onclick={() => zoomMode = 'torso'}
+              class="px-2 py-1 rounded-lg flex items-center gap-1 transition-all {zoomMode === 'torso' ? 'bg-amber-500 text-stone-950 font-bold shadow' : 'text-zinc-400 hover:text-white'}"
             >
-              <ZoomIn class="w-3.5 h-3.5" />
-              <span>Zoom</span>
+              <span>👗 Tronco</span>
+            </button>
+            <button 
+              title="Focar nas Pernas e Calçados"
+              onclick={() => zoomMode = 'pernas_pes'}
+              class="px-2 py-1 rounded-lg flex items-center gap-1 transition-all {zoomMode === 'pernas_pes' ? 'bg-amber-500 text-stone-950 font-bold shadow' : 'text-zinc-400 hover:text-white'}"
+            >
+              <span>🦵 Pernas</span>
+            </button>
+            <button 
+              title="Visão Geral de Corpo Inteiro"
+              onclick={() => zoomMode = 'corpo_inteiro'}
+              class="px-2 py-1 rounded-lg flex items-center gap-1 transition-all {zoomMode === 'corpo_inteiro' ? 'bg-amber-500 text-stone-950 font-bold shadow' : 'text-zinc-400 hover:text-white'}"
+            >
+              <span>🧍 Todo</span>
             </button>
           </div>
 
           <!-- Indicador Numérico de Altura & Massa em Tempo Real -->
-          <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-xl bg-black/40 border border-white/10 text-[11px] font-mono text-zinc-300">
+          <div class="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-xl bg-black/50 border border-white/10 text-[11px] font-mono text-zinc-300">
             <span>📏 {(previewOutfit.height ?? 1.65).toFixed(2)}m</span>
             <span class="text-zinc-600">|</span>
             <span>⚖️ {(previewOutfit.body_build ?? 0) > 0 ? `+${previewOutfit.body_build}` : (previewOutfit.body_build ?? 0)}</span>
           </div>
 
           <!-- Expressão do Rosto -->
-          <div class="flex items-center gap-1.5 p-1 rounded-xl bg-black/40 border border-white/10 text-xs">
+          <div class="flex items-center gap-1 p-1 rounded-xl bg-black/50 border border-white/10 text-xs">
             <button 
               title="Sorriso Gentil"
               onclick={() => previewOutfit.mouth_expression = 'boca_sorriso'}
@@ -315,8 +374,8 @@
           </div>
         </div>
 
-        <!-- RENDERIZADOR ANIME DA PROTAGONISTA (ILUSTRAÇÃO REAL 2D COM MOTOR MORFOLÓGICO THE SIMS) -->
-        <div class="flex-1 w-full max-h-[480px] flex items-center justify-center my-auto z-10">
+        <!-- RENDERIZADOR ANIME CENTRALIZADO (ILUSTRAÇÃO REAL 2D COM MOTOR MORFOLÓGICO THE SIMS) -->
+        <div class="flex-1 w-full max-h-[500px] flex items-center justify-center my-auto z-10 overflow-hidden">
           <AnimeProtagonistDisplay 
             outfit={previewOutfit} 
             {zoomMode}
@@ -344,11 +403,11 @@
       <!-- ================= COLUNA DIREITA: CATÁLOGO, MORFOLOGIA E ROUPAS ================= -->
       <div class="flex-1 flex flex-col overflow-hidden bg-[#101117]">
         
-        <!-- ABAS DE NAVEGAÇÃO -->
+        <!-- ABAS DE NAVEGAÇÃO COM SMART AUTO-ZOOM -->
         <div class="flex items-center gap-1 px-4 pt-3 pb-2 border-b border-white/10 overflow-x-auto no-scrollbar bg-black/20">
           {#each tabs as tab}
             <button 
-              onclick={() => activeTab = tab.id as any}
+              onclick={() => selectTab(tab.id as any)}
               class="px-3 py-2 rounded-xl text-xs font-semibold flex items-center gap-2 whitespace-nowrap transition-all {activeTab === tab.id ? 'bg-amber-500 text-stone-950 shadow-md font-bold' : 'text-zinc-400 hover:text-white hover:bg-white/5'}"
             >
               <tab.icon class="w-4 h-4" />

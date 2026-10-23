@@ -1,9 +1,11 @@
 <script lang="ts">
   import type { EquippedOutfit } from './wardrobe.schema';
 
+  export type ProtagonistZoomMode = 'corpo_inteiro' | 'cabelo_rosto' | 'torso' | 'pernas_pes';
+
   interface Props {
     outfit: EquippedOutfit;
-    zoomMode?: 'corpo_inteiro' | 'busto';
+    zoomMode?: ProtagonistZoomMode;
     class?: string;
   }
 
@@ -43,7 +45,24 @@
     return '/assets/characters/iris/base/uniforme_lotus.png';
   });
 
-  let isCloseUp = $derived(zoomMode === 'busto');
+  // CÂMERA DINÂMICA INTELIGENTE (SMART AUTO-ZOOM CONTEXTUAL)
+  let cameraTransform = $derived.by(() => {
+    switch (zoomMode) {
+      case 'cabelo_rosto':
+        // Zoom cinematográfico no rosto, franja, corte e olhos
+        return 'scale(2.1) translateY(24%)';
+      case 'torso':
+        // Zoom focado no tronco, jaqueta, blusa e acessórios
+        return 'scale(1.42) translateY(10%)';
+      case 'pernas_pes':
+        // Zoom focado na saia, meia e calçados
+        return 'scale(1.42) translateY(-14%)';
+      case 'corpo_inteiro':
+      default:
+        // Enquadramento de passarela da cabeça aos pés sobre o chão
+        return 'scale(1.0) translateY(0)';
+    }
+  });
 
   // ================= MOTOR DE MORFOLOGIA THE SIMS 2D =================
   // 1. Altura (Normalizada em 1.65m): 1.50m até 1.82m
@@ -77,10 +96,10 @@
 <!-- EXIBIÇÃO ILUSTRADA ANIME DE ALTA RESOLUÇÃO DA PROTAGONISTA COM MORFOLOGIA DINÂMICA -->
 <div class="relative w-full h-full flex items-center justify-center select-none pointer-events-none {customClass}">
   
-  <!-- CONTÊINER EXTERNO COM CÂMERA DE ZOOM (BUSTO / CORPO INTEIRO) -->
+  <!-- CONTÊINER EXTERNO COM CÂMERA DE SMART AUTO-ZOOM SUAVE -->
   <div 
-    class="relative w-80 sm:w-96 md:w-[420px] h-[520px] sm:h-[580px] md:h-[640px] flex items-end justify-center transition-all duration-500 origin-top"
-    style="transform: {isCloseUp ? 'scale(1.45) translateY(12%)' : 'scale(1) translateY(0)'};"
+    class="relative w-80 sm:w-96 md:w-[440px] h-[520px] sm:h-[580px] md:h-[640px] flex items-end justify-center origin-top transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+    style="transform: {cameraTransform};"
   >
     <!-- CONTÊINER MORFOLÓGICO THE SIMS (ESCALA X/Y, DEFINIÇÃO MUSCULAR E ALTURA) -->
     <div 

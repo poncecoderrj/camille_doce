@@ -17,9 +17,21 @@
   let isLight = $derived(gameState.theme === 'light');
   let isMapOpen = $state(false);
 
+  // PROVADOR OBRIGATÓRIO AO LEVANTAR DA CAMA (CRIAR VISUAL & PERSONALIZAR PROTAGONISTA)
+  $effect(() => {
+    if (
+      gameState.currentNodeId === 'node_00_guarda_roupa' && 
+      !gameState.isWardrobeOpen && 
+      !gameState.flags.customizou_primeiro_dia
+    ) {
+      gameState.openWardrobe();
+    }
+  });
+
   function handleSelectChoice(choice: Choice) {
     if (choice.id === 'c0_abrir_closet_interativo') {
       gameState.openWardrobe();
+      return;
     } else if (choice.id === 'c0_traje_classico') {
       gameState.applyPreset(OUTFIT_PRESETS[0].pieces);
     } else if (choice.id === 'c0_traje_rock') {

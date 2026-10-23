@@ -43,36 +43,36 @@
       "id": "node_00_guarda_roupa",
       "speaker": "narrador",
       "expression": "neutral",
-      "text": "Diante do espelho do guarda-roupa, três opções de vestuário estão separadas. A primeira impressão na Academia Lótus vai ditar como as pessoas te enxergam pelos corredores.",
+      "text": "Diante do espelho de corpo inteiro do quarto, você respira fundo antes de sair. Chegou o momento de definir quem você é: sua postura, sua altura, seu cabelo e o visual que vestirá neste primeiro dia na Academia Lótus.",
       "location": "Quarto da Protagonista",
       "time_of_day": "manha",
       "choices": [
         {
+          "id": "c0_abrir_closet_interativo",
+          "text": "✨ Personalizar minha aparência no provador (Altura, Corpo, Cabelo e Roupas)",
+          "tipo": "Ação",
+          "set_flags": { "abriu_closet_interativo": true },
+          "next_node_id": "node_00_mochila"
+        },
+        {
           "id": "c0_traje_classico",
-          "text": "Blazer azul-marinho alinhado, camisa social branca engomada e saia pregueada clássica.",
+          "text": "Vestir o Uniforme Oficial Clássico da Lótus (Blazer azul-marinho e saia pregueada)",
           "tipo": "Prioridade",
           "set_flags": { "estilo_escolhido": "classico", "traje_classico": true },
           "next_node_id": "node_00_mochila"
         },
         {
           "id": "c0_traje_rock",
-          "text": "Camisa sob jaqueta de couro preta desabotoada, meias 3/4 e coturno cano médio.",
+          "text": "Vestir o Estilo Rock & Rebelde (Jaqueta de couro preta e coturno)",
           "tipo": "Prioridade",
           "set_flags": { "estilo_escolhido": "rock", "traje_rock": true },
           "next_node_id": "node_00_mochila"
         },
         {
           "id": "c0_traje_vintage",
-          "text": "Suéter macio de tricô ocre sobre camisa de linho e saia longa esvoaçante.",
+          "text": "Vestir o Estilo Romântico & Poético (Suéter aconchegante de tricô e saia midi)",
           "tipo": "Prioridade",
           "set_flags": { "estilo_escolhido": "vintage", "traje_vintage": true },
-          "next_node_id": "node_00_mochila"
-        },
-        {
-          "id": "c0_abrir_closet_interativo",
-          "text": "✨ Abrir o Closet Completo (Experimentar e sobrepor roupas, cabelo, calçados e acessórios no provador)",
-          "tipo": "Ação",
-          "set_flags": { "abriu_closet_interativo": true },
           "next_node_id": "node_00_mochila"
         }
       ]

@@ -1,17 +1,17 @@
 # Graph Report - entre-sinos  (2026-10-22)
 
 ## Corpus Check
-- 30 files · ~1,170,251 words
+- 30 files · ~1,172,198 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 2 file(s) not represented in the graph (top: (none) 1, .css 1)
 
 ## Summary
-- 246 nodes · 306 edges · 15 communities (12 shown, 3 thin omitted)
+- 259 nodes · 321 edges · 15 communities (12 shown, 3 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4fb3addb`
+- Built from commit: `6670435b`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -29,7 +29,7 @@
 - PaperdollActor.svelte
 - Svelte + TS + Vite
 - tsconfig.json
-- CharacterSprite.svelte
+- AnimeProtagonistDisplay.svelte
 
 ## God Nodes (most connected - your core abstractions)
 1. `gameState` - 23 edges
@@ -70,12 +70,12 @@ Nodes (28): dependencies, dexie, howler, lucide-svelte, zod, name, private, scri
 
 ### Community 3 - "WardrobeModal.svelte"
 Cohesion: 0.07
-Nodes (27): currentEye, currentHair, currentSkin, { 
+Nodes (31): currentEye, currentHair, currentSkin, { 
     outfit, 
     zoomMode = 'corpo_inteiro', 
     interactive = false,
     class: customClass = '' 
-  }, Props, viewBox, EYE_COLORS, HAIR_COLORS (+19 more)
+  }, Props, viewBox, BODY_PRESETS, BodyMorphologyPreset (+23 more)
 
 ### Community 4 - "compilerOptions"
 Cohesion: 0.12
@@ -94,8 +94,8 @@ Cohesion: 0.17
 Nodes (12): devDependencies, svelte, svelte-check, @sveltejs/vite-plugin-svelte, tailwindcss, @tailwindcss/vite, @tsconfig/svelte, @types/howler (+4 more)
 
 ### Community 8 - "DialogueBox.svelte"
-Cohesion: 0.09
-Nodes (21): displayedText, isAutoPlay, isLight, isTyping, { node, onSelectChoice, onTogglePhone, onOpenHistory }, Props, speakerAccent, speakerAccents (+13 more)
+Cohesion: 0.07
+Nodes (28): displayedText, isAutoPlay, isLight, isTyping, { node, onSelectChoice, onTogglePhone, onOpenHistory }, Props, speakerAccent, speakerAccents (+20 more)
 
 ### Community 10 - "PaperdollActor.svelte"
 Cohesion: 0.23
@@ -113,29 +113,29 @@ Nodes (8): CHARACTER_MANIFESTS, CharacterLayers, CharacterManifest, StandardExpr
 Cohesion: 0.40
 Nodes (4): Need an official Svelte framework?, Recommended IDE Setup, Svelte + TS + Vite, Technical considerations
 
-### Community 14 - "CharacterSprite.svelte"
-Cohesion: 0.15
-Nodes (11): PersonagemId, characterProfiles, isLight, isProtagonist, profile, Props, { speaker, speakerName = '', expression = 'neutro', timeOfDay = 'manha' }, activeArtPath (+3 more)
+### Community 14 - "AnimeProtagonistDisplay.svelte"
+Cohesion: 0.14
+Nodes (13): activeArtPath, curveRatio, hasCustomHairColor, heightRatio, isCloseUp, isLightHair, massRatio, muscleContrast (+5 more)
 
 ## Knowledge Gaps
-- **156 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+151 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 187 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **167 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+162 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 198 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `lucide-svelte` connect `DualStage.svelte` to `DialogueBox.svelte`, `package.json`, `WardrobeModal.svelte`, `PhoneShell.svelte`?**
-  _High betweenness centrality (0.159) - this node is a cross-community bridge._
+  _High betweenness centrality (0.154) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _156 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _167 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `DualStage.svelte` be split into smaller, more focused modules?**
   _Cohesion score 0.08666666666666667 - nodes in this community are weakly interconnected._
 - **Why does `zod` connect `DanteAvatar.svelte` to `DialogueBox.svelte`, `package.json`, `WardrobeModal.svelte`?**
-  _High betweenness centrality (0.127) - this node is a cross-community bridge._
+  _High betweenness centrality (0.126) - this node is a cross-community bridge._
 - **Should `package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.06854838709677419 - nodes in this community are weakly interconnected._
-- **Why does `gameState` connect `gameState` to `DualStage.svelte`, `WardrobeModal.svelte`, `PhoneShell.svelte`, `DialogueBox.svelte`, `CharacterSprite.svelte`?**
-  _High betweenness centrality (0.116) - this node is a cross-community bridge._
+- **Why does `gameState` connect `gameState` to `DualStage.svelte`, `DialogueBox.svelte`, `WardrobeModal.svelte`, `PhoneShell.svelte`?**
+  _High betweenness centrality (0.113) - this node is a cross-community bridge._
 - **Should `WardrobeModal.svelte` be split into smaller, more focused modules?**
-  _Cohesion score 0.07207207207207207 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06585365853658537 - nodes in this community are weakly interconnected._
