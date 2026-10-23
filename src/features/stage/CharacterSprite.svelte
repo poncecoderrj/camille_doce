@@ -50,7 +50,16 @@
     }
   };
 
-  let profile = $derived(characterProfiles[speaker] || characterProfiles.narrador);
+  let profile = $derived.by(() => {
+    if (speaker === 'protagonista' || speaker === 'iris') {
+      return {
+        name: gameState.protagonistProfile?.name || 'Íris',
+        title: 'Protagonista • 1º Ano',
+        accentColor: '#d97706'
+      };
+    }
+    return characterProfiles[speaker] || characterProfiles.narrador;
+  });
   let isLight = $derived(gameState.theme === 'light');
   let isProtagonist = $derived(speaker === 'protagonista' || speaker === 'iris');
 </script>

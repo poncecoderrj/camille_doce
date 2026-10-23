@@ -25,7 +25,8 @@
     Star, 
     User,
     Info,
-    AlertCircle
+    AlertCircle,
+    Play
   } from 'lucide-svelte';
   import { gameState } from '../game-state/GameState.svelte';
   import { audioManager } from '../audio/audio-manager';
@@ -37,14 +38,16 @@
 
   interface Props {
     onClose: () => void;
+    mode?: 'creation' | 'edit';
   }
 
-  let { onClose }: Props = $props();
+  let { onClose, mode = 'edit' }: Props = $props();
 
   type TabType = 'signo' | 'personalidade' | 'sonho' | 'look';
   let activeTab = $state<TabType>('personalidade');
 
   // Estado local editável
+  let draftName = $state<string>(gameState.protagonistProfile?.name || 'Íris');
   let draftZodiac = $state<ZodiacId>(gameState.protagonistProfile.zodiac);
   let draftTraits = $state<string[]>([...gameState.protagonistProfile.traits]);
   let draftAspiration = $state<string>(gameState.protagonistProfile.aspiration);
@@ -127,12 +130,27 @@
   }
 
   function handleSaveProfile() {
-    audioManager.playChoice();
+    const finalName = draftName.trim() || 'Íris';
+    if (draftTraits.length < 5) {
+      traitLimitWarning = 'Por favor, selecione 5 traços de personalidade para definir a personagem antes de começar!';
+      activeTab = 'personalidade';
+      audioManager.playClick();
+      return;
+    }
+
+    gameState.protagonistProfile.name = finalName;
     gameState.setZodiac(draftZodiac);
     gameState.setAspiration(draftAspiration);
     gameState.protagonistProfile.traits = [...draftTraits];
     gameState.setOutfit(draftOutfit);
-    onClose();
+
+    if (mode === 'creation') {
+      gameState.startNewGame();
+      onClose();
+    } else {
+      audioManager.playChoice();
+      onClose();
+    }
   }
 
   const boyAccents = {
@@ -160,13 +178,15 @@
         </div>
         <div>
           <h2 class="text-sm sm:text-base font-cinzel font-bold text-white flex items-center gap-2">
-            Identidade da Protagonista
+            {mode === 'creation' ? 'Criação da Protagonista' : 'Identidade da Protagonista'}
             <span class="text-[10px] font-sans px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 font-semibold uppercase tracking-wider">
-              Íris
+              {draftName.trim() || 'Íris'}
             </span>
           </h2>
           <p class="text-xs text-zinc-400 font-sans-ui hidden sm:block">
-            Defina o Signo, 5 Traços de Caráter, Aspiração de Vida e Look Oficial
+            {mode === 'creation' 
+              ? 'Defina o nome, signo, 5 traços e look inicial para ingressar na Academia Lótus' 
+              : 'Defina o Signo, 5 Traços de Caráter, Aspiração de Vida e Look Oficial'}
           </p>
         </div>
       </div>
@@ -179,6 +199,39 @@
         <X class="w-5 h-5" />
       </button>
     </header>
+
+    <!-- BARRA DE IDENTIFICAÇÃO E NOME DA PERSONAGEM -->
+    <div class="px-4 sm:px-6 py-2.5 bg-[#141624] border-b border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 shrink-0">
+      <div class="flex items-center gap-2.5 w-full sm:w-auto">
+        <label for="char-name-input" class="text-xs font-cinzel font-bold text-amber-400 shrink-0 flex items-center gap-1.5">
+          <User class="w-3.5 h-3.5" />
+          <span>Nome da Personagem:</span>
+        </label>
+        <div class="relative flex-1 sm:w-56">
+          <input 
+            id="char-name-input"
+            type="text"
+            bind:value={draftName}
+            maxlength="20"
+            placeholder="Nome da personagem..."
+            class="w-full px-3 py-1 rounded-xl bg-black/60 border border-amber-500/30 focus:border-amber-400 text-white font-cinzel text-xs sm:text-sm focus:outline-none focus:ring-1 focus:ring-amber-500/50"
+          />
+        </div>
+      </div>
+
+      <!-- Sugestões Rápidas de Nome -->
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <span class="text-[10px] text-zinc-500 font-sans">Sugestões:</span>
+        {#each ['Íris', 'Maya', 'Aurora', 'Luna', 'Clara'] as suggestion}
+          <button
+            onclick={() => { draftName = suggestion; audioManager.playClick(); }}
+            class="px-2 py-0.5 rounded-lg border text-[11px] font-cinzel transition-all {draftName === suggestion ? 'bg-amber-500/25 border-amber-500 text-amber-300 font-bold' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}"
+          >
+            {suggestion}
+          </button>
+        {/each}
+      </div>
+    </div>
 
     <!-- NAVEGAÇÃO ENTRE AS 4 DIMENSÕES DE IDENTIDADE -->
     <nav class="flex items-center border-b border-white/10 bg-[#12141e] px-4 py-2 gap-2 overflow-x-auto custom-scrollbar shrink-0">
@@ -523,7 +576,7 @@
       
       <!-- Resumo Rápido da Identidade Escolhida -->
       <div class="hidden sm:flex items-center gap-2 text-xs text-zinc-400 font-sans-ui">
-        <span class="font-bold text-white">Íris</span>
+        <span class="font-bold text-white">{draftName.trim() || 'Íris'}</span>
         <span>•</span>
         <span class="text-amber-300">{activeZodiacDetails?.symbol} {activeZodiacDetails?.name}</span>
         <span>•</span>
@@ -537,15 +590,20 @@
           onclick={onClose}
           class="px-4 py-2 rounded-xl border border-white/10 hover:border-white/20 text-xs text-zinc-400 hover:text-white transition-all"
         >
-          Cancelar
+          {mode === 'creation' ? 'Voltar ao Menu' : 'Cancelar'}
         </button>
 
         <button 
           onclick={handleSaveProfile}
-          class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-stone-950 font-cinzel font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/20 active:scale-95 transition-all"
+          class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-amber-500 hover:from-amber-400 hover:to-amber-300 text-stone-950 font-cinzel font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-amber-500/30 active:scale-95 transition-all group"
         >
-          <Check class="w-4 h-4 stroke-[2.5]" />
-          <span>Confirmar Identidade</span>
+          {#if mode === 'creation'}
+            <Play class="w-4 h-4 fill-stone-950 group-hover:scale-110 transition-transform" />
+            <span>Iniciar Jogo & Entrar na Lótus</span>
+          {:else}
+            <Check class="w-4 h-4 stroke-[2.5]" />
+            <span>Confirmar Identidade</span>
+          {/if}
         </button>
       </div>
 

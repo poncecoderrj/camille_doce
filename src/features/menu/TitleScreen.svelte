@@ -24,9 +24,19 @@
   let isAudioSettingsOpen = $state(false);
   let isCreditsOpen = $state(false);
   let isProfileModalOpen = $state(false);
+  let profileModalMode = $state<'creation' | 'edit'>('creation');
 
   function handleStartNewGame() {
-    gameState.startNewGame();
+    // Obrigatório montar o perfil, nome e personalidade antes de iniciar!
+    profileModalMode = 'creation';
+    isProfileModalOpen = true;
+    audioManager.playClick();
+  }
+
+  function handleOpenProfileEdit() {
+    profileModalMode = 'edit';
+    isProfileModalOpen = true;
+    audioManager.playClick();
   }
 
   function handleContinueGame() {
@@ -176,7 +186,7 @@
 
       <!-- BOTÃO PERSONALIDADE & LOOK DA PERSONAGEM -->
       <button 
-        onclick={() => { isProfileModalOpen = true; audioManager.playClick(); }}
+        onclick={handleOpenProfileEdit}
         class="w-full py-3 px-6 rounded-2xl bg-[#141620]/90 hover:bg-[#1a1e2d] border border-amber-500/20 hover:border-amber-500/40 text-amber-200 font-cinzel font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition-all active:scale-95 backdrop-blur-md"
       >
         <Sparkles class="w-4 h-4 text-amber-400" />
@@ -456,7 +466,7 @@
 
   <!-- MODAL DE PERSONALIDADE, SIGNO, ASPIRAÇÃO E LOOK (EXCLUSIVO DA TELA INICIAL) -->
   {#if isProfileModalOpen}
-    <CharacterProfileModal onClose={() => isProfileModalOpen = false} />
+    <CharacterProfileModal mode={profileModalMode} onClose={() => isProfileModalOpen = false} />
   {/if}
 
 </div>

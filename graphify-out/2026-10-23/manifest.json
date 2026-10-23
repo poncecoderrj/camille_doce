@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "src/features/game-state/GameState.svelte.ts": {
-    "mtime": 1792727053.2282143,
-    "seen": 1792727252.2556372,
-    "ast_hash": "4c4e2c74cd345fdca9fc4dda77ceb528",
+    "mtime": 1792727429.5884402,
+    "seen": 1792727650.1746473,
+    "ast_hash": "c69c8065e546ac381a3a5a41f6b53451",
     "semantic_hash": ""
   },
   "src/features/smartphone/PhoneShell.svelte": {
@@ -516,15 +516,33 @@
     "semantic_hash": ""
   },
   "src/features/menu/TitleScreen.svelte": {
-    "mtime": 1792727172.2822845,
-    "seen": 1792727252.2556372,
-    "ast_hash": "4f847342324da18574a100be5acf024d",
+    "mtime": 1792727529.158759,
+    "seen": 1792727650.1746473,
+    "ast_hash": "cf35a27b9c79418742d5984d4afc623b",
     "semantic_hash": ""
   },
   "src/features/stage/environment-lighting.ts": {
     "mtime": 1792725291.348665,
     "seen": 1792725648.0142581,
     "ast_hash": "35ebaf9cb850f3332a02984fe3084329",
+    "semantic_hash": ""
+  },
+  "src/features/personality/CharacterProfileModal.svelte": {
+    "mtime": 1792727576.0221488,
+    "seen": 1792727650.1746473,
+    "ast_hash": "e8d064aebf37cdb652f42fe807f87578",
+    "semantic_hash": ""
+  },
+  "src/features/personality/personality.catalog.ts": {
+    "mtime": 1792727396.1223185,
+    "seen": 1792727650.1746473,
+    "ast_hash": "7e2dfe674b760d360ee40a72cd807de4",
+    "semantic_hash": ""
+  },
+  "src/features/personality/personality.schema.ts": {
+    "mtime": 1792727356.0687773,
+    "seen": 1792727650.1746473,
+    "ast_hash": "c620e8f1c4e07513418031f2c112e7aa",
     "semantic_hash": ""
   }
 }

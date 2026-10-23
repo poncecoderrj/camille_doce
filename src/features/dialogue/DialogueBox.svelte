@@ -25,9 +25,16 @@
     gameState.isSpeaking = isTyping;
   });
 
+  // Substituição dinâmica do nome da personagem caso personalizada pelo jogador
+  let processedText = $derived.by(() => {
+    const charName = gameState.protagonistProfile?.name?.trim() || 'Íris';
+    if (!node.text) return '';
+    return node.text.replace(/\bÍris\b/g, charName);
+  });
+
   // Digitação suave progressiva
   $effect(() => {
-    const fullText = node.text;
+    const fullText = processedText;
     displayedText = '';
     isTyping = true;
     let charIndex = 0;
@@ -52,7 +59,7 @@
   function completeTextOrAdvance() {
     if (isTyping) {
       if (typingTimer) clearInterval(typingTimer);
-      displayedText = node.text;
+      displayedText = processedText;
       isTyping = false;
     }
   }
@@ -138,7 +145,9 @@
       >
         <Sparkles class="w-3 h-3 text-amber-400" />
         <span class="text-xs font-cinzel font-bold tracking-widest uppercase {speakerAccent.text}">
-          {node.speaker_name || (node.speaker === 'narrador' ? 'Narrador' : node.speaker)}
+          {(node.speaker === 'protagonista' || node.speaker === 'iris') 
+            ? (gameState.protagonistProfile?.name || 'Íris') 
+            : (node.speaker_name || (node.speaker === 'narrador' ? 'Narrador' : node.speaker))}
         </span>
       </div>
     </div>
