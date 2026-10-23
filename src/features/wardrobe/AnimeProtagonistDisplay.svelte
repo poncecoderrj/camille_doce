@@ -15,7 +15,28 @@
     class: customClass = '' 
   }: Props = $props();
 
-  // Detecta o visual dominante da protagonista para exibir a ilustração anime correta
+  // DETERMINAÇÃO DO ARQUÉTIPO ANATÔMICO REAL DESENHADO (AMOR DOCE ARCHETYPES)
+  let activeArchetype = $derived.by(() => {
+    const mass = outfit.body_build ?? 0;
+    const muscle = outfit.muscle_tone ?? 20;
+
+    // Se o jogador configurou compleição encorpada / plus size:
+    if (mass >= 22) {
+      return 'curvy_plussize';
+    }
+    // Se o jogador configurou compleição magra / delicada:
+    if (mass <= -22) {
+      return 'delicada_magra';
+    }
+    // Se o jogador configurou alta definição muscular:
+    if (muscle >= 70) {
+      return 'atletica_musculosa';
+    }
+    // Caso padrão: proporção equilibrada
+    return 'padrao';
+  });
+
+  // Detecta o visual dominante da protagonista (Look x Arquétipo Anatômico Real)
   let activeArtPath = $derived.by(() => {
     // 1. Estilo Rock / Rebelde (Afinidade com Dante)
     const isRock = 
@@ -24,7 +45,7 @@
       outfit.bottom === 'saia_xadrez_grunge' ||
       outfit.shoes === 'coturno_rock_militar';
 
-    if (isRock) {
+    if (isRock && activeArchetype === 'padrao') {
       return '/assets/characters/iris/base/look_rock.png';
     }
 
@@ -37,11 +58,22 @@
       outfit.dress === 'vestido_floral_primavera' ||
       outfit.necklace === 'cachecol_volumoso_mostarda';
 
-    if (isRomantico) {
+    if (isRomantico && activeArchetype === 'padrao') {
       return '/assets/characters/iris/base/look_romantico.png';
     }
 
-    // 3. Padrão: Uniforme Oficial da Academia Lótus (Afinidade com Lucas)
+    // 3. Arquétipos Anatômicos Desenhados com Traços Reais de Gordura / Curvas / Músculos
+    if (activeArchetype === 'curvy_plussize') {
+      return '/assets/characters/iris/base/corpo_curvy_plussize.png';
+    }
+    if (activeArchetype === 'delicada_magra') {
+      return '/assets/characters/iris/base/corpo_delicada_magra.png';
+    }
+    if (activeArchetype === 'atletica_musculosa') {
+      return '/assets/characters/iris/base/corpo_atletica_musculosa.png';
+    }
+
+    // 4. Padrão: Uniforme Oficial da Academia Lótus
     return '/assets/characters/iris/base/uniforme_lotus.png';
   });
 
@@ -68,21 +100,39 @@
   // 1. Altura (Normalizada em 1.65m): 1.50m até 1.82m
   let heightRatio = $derived(((outfit.height ?? 1.65) / 1.65));
 
-  // 2. Massa Corporal: -50 (magra/delicada) a +50 (encorpada/plus-size)
-  let massRatio = $derived(1 + ((outfit.body_build ?? 0) / 220));
+  // 2. Micro-ajuste Contínuo de Massa Corporal dentro do Arquétipo
+  let microMassRatio = $derived.by(() => {
+    const mass = outfit.body_build ?? 0;
+    if (activeArchetype === 'curvy_plussize') {
+      return 1 + ((mass - 35) / 380);
+    }
+    if (activeArchetype === 'delicada_magra') {
+      return 1 + ((mass + 35) / 380);
+    }
+    if (activeArchetype === 'atletica_musculosa') {
+      return 1 + (mass / 400);
+    }
+    return 1 + (mass / 260);
+  });
 
   // 3. Curvatura da Silhueta: -30 (reta) a +30 (ampulheta)
   let curveRatio = $derived(1 + ((outfit.curve_ratio ?? 0) / 500));
 
   // Escalas finais combinadas
-  let scaleX = $derived((massRatio * curveRatio).toFixed(3));
+  let scaleX = $derived((microMassRatio * curveRatio).toFixed(3));
   let scaleY = $derived(heightRatio.toFixed(3));
 
   // 4. Definição Muscular (contraste sutil para realçar sombras anatômicas a 60FPS)
   let muscleContrast = $derived((100 + ((outfit.muscle_tone ?? 20) - 20) * 0.15).toFixed(1));
 
-  // Largura dinâmica da sombra de piso
-  let shadowWidth = $derived(Math.max(140, Math.min(280, 200 + (outfit.body_build ?? 0) * 0.8)));
+  // Largura dinâmica da sombra de piso proporcional ao biotipo
+  let shadowWidth = $derived.by(() => {
+    let baseShadow = 200;
+    if (activeArchetype === 'curvy_plussize') baseShadow = 235;
+    else if (activeArchetype === 'delicada_magra') baseShadow = 175;
+    else if (activeArchetype === 'atletica_musculosa') baseShadow = 210;
+    return Math.max(140, Math.min(290, baseShadow + (outfit.body_build ?? 0) * 0.5));
+  });
 
   // Sistema de Tintura de Cabelo
   let hasCustomHairColor = $derived(Boolean(outfit.hair_color && outfit.hair_color !== '#4a2c11'));
@@ -103,7 +153,7 @@
   >
     <!-- CONTÊINER MORFOLÓGICO THE SIMS (ESCALA X/Y, DEFINIÇÃO MUSCULAR E ALTURA) -->
     <div 
-      class="relative w-full h-full flex items-end justify-center transition-transform duration-300 origin-bottom"
+      class="relative w-full h-full flex items-end justify-center transition-all duration-300 origin-bottom"
       style="
         transform: scale({scaleX}, {scaleY});
         filter: contrast({muscleContrast}%);

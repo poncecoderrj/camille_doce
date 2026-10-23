@@ -91,6 +91,16 @@
     })
   );
 
+  // Rótulo do Arquétipo Ativo em Tempo Real
+  let currentArchetypeLabel = $derived.by(() => {
+    const mass = previewOutfit.body_build ?? 0;
+    const muscle = previewOutfit.muscle_tone ?? 20;
+    if (mass >= 22) return '🌸 Curvilínea / Plus Size (Anatomia Desenhada)';
+    if (mass <= -22) return '🌿 Magra / Delicada (Anatomia Desenhada)';
+    if (muscle >= 70) return '⚡ Atlética / Firme (Anatomia Desenhada)';
+    return '✨ Clássica / Padrão Lótus (Traço Oficial)';
+  });
+
   // Cálculo Dinâmico de Afinidade & Estilo Dominante
   let styleScores = $derived.by(() => {
     let dante = 0;
@@ -474,21 +484,19 @@
           {:else if activeTab === 'corpo'}
             <div class="space-y-6">
               
-              <!-- CARD INFORMATIVO DO MOTOR THE SIMS -->
-              <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-between">
+              <!-- CARD INFORMATIVO DO MOTOR THE SIMS COM ARQUÉTIPO DINÂMICO -->
+              <div class="p-4 rounded-2xl bg-white/5 border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                 <div>
                   <h3 class="text-sm font-bold text-white flex items-center gap-2">
                     <User class="w-4 h-4 text-amber-400" />
-                    <span>Personalização de Físico & Morfologia (Estilo The Sims)</span>
+                    <span>Personalização de Físico & Morfologia Real</span>
                   </h3>
                   <p class="text-xs text-zinc-400 mt-0.5">
-                    Modifique a compleição de massa, altura e tônus muscular com feedback visual a 60FPS
+                    Ilustrações anime com traços corporais autênticos (gordura, músculos ou porte fino) combinadas a sliders contínuos
                   </p>
                 </div>
-                <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold font-mono">
-                  <span>{(previewOutfit.height ?? 1.65).toFixed(2)}m</span>
-                  <span>•</span>
-                  <span>{(previewOutfit.body_build ?? 0) > 15 ? 'Curvy' : (previewOutfit.body_build ?? 0) < -15 ? 'Petit' : 'Equilibrada'}</span>
+                <div class="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-bold font-mono shrink-0">
+                  <span>{currentArchetypeLabel}</span>
                 </div>
               </div>
 

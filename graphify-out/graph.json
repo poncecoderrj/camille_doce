@@ -463,7 +463,7 @@
       "file_type": "code",
       "norm_label": "applypreset()",
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L207"
+      "source_location": "L217"
     },
     {
       "id": "src_features_wardrobe_wardrobemodal_confirmoutfit",
@@ -475,7 +475,7 @@
       "file_type": "code",
       "norm_label": "confirmoutfit()",
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L243"
+      "source_location": "L253"
     },
     {
       "id": "src_features_wardrobe_wardrobemodal_equipitem",
@@ -487,7 +487,7 @@
       "file_type": "code",
       "norm_label": "equipitem()",
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L162"
+      "source_location": "L172"
     },
     {
       "id": "src_features_wardrobe_wardrobemodal_isequipped",
@@ -499,7 +499,7 @@
       "file_type": "code",
       "norm_label": "isequipped()",
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L203"
+      "source_location": "L213"
     },
     {
       "id": "src_features_wardrobe_wardrobemodal_resettosaved",
@@ -511,7 +511,7 @@
       "file_type": "code",
       "norm_label": "resettosaved()",
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L239"
+      "source_location": "L249"
     },
     {
       "id": "src_features_wardrobe_wardrobemodal_selecttab",
@@ -535,7 +535,7 @@
       "file_type": "code",
       "norm_label": "stripall()",
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L226"
+      "source_location": "L236"
     },
     {
       "id": "src_features_smartphone_phoneshell_handlesavediary",
@@ -875,6 +875,17 @@
       "norm_label": "{ location, timeofday = 'manha', islight = false }",
       "source_file": "src/features/stage/SceneryBackground.svelte",
       "source_location": "L8"
+    },
+    {
+      "id": "src_features_wardrobe_wardrobe_catalog_outfit_presets",
+      "label": "OUTFIT_PRESETS",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "outfit_presets",
+      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
+      "source_location": "L609"
     },
     {
       "id": "src_layout_dualstage",
@@ -1289,6 +1300,17 @@
       "source_location": "L1"
     },
     {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_activearchetype",
+      "label": "activeArchetype",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "AnimeProtagonistDisplay.svelte",
+      "file_type": "code",
+      "norm_label": "activearchetype",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L19"
+    },
+    {
       "id": "src_features_wardrobe_animeprotagonistdisplay_activeartpath",
       "label": "activeArtPath",
       "_origin": "ast",
@@ -1297,7 +1319,7 @@
       "file_type": "code",
       "norm_label": "activeartpath",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L19"
+      "source_location": "L40"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_cameratransform",
@@ -1308,7 +1330,7 @@
       "file_type": "code",
       "norm_label": "cameratransform",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L49"
+      "source_location": "L81"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_curveratio",
@@ -1319,7 +1341,7 @@
       "file_type": "code",
       "norm_label": "curveratio",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L75"
+      "source_location": "L119"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_hascustomhaircolor",
@@ -1330,7 +1352,7 @@
       "file_type": "code",
       "norm_label": "hascustomhaircolor",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L88"
+      "source_location": "L138"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_heightratio",
@@ -1341,7 +1363,7 @@
       "file_type": "code",
       "norm_label": "heightratio",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L69"
+      "source_location": "L101"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_islighthair",
@@ -1352,18 +1374,18 @@
       "file_type": "code",
       "norm_label": "islighthair",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L89"
+      "source_location": "L139"
     },
     {
-      "id": "src_features_wardrobe_animeprotagonistdisplay_massratio",
-      "label": "massRatio",
+      "id": "src_features_wardrobe_animeprotagonistdisplay_micromassratio",
+      "label": "microMassRatio",
       "_origin": "ast",
       "community": 14,
       "community_name": "AnimeProtagonistDisplay.svelte",
       "file_type": "code",
-      "norm_label": "massratio",
+      "norm_label": "micromassratio",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L72"
+      "source_location": "L104"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_musclecontrast",
@@ -1374,7 +1396,7 @@
       "file_type": "code",
       "norm_label": "musclecontrast",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L82"
+      "source_location": "L126"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_outfit_zoommode_corpo_inteiro_class_customclass",
@@ -1396,7 +1418,7 @@
       "file_type": "code",
       "norm_label": "scalex",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L78"
+      "source_location": "L122"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_scaley",
@@ -1407,7 +1429,7 @@
       "file_type": "code",
       "norm_label": "scaley",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L79"
+      "source_location": "L123"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_shadowwidth",
@@ -1418,7 +1440,7 @@
       "file_type": "code",
       "norm_label": "shadowwidth",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L85"
+      "source_location": "L129"
     },
     {
       "id": "package",
@@ -1894,17 +1916,6 @@
       "source_location": "L102"
     },
     {
-      "id": "src_features_wardrobe_wardrobe_catalog_outfit_presets",
-      "label": "OUTFIT_PRESETS",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "WardrobeModal.svelte",
-      "file_type": "code",
-      "norm_label": "outfit_presets",
-      "source_file": "src/features/wardrobe/wardrobe.catalog.ts",
-      "source_location": "L609"
-    },
-    {
       "id": "src_features_wardrobe_wardrobe_catalog_skin_tones",
       "label": "SKIN_TONES",
       "_origin": "ast",
@@ -1993,6 +2004,17 @@
       "source_location": "L44"
     },
     {
+      "id": "src_features_wardrobe_wardrobemodal_currentarchetypelabel",
+      "label": "currentArchetypeLabel",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
+      "file_type": "code",
+      "norm_label": "currentarchetypelabel",
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L95"
+    },
+    {
       "id": "src_features_wardrobe_wardrobemodal_currentitems",
       "label": "currentItems",
       "_origin": "ast",
@@ -2034,7 +2056,7 @@
       "file_type": "code",
       "norm_label": "reactions",
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L138"
+      "source_location": "L148"
     },
     {
       "id": "src_features_wardrobe_wardrobemodal_selectedstylefilter",
@@ -2056,7 +2078,7 @@
       "file_type": "code",
       "norm_label": "stylescores",
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L95"
+      "source_location": "L105"
     },
     {
       "id": "src_features_wardrobe_wardrobemodal_tabs",
@@ -5379,6 +5401,39 @@
     },
     {
       "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_heightratio",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L101",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_micromassratio",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_curveratio",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L119",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
       "target": "src_features_wardrobe_animeprotagonistdisplay_outfit_zoommode_corpo_inteiro_class_customclass",
       "relation": "contains",
       "_origin": "ast",
@@ -5390,7 +5445,73 @@
     },
     {
       "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_activeartpath",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_scalex",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_scaley",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_musclecontrast",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_shadowwidth",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_hascustomhaircolor",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_islighthair",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L139",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_activearchetype",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5412,13 +5533,13 @@
     },
     {
       "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_cameratransform",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_activeartpath",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L49",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -5434,101 +5555,13 @@
     },
     {
       "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_heightratio",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_cameratransform",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L69",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_massratio",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L72",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_curveratio",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L75",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_scalex",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L78",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_scaley",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L79",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_musclecontrast",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L82",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_shadowwidth",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L85",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_hascustomhaircolor",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L88",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_islighthair",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L89",
+      "source_location": "L81",
       "weight": 1.0
     },
     {
@@ -5775,13 +5808,24 @@
     },
     {
       "source": "src_features_wardrobe_wardrobemodal",
+      "target": "src_features_wardrobe_wardrobemodal_stylescores",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/WardrobeModal.svelte",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_wardrobemodal",
       "target": "src_features_wardrobe_wardrobemodal_reactions",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L138",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -5792,7 +5836,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L162",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -5803,7 +5847,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L203",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -5814,7 +5858,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L207",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -5825,7 +5869,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L226",
+      "source_location": "L236",
       "weight": 1.0
     },
     {
@@ -5836,7 +5880,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L239",
+      "source_location": "L249",
       "weight": 1.0
     },
     {
@@ -5847,7 +5891,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/WardrobeModal.svelte",
-      "source_location": "L243",
+      "source_location": "L253",
       "weight": 1.0
     },
     {
@@ -5951,7 +5995,7 @@
     },
     {
       "source": "src_features_wardrobe_wardrobemodal",
-      "target": "src_features_wardrobe_wardrobemodal_stylescores",
+      "target": "src_features_wardrobe_wardrobemodal_currentarchetypelabel",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6643,5 +6687,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "549a7368649e4dc6d9eced1f954dd0129d7737ea"
+  "built_at_commit": "a0371bd8aa88dfa8f557344a8938da81de941a45"
 }

@@ -1,17 +1,17 @@
 # Graph Report - entre-sinos  (2026-10-22)
 
 ## Corpus Check
-- 30 files · ~1,172,629 words
+- 30 files · ~1,224,417 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 2 file(s) not represented in the graph (top: (none) 1, .css 1)
 
 ## Summary
-- 261 nodes · 324 edges · 15 communities (12 shown, 3 thin omitted)
+- 263 nodes · 326 edges · 15 communities (12 shown, 3 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `549a7368`
+- Built from commit: `a0371bd8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -52,8 +52,8 @@
 ## Communities (15 total, 3 thin omitted)
 
 ### Community 0 - "DualStage.svelte"
-Cohesion: 0.09
-Nodes (16): lucide-svelte, isLight, locations, { onClose }, Props, activeImg, backgroundImages, { location, timeOfDay = 'manha', isLight = false } (+8 more)
+Cohesion: 0.08
+Nodes (17): lucide-svelte, isLight, locations, { onClose }, Props, activeImg, backgroundImages, { location, timeOfDay = 'manha', isLight = false } (+9 more)
 
 ### Community 1 - "DanteAvatar.svelte"
 Cohesion: 0.18
@@ -114,28 +114,28 @@ Cohesion: 0.40
 Nodes (4): Need an official Svelte framework?, Recommended IDE Setup, Svelte + TS + Vite, Technical considerations
 
 ### Community 14 - "AnimeProtagonistDisplay.svelte"
-Cohesion: 0.13
-Nodes (14): activeArtPath, cameraTransform, curveRatio, hasCustomHairColor, heightRatio, isLightHair, massRatio, muscleContrast (+6 more)
+Cohesion: 0.12
+Nodes (15): activeArchetype, activeArtPath, cameraTransform, curveRatio, hasCustomHairColor, heightRatio, isLightHair, microMassRatio (+7 more)
 
 ## Knowledge Gaps
-- **167 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+162 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 199 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **169 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+164 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 201 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **3 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `lucide-svelte` connect `DualStage.svelte` to `DialogueBox.svelte`, `package.json`, `WardrobeModal.svelte`, `PhoneShell.svelte`?**
-  _High betweenness centrality (0.155) - this node is a cross-community bridge._
+  _High betweenness centrality (0.154) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _167 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _169 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `DualStage.svelte` be split into smaller, more focused modules?**
-  _Cohesion score 0.08666666666666667 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08307692307692308 - nodes in this community are weakly interconnected._
 - **Why does `zod` connect `DanteAvatar.svelte` to `DialogueBox.svelte`, `package.json`, `WardrobeModal.svelte`?**
   _High betweenness centrality (0.124) - this node is a cross-community bridge._
 - **Should `package.json` be split into smaller, more focused modules?**
   _Cohesion score 0.06854838709677419 - nodes in this community are weakly interconnected._
 - **Why does `gameState` connect `gameState` to `DualStage.svelte`, `DialogueBox.svelte`, `WardrobeModal.svelte`, `PhoneShell.svelte`?**
-  _High betweenness centrality (0.113) - this node is a cross-community bridge._
+  _High betweenness centrality (0.112) - this node is a cross-community bridge._
 - **Should `WardrobeModal.svelte` be split into smaller, more focused modules?**
-  _Cohesion score 0.06387921022067364 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0627177700348432 - nodes in this community are weakly interconnected._
