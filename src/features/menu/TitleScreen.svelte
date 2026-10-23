@@ -19,10 +19,11 @@
   } from 'lucide-svelte';
   import { gameState } from '../game-state/GameState.svelte';
   import { audioManager } from '../audio/audio-manager';
-  import ProtagonistCustomizerModal from '../customization/ProtagonistCustomizerModal.svelte';
+  import CharacterProfileModal from '../personality/CharacterProfileModal.svelte';
 
   let isAudioSettingsOpen = $state(false);
   let isCreditsOpen = $state(false);
+  let isProfileModalOpen = $state(false);
 
   function handleStartNewGame() {
     gameState.startNewGame();
@@ -173,13 +174,13 @@
         </button>
       {/if}
 
-      <!-- BOTÃO ESTILO DA PERSONAGEM -->
+      <!-- BOTÃO PERSONALIDADE & LOOK DA PERSONAGEM -->
       <button 
-        onclick={() => { gameState.openWardrobe(); audioManager.playClick(); }}
+        onclick={() => { isProfileModalOpen = true; audioManager.playClick(); }}
         class="w-full py-3 px-6 rounded-2xl bg-[#141620]/90 hover:bg-[#1a1e2d] border border-amber-500/20 hover:border-amber-500/40 text-amber-200 font-cinzel font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition-all active:scale-95 backdrop-blur-md"
       >
-        <Shirt class="w-4 h-4 text-amber-400" />
-        <span>Estilo da Personagem</span>
+        <Sparkles class="w-4 h-4 text-amber-400" />
+        <span>Personalidade & Look</span>
       </button>
 
     </div>
@@ -453,9 +454,9 @@
     </div>
   {/if}
 
-  <!-- MODAL DE ESCOLHA DE LOOK DA PERSONAGEM (EXCLUSIVO DA TELA INICIAL) -->
-  {#if gameState.isWardrobeOpen}
-    <ProtagonistCustomizerModal onClose={() => gameState.closeWardrobe()} />
+  <!-- MODAL DE PERSONALIDADE, SIGNO, ASPIRAÇÃO E LOOK (EXCLUSIVO DA TELA INICIAL) -->
+  {#if isProfileModalOpen}
+    <CharacterProfileModal onClose={() => isProfileModalOpen = false} />
   {/if}
 
 </div>

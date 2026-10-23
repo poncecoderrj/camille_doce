@@ -17,5 +17,6 @@
   "15": "numpy",
   "16": "os",
   "17": "pil",
+  "18": "CharacterProfileModal.svelte",
   "19": "audioManager"
 }

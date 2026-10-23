@@ -1,5 +1,6 @@
 import type { DialogueNode, Choice } from '../dialogue/narrative.schema';
 import { audioManager } from '../audio/audio-manager';
+import type { ProtagonistProfile } from '../personality/personality.schema';
 
 export interface HistoryEntry {
   nodeId: string;
@@ -97,6 +98,49 @@ export class GameState {
   // Visual Oficial da Protagonista (Look / Roupa Única - sem camadas duplicadas)
   currentOutfit = $state<'uniforme_lotus' | 'look_rock' | 'look_romantico'>('uniforme_lotus');
   isWardrobeOpen = $state<boolean>(false);
+
+  // Perfil de Personalidade (Signo, 5 Traços The Sims e Aspiração de 10 Anos)
+  protagonistProfile = $state<ProtagonistProfile>({
+    name: 'Íris',
+    zodiac: 'libra',
+    traits: [
+      'romantica_incuravel',
+      'curiosa_insaciavel',
+      'intuitiva_astuta',
+      'sarcastica_ironica',
+      'criativa_sonhadora'
+    ],
+    aspiration: 'romancista'
+  });
+
+  setZodiac(zodiac: any) {
+    this.protagonistProfile.zodiac = zodiac;
+  }
+
+  setAspiration(aspiration: string) {
+    this.protagonistProfile.aspiration = aspiration;
+  }
+
+  toggleTrait(traitId: string): boolean {
+    const idx = this.protagonistProfile.traits.indexOf(traitId);
+    if (idx >= 0) {
+      if (this.protagonistProfile.traits.length > 1) {
+        this.protagonistProfile.traits.splice(idx, 1);
+        return true;
+      }
+      return false;
+    } else {
+      if (this.protagonistProfile.traits.length < 5) {
+        this.protagonistProfile.traits.push(traitId);
+        return true;
+      }
+      return false;
+    }
+  }
+
+  hasTrait(traitId: string): boolean {
+    return this.protagonistProfile.traits.includes(traitId);
+  }
 
   setOutfit(outfitId: 'uniforme_lotus' | 'look_rock' | 'look_romantico') {
     this.currentOutfit = outfitId;
