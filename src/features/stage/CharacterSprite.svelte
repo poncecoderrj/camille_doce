@@ -1,8 +1,6 @@
 <script lang="ts">
   import type { PersonagemId } from '../dialogue/narrative.schema';
   import { gameState } from '../game-state/GameState.svelte';
-  import AnimeProtagonistDisplay from '../wardrobe/AnimeProtagonistDisplay.svelte';
-  import PaperdollActor from '../characters/PaperdollActor.svelte';
 
   interface Props {
     speaker: PersonagemId;
@@ -50,59 +48,29 @@
     }
   };
 
-  let isProtagonist = $derived(speaker === 'protagonista' || speaker === 'iris');
   let profile = $derived(characterProfiles[speaker] || characterProfiles.narrador);
   let isLight = $derived(gameState.theme === 'light');
 </script>
 
-{#if isProtagonist}
-  <!-- PROTAGONISTA PAPERDOLL AO VIVO COM ROUPAS EM CAMADAS SOBREPOSTAS -->
+{#if speaker !== 'narrador'}
+  <!-- PALCO LIMPO DE PERSONAGEM (PRONTO PARA A NOVA CONSTRUÇÃO DO ZERO) -->
   <div class="relative flex flex-col items-center justify-end select-none pointer-events-none transition-all duration-700">
     <div class="relative w-72 sm:w-80 md:w-96 lg:w-[410px] h-[50vh] sm:h-[58vh] md:h-[66vh] max-h-[600px] flex flex-col items-center justify-end">
-      <div class="w-full h-full flex items-center justify-center">
-        <AnimeProtagonistDisplay 
-          outfit={gameState.equippedOutfit} 
-          zoomMode="corpo_inteiro"
-          class="h-full"
-        />
-      </div>
-
-      <!-- Cartão de Identificação da Protagonista -->
+      
+      <!-- Cartão de Identificação do Personagem na Cena -->
       <div 
         class="absolute -bottom-2 z-20 px-5 py-2 rounded-2xl backdrop-blur-xl border shadow-xl flex flex-col items-center gap-0.5 transition-all duration-300 {isLight ? 'bg-[#ebe4d5]/95 border-[#c5b79f] text-[#2c241e]' : 'bg-[#0d0e14]/90 border-white/8 text-[#ededef]'}"
       >
         <div class="flex items-center gap-2">
-          <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+          <span class="w-2.5 h-2.5 rounded-full" style="background: {profile.accentColor};"></span>
           <h2 class="text-sm font-cinzel font-bold tracking-wider">{profile.name}</h2>
         </div>
-        <p class="text-[10px] font-sans-ui tracking-wide {isLight ? 'text-stone-500' : 'text-zinc-400'} font-medium">
-          {profile.title}
-        </p>
+        {#if profile.title}
+          <p class="text-[10px] font-sans-ui tracking-wide {isLight ? 'text-stone-500' : 'text-zinc-400'} font-medium">
+            {profile.title}
+          </p>
+        {/if}
       </div>
     </div>
-  </div>
-{:else if speaker !== 'narrador' && ['dante', 'lucas', 'theo'].includes(speaker)}
-  <!-- RAPAZES (DANTE, LUCAS, THEO) — MOTOR PAPERDOLL ANIME 100% TRANSPARENTE COM MICROANIMAÇÕES -->
-  <div class="relative flex flex-col items-center justify-end select-none pointer-events-none transition-all duration-700">
-    
-    <!-- ATOR PAPERDOLL TRANSPARENTE (ZERO MOLDURAS QUADRADAS, PISA DIRETO NO CENÁRIO) -->
-    <PaperdollActor 
-      characterId={speaker} 
-      {expression} 
-    />
-
-    <!-- Cartão Elegante de Identificação do Personagem -->
-    <div 
-      class="absolute -bottom-2 z-20 px-5 py-2 rounded-2xl backdrop-blur-xl border shadow-xl flex flex-col items-center gap-0.5 transition-all duration-300 {isLight ? 'bg-[#ebe4d5]/95 border-[#c5b79f] text-[#2c241e]' : 'bg-[#0d0e14]/90 border-white/8 text-[#ededef]'}"
-    >
-      <div class="flex items-center gap-2">
-        <span class="w-2.5 h-2.5 rounded-full" style="background: {profile.accentColor};"></span>
-        <h2 class="text-sm font-cinzel font-bold tracking-wider">{profile.name}</h2>
-      </div>
-      <p class="text-[10px] font-sans-ui tracking-wide {isLight ? 'text-stone-500' : 'text-zinc-400'} font-medium">
-        {profile.title}
-      </p>
-    </div>
-
   </div>
 {/if}

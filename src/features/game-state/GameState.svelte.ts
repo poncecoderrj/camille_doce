@@ -1,5 +1,4 @@
 import type { DialogueNode, Choice } from '../dialogue/narrative.schema';
-import type { EquippedOutfit } from '../wardrobe/wardrobe.schema';
 
 export interface HistoryEntry {
   nodeId: string;
@@ -83,24 +82,9 @@ export class GameState {
     }
   ]);
 
-  // Customização da Protagonista & Provador
+  // Customização da Protagonista & Provador (Aguardando nova construção do zero)
   isWardrobeOpen = $state<boolean>(false);
-  equippedOutfit = $state<EquippedOutfit>({
-    skin_color: 'pele_clara',
-    eye_color: 'olhos_castanhos',
-    mouth_expression: 'boca_sorriso',
-    hair_front: 'cabelo_franja_onda',
-    hair_back: 'cabelo_longo_onda_tras',
-    hair_color: '#4a2c11',
-    blush: true,
-    top: 'camisa_uniforme_lotus',
-    bottom: 'saia_pregueada_azul',
-    jacket: 'blazer_marinho_lotus',
-    shoes: 'mocassim_marrom_lotus',
-    socks: 'meia_3_4_branca',
-    necklace: 'cordao_perola_delicado',
-    bag: 'mochila_couro_vintage'
-  });
+  equippedOutfit = $state<Record<string, any>>({});
 
   // Configurações
   textSpeed = $state<number>(35);
@@ -176,11 +160,11 @@ export class GameState {
     this.isWardrobeOpen = !this.isWardrobeOpen;
   }
 
-  equipPiece(category: keyof EquippedOutfit, itemId?: string) {
+  equipPiece(category: string, itemId?: string) {
     (this.equippedOutfit as any)[category] = itemId;
   }
 
-  applyPreset(presetPieces: Partial<EquippedOutfit>) {
+  applyPreset(presetPieces: Record<string, any>) {
     this.equippedOutfit = {
       ...this.equippedOutfit,
       ...presetPieces

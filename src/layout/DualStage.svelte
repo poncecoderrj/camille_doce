@@ -5,8 +5,6 @@
   import PhoneShell from '../features/smartphone/PhoneShell.svelte';
   import SceneryBackground from '../features/stage/SceneryBackground.svelte';
   import CampusMapModal from '../features/campus-map/CampusMapModal.svelte';
-  import WardrobeModal from '../features/wardrobe/WardrobeModal.svelte';
-  import { OUTFIT_PRESETS } from '../features/wardrobe/wardrobe.catalog';
   import cap00Data from '../../content/arcs/arco_1_adolescencia/cap_00_prologo.json';
   import type { DialogueNode, Choice } from '../features/dialogue/narrative.schema';
   import { Smartphone, RotateCcw, Sparkles, Sun, Moon, Map, Shirt } from 'lucide-svelte';
@@ -33,11 +31,11 @@
       gameState.openWardrobe();
       return;
     } else if (choice.id === 'c0_traje_classico') {
-      gameState.applyPreset(OUTFIT_PRESETS[0].pieces);
+      gameState.applyPreset({ outfit_id: 'uniforme_lotus' });
     } else if (choice.id === 'c0_traje_rock') {
-      gameState.applyPreset(OUTFIT_PRESETS[1].pieces);
+      gameState.applyPreset({ outfit_id: 'look_rock' });
     } else if (choice.id === 'c0_traje_vintage') {
-      gameState.applyPreset(OUTFIT_PRESETS[2].pieces);
+      gameState.applyPreset({ outfit_id: 'look_romantico' });
     }
     gameState.applyChoice(choice, currentNode);
   }
@@ -252,9 +250,20 @@
     <CampusMapModal onClose={() => isMapOpen = false} />
   {/if}
 
-  <!-- MODAL GUARDA-ROUPA / PROVADOR EM CAMADAS DA PROTAGONISTA -->
+  <!-- MODAL GUARDA-ROUPA / PROVADOR DA PROTAGONISTA -->
   {#if gameState.isWardrobeOpen}
-    <WardrobeModal onClose={() => gameState.closeWardrobe()} />
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+      <div class="bg-[#12131a] border border-white/10 rounded-2xl p-6 max-w-md w-full text-center">
+        <h3 class="text-lg font-bold text-white mb-2">Tela de Personalização</h3>
+        <p class="text-sm text-zinc-400 mb-6">Pronto para a nova construção do zero.</p>
+        <button 
+          onclick={() => gameState.closeWardrobe()}
+          class="px-6 py-2 rounded-xl bg-amber-500 text-stone-950 font-bold text-sm"
+        >
+          Fechar
+        </button>
+      </div>
+    </div>
   {/if}
 
 </div>
