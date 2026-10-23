@@ -173,13 +173,13 @@
         </button>
       {/if}
 
-      <!-- BOTÃO PERSONALIZAR HEROÍNA -->
+      <!-- BOTÃO ESTILO DA PERSONAGEM -->
       <button 
         onclick={() => { gameState.openWardrobe(); audioManager.playClick(); }}
         class="w-full py-3 px-6 rounded-2xl bg-[#141620]/90 hover:bg-[#1a1e2d] border border-amber-500/20 hover:border-amber-500/40 text-amber-200 font-cinzel font-medium text-xs sm:text-sm flex items-center justify-center gap-2 transition-all active:scale-95 backdrop-blur-md"
       >
         <Shirt class="w-4 h-4 text-amber-400" />
-        <span>Personalizar Heroína</span>
+        <span>Estilo da Personagem</span>
       </button>
 
     </div>
@@ -453,9 +453,9 @@
     </div>
   {/if}
 
-  <!-- MODAL DE CLOSET CASO O JOGADOR CLIQUE EM PERSONALIZAR NA TELA INICIAL -->
+  <!-- MODAL DE ESCOLHA DE LOOK DA PERSONAGEM (EXCLUSIVO DA TELA INICIAL) -->
   {#if gameState.isWardrobeOpen}
-    <ProtagonistCustomizerModal />
+    <ProtagonistCustomizerModal onClose={() => gameState.closeWardrobe()} />
   {/if}
 
 </div>

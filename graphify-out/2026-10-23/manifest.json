@@ -24,9 +24,9 @@
     "semantic_hash": ""
   },
   "src/App.svelte": {
-    "mtime": 1792705994.4781017,
-    "seen": 1792706151.533809,
-    "ast_hash": "b2d5305e8fab0557d2f1e7fed97497c1",
+    "mtime": 1792725386.421057,
+    "seen": 1792725648.0142581,
+    "ast_hash": "2a27d95639990f5b32a79e0d027906d8",
     "semantic_hash": ""
   },
   "src/features/campus-map/CampusMapModal.svelte": {
@@ -36,9 +36,9 @@
     "semantic_hash": ""
   },
   "src/features/dialogue/DialogueBox.svelte": {
-    "mtime": 1792715638.3280878,
-    "seen": 1792715828.3272846,
-    "ast_hash": "0d244ecba4287d9060fbff91b8d0e370",
+    "mtime": 1792725513.4668167,
+    "seen": 1792725648.0142581,
+    "ast_hash": "b6f7146d1581f6c837e276682e93871d",
     "semantic_hash": ""
   },
   "src/features/dialogue/narrative.schema.ts": {
@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "src/features/game-state/GameState.svelte.ts": {
-    "mtime": 1792722261.827984,
-    "seen": 1792722295.7218199,
-    "ast_hash": "ff5c272d5977d03e5cd04c8a95bd98d1",
+    "mtime": 1792725329.6865919,
+    "seen": 1792725648.0142581,
+    "ast_hash": "46901f0e626e77b160c85adda8f2081d",
     "semantic_hash": ""
   },
   "src/features/smartphone/PhoneShell.svelte": {
@@ -66,15 +66,15 @@
     "semantic_hash": ""
   },
   "src/features/stage/SceneryBackground.svelte": {
-    "mtime": 1792706286.8419018,
-    "seen": 1792706431.1903663,
-    "ast_hash": "21223480a8029036ed6133d178c55aa1",
+    "mtime": 1792725404.2835114,
+    "seen": 1792725648.0142581,
+    "ast_hash": "82fa128e8b95c951a306da01d5453efe",
     "semantic_hash": ""
   },
   "src/layout/DualStage.svelte": {
-    "mtime": 1792722249.9436588,
-    "seen": 1792722295.7218199,
-    "ast_hash": "5dc84a3d9986c789a21f4ff4c598d6ef",
+    "mtime": 1792725479.8920264,
+    "seen": 1792725648.0142581,
+    "ast_hash": "0a151d5a6afb3da032c7a1ea2a874027",
     "semantic_hash": ""
   },
   "src/main.ts": {
@@ -507,6 +507,24 @@
     "mtime": 1792721814.987988,
     "seen": 1792722295.7218199,
     "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
+    "semantic_hash": ""
+  },
+  "src/features/audio/audio-manager.ts": {
+    "mtime": 1792725243.8590212,
+    "seen": 1792725648.0142581,
+    "ast_hash": "6026718e12f07732ba067d53bb5f99b4",
+    "semantic_hash": ""
+  },
+  "src/features/menu/TitleScreen.svelte": {
+    "mtime": 1792725379.998874,
+    "seen": 1792725648.0142581,
+    "ast_hash": "9ae1e20cc83e2f56f1fb51d4d0f1c3e5",
+    "semantic_hash": ""
+  },
+  "src/features/stage/environment-lighting.ts": {
+    "mtime": 1792725291.348665,
+    "seen": 1792725648.0142581,
+    "ast_hash": "35ebaf9cb850f3332a02984fe3084329",
     "semantic_hash": ""
   }
 }

@@ -6,9 +6,9 @@
     "semantic_hash": ""
   },
   "content/arcs/arco_1_adolescencia/cap_00_prologo.json": {
-    "mtime": 1792713753.139783,
-    "seen": 1792713831.0789323,
-    "ast_hash": "4682d8ca981fee78e0695f7b6bc0d504",
+    "mtime": 1792727192.5724237,
+    "seen": 1792727252.2556372,
+    "ast_hash": "73edd5660a14810d5009174ad4cdd284",
     "semantic_hash": ""
   },
   "content/characters/characters.json": {
@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "src/features/game-state/GameState.svelte.ts": {
-    "mtime": 1792725329.6865919,
-    "seen": 1792725648.0142581,
-    "ast_hash": "46901f0e626e77b160c85adda8f2081d",
+    "mtime": 1792727053.2282143,
+    "seen": 1792727252.2556372,
+    "ast_hash": "4c4e2c74cd345fdca9fc4dda77ceb528",
     "semantic_hash": ""
   },
   "src/features/smartphone/PhoneShell.svelte": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "src/features/stage/CharacterSprite.svelte": {
-    "mtime": 1792722224.2672477,
-    "seen": 1792722295.7218199,
-    "ast_hash": "6ee2115f085c79c0a08d667d811db2bf",
+    "mtime": 1792727025.6507187,
+    "seen": 1792727252.2556372,
+    "ast_hash": "f60425bbe631af0c6f5f50b8b3d7011f",
     "semantic_hash": ""
   },
   "src/features/stage/SceneryBackground.svelte": {
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/layout/DualStage.svelte": {
-    "mtime": 1792725479.8920264,
-    "seen": 1792725648.0142581,
-    "ast_hash": "0a151d5a6afb3da032c7a1ea2a874027",
+    "mtime": 1792727144.6506166,
+    "seen": 1792727252.2556372,
+    "ast_hash": "8bc556850cb0bca871410780aa30d85b",
     "semantic_hash": ""
   },
   "src/main.ts": {
@@ -162,9 +162,9 @@
     "semantic_hash": ""
   },
   "src/features/characters/VisualNovelActor.svelte": {
-    "mtime": 1792721882.073027,
-    "seen": 1792722295.7218199,
-    "ast_hash": "3b95bc860c9b4392f9e77e6d1997434e",
+    "mtime": 1792727009.844147,
+    "seen": 1792727252.2556372,
+    "ast_hash": "cdb20607c3bf1fb4dccb83e36472d3d4",
     "semantic_hash": ""
   },
   "src/features/characters/character-manifest.ts": {
@@ -180,27 +180,27 @@
     "semantic_hash": ""
   },
   "src/features/customization/ProtagonistActor.svelte": {
-    "mtime": 1792722136.5895693,
-    "seen": 1792722295.7218199,
-    "ast_hash": "9127bab23ac08c5e458531f961b26717",
+    "mtime": 1792726937.188219,
+    "seen": 1792727252.2556372,
+    "ast_hash": "ce35164904a3b1a34b722d9c35931848",
     "semantic_hash": ""
   },
   "src/features/customization/ProtagonistCustomizerModal.svelte": {
-    "mtime": 1792722205.4881763,
-    "seen": 1792722295.7218199,
-    "ast_hash": "860912381c2e9f2fb854ba5abf731e7b",
+    "mtime": 1792726961.7210093,
+    "seen": 1792727252.2556372,
+    "ast_hash": "5eea3be702337265ea74340c1dbe2c7d",
     "semantic_hash": ""
   },
   "src/features/customization/customization.catalog.ts": {
-    "mtime": 1792722045.0737858,
-    "seen": 1792722295.7218199,
-    "ast_hash": "82e58c92657f54a6749bba193b09474b",
+    "mtime": 1792726926.3172352,
+    "seen": 1792727252.2556372,
+    "ast_hash": "904fbf6c8c71635c96210ace2cf59b08",
     "semantic_hash": ""
   },
   "src/features/customization/customization.schema.ts": {
-    "mtime": 1792721899.5168464,
-    "seen": 1792722295.7218199,
-    "ast_hash": "629ab88d087095d0130554767f1d135c",
+    "mtime": 1792726916.1948793,
+    "seen": 1792727252.2556372,
+    "ast_hash": "d8677048de97b5b5510f0c3c9a46f501",
     "semantic_hash": ""
   },
   "public/assets/characters/dante/base/corpo_neutro.png": {
@@ -516,9 +516,9 @@
     "semantic_hash": ""
   },
   "src/features/menu/TitleScreen.svelte": {
-    "mtime": 1792725379.998874,
-    "seen": 1792725648.0142581,
-    "ast_hash": "9ae1e20cc83e2f56f1fb51d4d0f1c3e5",
+    "mtime": 1792727172.2822845,
+    "seen": 1792727252.2556372,
+    "ast_hash": "4f847342324da18574a100be5acf024d",
     "semantic_hash": ""
   },
   "src/features/stage/environment-lighting.ts": {

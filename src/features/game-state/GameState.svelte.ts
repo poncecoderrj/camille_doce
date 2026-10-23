@@ -94,18 +94,22 @@ export class GameState {
     }
   ]);
 
-  // Customização Oficial da Protagonista & Provador
+  // Visual Oficial da Protagonista (Look / Roupa Única - sem camadas duplicadas)
+  currentOutfit = $state<'uniforme_lotus' | 'look_rock' | 'look_romantico'>('uniforme_lotus');
   isWardrobeOpen = $state<boolean>(false);
-  equippedOutfit = $state<Record<string, any>>({
-    outfit_id: 'uniforme_lotus',
-    body_archetype: 'padrao',
-    hair_color: '#4a2c11',
-    hair_style: 'ondulado_longo',
-    backpack: 'mochila_lotus',
-    glasses: false,
-    blush: true,
-    expression: 'neutro'
-  });
+
+  setOutfit(outfitId: 'uniforme_lotus' | 'look_rock' | 'look_romantico') {
+    this.currentOutfit = outfitId;
+  }
+
+  get equippedOutfit() {
+    return { outfit_id: this.currentOutfit };
+  }
+  set equippedOutfit(val: any) {
+    if (val && val.outfit_id) {
+      this.currentOutfit = val.outfit_id;
+    }
+  }
 
   // Configurações
   textSpeed = $state<number>(35);

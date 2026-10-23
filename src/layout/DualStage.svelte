@@ -5,7 +5,6 @@
   import PhoneShell from '../features/smartphone/PhoneShell.svelte';
   import SceneryBackground from '../features/stage/SceneryBackground.svelte';
   import CampusMapModal from '../features/campus-map/CampusMapModal.svelte';
-  import ProtagonistCustomizerModal from '../features/customization/ProtagonistCustomizerModal.svelte';
   import { resolveEnvironmentLighting } from '../features/stage/environment-lighting';
   import type { TimeOfDay } from '../features/stage/environment-lighting';
   import cap00Data from '../../content/arcs/arco_1_adolescencia/cap_00_prologo.json';
@@ -17,7 +16,6 @@
     Sun, 
     Moon, 
     Map, 
-    Shirt, 
     Volume2, 
     VolumeX, 
     Home, 
@@ -40,27 +38,13 @@
   let isLight = $derived(lighting.isLightUI);
   let isMapOpen = $state(false);
 
-  // PROVADOR OBRIGATÓRIO AO LEVANTAR DA CAMA (CRIAR VISUAL & PERSONALIZAR PROTAGONISTA)
-  $effect(() => {
-    if (
-      gameState.currentNodeId === 'node_00_guarda_roupa' && 
-      !gameState.isWardrobeOpen && 
-      !gameState.flags.customizou_primeiro_dia
-    ) {
-      gameState.openWardrobe();
-    }
-  });
-
   function handleSelectChoice(choice: Choice) {
-    if (choice.id === 'c0_abrir_closet_interativo') {
-      gameState.openWardrobe();
-      return;
-    } else if (choice.id === 'c0_traje_classico') {
-      gameState.applyPreset({ outfit_id: 'uniforme_lotus' });
+    if (choice.id === 'c0_abrir_closet_interativo' || choice.id === 'c0_traje_classico') {
+      gameState.setOutfit('uniforme_lotus');
     } else if (choice.id === 'c0_traje_rock') {
-      gameState.applyPreset({ outfit_id: 'look_rock' });
+      gameState.setOutfit('look_rock');
     } else if (choice.id === 'c0_traje_vintage') {
-      gameState.applyPreset({ outfit_id: 'look_romantico' });
+      gameState.setOutfit('look_romantico');
     }
     gameState.applyChoice(choice, currentNode);
   }
@@ -77,11 +61,8 @@
       gameState.togglePhone();
     } else if (e.key === 'm' || e.key === 'M') {
       isMapOpen = !isMapOpen;
-    } else if (e.key === 'c' || e.key === 'C') {
-      gameState.toggleWardrobe();
     } else if (e.key === 'Escape') {
-      if (gameState.isWardrobeOpen) gameState.isWardrobeOpen = false;
-      else if (isMapOpen) isMapOpen = false;
+      if (isMapOpen) isMapOpen = false;
       else if (gameState.isPhoneRaised) gameState.isPhoneRaised = false;
     }
   }
@@ -159,16 +140,6 @@
         {:else}
           <VolumeX class="w-4 h-4 text-zinc-500" />
         {/if}
-      </button>
-
-      <!-- BOTÃO GUARDA-ROUPA / CLOSET (C) -->
-      <button 
-        onclick={() => gameState.toggleWardrobe()}
-        title="Abrir Closet & Provador da Protagonista (C)"
-        class="px-2.5 sm:px-3 py-1.5 rounded-xl border transition-all active:scale-95 text-xs flex items-center gap-1.5 font-cinzel font-semibold {isLight ? 'bg-[#e0d6c4] hover:bg-[#d5c9b4] border-[#baa991] text-[#3d3126]' : 'bg-[#181a24] hover:bg-[#202330] border-white/8 text-zinc-200'}"
-      >
-        <Shirt class="w-3.5 h-3.5 text-amber-500" />
-        <span class="hidden sm:inline">Closet</span>
       </button>
 
       <!-- BOTÃO MAPA DO CAMPUS -->
@@ -278,11 +249,6 @@
   <!-- MODAL MAPA DO CAMPUS (TELA S03) -->
   {#if isMapOpen}
     <CampusMapModal onClose={() => isMapOpen = false} />
-  {/if}
-
-  <!-- MODAL GUARDA-ROUPA / PROVADOR DA PROTAGONISTA -->
-  {#if gameState.isWardrobeOpen}
-    <ProtagonistCustomizerModal />
   {/if}
 
 </div>

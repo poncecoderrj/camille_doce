@@ -43,34 +43,27 @@
       "id": "node_00_guarda_roupa",
       "speaker": "narrador",
       "expression": "neutral",
-      "text": "Diante do espelho de corpo inteiro do quarto, você respira fundo antes de sair. Chegou o momento de definir quem você é: sua postura, sua altura, seu cabelo e o visual que vestirá neste primeiro dia na Academia Lótus.",
+      "text": "Diante do espelho do quarto, você respira fundo antes de sair. Chegou o momento de decidir qual visual você vestirá neste primeiro dia na Academia Lótus.",
       "location": "Quarto da Protagonista",
       "time_of_day": "manha",
       "choices": [
         {
-          "id": "c0_abrir_closet_interativo",
-          "text": "✨ Personalizar minha aparência no provador (Altura, Corpo, Cabelo e Roupas)",
-          "tipo": "Ação",
-          "set_flags": { "abriu_closet_interativo": true },
-          "next_node_id": "node_00_mochila"
-        },
-        {
           "id": "c0_traje_classico",
-          "text": "Vestir o Uniforme Oficial Clássico da Lótus (Blazer azul-marinho e saia pregueada)",
+          "text": "Vestir o Uniforme Oficial Clássico da Lótus (Blazer azul-marinho alinhado e saia pregueada)",
           "tipo": "Prioridade",
           "set_flags": { "estilo_escolhido": "classico", "traje_classico": true },
           "next_node_id": "node_00_mochila"
         },
         {
           "id": "c0_traje_rock",
-          "text": "Vestir o Estilo Rock & Rebelde (Jaqueta de couro preta e coturno)",
+          "text": "Vestir o Estilo Rock & Rebelde (Jaqueta de couro preta e atitude marcante)",
           "tipo": "Prioridade",
           "set_flags": { "estilo_escolhido": "rock", "traje_rock": true },
           "next_node_id": "node_00_mochila"
         },
         {
           "id": "c0_traje_vintage",
-          "text": "Vestir o Estilo Romântico & Poético (Suéter aconchegante de tricô e saia midi)",
+          "text": "Vestir o Estilo Romântico & Poético (Vestido fluido delicado de caimento suave)",
           "tipo": "Prioridade",
           "set_flags": { "estilo_escolhido": "vintage", "traje_vintage": true },
           "next_node_id": "node_00_mochila"

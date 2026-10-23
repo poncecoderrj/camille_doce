@@ -3,7 +3,6 @@
   import { gameState } from '../game-state/GameState.svelte';
   import VisualNovelActor from '../characters/VisualNovelActor.svelte';
   import ProtagonistActor from '../customization/ProtagonistActor.svelte';
-  import type { ProtagonistCustomization } from '../customization/customization.schema';
 
   interface Props {
     speaker: PersonagemId;
@@ -54,29 +53,17 @@
   let profile = $derived(characterProfiles[speaker] || characterProfiles.narrador);
   let isLight = $derived(gameState.theme === 'light');
   let isProtagonist = $derived(speaker === 'protagonista' || speaker === 'iris');
-
-  // Configuração ativa da protagonista sincronizada com gameState
-  let protagonistCustomization = $derived<ProtagonistCustomization>({
-    outfit_id: gameState.equippedOutfit?.outfit_id || 'uniforme_lotus',
-    body_archetype: gameState.equippedOutfit?.body_archetype || 'padrao',
-    hair_color: gameState.equippedOutfit?.hair_color || '#4a2c11',
-    hair_style: gameState.equippedOutfit?.hair_style || 'ondulado_longo',
-    backpack: gameState.equippedOutfit?.backpack || 'mochila_lotus',
-    glasses: gameState.equippedOutfit?.glasses ?? false,
-    blush: gameState.equippedOutfit?.blush ?? true,
-    expression: expression || gameState.equippedOutfit?.expression || 'neutro'
-  });
 </script>
 
 {#if speaker !== 'narrador'}
-  <!-- PALCO PRINCIPAL DE ATOR DE VISUAL NOVEL (FECHADO, ALTA FIDELIDADE 768x1344) -->
+  <!-- PALCO PRINCIPAL DE ATOR DE VISUAL NOVEL (SPRITE ÚNICO, ZERO SOBREPOSIÇÃO) -->
   <div class="relative flex flex-col items-center justify-end select-none pointer-events-none transition-all duration-700">
     <div class="relative w-72 sm:w-80 md:w-96 lg:w-[410px] h-[50vh] sm:h-[58vh] md:h-[66vh] max-h-[600px] flex flex-col items-center justify-end">
       
-      <!-- RENDERIZAÇÃO DO ATOR CORRESPONDENTE -->
+      <!-- RENDERIZAÇÃO DO ATOR CORRESPONDENTE (SPRITE ÚNICO) -->
       {#if isProtagonist}
         <ProtagonistActor 
-          customization={protagonistCustomization}
+          outfitId={gameState.currentOutfit}
           scale={1}
         />
       {:else if speaker === 'dante' || speaker === 'lucas' || speaker === 'theo'}
