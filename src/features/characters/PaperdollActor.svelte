@@ -100,27 +100,15 @@
       return { body: '', ...overrideLayers };
     }
 
-    // Outfit selecionado
-    const activeOutfit = manifest.outfits[outfit] || manifest.outfits['default'] || {};
-
-    // Expressão facial selecionada (se houver variação diferente da base)
+    // Expressão facial selecionada
     const faceTexture = manifest.expressions[expression] 
       || manifest.expressions['neutro'] 
       || '';
 
     return {
-      hairBack: activeOutfit.hairBack,
       body: manifest.baseBody,
-      shoes: activeOutfit.shoes,
-      bottom: activeOutfit.bottom,
-      top: activeOutfit.top,
-      dress: activeOutfit.dress,
-      jacket: activeOutfit.jacket,
-      necklace: activeOutfit.necklace,
       face: faceTexture !== manifest.baseBody ? faceTexture : undefined,
       blush: expression === 'timido' || expression === 'corado' || expression === 'blush',
-      glasses: activeOutfit.glasses,
-      hairFront: activeOutfit.hairFront,
       ...overrideLayers
     };
   });
@@ -144,16 +132,6 @@
     <!-- SOMBRA SUAVE NO PISO (PROJEÇÃO DE CONTATO) -->
     <div class="absolute -bottom-2 w-48 sm:w-60 h-6 bg-black/40 rounded-full blur-md pointer-events-none z-0"></div>
 
-    <!-- Z: 05 — CABELO TRÁS -->
-    {#if resolvedLayers.hairBack}
-      <img 
-        src={resolvedLayers.hairBack} 
-        alt="" 
-        onerror={handleImgError}
-        class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-5"
-      />
-    {/if}
-
     <!-- Z: 10 — CORPO BASE ILUSTRADO (ANATOMIA COM RECORTE TRANSPARENTE) -->
     {#if resolvedLayers.body}
       <img 
@@ -161,66 +139,6 @@
         alt={manifest.name} 
         onerror={handleImgError}
         class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-10 drop-shadow-[0_12px_28px_rgba(0,0,0,0.55)]"
-      />
-    {/if}
-
-    <!-- Z: 20 — CALÇADOS -->
-    {#if resolvedLayers.shoes}
-      <img 
-        src={resolvedLayers.shoes} 
-        alt="" 
-        onerror={handleImgError}
-        class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-20"
-      />
-    {/if}
-
-    <!-- Z: 30 — PEÇA INFERIOR (CALÇA / SAIA) -->
-    {#if resolvedLayers.bottom && !resolvedLayers.dress}
-      <img 
-        src={resolvedLayers.bottom} 
-        alt="" 
-        onerror={handleImgError}
-        class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-30"
-      />
-    {/if}
-
-    <!-- Z: 40 — PEÇA SUPERIOR (CAMISA / CAMISETA) -->
-    {#if resolvedLayers.top && !resolvedLayers.dress}
-      <img 
-        src={resolvedLayers.top} 
-        alt="" 
-        onerror={handleImgError}
-        class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-40"
-      />
-    {/if}
-
-    <!-- Z: 50 — VESTIDO (ONE-PIECE) -->
-    {#if resolvedLayers.dress}
-      <img 
-        src={resolvedLayers.dress} 
-        alt="" 
-        onerror={handleImgError}
-        class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-50"
-      />
-    {/if}
-
-    <!-- Z: 60 — CASACO / BLAZER / JAQUETA -->
-    {#if resolvedLayers.jacket}
-      <img 
-        src={resolvedLayers.jacket} 
-        alt="" 
-        onerror={handleImgError}
-        class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-60"
-      />
-    {/if}
-
-    <!-- Z: 70 — ACESSÓRIOS DE PESCOÇO / PEITO -->
-    {#if resolvedLayers.necklace}
-      <img 
-        src={resolvedLayers.necklace} 
-        alt="" 
-        onerror={handleImgError}
-        class="absolute inset-0 w-full h-full object-contain object-bottom pointer-events-none z-70"
       />
     {/if}
 

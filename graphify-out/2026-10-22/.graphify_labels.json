@@ -13,5 +13,6 @@
   "11": "Svelte + TS + Vite",
   "12": "tsconfig.json",
   "13": "svelte.config.js",
-  "14": "AnimeProtagonistDisplay.svelte"
+  "14": "AnimeProtagonistDisplay.svelte",
+  "15": "extract_paperdoll_layers.py"
 }

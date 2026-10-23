@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/features/wardrobe/wardrobe.schema.ts": {
-    "mtime": 1792711621.7827728,
-    "seen": 1792711944.5836415,
-    "ast_hash": "7576f389041fc5cf5d20231ec9c63e12",
+    "mtime": 1792718485.3077261,
+    "seen": 1792718702.0922577,
+    "ast_hash": "9984825928fb9a84bf7980d1db9110d0",
     "semantic_hash": ""
   },
   "src/layout/DualStage.svelte": {
@@ -167,52 +167,22 @@
     "ast_hash": "ddc590a8124166a00504694f58ca15c8",
     "semantic_hash": ""
   },
-  "public/assets/characters/dante.png": {
-    "mtime": 1792711027.596438,
-    "seen": 1792711286.069641,
-    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/lucas.png": {
-    "mtime": 1792711029.1934981,
-    "seen": 1792711286.0706472,
-    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/theo.png": {
-    "mtime": 1792711030.571471,
-    "seen": 1792711286.0706472,
-    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
-    "semantic_hash": ""
-  },
-  "src/features/wardrobe/PaperdollAvatar.svelte": {
-    "mtime": 1792706970.5365415,
-    "seen": 1792707254.9817574,
-    "ast_hash": "a5c633ea71be1b56dacbc62ec6c97a78",
-    "semantic_hash": ""
-  },
   "src/features/wardrobe/WardrobeModal.svelte": {
-    "mtime": 1792715418.1547244,
-    "seen": 1792715454.755228,
-    "ast_hash": "aea7d7fdc504c56f099e7980f194542d",
+    "mtime": 1792718570.8986585,
+    "seen": 1792718702.0922577,
+    "ast_hash": "edf3574ab96c733b49c79275202b3521",
     "semantic_hash": ""
   },
   "src/features/wardrobe/wardrobe.catalog.ts": {
-    "mtime": 1792711739.7185144,
-    "seen": 1792711944.5836415,
-    "ast_hash": "8c9182237dd30325252424c8019b9657",
-    "semantic_hash": ""
-  },
-  "src/features/characters/DanteAvatar.svelte": {
-    "mtime": 1792708362.481097,
-    "seen": 1792709296.7266414,
-    "ast_hash": "1608090eac23ebe295be0bd4ef5e7054",
+    "mtime": 1792718501.8689742,
+    "seen": 1792718702.0922577,
+    "ast_hash": "b709a53b1da98742e463b770dbc546df",
     "semantic_hash": ""
   },
   "src/features/characters/PaperdollActor.svelte": {
-    "mtime": 1792716259.5601904,
-    "seen": 1792716444.4939907,
-    "ast_hash": "e7275c79941839ca7e3798efe4c544c7",
+    "mtime": 1792718651.7288928,
+    "seen": 1792718702.0922577,
+    "ast_hash": "d27497b3e2b9a0390e2cb83eb0d073b5",
     "semantic_hash": ""
   },
   "src/features/characters/character-manifest.ts": {
@@ -432,15 +402,9 @@
     "semantic_hash": ""
   },
   "src/features/wardrobe/AnimeProtagonistDisplay.svelte": {
-    "mtime": 1792717727.997323,
-    "seen": 1792717796.167656,
-    "ast_hash": "219553908e7baac24297a4f7f76b25d9",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris.png": {
-    "mtime": 1792711166.6362104,
-    "seen": 1792711286.0706472,
-    "ast_hash": "d2bf7a4647136fa2f081e61246962eb6",
+    "mtime": 1792718527.5351171,
+    "seen": 1792718702.0922577,
+    "ast_hash": "2497438b21da374c37c3e448fae0e4d9",
     "semantic_hash": ""
   },
   "public/assets/characters/iris/base/corpo_neutro.png": {
@@ -527,124 +491,10 @@
     "ast_hash": "9e2380911bdb564906235d4da8fd8590",
     "semantic_hash": ""
   },
-  "extract_paperdoll_layers.py": {
-    "mtime": 1792717427.2548542,
-    "seen": 1792717796.167656,
-    "ast_hash": "25b7addb081e6f93e9ba58d892f6baba",
-    "semantic_hash": ""
-  },
-  "generate_accessories.py": {
-    "mtime": 1792717448.576218,
-    "seen": 1792717796.167656,
-    "ast_hash": "6caa38100db7871f4666ea1976db1027",
-    "semantic_hash": ""
-  },
-  "generate_hairstyles.py": {
-    "mtime": 1792717523.3474522,
-    "seen": 1792717796.167656,
-    "ast_hash": "32a8b1cf9d12d9ad9760c0f653b15eff",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/base/corpo_manequim_padrao.png": {
-    "mtime": 1792717435.9653094,
-    "seen": 1792717796.167656,
-    "ast_hash": "5f1c158b8bc926ad02f1116b9f0416a6",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/cabelos/cabelo_bob_chanel.png": {
-    "mtime": 1792717529.575367,
-    "seen": 1792717796.167656,
-    "ast_hash": "7bb45c84f68b71d6b6113e47cbaf2681",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/cabelos/cabelo_ondulado_base.png": {
-    "mtime": 1792717434.7106843,
-    "seen": 1792717796.167656,
-    "ast_hash": "d26002e51cd4cf8465aebf2bf65b54e0",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/cabelos/cabelo_ondulado_frente.png": {
-    "mtime": 1792717608.4437914,
-    "seen": 1792717796.167656,
-    "ast_hash": "b974aca98e436164659872dc816b48fa",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/cabelos/cabelo_rabo_cavalo.png": {
-    "mtime": 1792717529.621192,
-    "seen": 1792717796.167656,
-    "ast_hash": "9da16bb93dd0eec13b6d9d169133a2dc",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/acessorios/boina_feltro_ocre.png": {
-    "mtime": 1792717435.616055,
-    "seen": 1792717796.167656,
-    "ast_hash": "96c1291fd973ea661de2e2920e04aab5",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/acessorios/oculos_redondos_dourados.png": {
+  "public/assets/characters/iris/acessorios/oculos_redondos_dourados.png": {
     "mtime": 1792717455.9533617,
-    "seen": 1792717796.167656,
+    "seen": 1792718702.093261,
     "ast_hash": "7ef543562631e08ed82457226e5ddea2",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/calcados/coturno_rock_militar.png": {
-    "mtime": 1792717435.1261091,
-    "seen": 1792717796.167656,
-    "ast_hash": "5545e93cb8c293879baea2a6ab1098f4",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/calcados/sapatilha_romantica.png": {
-    "mtime": 1792717435.719652,
-    "seen": 1792717796.167656,
-    "ast_hash": "c5eab672e69a668022a139239ff7c6a1",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/calcados/sapatos_uniforme_lotus.png": {
-    "mtime": 1792717434.605467,
-    "seen": 1792717796.167656,
-    "ast_hash": "de38b7df3e500392c4e6179479592962",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/casacos/jaqueta_couro_perfecto.png": {
-    "mtime": 1792717537.3523912,
-    "seen": 1792717796.167656,
-    "ast_hash": "4ae84b85f4bce1d8b5c5d7f0cd9da845",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/inferior/saia_midi_plissada.png": {
-    "mtime": 1792717435.5159805,
-    "seen": 1792717796.167656,
-    "ast_hash": "8e3ff7fa9183b482ae3ba075bc962c97",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/inferior/saia_uniforme_lotus.png": {
-    "mtime": 1792717434.4994154,
-    "seen": 1792717796.167656,
-    "ast_hash": "b044637a6963e84d10bce7d61f374a1b",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/inferior/saia_xadrez_grunge.png": {
-    "mtime": 1792717435.000324,
-    "seen": 1792717796.167656,
-    "ast_hash": "151d2d660a970c252b5f8db3080ad58f",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/superior/camisa_uniforme_lotus.png": {
-    "mtime": 1792717434.3944244,
-    "seen": 1792717796.167656,
-    "ast_hash": "aeb7e3fe26ec7157005107b9d6835fbc",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/superior/camiseta_rock_banda.png": {
-    "mtime": 1792717434.8424618,
-    "seen": 1792717796.167656,
-    "ast_hash": "4ae84b85f4bce1d8b5c5d7f0cd9da845",
-    "semantic_hash": ""
-  },
-  "public/assets/characters/iris/roupas/superior/sueter_trico_creme.png": {
-    "mtime": 1792717435.2346644,
-    "seen": 1792717796.167656,
-    "ast_hash": "69dcef0b442f64ba97e0152fbd486949",
     "semantic_hash": ""
   }
 }

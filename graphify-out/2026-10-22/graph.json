@@ -126,8 +126,8 @@
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 14,
-      "community_name": "AnimeProtagonistDisplay.svelte",
+      "community": 3,
+      "community_name": "WardrobeModal.svelte",
       "file_type": "code",
       "norm_label": "protagonistzoommode",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
@@ -500,6 +500,18 @@
       "norm_label": "triggerblinkcycle()",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
       "source_location": "L33"
+    },
+    {
+      "id": "extract_paperdoll_layers_slice_horizontal",
+      "label": "slice_horizontal()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "extract_paperdoll_layers.py",
+      "file_type": "code",
+      "norm_label": "slice_horizontal()",
+      "source_file": "extract_paperdoll_layers.py",
+      "source_location": "L19"
     },
     {
       "id": "src_features_wardrobe_wardrobemodal_applypreset",
@@ -1392,17 +1404,6 @@
       "source_location": "L98"
     },
     {
-      "id": "src_features_wardrobe_animeprotagonistdisplay_activeartpath",
-      "label": "activeArtPath",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "AnimeProtagonistDisplay.svelte",
-      "file_type": "code",
-      "norm_label": "activeartpath",
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L115"
-    },
-    {
       "id": "src_features_wardrobe_animeprotagonistdisplay_cameratransform",
       "label": "cameraTransform",
       "_origin": "ast",
@@ -1411,7 +1412,7 @@
       "file_type": "code",
       "norm_label": "cameratransform",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L152"
+      "source_location": "L213"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_curveratio",
@@ -1422,7 +1423,7 @@
       "file_type": "code",
       "norm_label": "curveratio",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L183"
+      "source_location": "L244"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_eyeblinkprogress",
@@ -1444,7 +1445,7 @@
       "file_type": "code",
       "norm_label": "hascustomhaircolor",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L196"
+      "source_location": "L257"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_heightratio",
@@ -1455,7 +1456,7 @@
       "file_type": "code",
       "norm_label": "heightratio",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L167"
+      "source_location": "L228"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_islighthair",
@@ -1466,7 +1467,7 @@
       "file_type": "code",
       "norm_label": "islighthair",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L197"
+      "source_location": "L258"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_micromassratio",
@@ -1477,7 +1478,7 @@
       "file_type": "code",
       "norm_label": "micromassratio",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L169"
+      "source_location": "L230"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_mouthopenamount",
@@ -1499,7 +1500,7 @@
       "file_type": "code",
       "norm_label": "musclecontrast",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L186"
+      "source_location": "L247"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_outfit_zoommode_corpo_inteiro_class_customclass",
@@ -1513,6 +1514,94 @@
       "source_location": "L15"
     },
     {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_resolvedbody",
+      "label": "resolvedBody",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "AnimeProtagonistDisplay.svelte",
+      "file_type": "code",
+      "norm_label": "resolvedbody",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L115"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_resolvedbottom",
+      "label": "resolvedBottom",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "AnimeProtagonistDisplay.svelte",
+      "file_type": "code",
+      "norm_label": "resolvedbottom",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L146"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_resolvedglasses",
+      "label": "resolvedGlasses",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "AnimeProtagonistDisplay.svelte",
+      "file_type": "code",
+      "norm_label": "resolvedglasses",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L205"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_resolvedhair",
+      "label": "resolvedHair",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "AnimeProtagonistDisplay.svelte",
+      "file_type": "code",
+      "norm_label": "resolvedhair",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L186"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_resolvedhat",
+      "label": "resolvedHat",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "AnimeProtagonistDisplay.svelte",
+      "file_type": "code",
+      "norm_label": "resolvedhat",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L197"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_resolvedjacket",
+      "label": "resolvedJacket",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "AnimeProtagonistDisplay.svelte",
+      "file_type": "code",
+      "norm_label": "resolvedjacket",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L164"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_resolvedshoes",
+      "label": "resolvedShoes",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "AnimeProtagonistDisplay.svelte",
+      "file_type": "code",
+      "norm_label": "resolvedshoes",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L172"
+    },
+    {
+      "id": "src_features_wardrobe_animeprotagonistdisplay_resolvedtop",
+      "label": "resolvedTop",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "AnimeProtagonistDisplay.svelte",
+      "file_type": "code",
+      "norm_label": "resolvedtop",
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L129"
+    },
+    {
       "id": "src_features_wardrobe_animeprotagonistdisplay_scalex",
       "label": "scaleX",
       "_origin": "ast",
@@ -1521,7 +1610,7 @@
       "file_type": "code",
       "norm_label": "scalex",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L184"
+      "source_location": "L245"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_scaley",
@@ -1532,7 +1621,7 @@
       "file_type": "code",
       "norm_label": "scaley",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L185"
+      "source_location": "L246"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_shadowwidth",
@@ -1543,7 +1632,7 @@
       "file_type": "code",
       "norm_label": "shadowwidth",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L188"
+      "source_location": "L249"
     },
     {
       "id": "src_features_wardrobe_animeprotagonistdisplay_skintonefill",
@@ -1555,6 +1644,50 @@
       "norm_label": "skintonefill",
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
       "source_location": "L24"
+    },
+    {
+      "id": "extract_paperdoll_layers",
+      "label": "extract_paperdoll_layers.py",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "extract_paperdoll_layers.py",
+      "file_type": "code",
+      "norm_label": "extract_paperdoll_layers.py",
+      "source_file": "extract_paperdoll_layers.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "generate_accessories",
+      "label": "generate_accessories.py",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "extract_paperdoll_layers.py",
+      "file_type": "code",
+      "norm_label": "generate_accessories.py",
+      "source_file": "generate_accessories.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "generate_hairstyles",
+      "label": "generate_hairstyles.py",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "extract_paperdoll_layers.py",
+      "file_type": "code",
+      "norm_label": "generate_hairstyles.py",
+      "source_file": "generate_hairstyles.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "extract_paperdoll_layers_rationale_20",
+      "label": "Extrai uma camada de roupa mantendo a resolu\u00e7\u00e3o exata 768x1344 e suavizando as\u2026",
+      "_origin": "ast",
+      "community": 15,
+      "community_name": "extract_paperdoll_layers.py",
+      "file_type": "rationale",
+      "norm_label": "extrai uma camada de roupa mantendo a resolucao exata 768x1344 e suavizando as...",
+      "source_file": "extract_paperdoll_layers.py",
+      "source_location": "L20"
     },
     {
       "id": "package",
@@ -3122,6 +3255,7 @@
     {
       "id": "src_features_characters_character_paperdoll_types_charactermanifest",
       "label": "src_features_characters_character_paperdoll_types_charactermanifest",
+      "_origin": "semantic",
       "community": 10,
       "community_name": "PaperdollActor.svelte",
       "external": true,
@@ -3129,9 +3263,54 @@
       "norm_label": "src_features_characters_character_paperdoll_types_charactermanifest",
       "source_file": "",
       "type": "external"
+    },
+    {
+      "id": "numpy",
+      "label": "numpy",
+      "community": 15,
+      "community_name": "extract_paperdoll_layers.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "numpy",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "os",
+      "label": "os",
+      "community": 15,
+      "community_name": "extract_paperdoll_layers.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "os",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "pil",
+      "label": "pil",
+      "community": 15,
+      "community_name": "extract_paperdoll_layers.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "pil",
+      "source_file": "",
+      "type": "external"
     }
   ],
   "links": [
+    {
+      "source": "extract_paperdoll_layers_slice_horizontal",
+      "target": "numpy",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "extract_paperdoll_layers.py",
+      "source_location": "L22",
+      "weight": 1.0
+    },
     {
       "source": "src_features_characters_paperdollactor_schedulenextblink",
       "target": "src_features_characters_paperdollactor_triggerblinkcycle",
@@ -3213,6 +3392,66 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "tsconfig.app.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "extract_paperdoll_layers",
+      "target": "os",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "extract_paperdoll_layers.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "extract_paperdoll_layers",
+      "target": "numpy",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "extract_paperdoll_layers.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_accessories",
+      "target": "os",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "generate_accessories.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_hairstyles",
+      "target": "os",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "generate_hairstyles.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_hairstyles",
+      "target": "numpy",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "generate_hairstyles.py",
       "source_location": "L2",
       "weight": 1.0
     },
@@ -3877,6 +4116,42 @@
       "weight": 1.0
     },
     {
+      "source": "extract_paperdoll_layers",
+      "target": "pil",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "extract_paperdoll_layers.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_accessories",
+      "target": "pil",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "generate_accessories.py",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "generate_hairstyles",
+      "target": "pil",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "generate_hairstyles.py",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
       "source": "src_app",
       "target": "src_layout_dualstage",
       "relation": "imports_from",
@@ -4534,6 +4809,17 @@
       "context": "parameter_type",
       "source_file": "src/features/game-state/GameState.svelte.ts",
       "source_location": "L179",
+      "weight": 1.0
+    },
+    {
+      "source": "extract_paperdoll_layers",
+      "target": "extract_paperdoll_layers_slice_horizontal",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extract_paperdoll_layers.py",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -5748,13 +6034,35 @@
     },
     {
       "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_activeartpath",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_resolvedbody",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
       "source_location": "L115",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_resolvedtop",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L129",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_resolvedbottom",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L146",
       "weight": 1.0
     },
     {
@@ -5770,73 +6078,29 @@
     },
     {
       "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_cameratransform",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_resolvedjacket",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L152",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
       "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_heightratio",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_resolvedshoes",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L167",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
       "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_micromassratio",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L169",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_curveratio",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L183",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_scalex",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L184",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_scaley",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L185",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_musclecontrast",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_resolvedhair",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -5847,35 +6111,57 @@
     },
     {
       "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_shadowwidth",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L188",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_hascustomhaircolor",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
-      "source_location": "L196",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_wardrobe_animeprotagonistdisplay",
-      "target": "src_features_wardrobe_animeprotagonistdisplay_islighthair",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_resolvedhat",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
       "source_location": "L197",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_resolvedglasses",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_cameratransform",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_heightratio",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L228",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_micromassratio",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -5887,6 +6173,83 @@
       "confidence_score": 1.0,
       "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
       "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_curveratio",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L244",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_scalex",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L245",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_scaley",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L246",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_musclecontrast",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L247",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_shadowwidth",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L249",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_hascustomhaircolor",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L257",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_wardrobe_animeprotagonistdisplay",
+      "target": "src_features_wardrobe_animeprotagonistdisplay_islighthair",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/wardrobe/AnimeProtagonistDisplay.svelte",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -7075,8 +7438,19 @@
       "source_file": "src/features/game-state/GameState.svelte.ts",
       "source_location": "L208",
       "weight": 1.0
+    },
+    {
+      "source": "extract_paperdoll_layers_rationale_20",
+      "target": "extract_paperdoll_layers_slice_horizontal",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "extract_paperdoll_layers.py",
+      "source_location": "L20",
+      "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4aee7a89328489802d34f18efa7fd3b4035e9058"
+  "built_at_commit": "a9f816e2863275b32ef6f7ccfe8987cf80a3647b"
 }
