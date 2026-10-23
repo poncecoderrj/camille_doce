@@ -7,7 +7,7 @@
   "5": "PhoneShell.svelte",
   "6": "compilerOptions",
   "7": "devDependencies",
-  "8": "CharacterSprite.svelte",
+  "8": "TitleScreen.svelte",
   "9": "gameState",
   "10": "src_features_characters_character_paperdoll_types_charactermanifest",
   "11": "Svelte + TS + Vite",
@@ -17,5 +17,6 @@
   "15": "numpy",
   "16": "os",
   "17": "pil",
-  "18": "ProtagonistActor.svelte"
+  "18": "ProtagonistActor.svelte",
+  "19": "audioManager"
 }

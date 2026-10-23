@@ -6,14 +6,38 @@
   import SceneryBackground from '../features/stage/SceneryBackground.svelte';
   import CampusMapModal from '../features/campus-map/CampusMapModal.svelte';
   import ProtagonistCustomizerModal from '../features/customization/ProtagonistCustomizerModal.svelte';
+  import { resolveEnvironmentLighting } from '../features/stage/environment-lighting';
+  import type { TimeOfDay } from '../features/stage/environment-lighting';
   import cap00Data from '../../content/arcs/arco_1_adolescencia/cap_00_prologo.json';
   import type { DialogueNode, Choice } from '../features/dialogue/narrative.schema';
-  import { Smartphone, RotateCcw, Sparkles, Sun, Moon, Map, Shirt } from 'lucide-svelte';
+  import { 
+    Smartphone, 
+    RotateCcw, 
+    Sparkles, 
+    Sun, 
+    Moon, 
+    Map, 
+    Shirt, 
+    Volume2, 
+    VolumeX, 
+    Home, 
+    Compass 
+  } from 'lucide-svelte';
 
   const nodes = cap00Data.nodes as unknown as Record<string, DialogueNode>;
   let currentNode = $derived(nodes[gameState.currentNodeId] || nodes['node_01_portao']);
 
-  let isLight = $derived(gameState.theme === 'light');
+  // Motor de Iluminação Ambiental Dinâmica (Dia/Noite e Luminosidade Específica do Cenário)
+  let lighting = $derived(
+    resolveEnvironmentLighting(
+      currentNode.location,
+      currentNode.time_of_day as TimeOfDay,
+      gameState.isFlashlightOn,
+      gameState.themeMode
+    )
+  );
+
+  let isLight = $derived(lighting.isLightUI);
   let isMapOpen = $state(false);
 
   // PROVADOR OBRIGATÓRIO AO LEVANTAR DA CAMA (CRIAR VISUAL & PERSONALIZAR PROTAGONISTA)
@@ -62,26 +86,7 @@
     }
   }
 
-  // Paletas Atmosféricas Confortáveis (Sem Roxos Agressivos e Sem Branco Ofuscante)
-  // Modo Claro: Papel pergaminho aconchegante, linho e tons quentes de biblioteca clássica
-  const lightBackgrounds: Record<string, string> = {
-    'Portões de Entrada': 'radial-gradient(ellipse at 50% 10%, #eae3d2 0%, #ded4bf 55%, #cfc3ab 100%)',
-    'Sala do Grêmio': 'radial-gradient(ellipse at 50% 10%, #e2e6dc 0%, #d4dad0 55%, #c4cbc0 100%)',
-    'Pátio Central': 'radial-gradient(ellipse at 50% 10%, #e7dfd3 0%, #dbcfbf 55%, #ccbfae 100%)'
-  };
-
-  // Modo Escuro: Grafite aveludado, carvão fosco e meia-noite suave (Zero saturação roxa)
-  const darkBackgrounds: Record<string, string> = {
-    'Portões de Entrada': 'radial-gradient(ellipse at 50% 10%, #151720 0%, #0e1017 55%, #08090d 100%)',
-    'Sala do Grêmio': 'radial-gradient(ellipse at 50% 10%, #11161f 0%, #0c0f16 55%, #07080d 100%)',
-    'Pátio Central': 'radial-gradient(ellipse at 50% 10%, #16151b 0%, #0f0e13 55%, #08080b 100%)'
-  };
-
-  let activeBg = $derived(
-    isLight 
-      ? (lightBackgrounds[currentNode.location] || lightBackgrounds['Portões de Entrada'])
-      : (darkBackgrounds[currentNode.location] || darkBackgrounds['Portões de Entrada'])
-  );
+  let activeBg = $derived(lighting.bgGradient);
 </script>
 
 <svelte:window onkeydown={handleKeyDown} />
@@ -93,34 +98,43 @@
 >
   <!-- PÉTALAS / PARTÍCULAS ATMOSFÉRICAS SUAVES -->
   <div class="absolute inset-0 pointer-events-none overflow-hidden z-10 opacity-40">
-    <div class="particle w-2.5 h-3 bg-amber-200/30 rounded-full blur-[0.5px]" style="left: 15%; top: 70%; animation-delay: 0s;"></div>
-    <div class="particle w-2 h-2.5 bg-amber-300/20 rounded-full blur-[0.5px]" style="left: 45%; top: 85%; animation-delay: 2.5s;"></div>
-    <div class="particle w-2.5 h-2.5 bg-stone-300/25 rounded-full blur-[0.5px]" style="left: 75%; top: 60%; animation-delay: 4.8s;"></div>
+    <div class="particle w-2.5 h-3 rounded-full blur-[0.5px]" style="background: {lighting.particleColor}; left: 15%; top: 70%; animation-delay: 0s;"></div>
+    <div class="particle w-2 h-2.5 rounded-full blur-[0.5px]" style="background: {lighting.particleColor}; left: 45%; top: 85%; animation-delay: 2.5s;"></div>
+    <div class="particle w-2.5 h-2.5 rounded-full blur-[0.5px]" style="background: {lighting.particleColor}; left: 75%; top: 60%; animation-delay: 4.8s;"></div>
   </div>
 
   <!-- CABEÇALHO SUPERIOR ELEGANTE -->
   <header 
-    class="w-full h-15 px-4 sm:px-8 flex items-center justify-between border-b backdrop-blur-xl z-30 transition-all {isLight ? 'bg-[#ece4d4]/90 border-[#cfc2ab] text-[#2c241e] shadow-sm' : 'bg-[#0b0c10]/85 border-white/6 text-zinc-200 shadow-xl'}"
+    class="w-full h-15 px-3 sm:px-8 flex items-center justify-between border-b backdrop-blur-xl z-30 transition-all {isLight ? 'bg-[#ece4d4]/90 border-[#cfc2ab] text-[#2c241e] shadow-sm' : 'bg-[#0b0c10]/85 border-white/6 text-zinc-200 shadow-xl'}"
   >
     <!-- Logo e Título do Jogo -->
     <div class="flex items-center gap-3">
+      <!-- Botão Menu Principal -->
+      <button 
+        onclick={() => gameState.returnToMenu()}
+        title="Voltar para a Tela Inicial / Menu Principal"
+        class="p-2 rounded-xl border transition-all active:scale-95 text-xs flex items-center gap-1.5 {isLight ? 'bg-[#e0d6c4] hover:bg-[#d5c9b4] border-[#baa991] text-[#3d3126]' : 'bg-[#181a24] hover:bg-[#202330] border-white/8 text-zinc-300'}"
+      >
+        <Home class="w-4 h-4 text-amber-500" />
+      </button>
+
       <div class="flex items-center gap-2.5">
         <span class="w-2.5 h-2.5 rounded-full {isLight ? 'bg-amber-700' : 'bg-amber-500'} shadow-sm"></span>
         <h1 class="text-sm sm:text-base font-cinzel font-extrabold tracking-widest uppercase {isLight ? 'text-[#2a221b]' : 'text-zinc-100'}">
           Entre Sinos
         </h1>
       </div>
-      <span class="opacity-30">•</span>
-      <span class="text-xs font-serif-romance italic {isLight ? 'text-[#68594b]' : 'text-zinc-400'}">
+      <span class="opacity-30 hidden sm:inline">•</span>
+      <span class="text-xs font-serif-romance italic hidden sm:inline {isLight ? 'text-[#68594b]' : 'text-zinc-400'}">
         {cap00Data.title}
       </span>
     </div>
 
     <!-- Indicador de Afinidade dos Rapazes & Alternador de Tema -->
-    <div class="flex items-center gap-2 sm:gap-4">
+    <div class="flex items-center gap-1.5 sm:gap-3">
       
       <!-- Luvômetro Resumo no Topo -->
-      <div class="flex items-center gap-2 sm:gap-3 px-3.5 py-1.5 rounded-full border backdrop-blur-md text-xs font-cinzel font-bold {isLight ? 'bg-[#e4dbca]/90 border-[#c5b8a0] text-[#332b23]' : 'bg-[#14161f]/80 border-white/8 text-zinc-300'}">
+      <div class="hidden md:flex items-center gap-2 sm:gap-3 px-3 py-1.5 rounded-full border backdrop-blur-md text-xs font-cinzel font-bold {isLight ? 'bg-[#e4dbca]/90 border-[#c5b8a0] text-[#332b23]' : 'bg-[#14161f]/80 border-white/8 text-zinc-300'}">
         <span class="text-rose-500 flex items-center gap-1">Dante {gameState.affinity.dante}</span>
         <span class="opacity-20">|</span>
         <span class="text-blue-500 flex items-center gap-1">Lucas {gameState.affinity.lucas}</span>
@@ -134,11 +148,24 @@
         <span>◈ {gameState.coins}</span>
       </div>
 
+      <!-- BOTÃO MÚSICA ON/OFF RÁPIDO -->
+      <button 
+        onclick={() => gameState.setMusicEnabled(!gameState.musicEnabled)}
+        title={gameState.musicEnabled ? 'Desativar Música Ambiente' : 'Ativar Música Ambiente'}
+        class="p-2 rounded-xl border transition-all active:scale-95 text-xs flex items-center justify-center {isLight ? 'bg-[#e0d6c4] hover:bg-[#d5c9b4] border-[#baa991] text-[#3d3126]' : 'bg-[#181a24] hover:bg-[#202330] border-white/8 text-zinc-300'}"
+      >
+        {#if gameState.musicEnabled}
+          <Volume2 class="w-4 h-4 text-amber-500" />
+        {:else}
+          <VolumeX class="w-4 h-4 text-zinc-500" />
+        {/if}
+      </button>
+
       <!-- BOTÃO GUARDA-ROUPA / CLOSET (C) -->
       <button 
         onclick={() => gameState.toggleWardrobe()}
         title="Abrir Closet & Provador da Protagonista (C)"
-        class="px-3 py-1.5 rounded-xl border transition-all active:scale-95 text-xs flex items-center gap-1.5 font-cinzel font-semibold {isLight ? 'bg-[#e0d6c4] hover:bg-[#d5c9b4] border-[#baa991] text-[#3d3126]' : 'bg-[#181a24] hover:bg-[#202330] border-white/8 text-zinc-200'}"
+        class="px-2.5 sm:px-3 py-1.5 rounded-xl border transition-all active:scale-95 text-xs flex items-center gap-1.5 font-cinzel font-semibold {isLight ? 'bg-[#e0d6c4] hover:bg-[#d5c9b4] border-[#baa991] text-[#3d3126]' : 'bg-[#181a24] hover:bg-[#202330] border-white/8 text-zinc-200'}"
       >
         <Shirt class="w-3.5 h-3.5 text-amber-500" />
         <span class="hidden sm:inline">Closet</span>
@@ -148,19 +175,21 @@
       <button 
         onclick={() => isMapOpen = true}
         title="Abrir Mapa do Campus (M)"
-        class="px-3 py-1.5 rounded-xl border transition-all active:scale-95 text-xs flex items-center gap-1.5 font-cinzel font-semibold {isLight ? 'bg-[#e0d6c4] hover:bg-[#d5c9b4] border-[#baa991] text-[#3d3126]' : 'bg-[#181a24] hover:bg-[#202330] border-white/8 text-zinc-200'}"
+        class="px-2.5 sm:px-3 py-1.5 rounded-xl border transition-all active:scale-95 text-xs flex items-center gap-1.5 font-cinzel font-semibold {isLight ? 'bg-[#e0d6c4] hover:bg-[#d5c9b4] border-[#baa991] text-[#3d3126]' : 'bg-[#181a24] hover:bg-[#202330] border-white/8 text-zinc-200'}"
       >
         <Map class="w-3.5 h-3.5 text-amber-500" />
         <span class="hidden sm:inline">Mapa</span>
       </button>
 
-      <!-- BOTÃO DE TEMA: LIGHT / DARK -->
+      <!-- BOTÃO DE TEMA: AUTO (CENÁRIO) / CLARO / ESCURO -->
       <button 
         onclick={() => gameState.toggleTheme()}
-        title="Alternar Tema Claro / Escuro"
-        class="p-2 rounded-xl border transition-all active:scale-95 text-xs flex items-center gap-1.5 font-medium {isLight ? 'bg-[#e0d6c4] hover:bg-[#d5c9b4] border-[#baa991] text-[#3d3126]' : 'bg-[#181a24] hover:bg-[#202330] border-white/8 text-amber-300'}"
+        title="Modo de Tema: {gameState.themeMode === 'auto' ? 'Automático por Cenário e Horário' : gameState.themeMode === 'light' ? 'Claro Fixo' : 'Escuro Fixo'}"
+        class="p-2 rounded-xl border transition-all active:scale-95 text-xs flex items-center gap-1 font-medium {isLight ? 'bg-[#e0d6c4] hover:bg-[#d5c9b4] border-[#baa991] text-[#3d3126]' : 'bg-[#181a24] hover:bg-[#202330] border-white/8 text-amber-300'}"
       >
-        {#if isLight}
+        {#if gameState.themeMode === 'auto'}
+          <Compass class="w-4 h-4 text-amber-500" />
+        {:else if gameState.themeMode === 'light'}
           <Sun class="w-4 h-4 text-amber-700" />
         {:else}
           <Moon class="w-4 h-4 text-zinc-300" />

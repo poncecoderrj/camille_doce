@@ -1,4 +1,5 @@
 import type { DialogueNode, Choice } from '../dialogue/narrative.schema';
+import { audioManager } from '../audio/audio-manager';
 
 export interface HistoryEntry {
   nodeId: string;
@@ -19,8 +20,19 @@ export interface DiaryEntry {
 }
 
 export class GameState {
-  // Tema Visual do Jogo (Dark / Light)
+  // Modo de Exibição do Jogo (Menu Inicial vs. Palco Principal)
+  gameMode = $state<'menu' | 'playing'>('menu');
+  hasStartedGame = $state<boolean>(false);
+
+  // Modo de Tema Visual: 'auto' (inteligente por cenário/dia/noite), 'light', 'dark'
+  themeMode = $state<'auto' | 'light' | 'dark'>('auto');
   theme = $state<'dark' | 'light'>('dark');
+
+  // Sistema de Áudio (BGM e SFX)
+  musicEnabled = $state<boolean>(true);
+  musicVolume = $state<number>(65); // 0 a 100
+  sfxEnabled = $state<boolean>(true);
+  sfxVolume = $state<number>(80);   // 0 a 100
 
   // Estado Narrativo Principal
   currentNodeId = $state<string>('node_00_despertador');
@@ -125,8 +137,68 @@ export class GameState {
     }
   }
 
+  // ================= TRANSIÇÕES DE ESTADO DO JOGO =================
+  startNewGame() {
+    this.currentNodeId = 'node_00_despertador';
+    this.currentLocation = 'Quarto da Protagonista';
+    this.timeOfDay = 'manha';
+    this.history = [];
+    this.affinity = { dante: 0, lucas: 0, theo: 0, rafael: 0, beatriz: 0 };
+    this.flags = { capitulo_00_terminado: false };
+    this.gameMode = 'playing';
+    this.hasStartedGame = true;
+    audioManager.playBell();
+    if (this.musicEnabled) {
+      audioManager.startAmbientMusic();
+    }
+  }
+
+  continueGame() {
+    this.gameMode = 'playing';
+    this.hasStartedGame = true;
+    audioManager.playClick();
+    if (this.musicEnabled) {
+      audioManager.startAmbientMusic();
+    }
+  }
+
+  returnToMenu() {
+    this.gameMode = 'menu';
+    audioManager.playClick();
+  }
+
+  // ================= CONTROLES DE ÁUDIO =================
+  setMusicEnabled(enabled: boolean) {
+    this.musicEnabled = enabled;
+    audioManager.updateSettings({ musicEnabled: enabled });
+  }
+
+  setMusicVolume(vol: number) {
+    this.musicVolume = vol;
+    audioManager.updateSettings({ musicVolume: vol });
+  }
+
+  setSfxEnabled(enabled: boolean) {
+    this.sfxEnabled = enabled;
+    audioManager.updateSettings({ sfxEnabled: enabled });
+  }
+
+  setSfxVolume(vol: number) {
+    this.sfxVolume = vol;
+    audioManager.updateSettings({ sfxVolume: vol });
+  }
+
   toggleTheme() {
-    this.theme = this.theme === 'dark' ? 'light' : 'dark';
+    if (this.themeMode === 'auto') {
+      this.themeMode = 'light';
+      this.theme = 'light';
+    } else if (this.themeMode === 'light') {
+      this.themeMode = 'dark';
+      this.theme = 'dark';
+    } else {
+      this.themeMode = 'auto';
+    }
+    audioManager.playClick();
   }
 
   toggleFlashlight() {

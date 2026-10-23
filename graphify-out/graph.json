@@ -17,6 +17,45 @@
       "source_location": "L5"
     },
     {
+      "id": "src_features_stage_environment_lighting_environmentlighting",
+      "label": "EnvironmentLighting",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "environmentlighting",
+      "source_file": "src/features/stage/environment-lighting.ts",
+      "source_location": "L52"
+    },
+    {
+      "id": "src_features_stage_environment_lighting_locationlightingprofile",
+      "label": "LocationLightingProfile",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "locationlightingprofile",
+      "source_file": "src/features/stage/environment-lighting.ts",
+      "source_location": "L12"
+    },
+    {
+      "id": "src_features_stage_environment_lighting_timeofday",
+      "label": "TimeOfDay",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "timeofday",
+      "source_file": "src/features/stage/environment-lighting.ts",
+      "source_location": "L10"
+    },
+    {
       "id": "src_features_stage_scenerybackground_props",
       "label": "Props",
       "_callable": true,
@@ -27,7 +66,20 @@
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L2"
+      "source_location": "L6"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiosettings",
+      "label": "AudioSettings",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "audiosettings",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L7"
     },
     {
       "id": "src_features_dialogue_dialoguebox_props",
@@ -40,7 +92,7 @@
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L6"
+      "source_location": "L7"
     },
     {
       "id": "src_features_dialogue_narrative_schema_chapter",
@@ -118,7 +170,7 @@
       "file_type": "code",
       "norm_label": "diaryentry",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_historyentry",
@@ -131,7 +183,7 @@
       "file_type": "code",
       "norm_label": "historyentry",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L3"
+      "source_location": "L4"
     },
     {
       "id": "src_features_characters_character_types_characterid",
@@ -199,6 +251,19 @@
       "source_location": "L6"
     },
     {
+      "id": "src_features_customization_customization_schema_protagonistcustomization",
+      "label": "ProtagonistCustomization",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "protagonistcustomization",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L50"
+    },
+    {
       "id": "src_features_customization_protagonistactor_props",
       "label": "Props",
       "_callable": true,
@@ -210,6 +275,45 @@
       "norm_label": "props",
       "source_file": "src/features/customization/ProtagonistActor.svelte",
       "source_location": "L7"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_personagemid",
+      "label": "PersonagemId",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "personagemid",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_features_stage_charactersprite_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L8"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager",
+      "label": "audioManager",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": "audiomanager",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L312"
     },
     {
       "id": "src_features_customization_customization_schema_backpackoption",
@@ -355,45 +459,6 @@
       "source_location": "L31"
     },
     {
-      "id": "src_features_customization_customization_schema_protagonistcustomization",
-      "label": "ProtagonistCustomization",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "CharacterSprite.svelte",
-      "file_type": "code",
-      "norm_label": "protagonistcustomization",
-      "source_file": "src/features/customization/customization.schema.ts",
-      "source_location": "L50"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_personagemid",
-      "label": "PersonagemId",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "CharacterSprite.svelte",
-      "file_type": "code",
-      "norm_label": "personagemid",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L18"
-    },
-    {
-      "id": "src_features_stage_charactersprite_props",
-      "label": "Props",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "CharacterSprite.svelte",
-      "file_type": "code",
-      "norm_label": "props",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L8"
-    },
-    {
       "id": "src_features_game_state_gamestate_svelte_gamestate",
       "label": "gameState",
       "_callable": true,
@@ -404,7 +469,7 @@
       "file_type": "code",
       "norm_label": "gamestate",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L230"
+      "source_location": "L302"
     },
     {
       "id": "src_features_campus_map_campusmapmodal_travelto",
@@ -419,6 +484,18 @@
       "source_location": "L72"
     },
     {
+      "id": "src_features_stage_environment_lighting_resolveenvironmentlighting",
+      "label": "resolveEnvironmentLighting()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "resolveenvironmentlighting()",
+      "source_file": "src/features/stage/environment-lighting.ts",
+      "source_location": "L70"
+    },
+    {
       "id": "src_layout_dualstage_handlekeydown",
       "label": "handleKeyDown()",
       "_callable": true,
@@ -428,7 +505,7 @@
       "file_type": "code",
       "norm_label": "handlekeydown()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L51"
+      "source_location": "L75"
     },
     {
       "id": "src_layout_dualstage_handleselectchoice",
@@ -440,7 +517,7 @@
       "file_type": "code",
       "norm_label": "handleselectchoice()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L30"
+      "source_location": "L54"
     },
     {
       "id": "src_layout_dualstage_restartchapter",
@@ -452,7 +529,7 @@
       "file_type": "code",
       "norm_label": "restartchapter()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L44"
+      "source_location": "L68"
     },
     {
       "id": "src_features_dialogue_dialoguebox_completetextoradvance",
@@ -464,7 +541,7 @@
       "file_type": "code",
       "norm_label": "completetextoradvance()",
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L51"
+      "source_location": "L52"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_applychoice",
@@ -476,7 +553,7 @@
       "file_type": "code",
       "norm_label": ".applychoice()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L201"
+      "source_location": "L273"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_modifyaffinity",
@@ -488,7 +565,7 @@
       "file_type": "code",
       "norm_label": ".modifyaffinity()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L184"
+      "source_location": "L256"
     },
     {
       "id": "src_features_characters_visualnovelactor_handleimgerror",
@@ -561,18 +638,6 @@
       "norm_label": "step()",
       "source_file": "src/features/characters/VisualNovelActor.svelte",
       "source_location": "L61"
-    },
-    {
-      "id": "src_features_customization_customization_catalog_resolvebackpackasset",
-      "label": "resolveBackpackAsset()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "ProtagonistActor.svelte",
-      "file_type": "code",
-      "norm_label": "resolvebackpackasset()",
-      "source_file": "src/features/customization/customization.catalog.ts",
-      "source_location": "L214"
     },
     {
       "id": "src_features_customization_customization_catalog_resolveprotagonistmasterillustration",
@@ -657,6 +722,150 @@
       "norm_label": "step()",
       "source_file": "src/features/customization/ProtagonistActor.svelte",
       "source_location": "L76"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager_constructor",
+      "label": ".constructor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".constructor()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager_getsettings",
+      "label": ".getSettings()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".getsettings()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L98"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager_initcontext",
+      "label": ".initContext()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".initcontext()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager_playbell",
+      "label": ".playBell()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".playbell()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L248"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager_playchoice",
+      "label": ".playChoice()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".playchoice()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L218"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager_playclick",
+      "label": ".playClick()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".playclick()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L193"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager_playnotification",
+      "label": ".playNotification()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".playnotification()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L284"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager_playplucknote",
+      "label": ".playPluckNote()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".playplucknote()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L158"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager_startambientmusic",
+      "label": ".startAmbientMusic()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".startambientmusic()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L105"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager_stopambientmusic",
+      "label": ".stopAmbientMusic()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".stopambientmusic()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L147"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiomanager_updatesettings",
+      "label": ".updateSettings()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".updatesettings()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L68"
+    },
+    {
+      "id": "src_features_customization_customization_catalog_resolvebackpackasset",
+      "label": "resolveBackpackAsset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "resolvebackpackasset()",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L214"
     },
     {
       "id": "src_features_customization_protagonistcustomizermodal_handlereset",
@@ -791,6 +1000,114 @@
       "source_location": "L195"
     },
     {
+      "id": "src_features_menu_titlescreen_handlecontinuegame",
+      "label": "handleContinueGame()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "TitleScreen.svelte",
+      "file_type": "code",
+      "norm_label": "handlecontinuegame()",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L31"
+    },
+    {
+      "id": "src_features_menu_titlescreen_handlemusicvolumechange",
+      "label": "handleMusicVolumeChange()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "TitleScreen.svelte",
+      "file_type": "code",
+      "norm_label": "handlemusicvolumechange()",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L40"
+    },
+    {
+      "id": "src_features_menu_titlescreen_handlesfxvolumechange",
+      "label": "handleSfxVolumeChange()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "TitleScreen.svelte",
+      "file_type": "code",
+      "norm_label": "handlesfxvolumechange()",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L50"
+    },
+    {
+      "id": "src_features_menu_titlescreen_handlestartnewgame",
+      "label": "handleStartNewGame()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "TitleScreen.svelte",
+      "file_type": "code",
+      "norm_label": "handlestartnewgame()",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_features_menu_titlescreen_selectthememode",
+      "label": "selectThemeMode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "TitleScreen.svelte",
+      "file_type": "code",
+      "norm_label": "selectthememode()",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L63"
+    },
+    {
+      "id": "src_features_menu_titlescreen_testbellsfx",
+      "label": "testBellSfx()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "TitleScreen.svelte",
+      "file_type": "code",
+      "norm_label": "testbellsfx()",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L55"
+    },
+    {
+      "id": "src_features_menu_titlescreen_testnotificationsfx",
+      "label": "testNotificationSfx()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "TitleScreen.svelte",
+      "file_type": "code",
+      "norm_label": "testnotificationsfx()",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L59"
+    },
+    {
+      "id": "src_features_menu_titlescreen_togglemusic",
+      "label": "toggleMusic()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "TitleScreen.svelte",
+      "file_type": "code",
+      "norm_label": "togglemusic()",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L35"
+    },
+    {
+      "id": "src_features_menu_titlescreen_togglesfx",
+      "label": "toggleSfx()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "TitleScreen.svelte",
+      "file_type": "code",
+      "norm_label": "togglesfx()",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L45"
+    },
+    {
       "id": "src_features_game_state_gamestate_svelte_gamestate_adddiarynote",
       "label": ".addDiaryNote()",
       "_callable": true,
@@ -800,7 +1117,7 @@
       "file_type": "code",
       "norm_label": ".adddiarynote()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L148"
+      "source_location": "L220"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_applypreset",
@@ -812,7 +1129,7 @@
       "file_type": "code",
       "norm_label": ".applypreset()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L176"
+      "source_location": "L248"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_closewardrobe",
@@ -824,7 +1141,19 @@
       "file_type": "code",
       "norm_label": ".closewardrobe()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L164"
+      "source_location": "L236"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_continuegame",
+      "label": ".continueGame()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".continuegame()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L156"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_equippiece",
@@ -836,7 +1165,7 @@
       "file_type": "code",
       "norm_label": ".equippiece()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L172"
+      "source_location": "L244"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_getaffinitytier",
@@ -848,7 +1177,7 @@
       "file_type": "code",
       "norm_label": ".getaffinitytier()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L192"
+      "source_location": "L264"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_openphoneapp",
@@ -860,7 +1189,7 @@
       "file_type": "code",
       "norm_label": ".openphoneapp()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L112"
+      "source_location": "L124"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_openwardrobe",
@@ -872,7 +1201,7 @@
       "file_type": "code",
       "norm_label": ".openwardrobe()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L160"
+      "source_location": "L232"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_pressphonehome",
@@ -884,7 +1213,79 @@
       "file_type": "code",
       "norm_label": ".pressphonehome()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L120"
+      "source_location": "L132"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_returntomenu",
+      "label": ".returnToMenu()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".returntomenu()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L165"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_setmusicenabled",
+      "label": ".setMusicEnabled()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".setmusicenabled()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L171"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_setmusicvolume",
+      "label": ".setMusicVolume()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".setmusicvolume()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L176"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_setsfxenabled",
+      "label": ".setSfxEnabled()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".setsfxenabled()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L181"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_setsfxvolume",
+      "label": ".setSfxVolume()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".setsfxvolume()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L186"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_startnewgame",
+      "label": ".startNewGame()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".startnewgame()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L141"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_toggleflashlight",
@@ -896,7 +1297,7 @@
       "file_type": "code",
       "norm_label": ".toggleflashlight()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L132"
+      "source_location": "L204"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_togglehotspot",
@@ -908,7 +1309,7 @@
       "file_type": "code",
       "norm_label": ".togglehotspot()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L136"
+      "source_location": "L208"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_togglephone",
@@ -920,7 +1321,7 @@
       "file_type": "code",
       "norm_label": ".togglephone()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L105"
+      "source_location": "L117"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_toggletheme",
@@ -932,7 +1333,7 @@
       "file_type": "code",
       "norm_label": ".toggletheme()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L128"
+      "source_location": "L191"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_togglewardrobe",
@@ -944,7 +1345,7 @@
       "file_type": "code",
       "norm_label": ".togglewardrobe()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L168"
+      "source_location": "L240"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_triggercloudbackup",
@@ -956,7 +1357,7 @@
       "file_type": "code",
       "norm_label": ".triggercloudbackup()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L140"
+      "source_location": "L212"
     },
     {
       "id": "lucide_svelte",
@@ -1014,6 +1415,28 @@
       "source_location": "L9"
     },
     {
+      "id": "src_features_stage_environment_lighting",
+      "label": "environment-lighting.ts",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "environment-lighting.ts",
+      "source_file": "src/features/stage/environment-lighting.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_stage_environment_lighting_location_profiles",
+      "label": "LOCATION_PROFILES",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "location_profiles",
+      "source_file": "src/features/stage/environment-lighting.ts",
+      "source_location": "L21"
+    },
+    {
       "id": "src_features_stage_scenerybackground",
       "label": "SceneryBackground.svelte",
       "_origin": "ast",
@@ -1033,7 +1456,7 @@
       "file_type": "code",
       "norm_label": "activeimg",
       "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L18"
+      "source_location": "L22"
     },
     {
       "id": "src_features_stage_scenerybackground_backgroundimages",
@@ -1044,7 +1467,18 @@
       "file_type": "code",
       "norm_label": "backgroundimages",
       "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L11"
+      "source_location": "L15"
+    },
+    {
+      "id": "src_features_stage_scenerybackground_lighting",
+      "label": "lighting",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "lighting",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L25"
     },
     {
       "id": "src_features_stage_scenerybackground_location_timeofday_manha_islight_false",
@@ -1055,7 +1489,7 @@
       "file_type": "code",
       "norm_label": "{ location, timeofday = 'manha', islight = false }",
       "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L8"
+      "source_location": "L12"
     },
     {
       "id": "src_layout_dualstage",
@@ -1077,7 +1511,7 @@
       "file_type": "code",
       "norm_label": "activebg",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L80"
+      "source_location": "L89"
     },
     {
       "id": "src_layout_dualstage_currentnode",
@@ -1088,18 +1522,7 @@
       "file_type": "code",
       "norm_label": "currentnode",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_layout_dualstage_darkbackgrounds",
-      "label": "darkBackgrounds",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "darkbackgrounds",
-      "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L74"
+      "source_location": "L28"
     },
     {
       "id": "src_layout_dualstage_islight",
@@ -1110,7 +1533,7 @@
       "file_type": "code",
       "norm_label": "islight",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L16"
+      "source_location": "L40"
     },
     {
       "id": "src_layout_dualstage_ismapopen",
@@ -1121,18 +1544,18 @@
       "file_type": "code",
       "norm_label": "ismapopen",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L17"
+      "source_location": "L41"
     },
     {
-      "id": "src_layout_dualstage_lightbackgrounds",
-      "label": "lightBackgrounds",
+      "id": "src_layout_dualstage_lighting",
+      "label": "lighting",
       "_origin": "ast",
       "community": 0,
       "community_name": "DualStage.svelte",
       "file_type": "code",
-      "norm_label": "lightbackgrounds",
+      "norm_label": "lighting",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L67"
+      "source_location": "L31"
     },
     {
       "id": "src_layout_dualstage_nodes",
@@ -1143,7 +1566,7 @@
       "file_type": "code",
       "norm_label": "nodes",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L13"
+      "source_location": "L27"
     },
     {
       "id": "ref_lucide_svelte",
@@ -1155,6 +1578,17 @@
       "norm_label": "lucide-svelte",
       "source_file": "package.json",
       "source_location": "L28"
+    },
+    {
+      "id": "src_features_audio_audio_manager",
+      "label": "audio-manager.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "audio-manager.ts",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L1"
     },
     {
       "id": "src_features_dialogue_dialoguebox",
@@ -1176,7 +1610,7 @@
       "file_type": "code",
       "norm_label": "displayedtext",
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "src_features_dialogue_dialoguebox_isautoplay",
@@ -1187,7 +1621,7 @@
       "file_type": "code",
       "norm_label": "isautoplay",
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
       "id": "src_features_dialogue_dialoguebox_islight",
@@ -1198,7 +1632,7 @@
       "file_type": "code",
       "norm_label": "islight",
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L20"
+      "source_location": "L21"
     },
     {
       "id": "src_features_dialogue_dialoguebox_istyping",
@@ -1209,7 +1643,7 @@
       "file_type": "code",
       "norm_label": "istyping",
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "src_features_dialogue_dialoguebox_node_onselectchoice_ontogglephone_onopenhistory",
@@ -1220,7 +1654,7 @@
       "file_type": "code",
       "norm_label": "{ node, onselectchoice, ontogglephone, onopenhistory }",
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "src_features_dialogue_dialoguebox_speakeraccent",
@@ -1231,7 +1665,7 @@
       "file_type": "code",
       "norm_label": "speakeraccent",
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L67"
+      "source_location": "L68"
     },
     {
       "id": "src_features_dialogue_dialoguebox_speakeraccents",
@@ -1242,7 +1676,7 @@
       "file_type": "code",
       "norm_label": "speakeraccents",
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L60"
+      "source_location": "L61"
     },
     {
       "id": "src_features_dialogue_narrative_schema",
@@ -1679,6 +2113,83 @@
       "source_location": "L104"
     },
     {
+      "id": "src_features_stage_charactersprite",
+      "label": "CharacterSprite.svelte",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "charactersprite.svelte",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_stage_charactersprite_characterprofiles",
+      "label": "characterProfiles",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "characterprofiles",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_features_stage_charactersprite_islight",
+      "label": "isLight",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "islight",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L55"
+    },
+    {
+      "id": "src_features_stage_charactersprite_isprotagonist",
+      "label": "isProtagonist",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "isprotagonist",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L56"
+    },
+    {
+      "id": "src_features_stage_charactersprite_profile",
+      "label": "profile",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "profile",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L54"
+    },
+    {
+      "id": "src_features_stage_charactersprite_protagonistcustomization",
+      "label": "protagonistCustomization",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "protagonistcustomization",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L59"
+    },
+    {
+      "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutro_timeofday_manha",
+      "label": "{ speaker, speakerName = '', expression = 'neutro', timeOfDay = 'manha' }",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "{ speaker, speakername = '', expression = 'neutro', timeofday = 'manha' }",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L15"
+    },
+    {
       "id": "package",
       "label": "package.json",
       "_origin": "ast",
@@ -1844,39 +2355,6 @@
       "source_location": "L4"
     },
     {
-      "id": "src_app",
-      "label": "App.svelte",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "app.svelte",
-      "source_file": "src/App.svelte",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_main",
-      "label": "main.ts",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "main.ts",
-      "source_file": "src/main.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_main_app",
-      "label": "app",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "code",
-      "norm_label": "app",
-      "source_file": "src/main.ts",
-      "source_location": "L5"
-    },
-    {
       "id": "vite_config",
       "label": "vite.config.ts",
       "_origin": "ast",
@@ -1908,17 +2386,6 @@
       "norm_label": "howler",
       "source_file": "package.json",
       "source_location": "L27"
-    },
-    {
-      "id": "ref_svelte",
-      "label": "svelte",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "package.json",
-      "file_type": "concept",
-      "norm_label": "svelte",
-      "source_file": "package.json",
-      "source_location": "L18"
     },
     {
       "id": "ref_svelte_check",
@@ -2029,17 +2496,6 @@
       "norm_label": "vite-plugin-pwa",
       "source_file": "package.json",
       "source_location": "L23"
-    },
-    {
-      "id": "transition",
-      "label": "svelte/transition",
-      "_origin": "ast",
-      "community": 3,
-      "community_name": "ProtagonistCustomizerModal.svelte",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "svelte/transition",
-      "source_file": "svelte/transition"
     },
     {
       "id": "src_features_customization_customization_catalog",
@@ -2900,81 +3356,92 @@
       "source_location": "L23"
     },
     {
-      "id": "src_features_stage_charactersprite",
-      "label": "CharacterSprite.svelte",
+      "id": "transition",
+      "label": "svelte/transition",
       "_origin": "ast",
       "community": 8,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "TitleScreen.svelte",
+      "confidence": "EXTRACTED",
       "file_type": "code",
-      "norm_label": "charactersprite.svelte",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "norm_label": "svelte/transition",
+      "source_file": "svelte/transition"
+    },
+    {
+      "id": "src_app",
+      "label": "App.svelte",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "TitleScreen.svelte",
+      "file_type": "code",
+      "norm_label": "app.svelte",
+      "source_file": "src/App.svelte",
       "source_location": "L1"
     },
     {
-      "id": "src_features_stage_charactersprite_characterprofiles",
-      "label": "characterProfiles",
+      "id": "src_features_menu_titlescreen",
+      "label": "TitleScreen.svelte",
       "_origin": "ast",
       "community": 8,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "TitleScreen.svelte",
       "file_type": "code",
-      "norm_label": "characterprofiles",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L17"
+      "norm_label": "titlescreen.svelte",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L1"
     },
     {
-      "id": "src_features_stage_charactersprite_islight",
-      "label": "isLight",
+      "id": "src_features_menu_titlescreen_isaudiosettingsopen",
+      "label": "isAudioSettingsOpen",
       "_origin": "ast",
       "community": 8,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "TitleScreen.svelte",
       "file_type": "code",
-      "norm_label": "islight",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L55"
+      "norm_label": "isaudiosettingsopen",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L24"
     },
     {
-      "id": "src_features_stage_charactersprite_isprotagonist",
-      "label": "isProtagonist",
+      "id": "src_features_menu_titlescreen_iscreditsopen",
+      "label": "isCreditsOpen",
       "_origin": "ast",
       "community": 8,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "TitleScreen.svelte",
       "file_type": "code",
-      "norm_label": "isprotagonist",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L56"
+      "norm_label": "iscreditsopen",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L25"
     },
     {
-      "id": "src_features_stage_charactersprite_profile",
-      "label": "profile",
+      "id": "src_main",
+      "label": "main.ts",
       "_origin": "ast",
       "community": 8,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "TitleScreen.svelte",
       "file_type": "code",
-      "norm_label": "profile",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L54"
+      "norm_label": "main.ts",
+      "source_file": "src/main.ts",
+      "source_location": "L1"
     },
     {
-      "id": "src_features_stage_charactersprite_protagonistcustomization",
-      "label": "protagonistCustomization",
+      "id": "src_main_app",
+      "label": "app",
       "_origin": "ast",
       "community": 8,
-      "community_name": "CharacterSprite.svelte",
+      "community_name": "TitleScreen.svelte",
       "file_type": "code",
-      "norm_label": "protagonistcustomization",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L59"
+      "norm_label": "app",
+      "source_file": "src/main.ts",
+      "source_location": "L5"
     },
     {
-      "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutro_timeofday_manha",
-      "label": "{ speaker, speakerName = '', expression = 'neutro', timeOfDay = 'manha' }",
+      "id": "ref_svelte",
+      "label": "svelte",
       "_origin": "ast",
       "community": 8,
-      "community_name": "CharacterSprite.svelte",
-      "file_type": "code",
-      "norm_label": "{ speaker, speakername = '', expression = 'neutro', timeofday = 'manha' }",
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L15"
+      "community_name": "TitleScreen.svelte",
+      "file_type": "concept",
+      "norm_label": "svelte",
+      "source_file": "package.json",
+      "source_location": "L18"
     },
     {
       "id": "content_arcs_arco_1_adolescencia_cap_00_prologo",
@@ -3039,6 +3506,102 @@
   ],
   "links": [
     {
+      "source": "src_features_audio_audio_manager_audiomanager_playbell",
+      "target": "src_features_audio_audio_manager_audiomanager_initcontext",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L249",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager_playchoice",
+      "target": "src_features_audio_audio_manager_audiomanager_initcontext",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L219",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager_playclick",
+      "target": "src_features_audio_audio_manager_audiomanager_initcontext",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L194",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager_playnotification",
+      "target": "src_features_audio_audio_manager_audiomanager_initcontext",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L285",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager_startambientmusic",
+      "target": "src_features_audio_audio_manager_audiomanager_initcontext",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager_startambientmusic",
+      "target": "src_features_audio_audio_manager_audiomanager_playplucknote",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L132",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager_updatesettings",
+      "target": "src_features_audio_audio_manager_audiomanager_startambientmusic",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager_updatesettings",
+      "target": "src_features_audio_audio_manager_audiomanager_stopambientmusic",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_characters_visualnovelactor_triggerblink_step",
       "target": "src_features_characters_visualnovelactor_schedulenext",
       "relation": "calls",
@@ -3095,7 +3658,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L213",
+      "source_location": "L285",
       "weight": 1.0
     },
     {
@@ -3312,6 +3875,18 @@
       "context": "import",
       "source_file": "package.json",
       "source_location": "L29",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_features_game_state_gamestate_svelte_gamestate",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.svelte",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -3723,6 +4298,18 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_dialogue_dialoguebox",
+      "target": "src_features_audio_audio_manager_audiomanager",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_game_state_gamestate_svelte",
       "target": "src_features_dialogue_narrative_schema_choice",
       "relation": "imports",
@@ -3744,6 +4331,42 @@
       "context": "import",
       "source_file": "src/features/game-state/GameState.svelte.ts",
       "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte",
+      "target": "src_features_audio_audio_manager_audiomanager",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_game_state_gamestate_svelte_gamestate",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_audio_audio_manager_audiomanager",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -3795,8 +4418,44 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_stage_scenerybackground",
+      "target": "src_features_game_state_gamestate_svelte_gamestate",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_scenerybackground",
+      "target": "src_features_stage_environment_lighting_resolveenvironmentlighting",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_scenerybackground",
+      "target": "src_features_stage_environment_lighting_timeofday",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "src_layout_dualstage",
-      "target": "src_features_dialogue_narrative_schema_choice",
+      "target": "src_features_stage_environment_lighting_timeofday",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -3808,6 +4467,18 @@
     },
     {
       "source": "src_layout_dualstage",
+      "target": "src_features_dialogue_narrative_schema_choice",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
       "target": "src_features_dialogue_narrative_schema_dialoguenode",
       "relation": "imports",
       "_origin": "ast",
@@ -3815,7 +4486,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L10",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -3831,6 +4502,54 @@
       "weight": 1.0
     },
     {
+      "source": "src_layout_dualstage",
+      "target": "src_features_stage_environment_lighting_resolveenvironmentlighting",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "ref_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_features_game_state_gamestate_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_features_menu_titlescreen",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/App.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "src_app",
       "target": "src_layout_dualstage",
       "relation": "imports_from",
@@ -3839,7 +4558,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/App.svelte",
-      "source_location": "L2",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -4090,7 +4809,7 @@
     },
     {
       "source": "src_features_dialogue_dialoguebox",
-      "target": "ref_lucide_svelte",
+      "target": "src_features_audio_audio_manager",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4098,6 +4817,18 @@
       "context": "import",
       "source_file": "src/features/dialogue/DialogueBox.svelte",
       "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_dialogue_dialoguebox",
+      "target": "ref_lucide_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L5",
       "weight": 1.0
     },
     {
@@ -4123,6 +4854,78 @@
       "source_file": "src/features/game-state/GameState.svelte.ts",
       "source_location": "L1",
       "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte",
+      "target": "src_features_audio_audio_manager",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "ref_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_game_state_gamestate_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_audio_audio_manager",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_customization_protagonistcustomizermodal",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "ref_lucide_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L3",
       "weight": 1.0
     },
     {
@@ -4212,8 +5015,33 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_stage_scenerybackground",
+      "target": "src_features_game_state_gamestate_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_scenerybackground",
+      "target": "src_features_stage_environment_lighting",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L4",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
       "source": "src_layout_dualstage",
-      "target": "src_features_dialogue_narrative_schema",
+      "target": "src_features_stage_environment_lighting",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4226,7 +5054,7 @@
     },
     {
       "source": "src_layout_dualstage",
-      "target": "ref_lucide_svelte",
+      "target": "content_arcs_arco_1_adolescencia_cap_00_prologo",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -4234,6 +5062,31 @@
       "context": "import",
       "source_file": "src/layout/DualStage.svelte",
       "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
+      "target": "src_features_dialogue_narrative_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L12",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
+      "target": "ref_lucide_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -4321,18 +5174,6 @@
       "weight": 1.0
     },
     {
-      "source": "src_layout_dualstage",
-      "target": "content_arcs_arco_1_adolescencia_cap_00_prologo",
-      "relation": "imports_from",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "import",
-      "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L9",
-      "weight": 1.0
-    },
-    {
       "source": "src_main",
       "target": "ref_svelte",
       "relation": "imports_from",
@@ -4413,7 +5254,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L201",
+      "source_location": "L273",
       "weight": 1.0
     },
     {
@@ -4425,7 +5266,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L201",
+      "source_location": "L273",
       "weight": 1.0
     },
     {
@@ -4756,6 +5597,28 @@
       "confidence_score": 1.0,
       "source_file": "README.md",
       "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager",
+      "target": "src_features_audio_audio_manager_audiomanager",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L312",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager",
+      "target": "src_features_audio_audio_manager_audiosettings",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -5569,7 +6432,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -5580,7 +6443,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -5591,7 +6454,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -5602,7 +6465,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -5613,7 +6476,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L20",
+      "source_location": "L21",
       "weight": 1.0
     },
     {
@@ -5624,18 +6487,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L51",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_dialogue_dialoguebox",
-      "target": "src_features_dialogue_dialoguebox_props",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L6",
+      "source_location": "L52",
       "weight": 1.0
     },
     {
@@ -5646,7 +6498,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -5657,7 +6509,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L67",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_dialogue_dialoguebox",
+      "target": "src_features_dialogue_dialoguebox_props",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L7",
       "weight": 1.0
     },
     {
@@ -5800,7 +6663,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -5811,7 +6674,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L230",
+      "source_location": "L302",
       "weight": 1.0
     },
     {
@@ -5822,7 +6685,128 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L3",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_menu_titlescreen_isaudiosettingsopen",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_menu_titlescreen_iscreditsopen",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_menu_titlescreen_handlestartnewgame",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_menu_titlescreen_handlecontinuegame",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_menu_titlescreen_togglemusic",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_menu_titlescreen_handlemusicvolumechange",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_menu_titlescreen_togglesfx",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_menu_titlescreen_handlesfxvolumechange",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_menu_titlescreen_testbellsfx",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_menu_titlescreen_testnotificationsfx",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "src_features_menu_titlescreen_selectthememode",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -6101,36 +7085,58 @@
       "weight": 1.0
     },
     {
-      "source": "src_features_stage_scenerybackground",
-      "target": "src_features_stage_scenerybackground_backgroundimages",
+      "source": "src_features_stage_environment_lighting",
+      "target": "src_features_stage_environment_lighting_timeofday",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L11",
+      "source_file": "src/features/stage/environment-lighting.ts",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
-      "source": "src_features_stage_scenerybackground",
-      "target": "src_features_stage_scenerybackground_activeimg",
+      "source": "src_features_stage_environment_lighting",
+      "target": "src_features_stage_environment_lighting_locationlightingprofile",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L18",
+      "source_file": "src/features/stage/environment-lighting.ts",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
-      "source": "src_features_stage_scenerybackground",
-      "target": "src_features_stage_scenerybackground_props",
+      "source": "src_features_stage_environment_lighting",
+      "target": "src_features_stage_environment_lighting_location_profiles",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L2",
+      "source_file": "src/features/stage/environment-lighting.ts",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_environment_lighting",
+      "target": "src_features_stage_environment_lighting_environmentlighting",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/environment-lighting.ts",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_environment_lighting",
+      "target": "src_features_stage_environment_lighting_resolveenvironmentlighting",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/environment-lighting.ts",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -6141,7 +7147,51 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L8",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_scenerybackground",
+      "target": "src_features_stage_scenerybackground_backgroundimages",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_scenerybackground",
+      "target": "src_features_stage_scenerybackground_activeimg",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_scenerybackground",
+      "target": "src_features_stage_scenerybackground_lighting",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_scenerybackground",
+      "target": "src_features_stage_scenerybackground_props",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -6152,7 +7202,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L13",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -6163,7 +7213,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L14",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
+      "target": "src_layout_dualstage_lighting",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -6174,7 +7235,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L16",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -6185,7 +7246,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L17",
+      "source_location": "L41",
       "weight": 1.0
     },
     {
@@ -6196,7 +7257,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L30",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -6207,7 +7268,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L44",
+      "source_location": "L68",
       "weight": 1.0
     },
     {
@@ -6218,29 +7279,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L51",
-      "weight": 1.0
-    },
-    {
-      "source": "src_layout_dualstage",
-      "target": "src_layout_dualstage_lightbackgrounds",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L67",
-      "weight": 1.0
-    },
-    {
-      "source": "src_layout_dualstage",
-      "target": "src_layout_dualstage_darkbackgrounds",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L74",
+      "source_location": "L75",
       "weight": 1.0
     },
     {
@@ -6251,7 +7290,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L80",
+      "source_location": "L89",
       "weight": 1.0
     },
     {
@@ -6605,6 +7644,15 @@
       "source_file": "svelte.config.js"
     },
     {
+      "source": "src_app",
+      "target": "transition",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/App.svelte"
+    },
+    {
       "source": "src_features_campus_map_campusmapmodal",
       "target": "lucide_svelte",
       "relation": "imports_from",
@@ -6641,6 +7689,24 @@
       "source_file": "src/features/dialogue/DialogueBox.svelte"
     },
     {
+      "source": "src_features_menu_titlescreen",
+      "target": "lucide_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte"
+    },
+    {
+      "source": "src_features_menu_titlescreen",
+      "target": "transition",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/menu/TitleScreen.svelte"
+    },
+    {
       "source": "src_features_smartphone_phoneshell",
       "target": "lucide_svelte",
       "relation": "imports_from",
@@ -6659,6 +7725,127 @@
       "source_file": "src/layout/DualStage.svelte"
     },
     {
+      "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_startambientmusic",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_stopambientmusic",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L147",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_playplucknote",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L158",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_playclick",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L193",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_playchoice",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L218",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_playbell",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L248",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_playnotification",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L284",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_constructor",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_initcontext",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_updatesettings",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_getsettings",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
       "target": "src_features_game_state_gamestate_svelte_gamestate_togglephone",
       "relation": "method",
@@ -6666,7 +7853,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L105",
+      "source_location": "L117",
       "weight": 1.0
     },
     {
@@ -6677,7 +7864,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L112",
+      "source_location": "L124",
       "weight": 1.0
     },
     {
@@ -6688,111 +7875,56 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L120",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_toggletheme",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L128",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_toggleflashlight",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/game-state/GameState.svelte.ts",
       "source_location": "L132",
       "weight": 1.0
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_togglehotspot",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_startnewgame",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L136",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_triggercloudbackup",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_continuegame",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L140",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_adddiarynote",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_returntomenu",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L148",
+      "source_location": "L165",
       "weight": 1.0
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_openwardrobe",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_setmusicenabled",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L160",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_closewardrobe",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L164",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_togglewardrobe",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L168",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_equippiece",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L172",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_applypreset",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_setmusicvolume",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6803,13 +7935,145 @@
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_setsfxenabled",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L181",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_setsfxvolume",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L186",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_toggletheme",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L191",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_toggleflashlight",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_togglehotspot",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_triggercloudbackup",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_adddiarynote",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_openwardrobe",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L232",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_closewardrobe",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L236",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_togglewardrobe",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L240",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_equippiece",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L244",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_applypreset",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L248",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
       "target": "src_features_game_state_gamestate_svelte_gamestate_modifyaffinity",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L184",
+      "source_location": "L256",
       "weight": 1.0
     },
     {
@@ -6820,7 +8084,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L192",
+      "source_location": "L264",
       "weight": 1.0
     },
     {
@@ -6831,7 +8095,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L201",
+      "source_location": "L273",
       "weight": 1.0
     },
     {
@@ -6956,5 +8220,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "ca5e4121839f6de50074118e2e7ba8b9b8e1ba3e"
+  "built_at_commit": "1167e0a87a0f121934ca8187fd0bfdfac07ff704"
 }

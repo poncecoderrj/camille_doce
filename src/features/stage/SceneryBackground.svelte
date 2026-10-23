@@ -1,7 +1,11 @@
 <script lang="ts">
+  import { gameState } from '../game-state/GameState.svelte';
+  import { resolveEnvironmentLighting } from './environment-lighting';
+  import type { TimeOfDay } from './environment-lighting';
+
   interface Props {
     location: string;
-    timeOfDay?: 'manha' | 'tarde' | 'entardecer' | 'noite';
+    timeOfDay?: TimeOfDay | string;
     isLight?: boolean;
   }
 
@@ -16,31 +20,56 @@
   };
 
   let activeImg = $derived(backgroundImages[location] || '/assets/backgrounds/portao_escola.png');
+
+  // Resolução da iluminação ambiente dinâmica em tempo real
+  let lighting = $derived(
+    resolveEnvironmentLighting(
+      location, 
+      timeOfDay as TimeOfDay, 
+      gameState.isFlashlightOn, 
+      gameState.themeMode
+    )
+  );
 </script>
 
 <div class="absolute inset-0 w-full h-full overflow-hidden pointer-events-none select-none z-0">
   
-  <!-- IMAGEM ARTÍSTICA REAL DE PINTURA ANIME / VISUAL NOVEL -->
+  <!-- IMAGEM ARTÍSTICA DA PINTURA VISUAL NOVEL COM FILTRO DINÂMICO DE LUZ E CONTRASTE -->
   <img 
     src={activeImg} 
     alt={location}
     class="w-full h-full object-cover object-center transition-all duration-700 transform scale-105 animate-slow-drift"
+    style="filter: {lighting.sceneryFilter};"
     loading="eager"
   />
 
-  <!-- FILTRO DE ILUMINAÇÃO DINÂMICA DE ACORDO COM O TEMA -->
-  {#if isLight}
-    <!-- Modo Claro: Raios dourados matinais suaves e contraste aveludado -->
-    <div class="absolute inset-0 bg-gradient-to-t from-amber-950/40 via-transparent to-amber-100/20 mix-blend-soft-light transition-all duration-700"></div>
-    <div class="absolute inset-0 bg-amber-500/5 mix-blend-color transition-all duration-700"></div>
-  {:else}
-    <!-- Modo Escuro: Atmosfera noturna com filtro luar azul-grafite e vinheta cinematográfica -->
-    <div class="absolute inset-0 bg-gradient-to-t from-[#08090d]/90 via-[#0e1017]/40 to-[#08090d]/60 transition-all duration-700"></div>
-    <div class="absolute inset-0 bg-[#0f172a]/30 mix-blend-multiply transition-all duration-700"></div>
+  <!-- CAMADA DE ILUMINAÇÃO ATMOSFÉRICA DINÂMICA (ALVORADA, SOL PLENO, ENTARDECER OU PENUMBRA) -->
+  <div 
+    class="absolute inset-0 transition-all duration-700 pointer-events-none {lighting.lightingOverlayClass}"
+    style={lighting.lightingOverlayStyle}
+  ></div>
+
+  <!-- SE FOR LOCAL ESCURO/QUARTO COM CORTINAS: FRESTAS DE LUZ DOURADA SUTIS -->
+  {#if lighting.isDarkEnvironment && !gameState.isFlashlightOn}
+    <div 
+      class="absolute inset-0 pointer-events-none opacity-40 mix-blend-screen transition-opacity duration-700"
+      style="background: linear-gradient(125deg, rgba(254, 240, 138, 0.35) 0%, transparent 40%, rgba(254, 215, 170, 0.2) 60%, transparent 100%);"
+    ></div>
   {/if}
 
-  <!-- VINHETA CINEMATOGRÁFICA NAS BORDAS PARA DESTAQUE DO PERSONAGEM E TEXTO -->
-  <div class="absolute inset-0 bg-radial from-transparent via-transparent to-black/50 pointer-events-none"></div>
+  <!-- FEIXE DE LUZ DA LANTERNA DO CELULAR (QUANDO ATIVADA NO CELULAR) -->
+  {#if gameState.isFlashlightOn}
+    <div 
+      class="absolute inset-0 pointer-events-none z-10 transition-opacity duration-500 animate-pulse"
+      style="background: radial-gradient(circle at 65% 55%, rgba(255, 252, 235, 0.45) 0%, rgba(255, 245, 205, 0.2) 35%, rgba(0, 0, 0, 0.5) 85%); mix-blend-mode: screen;"
+    ></div>
+  {/if}
+
+  <!-- VINHETA CINEMATOGRÁFICA ADAPTATIVA NAS BORDAS PARA DESTAQUE DO PERSONAGEM E TEXTO -->
+  <div 
+    class="absolute inset-0 pointer-events-none transition-opacity duration-700"
+    style="background: radial-gradient(circle, transparent 40%, rgba(0, 0, 0, {lighting.vignetteOpacity}) 100%);"
+  ></div>
 
 </div>
 

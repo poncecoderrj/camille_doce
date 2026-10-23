@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { DialogueNode, Choice } from './narrative.schema';
   import { gameState } from '../game-state/GameState.svelte';
+  import { audioManager } from '../audio/audio-manager';
   import { Smartphone, History, Play, Pause, ChevronRight, Sparkles } from 'lucide-svelte';
 
   interface Props {
@@ -165,6 +166,7 @@
             <button 
               onclick={(e) => {
                 e.stopPropagation();
+                audioManager.playChoice();
                 onSelectChoice(choice);
               }}
               class="group relative w-full text-left px-5 py-3.5 rounded-2xl border transition-all duration-200 active:scale-[0.99] flex items-center justify-between gap-3 {isLight ? 'bg-[#e9e0ce] hover:bg-[#ded2bd] border-[#c0af95] text-[#282019] shadow-sm hover:border-amber-700/40' : 'bg-[#13151f]/80 hover:bg-[#191c28] border-white/6 text-zinc-100 hover:border-amber-400/30 shadow-md'}"
