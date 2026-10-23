@@ -307,6 +307,34 @@ class AudioManager {
     osc2.start(now + 0.09);
     osc2.stop(now + 0.35);
   }
+
+  /**
+   * Efeito Sonoro: Alarme Matinal do Celular
+   */
+  public playAlarm() {
+    this.initContext();
+    if (!this.ctx || !this.sfxGain || !this.settings.sfxEnabled) return;
+
+    const now = this.ctx.currentTime;
+    const tones = [987.77, 1318.51, 987.77, 1318.51];
+    tones.forEach((freq, i) => {
+      const osc = this.ctx!.createOscillator();
+      const gain = this.ctx!.createGain();
+      const start = now + i * 0.12;
+
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, start);
+
+      gain.gain.setValueAtTime(0.2, start);
+      gain.gain.exponentialRampToValueAtTime(0.001, start + 0.1);
+
+      osc.connect(gain);
+      gain.connect(this.sfxGain!);
+
+      osc.start(start);
+      osc.stop(start + 0.1);
+    });
+  }
 }
 
 export const audioManager = new AudioManager();

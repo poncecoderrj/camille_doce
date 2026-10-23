@@ -129,3 +129,89 @@ html, body {
   animation: vnBreath 4.6s ease-in-out infinite;
   transform-origin: 50% 95%;
 }
+
+/* 1. Movimento Lateralizado: Raiva / Irritação / Agitação (Shake X) */
+@keyframes vnAngryShake {
+  0%, 100% { transform: translateX(0); }
+  12% { transform: translateX(-7px) rotate(-0.6deg); }
+  25% { transform: translateX(7px) rotate(0.6deg); }
+  37% { transform: translateX(-5px) rotate(-0.4deg); }
+  50% { transform: translateX(6px) rotate(0.4deg); }
+  62% { transform: translateX(-4px); }
+  75% { transform: translateX(3px); }
+  87% { transform: translateX(-1px); }
+}
+
+.vn-angry-shake {
+  animation: vnAngryShake 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  transform-origin: 50% 95%;
+}
+
+/* 2. Movimento Vertical Suave: Conversa / Fala Ativa (Speaking Bob) */
+@keyframes vnSpeakingBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.vn-speaking-bob {
+  animation: vnSpeakingBob 0.85s ease-in-out infinite;
+  transform-origin: 50% 95%;
+}
+
+/* 3. Movimento Vertical Rápido: Surpresa / Susto / Impacto (Surprise Bounce) */
+@keyframes vnSurpriseBounce {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-16px) scale(1.02); }
+  60% { transform: translateY(3px); }
+  100% { transform: translateY(0); }
+}
+
+.vn-surprise-bounce {
+  animation: vnSurpriseBounce 0.45s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  transform-origin: 50% 95%;
+}
+
+/* 4. Entrada Deslizante da Personagem no Canto Esquerdo */
+@keyframes vnEnterLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-45px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.vn-enter-left {
+  animation: vnEnterLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 5. Entrada Deslizante do Interlocutor no Canto Direito */
+@keyframes vnEnterRight {
+  0% {
+    opacity: 0;
+    transform: translateX(45px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.vn-enter-right {
+  animation: vnEnterRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pulsação do Alarme Interativo do Celular */
+@keyframes alarmVibrate {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-2px, -1px) rotate(-1deg); }
+  40% { transform: translate(2px, 1px) rotate(1deg); }
+  60% { transform: translate(-2px, 1px) rotate(-1deg); }
+  80% { transform: translate(2px, -1px) rotate(1deg); }
+}
+
+.alarm-vibrate {
+  animation: alarmVibrate 0.3s ease-in-out infinite;
+}

@@ -4,19 +4,6 @@
   "graph": {},
   "nodes": [
     {
-      "id": "src_features_campus_map_campusmapmodal_props",
-      "label": "Props",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "props",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
-      "source_location": "L5"
-    },
-    {
       "id": "src_features_stage_environment_lighting_environmentlighting",
       "label": "EnvironmentLighting",
       "_callable": true,
@@ -69,39 +56,13 @@
       "source_location": "L6"
     },
     {
-      "id": "src_features_audio_audio_manager_audiosettings",
-      "label": "AudioSettings",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "audiosettings",
-      "source_file": "src/features/audio/audio-manager.ts",
-      "source_location": "L7"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_props",
-      "label": "Props",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "props",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L7"
-    },
-    {
       "id": "src_features_dialogue_narrative_schema_chapter",
       "label": "Chapter",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "chapter",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -114,7 +75,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "choice",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -127,7 +88,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "dialoguenode",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -140,7 +101,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "dresscodecriteria",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -153,7 +114,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "personagemid",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -166,7 +127,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "tom",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -179,11 +140,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "diaryentry",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L15"
+      "source_location": "L23"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_historyentry",
@@ -192,7 +153,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "historyentry",
       "source_file": "src/features/game-state/GameState.svelte.ts",
@@ -205,7 +166,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "protagonistprofile",
       "source_file": "src/features/personality/personality.schema.ts",
@@ -218,7 +179,7 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/features/stage/CharacterSprite.svelte",
@@ -391,7 +352,46 @@
       "file_type": "code",
       "norm_label": "audiomanager",
       "source_file": "src/features/audio/audio-manager.ts",
-      "source_location": "L312"
+      "source_location": "L340"
+    },
+    {
+      "id": "src_features_audio_audio_manager_audiosettings",
+      "label": "AudioSettings",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": "audiosettings",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_features_campus_map_campusmapmodal_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L5"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L7"
     },
     {
       "id": "src_features_customization_customization_schema_outfitid",
@@ -469,19 +469,7 @@
       "file_type": "code",
       "norm_label": "gamestate",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L350"
-    },
-    {
-      "id": "src_features_campus_map_campusmapmodal_travelto",
-      "label": "travelTo()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "travelto()",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
-      "source_location": "L72"
+      "source_location": "L426"
     },
     {
       "id": "src_features_stage_environment_lighting_resolveenvironmentlighting",
@@ -505,7 +493,7 @@
       "file_type": "code",
       "norm_label": "handlekeydown()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L59"
+      "source_location": "L87"
     },
     {
       "id": "src_layout_dualstage_handleselectchoice",
@@ -517,7 +505,7 @@
       "file_type": "code",
       "norm_label": "handleselectchoice()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L41"
+      "source_location": "L66"
     },
     {
       "id": "src_layout_dualstage_restartchapter",
@@ -529,19 +517,7 @@
       "file_type": "code",
       "norm_label": "restartchapter()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L52"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_completetextoradvance",
-      "label": "completeTextOrAdvance()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "completetextoradvance()",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L59"
+      "source_location": "L77"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_applychoice",
@@ -549,11 +525,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": ".applychoice()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L321"
+      "source_location": "L362"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_modifyaffinity",
@@ -561,11 +537,11 @@
       "_callable": true,
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": ".modifyaffinity()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L304"
+      "source_location": "L345"
     },
     {
       "id": "src_features_characters_visualnovelactor_handleimgerror",
@@ -676,6 +652,18 @@
       "source_location": "L36"
     },
     {
+      "id": "src_features_audio_audio_manager_audiomanager_playalarm",
+      "label": ".playAlarm()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": ".playalarm()",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L314"
+    },
+    {
       "id": "src_features_audio_audio_manager_audiomanager_playbell",
       "label": ".playBell()",
       "_callable": true,
@@ -772,6 +760,30 @@
       "source_location": "L68"
     },
     {
+      "id": "src_features_campus_map_campusmapmodal_travelto",
+      "label": "travelTo()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "travelto()",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L72"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_completetextoradvance",
+      "label": "completeTextOrAdvance()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "completetextoradvance()",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L61"
+    },
+    {
       "id": "src_features_customization_customization_catalog_resolveprotagonistlookimage",
       "label": "resolveProtagonistLookImage()",
       "_callable": true,
@@ -841,7 +853,7 @@
       "file_type": "code",
       "norm_label": "handlesavediary()",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L178"
+      "source_location": "L199"
     },
     {
       "id": "src_features_smartphone_phoneshell_toggleaudioplay",
@@ -853,7 +865,7 @@
       "file_type": "code",
       "norm_label": "toggleaudioplay()",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L189"
+      "source_location": "L210"
     },
     {
       "id": "src_features_smartphone_phoneshell_triggerbackupwithfeedback",
@@ -865,7 +877,7 @@
       "file_type": "code",
       "norm_label": "triggerbackupwithfeedback()",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L195"
+      "source_location": "L216"
     },
     {
       "id": "src_features_menu_titlescreen_handlecontinuegame",
@@ -997,7 +1009,7 @@
       "file_type": "code",
       "norm_label": ".adddiarynote()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L268"
+      "source_location": "L309"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_applypreset",
@@ -1009,7 +1021,7 @@
       "file_type": "code",
       "norm_label": ".applypreset()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L296"
+      "source_location": "L337"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_closewardrobe",
@@ -1021,7 +1033,7 @@
       "file_type": "code",
       "norm_label": ".closewardrobe()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L284"
+      "source_location": "L325"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_continuegame",
@@ -1032,6 +1044,18 @@
       "community_name": "gameState",
       "file_type": "code",
       "norm_label": ".continuegame()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L245"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_dismissalarm",
+      "label": ".dismissAlarm()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".dismissalarm()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
       "source_location": "L204"
     },
@@ -1045,7 +1069,7 @@
       "file_type": "code",
       "norm_label": ".equippedoutfit()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L149"
+      "source_location": "L164"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_equippiece",
@@ -1057,7 +1081,7 @@
       "file_type": "code",
       "norm_label": ".equippiece()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L292"
+      "source_location": "L333"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_getaffinitytier",
@@ -1069,7 +1093,7 @@
       "file_type": "code",
       "norm_label": ".getaffinitytier()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L312"
+      "source_location": "L353"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_hastrait",
@@ -1081,7 +1105,7 @@
       "file_type": "code",
       "norm_label": ".hastrait()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L141"
+      "source_location": "L156"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_openphoneapp",
@@ -1093,7 +1117,7 @@
       "file_type": "code",
       "norm_label": ".openphoneapp()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L172"
+      "source_location": "L187"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_openwardrobe",
@@ -1105,7 +1129,7 @@
       "file_type": "code",
       "norm_label": ".openwardrobe()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L280"
+      "source_location": "L321"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_pressphonehome",
@@ -1117,7 +1141,7 @@
       "file_type": "code",
       "norm_label": ".pressphonehome()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L180"
+      "source_location": "L195"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_returntomenu",
@@ -1129,7 +1153,31 @@
       "file_type": "code",
       "norm_label": ".returntomenu()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L213"
+      "source_location": "L254"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_rollbackpreviousnode",
+      "label": ".rollbackPreviousNode()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".rollbackpreviousnode()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L401"
+    },
+    {
+      "id": "src_features_game_state_gamestate_svelte_gamestate_sendchatmessage",
+      "label": ".sendChatMessage()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 9,
+      "community_name": "gameState",
+      "file_type": "code",
+      "norm_label": ".sendchatmessage()",
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L210"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_setaspiration",
@@ -1141,7 +1189,7 @@
       "file_type": "code",
       "norm_label": ".setaspiration()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L120"
+      "source_location": "L135"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_setmusicenabled",
@@ -1153,7 +1201,7 @@
       "file_type": "code",
       "norm_label": ".setmusicenabled()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L219"
+      "source_location": "L260"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_setmusicvolume",
@@ -1165,7 +1213,7 @@
       "file_type": "code",
       "norm_label": ".setmusicvolume()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L224"
+      "source_location": "L265"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_setoutfit",
@@ -1177,7 +1225,7 @@
       "file_type": "code",
       "norm_label": ".setoutfit()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L145"
+      "source_location": "L160"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_setsfxenabled",
@@ -1189,7 +1237,7 @@
       "file_type": "code",
       "norm_label": ".setsfxenabled()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L229"
+      "source_location": "L270"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_setsfxvolume",
@@ -1201,7 +1249,7 @@
       "file_type": "code",
       "norm_label": ".setsfxvolume()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L234"
+      "source_location": "L275"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_setzodiac",
@@ -1213,7 +1261,7 @@
       "file_type": "code",
       "norm_label": ".setzodiac()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L116"
+      "source_location": "L131"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_startnewgame",
@@ -1225,7 +1273,7 @@
       "file_type": "code",
       "norm_label": ".startnewgame()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L189"
+      "source_location": "L229"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_toggleflashlight",
@@ -1237,7 +1285,7 @@
       "file_type": "code",
       "norm_label": ".toggleflashlight()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L252"
+      "source_location": "L293"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_togglehotspot",
@@ -1249,7 +1297,7 @@
       "file_type": "code",
       "norm_label": ".togglehotspot()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L256"
+      "source_location": "L297"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_togglephone",
@@ -1261,7 +1309,7 @@
       "file_type": "code",
       "norm_label": ".togglephone()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L165"
+      "source_location": "L180"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_toggletheme",
@@ -1273,7 +1321,7 @@
       "file_type": "code",
       "norm_label": ".toggletheme()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L239"
+      "source_location": "L280"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_toggletrait",
@@ -1285,7 +1333,7 @@
       "file_type": "code",
       "norm_label": ".toggletrait()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L124"
+      "source_location": "L139"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_togglewardrobe",
@@ -1297,7 +1345,7 @@
       "file_type": "code",
       "norm_label": ".togglewardrobe()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L288"
+      "source_location": "L329"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_triggercloudbackup",
@@ -1309,62 +1357,7 @@
       "file_type": "code",
       "norm_label": ".triggercloudbackup()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L260"
-    },
-    {
-      "id": "lucide_svelte",
-      "label": "lucide-svelte",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "confidence": "EXTRACTED",
-      "file_type": "code",
-      "norm_label": "lucide-svelte",
-      "source_file": "lucide-svelte"
-    },
-    {
-      "id": "src_features_campus_map_campusmapmodal",
-      "label": "CampusMapModal.svelte",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "campusmapmodal.svelte",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_campus_map_campusmapmodal_islight",
-      "label": "isLight",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "islight",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
-      "source_location": "L11"
-    },
-    {
-      "id": "src_features_campus_map_campusmapmodal_locations",
-      "label": "locations",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "locations",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_features_campus_map_campusmapmodal_onclose",
-      "label": "{ onClose }",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "code",
-      "norm_label": "{ onclose }",
-      "source_file": "src/features/campus-map/CampusMapModal.svelte",
-      "source_location": "L9"
+      "source_location": "L301"
     },
     {
       "id": "src_features_stage_environment_lighting",
@@ -1463,7 +1456,7 @@
       "file_type": "code",
       "norm_label": "activebg",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L70"
+      "source_location": "L98"
     },
     {
       "id": "src_layout_dualstage_currentnode",
@@ -1477,6 +1470,17 @@
       "source_location": "L26"
     },
     {
+      "id": "src_layout_dualstage_interlocutorid",
+      "label": "interlocutorId",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "interlocutorid",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L31"
+    },
+    {
       "id": "src_layout_dualstage_islight",
       "label": "isLight",
       "_origin": "ast",
@@ -1485,7 +1489,7 @@
       "file_type": "code",
       "norm_label": "islight",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L38"
+      "source_location": "L63"
     },
     {
       "id": "src_layout_dualstage_ismapopen",
@@ -1496,7 +1500,18 @@
       "file_type": "code",
       "norm_label": "ismapopen",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L39"
+      "source_location": "L64"
+    },
+    {
+      "id": "src_layout_dualstage_knownboyids",
+      "label": "knownBoyIds",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "knownboyids",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L28"
     },
     {
       "id": "src_layout_dualstage_lighting",
@@ -1507,7 +1522,7 @@
       "file_type": "code",
       "norm_label": "lighting",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L29"
+      "source_location": "L54"
     },
     {
       "id": "src_layout_dualstage_nodes",
@@ -1521,132 +1536,11 @@
       "source_location": "L25"
     },
     {
-      "id": "ref_lucide_svelte",
-      "label": "lucide-svelte",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "DualStage.svelte",
-      "file_type": "concept",
-      "norm_label": "lucide-svelte",
-      "source_file": "package.json",
-      "source_location": "L28"
-    },
-    {
-      "id": "src_features_audio_audio_manager",
-      "label": "audio-manager.ts",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "audio-manager.ts",
-      "source_file": "src/features/audio/audio-manager.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox",
-      "label": "DialogueBox.svelte",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "dialoguebox.svelte",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_displayedtext",
-      "label": "displayedText",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "displayedtext",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L16"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_isautoplay",
-      "label": "isAutoPlay",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "isautoplay",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L19"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_islight",
-      "label": "isLight",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "islight",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L21"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_istyping",
-      "label": "isTyping",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "istyping",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L17"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_node_onselectchoice_ontogglephone_onopenhistory",
-      "label": "{ node, onSelectChoice, onTogglePhone, onOpenHistory }",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "{ node, onselectchoice, ontogglephone, onopenhistory }",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L14"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_processedtext",
-      "label": "processedText",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "processedtext",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L29"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_speakeraccent",
-      "label": "speakerAccent",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "speakeraccent",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L75"
-    },
-    {
-      "id": "src_features_dialogue_dialoguebox_speakeraccents",
-      "label": "speakerAccents",
-      "_origin": "ast",
-      "community": 1,
-      "community_name": "DialogueBox.svelte",
-      "file_type": "code",
-      "norm_label": "speakeraccents",
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L68"
-    },
-    {
       "id": "src_features_dialogue_narrative_schema",
       "label": "narrative.schema.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "narrative.schema.ts",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1657,7 +1551,7 @@
       "label": "ChapterSchema",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "chapterschema",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1668,7 +1562,7 @@
       "label": "ChoiceSchema",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "choiceschema",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1679,7 +1573,7 @@
       "label": "DialogueNodeSchema",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "dialoguenodeschema",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1690,7 +1584,7 @@
       "label": "DressCodeCriteriaSchema",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "dresscodecriteriaschema",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1701,7 +1595,7 @@
       "label": "PersonagemEnum",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "personagemenum",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1712,7 +1606,7 @@
       "label": "TomEnum",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "tomenum",
       "source_file": "src/features/dialogue/narrative.schema.ts",
@@ -1723,7 +1617,7 @@
       "label": "GameState.svelte.ts",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "gamestate.svelte.ts",
       "source_file": "src/features/game-state/GameState.svelte.ts",
@@ -1734,7 +1628,7 @@
       "label": "CharacterSprite.svelte",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "charactersprite.svelte",
       "source_file": "src/features/stage/CharacterSprite.svelte",
@@ -1745,55 +1639,77 @@
       "label": "characterProfiles",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "characterprofiles",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L16"
+      "source_location": "L27"
+    },
+    {
+      "id": "src_features_stage_charactersprite_enterclass",
+      "label": "enterClass",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "GameState.svelte.ts",
+      "file_type": "code",
+      "norm_label": "enterclass",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L102"
     },
     {
       "id": "src_features_stage_charactersprite_islight",
       "label": "isLight",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "islight",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L63"
+      "source_location": "L79"
     },
     {
       "id": "src_features_stage_charactersprite_isprotagonist",
       "label": "isProtagonist",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "isprotagonist",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L64"
+      "source_location": "L80"
+    },
+    {
+      "id": "src_features_stage_charactersprite_motionanimclass",
+      "label": "motionAnimClass",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "GameState.svelte.ts",
+      "file_type": "code",
+      "norm_label": "motionanimclass",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L87"
     },
     {
       "id": "src_features_stage_charactersprite_profile",
       "label": "profile",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
       "norm_label": "profile",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L53"
+      "source_location": "L64"
     },
     {
-      "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutro_timeofday_manha",
-      "label": "{ speaker, speakerName = '', expression = 'neutro', timeOfDay = 'manha' }",
+      "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutral_timeofday_manha_position_center_isactive_true_isspeaking_false",
+      "label": "{ \n    speaker, \n    speakerName = '', \n    expression = 'neutral', \n    timeOfDay = 'manha',\n    position = 'center',\n    isActive = true,\n    isSpeaking = false\n  }",
       "_origin": "ast",
       "community": 1,
-      "community_name": "DialogueBox.svelte",
+      "community_name": "GameState.svelte.ts",
       "file_type": "code",
-      "norm_label": "{ speaker, speakername = '', expression = 'neutro', timeofday = 'manha' }",
+      "norm_label": "{ \n    speaker, \n    speakername = '', \n    expression = 'neutral', \n    timeofday = 'manha',\n    position = 'center',\n    isactive = true,\n    isspeaking = false\n  }",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L14"
+      "source_location": "L17"
     },
     {
       "id": "readme",
@@ -2241,6 +2157,17 @@
       "source_location": "L4"
     },
     {
+      "id": "src_features_audio_audio_manager",
+      "label": "audio-manager.ts",
+      "_origin": "ast",
+      "community": 19,
+      "community_name": "audioManager",
+      "file_type": "code",
+      "norm_label": "audio-manager.ts",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L1"
+    },
+    {
       "id": "package",
       "label": "package.json",
       "_origin": "ast",
@@ -2547,6 +2474,182 @@
       "norm_label": "vite-plugin-pwa",
       "source_file": "package.json",
       "source_location": "L23"
+    },
+    {
+      "id": "lucide_svelte",
+      "label": "lucide-svelte",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "confidence": "EXTRACTED",
+      "file_type": "code",
+      "norm_label": "lucide-svelte",
+      "source_file": "lucide-svelte"
+    },
+    {
+      "id": "src_features_campus_map_campusmapmodal",
+      "label": "CampusMapModal.svelte",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "campusmapmodal.svelte",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_campus_map_campusmapmodal_islight",
+      "label": "isLight",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "islight",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_features_campus_map_campusmapmodal_locations",
+      "label": "locations",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "locations",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_features_campus_map_campusmapmodal_onclose",
+      "label": "{ onClose }",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "{ onclose }",
+      "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L9"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox",
+      "label": "DialogueBox.svelte",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "dialoguebox.svelte",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_canrollback",
+      "label": "canRollback",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "canrollback",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L22"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_displayedtext",
+      "label": "displayedText",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "displayedtext",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L17"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_isalarmblocked",
+      "label": "isAlarmBlocked",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "isalarmblocked",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_islight",
+      "label": "isLight",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "islight",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L21"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_istyping",
+      "label": "isTyping",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "istyping",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_node_onselectchoice_ontogglephone_onopenhistory_onrollback",
+      "label": "{ node, onSelectChoice, onTogglePhone, onOpenHistory, onRollback }",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "{ node, onselectchoice, ontogglephone, onopenhistory, onrollback }",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_processedtext",
+      "label": "processedText",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "processedtext",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L31"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_speakeraccent",
+      "label": "speakerAccent",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "speakeraccent",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L79"
+    },
+    {
+      "id": "src_features_dialogue_dialoguebox_speakeraccents",
+      "label": "speakerAccents",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "speakeraccents",
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L70"
+    },
+    {
+      "id": "ref_lucide_svelte",
+      "label": "lucide-svelte",
+      "_origin": "ast",
+      "community": 20,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "concept",
+      "norm_label": "lucide-svelte",
+      "source_file": "package.json",
+      "source_location": "L28"
     },
     {
       "id": "src_features_customization_customization_catalog",
@@ -2931,7 +3034,7 @@
       "file_type": "code",
       "norm_label": "backupfeedback",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L194"
+      "source_location": "L215"
     },
     {
       "id": "src_features_smartphone_phoneshell_calendarevents",
@@ -2942,7 +3045,7 @@
       "file_type": "code",
       "norm_label": "calendarevents",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L166"
+      "source_location": "L187"
     },
     {
       "id": "src_features_smartphone_phoneshell_chatlogs",
@@ -2954,6 +3057,17 @@
       "norm_label": "chatlogs",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
       "source_location": "L104"
+    },
+    {
+      "id": "src_features_smartphone_phoneshell_chatquickreplies",
+      "label": "chatQuickReplies",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "PhoneShell.svelte",
+      "file_type": "code",
+      "norm_label": "chatquickreplies",
+      "source_file": "src/features/smartphone/PhoneShell.svelte",
+      "source_location": "L123"
     },
     {
       "id": "src_features_smartphone_phoneshell_contacts",
@@ -2975,7 +3089,7 @@
       "file_type": "code",
       "norm_label": "emails",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L150"
+      "source_location": "L171"
     },
     {
       "id": "src_features_smartphone_phoneshell_feedposts",
@@ -2986,7 +3100,7 @@
       "file_type": "code",
       "norm_label": "feedposts",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L130"
+      "source_location": "L151"
     },
     {
       "id": "src_features_smartphone_phoneshell_isplayingaudio",
@@ -2997,7 +3111,7 @@
       "file_type": "code",
       "norm_label": "isplayingaudio",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L188"
+      "source_location": "L209"
     },
     {
       "id": "src_features_smartphone_phoneshell_iswritingdiary",
@@ -3008,7 +3122,7 @@
       "file_type": "code",
       "norm_label": "iswritingdiary",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L176"
+      "source_location": "L197"
     },
     {
       "id": "src_features_smartphone_phoneshell_newdiarycontent",
@@ -3019,7 +3133,7 @@
       "file_type": "code",
       "norm_label": "newdiarycontent",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L175"
+      "source_location": "L196"
     },
     {
       "id": "src_features_smartphone_phoneshell_newdiarytitle",
@@ -3030,7 +3144,7 @@
       "file_type": "code",
       "norm_label": "newdiarytitle",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L174"
+      "source_location": "L195"
     },
     {
       "id": "src_features_smartphone_phoneshell_onclose",
@@ -3052,7 +3166,7 @@
       "file_type": "code",
       "norm_label": "stories",
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L123"
+      "source_location": "L144"
     },
     {
       "id": "src_features_smartphone_phoneshell_wallpapers",
@@ -3524,6 +3638,18 @@
   ],
   "links": [
     {
+      "source": "src_features_audio_audio_manager_audiomanager_playalarm",
+      "target": "src_features_audio_audio_manager_audiomanager_initcontext",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L315",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_audio_audio_manager_audiomanager_playbell",
       "target": "src_features_audio_audio_manager_audiomanager_initcontext",
       "relation": "calls",
@@ -3640,7 +3766,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L333",
+      "source_location": "L383",
       "weight": 1.0
     },
     {
@@ -5287,7 +5413,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L321",
+      "source_location": "L362",
       "weight": 1.0
     },
     {
@@ -5299,7 +5425,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L321",
+      "source_location": "L362",
       "weight": 1.0
     },
     {
@@ -5640,7 +5766,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/audio/audio-manager.ts",
-      "source_location": "L312",
+      "source_location": "L340",
       "weight": 1.0
     },
     {
@@ -6041,13 +6167,13 @@
     },
     {
       "source": "src_features_dialogue_dialoguebox",
-      "target": "src_features_dialogue_dialoguebox_node_onselectchoice_ontogglephone_onopenhistory",
+      "target": "src_features_dialogue_dialoguebox_node_onselectchoice_ontogglephone_onopenhistory_onrollback",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -6058,7 +6184,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -6069,18 +6195,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L17",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_dialogue_dialoguebox",
-      "target": "src_features_dialogue_dialoguebox_isautoplay",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L19",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -6096,13 +6211,35 @@
     },
     {
       "source": "src_features_dialogue_dialoguebox",
+      "target": "src_features_dialogue_dialoguebox_canrollback",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_dialogue_dialoguebox",
+      "target": "src_features_dialogue_dialoguebox_isalarmblocked",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_dialogue_dialoguebox",
       "target": "src_features_dialogue_dialoguebox_processedtext",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L29",
+      "source_location": "L31",
       "weight": 1.0
     },
     {
@@ -6113,18 +6250,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L59",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_dialogue_dialoguebox",
-      "target": "src_features_dialogue_dialoguebox_speakeraccents",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L68",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -6140,13 +6266,24 @@
     },
     {
       "source": "src_features_dialogue_dialoguebox",
+      "target": "src_features_dialogue_dialoguebox_speakeraccents",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/dialogue/DialogueBox.svelte",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_dialogue_dialoguebox",
       "target": "src_features_dialogue_dialoguebox_speakeraccent",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/dialogue/DialogueBox.svelte",
-      "source_location": "L75",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -6289,7 +6426,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L15",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -6300,7 +6437,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L350",
+      "source_location": "L426",
       "weight": 1.0
     },
     {
@@ -6833,7 +6970,7 @@
     },
     {
       "source": "src_features_smartphone_phoneshell",
-      "target": "src_features_smartphone_phoneshell_stories",
+      "target": "src_features_smartphone_phoneshell_chatquickreplies",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -6844,13 +6981,24 @@
     },
     {
       "source": "src_features_smartphone_phoneshell",
+      "target": "src_features_smartphone_phoneshell_stories",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/smartphone/PhoneShell.svelte",
+      "source_location": "L144",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_smartphone_phoneshell",
       "target": "src_features_smartphone_phoneshell_feedposts",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L130",
+      "source_location": "L151",
       "weight": 1.0
     },
     {
@@ -6861,7 +7009,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L150",
+      "source_location": "L171",
       "weight": 1.0
     },
     {
@@ -6872,7 +7020,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L166",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -6883,7 +7031,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L174",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
@@ -6894,7 +7042,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L175",
+      "source_location": "L196",
       "weight": 1.0
     },
     {
@@ -6905,7 +7053,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L176",
+      "source_location": "L197",
       "weight": 1.0
     },
     {
@@ -6916,7 +7064,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L178",
+      "source_location": "L199",
       "weight": 1.0
     },
     {
@@ -6927,7 +7075,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L188",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
@@ -6938,7 +7086,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L189",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
@@ -6949,7 +7097,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L194",
+      "source_location": "L215",
       "weight": 1.0
     },
     {
@@ -6960,7 +7108,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/smartphone/PhoneShell.svelte",
-      "source_location": "L195",
+      "source_location": "L216",
       "weight": 1.0
     },
     {
@@ -7020,13 +7168,24 @@
     },
     {
       "source": "src_features_stage_charactersprite",
-      "target": "src_features_stage_charactersprite_speaker_speakername_expression_neutro_timeofday_manha",
+      "target": "src_features_stage_charactersprite_enterclass",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L14",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_stage_charactersprite_speaker_speakername_expression_neutral_timeofday_manha_position_center_isactive_true_isspeaking_false",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -7037,34 +7196,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L16",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
       "source": "src_features_stage_charactersprite",
       "target": "src_features_stage_charactersprite_profile",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L53",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_stage_charactersprite",
-      "target": "src_features_stage_charactersprite_islight",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L63",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_stage_charactersprite",
-      "target": "src_features_stage_charactersprite_isprotagonist",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7082,6 +7219,39 @@
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
       "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_stage_charactersprite_islight",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_stage_charactersprite_isprotagonist",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L80",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_stage_charactersprite_motionanimclass",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -7218,13 +7388,35 @@
     },
     {
       "source": "src_layout_dualstage",
+      "target": "src_layout_dualstage_knownboyids",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
+      "target": "src_layout_dualstage_interlocutorid",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
       "target": "src_layout_dualstage_lighting",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L29",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -7235,7 +7427,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L38",
+      "source_location": "L63",
       "weight": 1.0
     },
     {
@@ -7246,7 +7438,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L39",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -7257,7 +7449,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L41",
+      "source_location": "L66",
       "weight": 1.0
     },
     {
@@ -7268,7 +7460,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L52",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -7279,7 +7471,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L59",
+      "source_location": "L87",
       "weight": 1.0
     },
     {
@@ -7290,7 +7482,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L70",
+      "source_location": "L98",
       "weight": 1.0
     },
     {
@@ -7821,6 +8013,17 @@
     },
     {
       "source": "src_features_audio_audio_manager_audiomanager",
+      "target": "src_features_audio_audio_manager_audiomanager_playalarm",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/audio/audio-manager.ts",
+      "source_location": "L314",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_audio_audio_manager_audiomanager",
       "target": "src_features_audio_audio_manager_audiomanager_constructor",
       "relation": "method",
       "_origin": "ast",
@@ -7871,7 +8074,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L116",
+      "source_location": "L131",
       "weight": 1.0
     },
     {
@@ -7882,7 +8085,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L120",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -7893,7 +8096,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L124",
+      "source_location": "L139",
       "weight": 1.0
     },
     {
@@ -7904,7 +8107,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L141",
+      "source_location": "L156",
       "weight": 1.0
     },
     {
@@ -7915,7 +8118,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L145",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -7926,7 +8129,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L152",
+      "source_location": "L167",
       "weight": 1.0
     },
     {
@@ -7937,7 +8140,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L165",
+      "source_location": "L180",
       "weight": 1.0
     },
     {
@@ -7948,7 +8151,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L172",
+      "source_location": "L187",
       "weight": 1.0
     },
     {
@@ -7959,23 +8162,12 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L180",
+      "source_location": "L195",
       "weight": 1.0
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_startnewgame",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L189",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_continuegame",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_dismissalarm",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -7986,40 +8178,18 @@
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_returntomenu",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_sendchatmessage",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L213",
+      "source_location": "L210",
       "weight": 1.0
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_setmusicenabled",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L219",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_setmusicvolume",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L224",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_setsfxenabled",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_startnewgame",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8030,51 +8200,29 @@
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_setsfxvolume",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_continuegame",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L234",
+      "source_location": "L245",
       "weight": 1.0
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_toggletheme",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_returntomenu",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L239",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_toggleflashlight",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L252",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_togglehotspot",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L256",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_triggercloudbackup",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_setmusicenabled",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8085,18 +8233,40 @@
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_adddiarynote",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_setmusicvolume",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L268",
+      "source_location": "L265",
       "weight": 1.0
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_openwardrobe",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_setsfxenabled",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L270",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_setsfxvolume",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L275",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_toggletheme",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -8107,13 +8277,68 @@
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_toggleflashlight",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L293",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_togglehotspot",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L297",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_triggercloudbackup",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L301",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_adddiarynote",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L309",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_openwardrobe",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L321",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
       "target": "src_features_game_state_gamestate_svelte_gamestate_closewardrobe",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L284",
+      "source_location": "L325",
       "weight": 1.0
     },
     {
@@ -8124,7 +8349,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L288",
+      "source_location": "L329",
       "weight": 1.0
     },
     {
@@ -8135,7 +8360,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L292",
+      "source_location": "L333",
       "weight": 1.0
     },
     {
@@ -8146,7 +8371,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L296",
+      "source_location": "L337",
       "weight": 1.0
     },
     {
@@ -8157,7 +8382,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L304",
+      "source_location": "L345",
       "weight": 1.0
     },
     {
@@ -8168,7 +8393,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L312",
+      "source_location": "L353",
       "weight": 1.0
     },
     {
@@ -8179,10 +8404,21 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L321",
+      "source_location": "L362",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_rollbackpreviousnode",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L401",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "badf98d1ac82811ca564f19b16fa40b57c37d1e2"
+  "built_at_commit": "2dd2bb255b71a40b7e9f2a51a7068d21cf9b2536"
 }

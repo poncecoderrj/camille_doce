@@ -10,6 +10,14 @@ export interface HistoryEntry {
   location: string;
   timeOfDay: string;
   chosenOptionText?: string;
+  snapshot: {
+    affinity: Record<string, number>;
+    flags: Record<string, boolean | number | string>;
+    coins: number;
+    currentOutfit: 'uniforme_lotus' | 'look_rock' | 'look_romantico';
+    unlockedMemories: string[];
+    interlocutorId: string | null;
+  };
 }
 
 export interface DiaryEntry {
@@ -53,9 +61,13 @@ export class GameState {
     beatriz: 0
   });
 
+  // Interlocutor Ativo em Cena (Dante, Lucas, Theo, etc. no canto direito)
+  currentInterlocutorId = $state<string | null>(null);
+
   // Flags Dinâmicas do Mundo e Escolhas (Efeito Borboleta)
   flags = $state<Record<string, boolean | number | string>>({
-    capitulo_00_terminado: false
+    capitulo_00_terminado: false,
+    alarme_desligado: false
   });
 
   // Memórias Afetivas Coletadas (18 no total)
@@ -64,7 +76,7 @@ export class GameState {
   // Moedas (◈ Obtidas por exploração e capítulos, 0 dinheiro real)
   coins = $state<number>(50);
 
-  // Histórico de Falas (Rollback)
+  // Histórico de Falas (Rollback com Snapshot Completo)
   history = $state<HistoryEntry[]>([]);
 
   // ================= SISTEMA DO SMARTPHONE COMPLETO =================
@@ -75,6 +87,9 @@ export class GameState {
   activeChatTarget = $state<string>('dante');
   phoneWallpaper = $state<'cherry_sunset' | 'midnight_stars' | 'golden_lotus' | 'minimalist'>('cherry_sunset');
   unreadNotification = $state<string | null>('Nova mensagem de Dante');
+
+  // Respostas Interativas Enviadas pelo Jogador no WhatsApp
+  customChatReplies = $state<Record<string, Array<{ from: 'them' | 'me'; text?: string; isAudio?: boolean; audioDuration?: string; time: string }>>>({});
 
   // Recursos de Hardware do Celular para Enredos
   isFlashlightOn = $state<boolean>(false);
@@ -185,6 +200,31 @@ export class GameState {
     }
   }
 
+  // Interação obrigatória do celular: Desligar Alarme
+  dismissAlarm() {
+    this.flags.alarme_desligado = true;
+    audioManager.playClick();
+  }
+
+  // Interação obrigatória do celular: Responder mensagem no WhatsApp
+  sendChatMessage(contactId: string, text: string) {
+    if (!this.customChatReplies[contactId]) {
+      this.customChatReplies[contactId] = [];
+    }
+    const now = new Date();
+    const time = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+    this.customChatReplies[contactId].push({
+      from: 'me',
+      text,
+      time
+    });
+    this.flags[`respondeu_zap_${contactId}`] = true;
+    if (this.unreadNotification && this.unreadNotification.toLowerCase().includes(contactId)) {
+      this.unreadNotification = null;
+    }
+    audioManager.playChoice();
+  }
+
   // ================= TRANSIÇÕES DE ESTADO DO JOGO =================
   startNewGame() {
     this.currentNodeId = 'node_00_despertador';
@@ -192,7 +232,8 @@ export class GameState {
     this.timeOfDay = 'manha';
     this.history = [];
     this.affinity = { dante: 0, lucas: 0, theo: 0, rafael: 0, beatriz: 0 };
-    this.flags = { capitulo_00_terminado: false };
+    this.flags = { capitulo_00_terminado: false, alarme_desligado: false };
+    this.currentInterlocutorId = null;
     this.gameMode = 'playing';
     this.hasStartedGame = true;
     audioManager.playBell();
@@ -319,6 +360,7 @@ export class GameState {
   }
 
   applyChoice(choice: Choice, currentNode: DialogueNode) {
+    // Salva o snapshot completo no histórico para permitir rollback perfeito
     this.history.push({
       nodeId: currentNode.id,
       speaker: currentNode.speaker,
@@ -326,11 +368,20 @@ export class GameState {
       text: currentNode.text,
       location: currentNode.location,
       timeOfDay: currentNode.time_of_day,
-      chosenOptionText: choice.text
+      chosenOptionText: choice.text,
+      snapshot: {
+        affinity: { ...this.affinity },
+        flags: { ...this.flags },
+        coins: this.coins,
+        currentOutfit: this.currentOutfit,
+        unlockedMemories: [...this.unlockedMemories],
+        interlocutorId: this.currentInterlocutorId
+      }
     });
 
     if (choice.target_character && choice.affinity_delta !== 0) {
       this.modifyAffinity(choice.target_character, choice.affinity_delta);
+      this.currentInterlocutorId = choice.target_character;
     }
 
     if (choice.set_flags) {
@@ -344,6 +395,31 @@ export class GameState {
     }
 
     this.currentNodeId = choice.next_node_id;
+  }
+
+  // ================= SISTEMA DE VOLTAR / DESFAZER ESCOLHA (ROLLBACK) =================
+  rollbackPreviousNode(): boolean {
+    if (this.history.length === 0) return false;
+    const lastEntry = this.history.pop();
+    if (!lastEntry) return false;
+
+    // Restaura o nó e o cenário anteriores
+    this.currentNodeId = lastEntry.nodeId;
+    this.currentLocation = lastEntry.location;
+    this.timeOfDay = lastEntry.timeOfDay as any;
+
+    // Restaura o estado anterior (afinidade, flags, moedas, etc)
+    if (lastEntry.snapshot) {
+      this.affinity = { ...lastEntry.snapshot.affinity };
+      this.flags = { ...lastEntry.snapshot.flags };
+      this.coins = lastEntry.snapshot.coins;
+      this.currentOutfit = lastEntry.snapshot.currentOutfit;
+      this.unlockedMemories = [...lastEntry.snapshot.unlockedMemories];
+      this.currentInterlocutorId = lastEntry.snapshot.interlocutorId;
+    }
+
+    audioManager.playClick();
+    return true;
   }
 }
 

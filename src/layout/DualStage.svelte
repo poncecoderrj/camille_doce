@@ -25,6 +25,31 @@
   const nodes = cap00Data.nodes as unknown as Record<string, DialogueNode>;
   let currentNode = $derived(nodes[gameState.currentNodeId] || nodes['node_01_portao']);
 
+  const knownBoyIds = ['dante', 'lucas', 'theo', 'nina', 'rafael', 'beatriz'];
+
+  // Detecta se há um interlocutor presente na cena (Dante, Lucas, Theo, etc.)
+  let interlocutorId = $derived.by(() => {
+    if (knownBoyIds.includes(currentNode.speaker)) {
+      return currentNode.speaker;
+    }
+    const targetChoice = currentNode.choices.find(c => c.target_character && knownBoyIds.includes(c.target_character));
+    if (targetChoice && targetChoice.target_character) {
+      return targetChoice.target_character;
+    }
+    if (gameState.currentInterlocutorId && !currentNode.location.includes('Quarto') && !currentNode.id.includes('node_00')) {
+      return gameState.currentInterlocutorId;
+    }
+    return null;
+  });
+
+  $effect(() => {
+    if (knownBoyIds.includes(currentNode.speaker)) {
+      gameState.currentInterlocutorId = currentNode.speaker;
+    } else if (currentNode.location.includes('Quarto') || currentNode.id.includes('node_00')) {
+      gameState.currentInterlocutorId = null;
+    }
+  });
+
   // Motor de Iluminação Ambiental Dinâmica (Dia/Noite e Luminosidade Específica do Cenário)
   let lighting = $derived(
     resolveEnvironmentLighting(
@@ -52,7 +77,10 @@
   function restartChapter() {
     gameState.currentNodeId = 'node_00_despertador';
     gameState.currentLocation = 'Quarto da Protagonista';
+    gameState.flags.alarme_desligado = false;
+    gameState.currentInterlocutorId = null;
     gameState.history = [];
+    audioManager.playBell();
   }
 
   // Atalhos de teclado no Desktop (Estilo GTA V)
@@ -188,6 +216,69 @@
       {isLight} 
     />
 
+    <!-- INDICADOR DE LOCALIZAÇÃO E HORÁRIO NO CANTO SUPERIOR AO MEIO DA TELA (CONFORME PEDIDO) -->
+    <div class="absolute top-4 sm:top-5 left-1/2 -translate-x-1/2 z-30 pointer-events-none">
+      <div 
+        class="px-5 py-1.5 rounded-full border backdrop-blur-xl shadow-xl flex items-center gap-2.5 font-cinzel text-xs font-bold tracking-widest uppercase transition-all duration-500 {isLight ? 'bg-[#ece4d4]/90 border-[#cfbfab] text-[#332a21]' : 'bg-[#0d0e14]/85 border-white/10 text-zinc-200'}"
+      >
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        <span class="tracking-widest">{currentNode.location}</span>
+        <span class="opacity-30">•</span>
+        <span class="text-[10px] tracking-normal font-sans-ui font-semibold opacity-75">
+          {currentNode.time_of_day === 'manha' ? 'Manhã' : currentNode.time_of_day === 'tarde' ? 'Tarde' : currentNode.time_of_day === 'entardecer' ? 'Entardecer' : 'Noite'}
+        </span>
+      </div>
+    </div>
+
+    <!-- ALERTA / INTERAÇÃO OBRIGATÓRIA DE TELEFONE (ALARME DO DESPERTADOR) -->
+    {#if currentNode.id === 'node_00_despertador' && !gameState.flags.alarme_desligado}
+      <div class="absolute top-16 left-1/2 -translate-x-1/2 z-35 pointer-events-auto w-11/12 max-w-md">
+        <div class="alarm-vibrate p-3.5 rounded-2xl bg-black/90 backdrop-blur-xl border border-amber-500/40 shadow-2xl flex items-center justify-between gap-3 text-white">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400">
+              <Smartphone class="w-5 h-5 animate-pulse" />
+            </div>
+            <div>
+              <p class="text-[10px] font-cinzel font-bold text-amber-400 uppercase tracking-wider">06:45 • Celular Tocando</p>
+              <p class="text-xs font-sans-ui text-zinc-200 font-medium">Alarme: Primeiro Dia na Lótus</p>
+            </div>
+          </div>
+          <button 
+            onclick={() => gameState.dismissAlarm()}
+            class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-400 text-stone-950 font-cinzel font-bold text-xs uppercase tracking-wider shadow-lg active:scale-95 transition-all"
+          >
+            Desligar
+          </button>
+        </div>
+      </div>
+    {/if}
+
+    <!-- NOTIFICAÇÃO FLUTUANTE DE WHATSAPP NO PALCO (COM AÇÃO OBRIGATÓRIA) -->
+    {#if gameState.unreadNotification && !gameState.isPhoneRaised}
+      <div class="absolute top-16 left-1/2 -translate-x-1/2 z-35 pointer-events-auto w-11/12 max-w-md animate-bounce">
+        <div class="p-3 rounded-2xl bg-[#0f111a]/95 backdrop-blur-xl border border-emerald-500/40 shadow-2xl flex items-center justify-between gap-3 text-white">
+          <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow">
+              <Smartphone class="w-5 h-5" />
+            </div>
+            <div>
+              <p class="text-[10px] font-sans text-emerald-400 font-semibold uppercase tracking-wider">WhatsApp • Nova Mensagem</p>
+              <p class="text-xs font-sans-ui text-zinc-100 font-medium truncate max-w-[210px]">{gameState.unreadNotification}</p>
+            </div>
+          </div>
+          <button 
+            onclick={() => {
+              gameState.isPhoneRaised = true;
+              gameState.openPhoneApp('chat_room', 'dante');
+            }}
+            class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-cinzel font-bold text-xs uppercase tracking-wider shadow-lg active:scale-95 transition-all"
+          >
+            Responder
+          </button>
+        </div>
+      </div>
+    {/if}
+
     <!-- EFEITO DE LANTERNA DO CELULAR (QUANDO ATIVADA NO CELULAR) -->
     {#if gameState.isFlashlightOn}
       <div 
@@ -196,14 +287,36 @@
       ></div>
     {/if}
 
-    <!-- CAMADA DO PERSONAGEM (ABSOLUTA, ANCORADA NA BASE, NUNCA DESLOCA OU CORTA O DIÁLOGO) -->
-    <div class="absolute inset-x-0 bottom-0 top-10 flex items-end justify-center pointer-events-none z-10 overflow-hidden">
-      <CharacterSprite 
-        speaker={currentNode.speaker}
-        speakerName={currentNode.speaker_name}
-        expression={currentNode.expression}
-        timeOfDay={currentNode.time_of_day}
-      />
+    <!-- CAMADA DOS PERSONAGENS (CANTO ESQUERDO: PROTAGONISTA | CANTO DIREITO: INTERLOCUTOR) -->
+    <div class="absolute inset-x-0 bottom-0 top-10 flex items-end justify-between px-2 sm:px-6 md:px-10 pointer-events-none z-10 overflow-hidden">
+      
+      <!-- PERSONAGEM PROTAGONISTA (SEMPRE NO CANTO ESQUERDO) -->
+      <div class="flex items-end {interlocutorId ? 'w-1/2 justify-start' : 'w-full justify-center sm:justify-start sm:pl-10'}">
+        <CharacterSprite 
+          speaker="protagonista"
+          position="left"
+          isActive={currentNode.speaker === 'protagonista' || currentNode.speaker === 'iris' || !interlocutorId}
+          isSpeaking={(currentNode.speaker === 'protagonista' || currentNode.speaker === 'iris') && gameState.isSpeaking}
+          expression={currentNode.speaker === 'protagonista' || currentNode.speaker === 'iris' ? currentNode.expression : 'neutral'}
+          timeOfDay={currentNode.time_of_day}
+        />
+      </div>
+
+      <!-- INTERLOCUTOR (SE HOUVER: DANTE, LUCAS, THEO, ETC. NO CANTO DIREITO) -->
+      {#if interlocutorId}
+        <div class="flex items-end justify-end w-1/2">
+          <CharacterSprite 
+            speaker={interlocutorId}
+            speakerName={currentNode.speaker === interlocutorId ? currentNode.speaker_name : undefined}
+            position="right"
+            isActive={currentNode.speaker === interlocutorId}
+            isSpeaking={currentNode.speaker === interlocutorId && gameState.isSpeaking}
+            expression={currentNode.speaker === interlocutorId ? currentNode.expression : 'neutral'}
+            timeOfDay={currentNode.time_of_day}
+          />
+        </div>
+      {/if}
+
     </div>
 
     <!-- CAIXA DE DIÁLOGO E ESCOLHAS (ESTÁVEL NA BASE DO PALCO, Z-INDEX 20) -->
@@ -213,6 +326,7 @@
         onSelectChoice={handleSelectChoice}
         onTogglePhone={() => gameState.togglePhone()}
         onOpenHistory={() => {}}
+        onRollback={() => gameState.rollbackPreviousNode()}
       />
     </div>
   </main>

@@ -119,6 +119,27 @@
     ]
   };
 
+  // Sugestões de Respostas Rápidas Interativas para o Chat do WhatsApp
+  const chatQuickReplies: Record<string, string[]> = {
+    dante: [
+      'Sobrevivi... mas quase quebrei a cara no portão 😅',
+      'Pode deixar, se me perguntarem não vi ninguém.',
+      'Você sempre corre assim pelos corredores?'
+    ],
+    lucas: [
+      'Muito obrigada, Lucas! Protocolo anotado.',
+      'Obrigada pelo aviso sobre o horário dos armários.'
+    ],
+    theo: [
+      'Os vitrais são deslumbrantes mesmo...',
+      'Você passa muito tempo no ateliê?'
+    ],
+    nina: [
+      'Menina, você não tem noção de quem eu já esbarrei!',
+      'Me encontra no intervalo pra fofocar!'
+    ]
+  };
+
   // LótusGram Posts e Stories
   const stories = [
     { name: 'Dante', avatar: 'D', color: 'from-rose-500 to-amber-500', unread: true },
@@ -461,10 +482,38 @@
                 </div>
               </div>
             {/each}
+
+            <!-- Respostas Enviadas Interativamente pelo Jogador -->
+            {#each (gameState.customChatReplies[gameState.activeChatTarget] || []) as customMsg}
+              <div class="flex justify-end">
+                <div class="max-w-[85%] rounded-2xl px-3 py-2 text-xs bg-emerald-700 text-white rounded-br-none shadow-md">
+                  <p>{customMsg.text}</p>
+                  <div class="flex items-center justify-end gap-1 mt-1">
+                    <span class="text-[8px] opacity-75">{customMsg.time}</span>
+                    <CheckCheck class="w-3 h-3 text-emerald-300" />
+                  </div>
+                </div>
+              </div>
+            {/each}
           </div>
 
-          <div class="p-2 bg-black/60 border-t border-white/10 text-center text-[10px] text-zinc-400 italic">
-            Novas mensagens chegam conforme você toma decisões nos capítulos.
+          <!-- BARRA INTERATIVA DE RESPOSTAS DO WHATSAPP (AÇÃO DIRETA DO JOGADOR) -->
+          <div class="p-2.5 bg-black/80 border-t border-white/10 flex flex-col gap-1.5 shrink-0">
+            <span class="text-[9px] text-emerald-400 font-semibold uppercase tracking-wider flex items-center gap-1">
+              <Send class="w-2.5 h-2.5" />
+              <span>Toque para responder {char.name}:</span>
+            </span>
+            <div class="flex flex-col gap-1 max-h-24 overflow-y-auto custom-scrollbar">
+              {#each (chatQuickReplies[gameState.activeChatTarget] || ['Recebido!', 'Nos vemos depois!']) as reply}
+                <button 
+                  onclick={() => gameState.sendChatMessage(gameState.activeChatTarget, reply)}
+                  class="text-left text-[11px] px-2.5 py-1.5 rounded-xl bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-600/40 text-emerald-100 transition-all active:scale-[0.98] flex items-center justify-between group"
+                >
+                  <span class="leading-tight">{reply}</span>
+                  <Send class="w-3 h-3 text-emerald-400 opacity-60 group-hover:opacity-100 shrink-0 ml-1.5 transition-opacity" />
+                </button>
+              {/each}
+            </div>
           </div>
         </div>
 

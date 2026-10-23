@@ -2,23 +2,25 @@
   import type { DialogueNode, Choice } from './narrative.schema';
   import { gameState } from '../game-state/GameState.svelte';
   import { audioManager } from '../audio/audio-manager';
-  import { Smartphone, History, Play, Pause, ChevronRight, Sparkles } from 'lucide-svelte';
+  import { Smartphone, History, RotateCcw, ChevronRight, Sparkles, Bell } from 'lucide-svelte';
 
   interface Props {
     node: DialogueNode;
     onSelectChoice: (choice: Choice) => void;
     onTogglePhone?: () => void;
     onOpenHistory?: () => void;
+    onRollback?: () => void;
   }
 
-  let { node, onSelectChoice, onTogglePhone, onOpenHistory }: Props = $props();
+  let { node, onSelectChoice, onTogglePhone, onOpenHistory, onRollback }: Props = $props();
 
   let displayedText = $state('');
   let isTyping = $state(false);
   let typingTimer: any = null;
-  let isAutoPlay = $state(false);
 
   let isLight = $derived(gameState.theme === 'light');
+  let canRollback = $derived(gameState.history.length > 0);
+  let isAlarmBlocked = $derived(node.id === 'node_00_despertador' && !gameState.flags.alarme_desligado);
 
   // Sincroniza a fala em tempo real com o motor de animação labial (Lip-Sync)
   $effect(() => {
@@ -69,6 +71,8 @@
     dante: { bg: 'bg-[#3b0808]/90', text: 'text-rose-200', border: 'border-rose-900/60' },
     lucas: { bg: 'bg-[#0b172a]/90', text: 'text-blue-200', border: 'border-blue-900/60' },
     theo: { bg: 'bg-[#032418]/90', text: 'text-emerald-200', border: 'border-emerald-900/60' },
+    protagonista: { bg: 'bg-[#3b2308]/90', text: 'text-amber-200', border: 'border-amber-700/60' },
+    iris: { bg: 'bg-[#3b2308]/90', text: 'text-amber-200', border: 'border-amber-700/60' },
     narrador: { bg: 'bg-[#1c1917]/90', text: 'text-amber-100', border: 'border-stone-700/60' }
   };
 
@@ -77,57 +81,42 @@
 
 <div class="relative w-full max-w-4xl mx-auto px-3 sm:px-4 pb-4 select-none">
   
-  <!-- BARRA DE FERRAMENTAS SUPERIOR -->
-  <div class="flex items-center justify-between mb-2.5 px-2">
-    <!-- Localização & Hora do Dia -->
-    <div class="flex items-center gap-2">
-      <div 
-        class="flex items-center gap-2 px-3.5 py-1 rounded-full border backdrop-blur-xl text-xs font-cinzel font-semibold tracking-wider transition-colors {isLight ? 'bg-[#e5dbc7]/90 border-[#c4b59c] text-[#332a21] shadow-sm' : 'bg-[#10121a]/80 border-white/6 text-zinc-300'}"
-      >
-        <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
-        <span>{node.location.toUpperCase()}</span>
-        <span class="opacity-30">•</span>
-        <span class="text-[10px] opacity-70">{node.time_of_day.toUpperCase()}</span>
-      </div>
-    </div>
+  <!-- BARRA DE FERRAMENTAS SUPERIOR (BOTÃO VOLTAR CONVERSA + CELULAR + HISTÓRICO) -->
+  <div class="flex items-center justify-end mb-2.5 px-2 gap-2">
+    
+    <!-- BOTÃO VOLTAR CONVERSA / DESFAZER ESCOLHA ANTERIOR -->
+    <button 
+      onclick={onRollback}
+      disabled={!canRollback}
+      class="px-3.5 py-1.5 rounded-xl border backdrop-blur-md transition-all active:scale-95 text-xs flex items-center gap-1.5 font-medium {!canRollback ? 'opacity-35 cursor-not-allowed border-white/5 text-zinc-500' : isLight ? 'bg-[#e5dbc7]/90 hover:bg-[#dbd0ba] border-[#c4b59c] text-[#332a21]' : 'bg-[#12141c]/80 hover:bg-[#1a1d28] border-white/10 text-zinc-200'}"
+      title={canRollback ? "Voltar para a escolha anterior" : "Nenhuma escolha anterior para voltar"}
+    >
+      <RotateCcw class="w-3.5 h-3.5 text-amber-500" />
+      <span>Voltar</span>
+    </button>
 
-    <!-- Controles Rápidos -->
-    <div class="flex items-center gap-1.5">
-      <button 
-        onclick={onOpenHistory}
-        class="px-3 py-1.5 rounded-xl border backdrop-blur-md transition-all active:scale-95 text-xs flex items-center gap-1.5 font-medium {isLight ? 'bg-[#e5dbc7]/80 hover:bg-[#dbd0ba] border-[#c4b59c] text-[#332a21]' : 'bg-[#12141c]/80 hover:bg-[#1a1d28] border-white/6 text-zinc-300'}"
-        title="Histórico de Diálogo"
-      >
-        <History class="w-3.5 h-3.5 opacity-70" />
-        <span class="hidden sm:inline">Histórico</span>
-      </button>
+    <!-- HISTÓRICO DE DIÁLOGO -->
+    <button 
+      onclick={onOpenHistory}
+      class="px-3 py-1.5 rounded-xl border backdrop-blur-md transition-all active:scale-95 text-xs flex items-center gap-1.5 font-medium {isLight ? 'bg-[#e5dbc7]/80 hover:bg-[#dbd0ba] border-[#c4b59c] text-[#332a21]' : 'bg-[#12141c]/80 hover:bg-[#1a1d28] border-white/6 text-zinc-300'}"
+      title="Histórico de Diálogo"
+    >
+      <History class="w-3.5 h-3.5 opacity-70" />
+      <span class="hidden sm:inline">Histórico</span>
+    </button>
 
-      <button 
-        onclick={() => isAutoPlay = !isAutoPlay}
-        class="px-3 py-1.5 rounded-xl border backdrop-blur-md transition-all active:scale-95 text-xs flex items-center gap-1.5 font-medium {isAutoPlay ? 'bg-amber-600 text-white border-amber-500 font-bold' : isLight ? 'bg-[#e5dbc7]/80 border-[#c4b59c] text-[#332a21]' : 'bg-[#12141c]/80 border-white/6 text-zinc-300'}"
-        title="Modo Automático"
-      >
-        {#if isAutoPlay}
-          <Pause class="w-3.5 h-3.5" />
-        {:else}
-          <Play class="w-3.5 h-3.5 opacity-70" />
-        {/if}
-        <span class="hidden sm:inline">Auto</span>
-      </button>
-
-      <!-- Botão Celular GTA V -->
-      <button 
-        onclick={onTogglePhone}
-        class="relative px-3.5 py-1.5 rounded-xl border backdrop-blur-md transition-all active:scale-95 text-xs flex items-center gap-1.5 font-semibold shadow-md {isLight ? 'bg-[#7c5b36] hover:bg-[#6c4e2e] text-[#faf6ee] border-[#9c7546]' : 'bg-[#181a24] hover:bg-[#202330] text-zinc-200 border-white/10'}"
-        title="Pegar Celular (P ou ↑)"
-      >
-        <Smartphone class="w-3.5 h-3.5 text-amber-400" />
-        <span class="font-medium">Celular</span>
-        {#if gameState.unreadNotification}
-          <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping absolute -top-0.5 -right-0.5"></span>
-        {/if}
-      </button>
-    </div>
+    <!-- BOTÃO CELULAR GTA V -->
+    <button 
+      onclick={onTogglePhone}
+      class="relative px-3.5 py-1.5 rounded-xl border backdrop-blur-md transition-all active:scale-95 text-xs flex items-center gap-1.5 font-semibold shadow-md {isLight ? 'bg-[#7c5b36] hover:bg-[#6c4e2e] text-[#faf6ee] border-[#9c7546]' : 'bg-[#181a24] hover:bg-[#202330] text-zinc-200 border-white/10'}"
+      title="Pegar Celular (P ou ↑)"
+    >
+      <Smartphone class="w-3.5 h-3.5 text-amber-400" />
+      <span class="font-medium">Celular</span>
+      {#if gameState.unreadNotification}
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping absolute -top-0.5 -right-0.5"></span>
+      {/if}
+    </button>
   </div>
 
   <!-- CAIXA DE TEXTO PRINCIPAL (PERGAMINHO QUENTE NO LIGHT, OBSIDIANA GRAFITE NO DARK) -->
@@ -160,8 +149,27 @@
       {/if}
     </div>
 
-    <!-- LISTA DE ESCOLHAS NARRATIVAS -->
-    {#if !isTyping && node.choices.length > 0}
+    <!-- AVISO DE INTERAÇÃO OBRIGATÓRIA DE TELEFONE (ALARME DO DESPERTADOR) -->
+    {#if isAlarmBlocked}
+      <div class="mt-5 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-between gap-3 text-xs">
+        <div class="flex items-center gap-2.5 text-amber-300">
+          <Bell class="w-4 h-4 animate-bounce text-amber-400" />
+          <span class="font-sans-ui font-medium">O alarme do celular está tocando. Desligue-o para levantar!</span>
+        </div>
+        <button 
+          onclick={(e) => {
+            e.stopPropagation();
+            gameState.dismissAlarm();
+          }}
+          class="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-cinzel font-bold text-xs uppercase tracking-wider shadow-md transition-all active:scale-95"
+        >
+          Desligar Alarme
+        </button>
+      </div>
+    {/if}
+
+    <!-- LISTA DE ESCOLHAS NARRATIVAS (LIBERADAS APENAS SE O ALARME NÃO ESTIVER BLOQUEADO) -->
+    {#if !isTyping && !isAlarmBlocked && node.choices.length > 0}
       <div class="mt-5 pt-4 border-t {isLight ? 'border-[#cfbfab]' : 'border-white/6'} flex flex-col gap-2.5">
         <div class="flex items-center justify-between">
           <p class="text-[11px] font-cinzel font-bold uppercase tracking-widest {isLight ? 'text-[#6e5d4c]' : 'text-zinc-400'}">
