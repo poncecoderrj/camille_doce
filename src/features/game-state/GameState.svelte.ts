@@ -82,9 +82,18 @@ export class GameState {
     }
   ]);
 
-  // Customização da Protagonista & Provador (Aguardando nova construção do zero)
+  // Customização Oficial da Protagonista & Provador
   isWardrobeOpen = $state<boolean>(false);
-  equippedOutfit = $state<Record<string, any>>({});
+  equippedOutfit = $state<Record<string, any>>({
+    outfit_id: 'uniforme_lotus',
+    body_archetype: 'padrao',
+    hair_color: '#4a2c11',
+    hair_style: 'ondulado_longo',
+    backpack: 'mochila_lotus',
+    glasses: false,
+    blush: true,
+    expression: 'neutro'
+  });
 
   // Configurações
   textSpeed = $state<number>(35);

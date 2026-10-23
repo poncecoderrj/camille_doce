@@ -1,19 +1,21 @@
 {
   "0": "DualStage.svelte",
+  "1": "DialogueBox.svelte",
   "2": "package.json",
-  "3": "WardrobeModal.svelte",
+  "3": "dependencies",
   "4": "compilerOptions",
   "5": "PhoneShell.svelte",
   "6": "compilerOptions",
   "7": "devDependencies",
-  "8": "DialogueBox.svelte",
+  "8": "narrative.schema.ts",
   "9": "gameState",
-  "10": "PaperdollActor.svelte",
+  "10": "src_features_characters_character_paperdoll_types_charactermanifest",
   "11": "Svelte + TS + Vite",
   "12": "tsconfig.json",
   "13": "svelte.config.js",
-  "14": "AnimeProtagonistDisplay.svelte",
+  "14": "scripts",
   "15": "numpy",
   "16": "os",
-  "17": "pil"
+  "17": "pil",
+  "18": "SceneryBackground.svelte"
 }

@@ -17,6 +17,19 @@
       "source_location": "L5"
     },
     {
+      "id": "src_features_stage_scenerybackground_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L2"
+    },
+    {
       "id": "src_features_dialogue_dialoguebox_props",
       "label": "Props",
       "_callable": true,
@@ -28,6 +41,19 @@
       "norm_label": "props",
       "source_file": "src/features/dialogue/DialogueBox.svelte",
       "source_location": "L6"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_chapter",
+      "label": "Chapter",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "chapter",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L57"
     },
     {
       "id": "src_features_dialogue_narrative_schema_choice",
@@ -56,6 +82,32 @@
       "source_location": "L47"
     },
     {
+      "id": "src_features_dialogue_narrative_schema_dresscodecriteria",
+      "label": "DressCodeCriteria",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "dresscodecriteria",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L66"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_tom",
+      "label": "Tom",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "tom",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L4"
+    },
+    {
       "id": "src_features_game_state_gamestate_svelte_diaryentry",
       "label": "DiaryEntry",
       "_callable": true,
@@ -82,17 +134,212 @@
       "source_location": "L3"
     },
     {
-      "id": "src_features_stage_scenerybackground_props",
+      "id": "src_features_characters_character_types_characterid",
+      "label": "CharacterId",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "characterid",
+      "source_file": "src/features/characters/character.types.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_characters_character_types_charactermanifest",
+      "label": "CharacterManifest",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "charactermanifest",
+      "source_file": "src/features/characters/character.types.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_features_characters_character_types_facialmetrics",
+      "label": "FacialMetrics",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "facialmetrics",
+      "source_file": "src/features/characters/character.types.ts",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_features_characters_character_types_standardexpression",
+      "label": "StandardExpression",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "standardexpression",
+      "source_file": "src/features/characters/character.types.ts",
+      "source_location": "L3"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_props",
+      "label": "Props",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "props",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_props",
       "label": "Props",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 18,
-      "community_name": "SceneryBackground.svelte",
+      "community_name": "ProtagonistActor.svelte",
       "file_type": "code",
       "norm_label": "props",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L2"
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L7"
+    },
+    {
+      "id": "src_features_customization_customization_schema_backpackoption",
+      "label": "BackpackOption",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "backpackoption",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L79"
+    },
+    {
+      "id": "src_features_customization_customization_schema_backpacktype",
+      "label": "BackpackType",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "backpacktype",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L36"
+    },
+    {
+      "id": "src_features_customization_customization_schema_bodyarchetype",
+      "label": "BodyArchetype",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "bodyarchetype",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_features_customization_customization_schema_bodyarchetypeoption",
+      "label": "BodyArchetypeOption",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "bodyarchetypeoption",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L62"
+    },
+    {
+      "id": "src_features_customization_customization_schema_haircoloroption",
+      "label": "HairColorOption",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "haircoloroption",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L87"
+    },
+    {
+      "id": "src_features_customization_customization_schema_hairstyle",
+      "label": "HairStyle",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "hairstyle",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L27"
+    },
+    {
+      "id": "src_features_customization_customization_schema_hairstyleoption",
+      "label": "HairStyleOption",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "hairstyleoption",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L71"
+    },
+    {
+      "id": "src_features_customization_customization_schema_outfitid",
+      "label": "OutfitId",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "outfitid",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L19"
+    },
+    {
+      "id": "src_features_customization_customization_schema_outfitoption",
+      "label": "OutfitOption",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "outfitoption",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L52"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_activetab",
+      "label": "ActiveTab",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "activetab",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L35"
     },
     {
       "id": "src_features_smartphone_phoneshell_props",
@@ -108,30 +355,17 @@
       "source_location": "L31"
     },
     {
-      "id": "src_features_dialogue_narrative_schema_chapter",
-      "label": "Chapter",
+      "id": "src_features_customization_customization_schema_protagonistcustomization",
+      "label": "ProtagonistCustomization",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
-      "norm_label": "chapter",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L57"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_dresscodecriteria",
-      "label": "DressCodeCriteria",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "dresscodecriteria",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L66"
+      "norm_label": "protagonistcustomization",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L50"
     },
     {
       "id": "src_features_dialogue_narrative_schema_personagemid",
@@ -140,24 +374,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "personagemid",
       "source_file": "src/features/dialogue/narrative.schema.ts",
       "source_location": "L18"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_tom",
-      "label": "Tom",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "tom",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L4"
     },
     {
       "id": "src_features_stage_charactersprite_props",
@@ -166,11 +387,11 @@
       "_callable_class": true,
       "_origin": "ast",
       "community": 8,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "props",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L5"
+      "source_location": "L8"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate",
@@ -183,7 +404,7 @@
       "file_type": "code",
       "norm_label": "gamestate",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L221"
+      "source_location": "L230"
     },
     {
       "id": "src_features_campus_map_campusmapmodal_travelto",
@@ -207,7 +428,7 @@
       "file_type": "code",
       "norm_label": "handlekeydown()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L50"
+      "source_location": "L51"
     },
     {
       "id": "src_layout_dualstage_handleselectchoice",
@@ -219,7 +440,7 @@
       "file_type": "code",
       "norm_label": "handleselectchoice()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L29"
+      "source_location": "L30"
     },
     {
       "id": "src_layout_dualstage_restartchapter",
@@ -231,7 +452,7 @@
       "file_type": "code",
       "norm_label": "restartchapter()",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L43"
+      "source_location": "L44"
     },
     {
       "id": "src_features_dialogue_dialoguebox_completetextoradvance",
@@ -255,7 +476,7 @@
       "file_type": "code",
       "norm_label": ".applychoice()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L192"
+      "source_location": "L201"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_modifyaffinity",
@@ -267,7 +488,271 @@
       "file_type": "code",
       "norm_label": ".modifyaffinity()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L175"
+      "source_location": "L184"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_handleimgerror",
+      "label": "handleImgError()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "handleimgerror()",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L116"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_schedulenext",
+      "label": "scheduleNext()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "schedulenext()",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L75"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_triggerblink",
+      "label": "triggerBlink()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "triggerblink()",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L32"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_triggerblink_step",
+      "label": "step()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "step()",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L37"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_triggersingleblink",
+      "label": "triggerSingleBlink()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "triggersingleblink()",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L58"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_triggersingleblink_step",
+      "label": "step()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "step()",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L61"
+    },
+    {
+      "id": "src_features_customization_customization_catalog_resolvebackpackasset",
+      "label": "resolveBackpackAsset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "resolvebackpackasset()",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L214"
+    },
+    {
+      "id": "src_features_customization_customization_catalog_resolveprotagonistmasterillustration",
+      "label": "resolveProtagonistMasterIllustration()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "resolveprotagonistmasterillustration()",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L178"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_handleimgerror",
+      "label": "handleImgError()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "handleimgerror()",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L142"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_schedulenext",
+      "label": "scheduleNext()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "schedulenext()",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L90"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_triggerblink",
+      "label": "triggerBlink()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "triggerblink()",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L47"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_triggerblink_step",
+      "label": "step()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "step()",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L52"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_triggersingleblink",
+      "label": "triggerSingleBlink()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "triggersingleblink()",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L73"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_triggersingleblink_step",
+      "label": "step()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "step()",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L76"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_handlereset",
+      "label": "handleReset()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "handlereset()",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L114"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_handlesaveandcontinue",
+      "label": "handleSaveAndContinue()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "handlesaveandcontinue()",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L127"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_selectbackpack",
+      "label": "selectBackpack()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "selectbackpack()",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L102"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_selectbody",
+      "label": "selectBody()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "selectbody()",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L90"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_selecthaircolor",
+      "label": "selectHairColor()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "selecthaircolor()",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L98"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_selecthairstyle",
+      "label": "selectHairStyle()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "selecthairstyle()",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L94"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_selectoutfit",
+      "label": "selectOutfit()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "selectoutfit()",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L81"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_setexpression",
+      "label": "setExpression()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "setexpression()",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L110"
     },
     {
       "id": "src_features_smartphone_phoneshell_handlesavediary",
@@ -315,7 +800,7 @@
       "file_type": "code",
       "norm_label": ".adddiarynote()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L139"
+      "source_location": "L148"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_applypreset",
@@ -327,7 +812,7 @@
       "file_type": "code",
       "norm_label": ".applypreset()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L167"
+      "source_location": "L176"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_closewardrobe",
@@ -339,7 +824,7 @@
       "file_type": "code",
       "norm_label": ".closewardrobe()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L155"
+      "source_location": "L164"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_equippiece",
@@ -351,7 +836,7 @@
       "file_type": "code",
       "norm_label": ".equippiece()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L163"
+      "source_location": "L172"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_getaffinitytier",
@@ -363,7 +848,7 @@
       "file_type": "code",
       "norm_label": ".getaffinitytier()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L183"
+      "source_location": "L192"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_openphoneapp",
@@ -375,7 +860,7 @@
       "file_type": "code",
       "norm_label": ".openphoneapp()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L103"
+      "source_location": "L112"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_openwardrobe",
@@ -387,7 +872,7 @@
       "file_type": "code",
       "norm_label": ".openwardrobe()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L151"
+      "source_location": "L160"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_pressphonehome",
@@ -399,7 +884,7 @@
       "file_type": "code",
       "norm_label": ".pressphonehome()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L111"
+      "source_location": "L120"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_toggleflashlight",
@@ -411,7 +896,7 @@
       "file_type": "code",
       "norm_label": ".toggleflashlight()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L123"
+      "source_location": "L132"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_togglehotspot",
@@ -423,7 +908,7 @@
       "file_type": "code",
       "norm_label": ".togglehotspot()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L127"
+      "source_location": "L136"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_togglephone",
@@ -435,7 +920,7 @@
       "file_type": "code",
       "norm_label": ".togglephone()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L96"
+      "source_location": "L105"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_toggletheme",
@@ -447,7 +932,7 @@
       "file_type": "code",
       "norm_label": ".toggletheme()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L119"
+      "source_location": "L128"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_togglewardrobe",
@@ -459,7 +944,7 @@
       "file_type": "code",
       "norm_label": ".togglewardrobe()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L159"
+      "source_location": "L168"
     },
     {
       "id": "src_features_game_state_gamestate_svelte_gamestate_triggercloudbackup",
@@ -471,7 +956,7 @@
       "file_type": "code",
       "norm_label": ".triggercloudbackup()",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L131"
+      "source_location": "L140"
     },
     {
       "id": "lucide_svelte",
@@ -529,6 +1014,50 @@
       "source_location": "L9"
     },
     {
+      "id": "src_features_stage_scenerybackground",
+      "label": "SceneryBackground.svelte",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "scenerybackground.svelte",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_stage_scenerybackground_activeimg",
+      "label": "activeImg",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "activeimg",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L18"
+    },
+    {
+      "id": "src_features_stage_scenerybackground_backgroundimages",
+      "label": "backgroundImages",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "backgroundimages",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_features_stage_scenerybackground_location_timeofday_manha_islight_false",
+      "label": "{ location, timeOfDay = 'manha', isLight = false }",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "DualStage.svelte",
+      "file_type": "code",
+      "norm_label": "{ location, timeofday = 'manha', islight = false }",
+      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "source_location": "L8"
+    },
+    {
       "id": "src_layout_dualstage",
       "label": "DualStage.svelte",
       "_origin": "ast",
@@ -548,7 +1077,7 @@
       "file_type": "code",
       "norm_label": "activebg",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L79"
+      "source_location": "L80"
     },
     {
       "id": "src_layout_dualstage_currentnode",
@@ -559,7 +1088,7 @@
       "file_type": "code",
       "norm_label": "currentnode",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L13"
+      "source_location": "L14"
     },
     {
       "id": "src_layout_dualstage_darkbackgrounds",
@@ -570,7 +1099,7 @@
       "file_type": "code",
       "norm_label": "darkbackgrounds",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L73"
+      "source_location": "L74"
     },
     {
       "id": "src_layout_dualstage_islight",
@@ -581,7 +1110,7 @@
       "file_type": "code",
       "norm_label": "islight",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "src_layout_dualstage_ismapopen",
@@ -592,7 +1121,7 @@
       "file_type": "code",
       "norm_label": "ismapopen",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L16"
+      "source_location": "L17"
     },
     {
       "id": "src_layout_dualstage_lightbackgrounds",
@@ -603,7 +1132,7 @@
       "file_type": "code",
       "norm_label": "lightbackgrounds",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L66"
+      "source_location": "L67"
     },
     {
       "id": "src_layout_dualstage_nodes",
@@ -614,7 +1143,7 @@
       "file_type": "code",
       "norm_label": "nodes",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L12"
+      "source_location": "L13"
     },
     {
       "id": "ref_lucide_svelte",
@@ -716,6 +1245,83 @@
       "source_location": "L60"
     },
     {
+      "id": "src_features_dialogue_narrative_schema",
+      "label": "narrative.schema.ts",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "narrative.schema.ts",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_chapterschema",
+      "label": "ChapterSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "chapterschema",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L49"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_choiceschema",
+      "label": "ChoiceSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "choiceschema",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L20"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_dialoguenodeschema",
+      "label": "DialogueNodeSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "dialoguenodeschema",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L33"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_dresscodecriteriaschema",
+      "label": "DressCodeCriteriaSchema",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "dresscodecriteriaschema",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L59"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_personagemenum",
+      "label": "PersonagemEnum",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "personagemenum",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L6"
+    },
+    {
+      "id": "src_features_dialogue_narrative_schema_tomenum",
+      "label": "TomEnum",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "code",
+      "norm_label": "tomenum",
+      "source_file": "src/features/dialogue/narrative.schema.ts",
+      "source_location": "L3"
+    },
+    {
       "id": "src_features_game_state_gamestate_svelte",
       "label": "GameState.svelte.ts",
       "_origin": "ast",
@@ -725,6 +1331,17 @@
       "norm_label": "gamestate.svelte.ts",
       "source_file": "src/features/game-state/GameState.svelte.ts",
       "source_location": "L1"
+    },
+    {
+      "id": "ref_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 1,
+      "community_name": "DialogueBox.svelte",
+      "file_type": "concept",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L29"
     },
     {
       "id": "readme",
@@ -842,103 +1459,224 @@
       "source_location": "L1"
     },
     {
-      "id": "package_scripts",
-      "label": "scripts",
+      "id": "src_features_characters_character_manifest",
+      "label": "character-manifest.ts",
       "_origin": "ast",
       "community": 14,
-      "community_name": "scripts",
+      "community_name": "VisualNovelActor.svelte",
       "file_type": "code",
-      "norm_label": "scripts",
-      "source_file": "package.json",
-      "source_location": "L6"
-    },
-    {
-      "id": "package_scripts_build",
-      "label": "build",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "build",
-      "source_file": "package.json",
-      "source_location": "L8"
-    },
-    {
-      "id": "package_scripts_check",
-      "label": "check",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "check",
-      "source_file": "package.json",
-      "source_location": "L10"
-    },
-    {
-      "id": "package_scripts_dev",
-      "label": "dev",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "dev",
-      "source_file": "package.json",
-      "source_location": "L7"
-    },
-    {
-      "id": "package_scripts_preview",
-      "label": "preview",
-      "_origin": "ast",
-      "community": 14,
-      "community_name": "scripts",
-      "file_type": "code",
-      "norm_label": "preview",
-      "source_file": "package.json",
-      "source_location": "L9"
-    },
-    {
-      "id": "src_features_stage_scenerybackground",
-      "label": "SceneryBackground.svelte",
-      "_origin": "ast",
-      "community": 18,
-      "community_name": "SceneryBackground.svelte",
-      "file_type": "code",
-      "norm_label": "scenerybackground.svelte",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
+      "norm_label": "character-manifest.ts",
+      "source_file": "src/features/characters/character-manifest.ts",
       "source_location": "L1"
     },
     {
-      "id": "src_features_stage_scenerybackground_activeimg",
-      "label": "activeImg",
+      "id": "src_features_characters_character_manifest_character_manifests",
+      "label": "CHARACTER_MANIFESTS",
       "_origin": "ast",
-      "community": 18,
-      "community_name": "SceneryBackground.svelte",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
       "file_type": "code",
-      "norm_label": "activeimg",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L18"
+      "norm_label": "character_manifests",
+      "source_file": "src/features/characters/character-manifest.ts",
+      "source_location": "L4"
     },
     {
-      "id": "src_features_stage_scenerybackground_backgroundimages",
-      "label": "backgroundImages",
+      "id": "src_features_characters_character_types",
+      "label": "character.types.ts",
       "_origin": "ast",
-      "community": 18,
-      "community_name": "SceneryBackground.svelte",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
       "file_type": "code",
-      "norm_label": "backgroundimages",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L11"
+      "norm_label": "character.types.ts",
+      "source_file": "src/features/characters/character.types.ts",
+      "source_location": "L1"
     },
     {
-      "id": "src_features_stage_scenerybackground_location_timeofday_manha_islight_false",
-      "label": "{ location, timeOfDay = 'manha', isLight = false }",
+      "id": "src_features_characters_character_types_character_facial_metrics",
+      "label": "CHARACTER_FACIAL_METRICS",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "character_facial_metrics",
+      "source_file": "src/features/characters/character.types.ts",
+      "source_location": "L37"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor",
+      "label": "VisualNovelActor.svelte",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "visualnovelactor.svelte",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_characterid_expression_neutro_scale_1_fliphorizontal_false_customclass",
+      "label": "{ \n    characterId, \n    expression = 'neutro', \n    scale = 1, \n    flipHorizontal = false, \n    customClass = '' \n  }",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "{ \n    characterid, \n    expression = 'neutro', \n    scale = 1, \n    fliphorizontal = false, \n    customclass = '' \n  }",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_eyeblinkprogress",
+      "label": "eyeBlinkProgress",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "eyeblinkprogress",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L26"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_facetexture",
+      "label": "faceTexture",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "facetexture",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L111"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_manifest",
+      "label": "manifest",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "manifest",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L22"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_metrics",
+      "label": "metrics",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "metrics",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L23"
+    },
+    {
+      "id": "src_features_characters_visualnovelactor_mouthopenamount",
+      "label": "mouthOpenAmount",
+      "_origin": "ast",
+      "community": 14,
+      "community_name": "VisualNovelActor.svelte",
+      "file_type": "code",
+      "norm_label": "mouthopenamount",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L89"
+    },
+    {
+      "id": "src_features_customization_protagonistactor",
+      "label": "ProtagonistActor.svelte",
       "_origin": "ast",
       "community": 18,
-      "community_name": "SceneryBackground.svelte",
+      "community_name": "ProtagonistActor.svelte",
       "file_type": "code",
-      "norm_label": "{ location, timeofday = 'manha', islight = false }",
-      "source_file": "src/features/stage/SceneryBackground.svelte",
-      "source_location": "L8"
+      "norm_label": "protagonistactor.svelte",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_backpackasset",
+      "label": "backpackAsset",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "backpackasset",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L31"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_cameraorigin",
+      "label": "cameraOrigin",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "cameraorigin",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L136"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_cameratransform",
+      "label": "cameraTransform",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "cameratransform",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L126"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_customization_camerafocus_corpo_inteiro_scale_1_fliphorizontal_false_customclass",
+      "label": "{\n    customization,\n    cameraFocus = 'corpo_inteiro',\n    scale = 1,\n    flipHorizontal = false,\n    customClass = ''\n  }",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "{\n    customization,\n    camerafocus = 'corpo_inteiro',\n    scale = 1,\n    fliphorizontal = false,\n    customclass = ''\n  }",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L15"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_eyeblinkprogress",
+      "label": "eyeBlinkProgress",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "eyeblinkprogress",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L41"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_facetexture",
+      "label": "faceTexture",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "facetexture",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L36"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_masterillustration",
+      "label": "masterIllustration",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "masterillustration",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L26"
+    },
+    {
+      "id": "src_features_customization_protagonistactor_mouthopenamount",
+      "label": "mouthOpenAmount",
+      "_origin": "ast",
+      "community": 18,
+      "community_name": "ProtagonistActor.svelte",
+      "file_type": "code",
+      "norm_label": "mouthopenamount",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L104"
     },
     {
       "id": "package",
@@ -950,6 +1688,61 @@
       "norm_label": "package.json",
       "source_file": "package.json",
       "source_location": "L1"
+    },
+    {
+      "id": "package_dependencies",
+      "label": "dependencies",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "dependencies",
+      "source_file": "package.json",
+      "source_location": "L25"
+    },
+    {
+      "id": "package_dependencies_dexie",
+      "label": "dexie",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "dexie",
+      "source_file": "package.json",
+      "source_location": "L26"
+    },
+    {
+      "id": "package_dependencies_howler",
+      "label": "howler",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "howler",
+      "source_file": "package.json",
+      "source_location": "L27"
+    },
+    {
+      "id": "package_dependencies_lucide_svelte",
+      "label": "lucide-svelte",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "lucide-svelte",
+      "source_file": "package.json",
+      "source_location": "L28"
+    },
+    {
+      "id": "package_dependencies_zod",
+      "label": "zod",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "zod",
+      "source_file": "package.json",
+      "source_location": "L29"
     },
     {
       "id": "package_name",
@@ -972,6 +1765,61 @@
       "norm_label": "private",
       "source_file": "package.json",
       "source_location": "L3"
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "scripts",
+      "source_file": "package.json",
+      "source_location": "L6"
+    },
+    {
+      "id": "package_scripts_build",
+      "label": "build",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "build",
+      "source_file": "package.json",
+      "source_location": "L8"
+    },
+    {
+      "id": "package_scripts_check",
+      "label": "check",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "check",
+      "source_file": "package.json",
+      "source_location": "L10"
+    },
+    {
+      "id": "package_scripts_dev",
+      "label": "dev",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "dev",
+      "source_file": "package.json",
+      "source_location": "L7"
+    },
+    {
+      "id": "package_scripts_preview",
+      "label": "preview",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "package.json",
+      "file_type": "code",
+      "norm_label": "preview",
+      "source_file": "package.json",
+      "source_location": "L9"
     },
     {
       "id": "package_type",
@@ -1183,59 +2031,235 @@
       "source_location": "L23"
     },
     {
-      "id": "package_dependencies",
-      "label": "dependencies",
+      "id": "transition",
+      "label": "svelte/transition",
       "_origin": "ast",
       "community": 3,
-      "community_name": "dependencies",
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "confidence": "EXTRACTED",
       "file_type": "code",
-      "norm_label": "dependencies",
-      "source_file": "package.json",
-      "source_location": "L25"
+      "norm_label": "svelte/transition",
+      "source_file": "svelte/transition"
     },
     {
-      "id": "package_dependencies_dexie",
-      "label": "dexie",
+      "id": "src_features_customization_customization_catalog",
+      "label": "customization.catalog.ts",
       "_origin": "ast",
       "community": 3,
-      "community_name": "dependencies",
+      "community_name": "ProtagonistCustomizerModal.svelte",
       "file_type": "code",
-      "norm_label": "dexie",
-      "source_file": "package.json",
-      "source_location": "L26"
+      "norm_label": "customization.catalog.ts",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L1"
     },
     {
-      "id": "package_dependencies_howler",
-      "label": "howler",
+      "id": "src_features_customization_customization_catalog_backpack_options",
+      "label": "BACKPACK_OPTIONS",
       "_origin": "ast",
       "community": 3,
-      "community_name": "dependencies",
+      "community_name": "ProtagonistCustomizerModal.svelte",
       "file_type": "code",
-      "norm_label": "howler",
-      "source_file": "package.json",
-      "source_location": "L27"
+      "norm_label": "backpack_options",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L121"
     },
     {
-      "id": "package_dependencies_lucide_svelte",
-      "label": "lucide-svelte",
+      "id": "src_features_customization_customization_catalog_body_archetypes",
+      "label": "BODY_ARCHETYPES",
       "_origin": "ast",
       "community": 3,
-      "community_name": "dependencies",
+      "community_name": "ProtagonistCustomizerModal.svelte",
       "file_type": "code",
-      "norm_label": "lucide-svelte",
-      "source_file": "package.json",
-      "source_location": "L28"
+      "norm_label": "body_archetypes",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L41"
     },
     {
-      "id": "package_dependencies_zod",
-      "label": "zod",
+      "id": "src_features_customization_customization_catalog_boy_reactions",
+      "label": "BOY_REACTIONS",
       "_origin": "ast",
       "community": 3,
-      "community_name": "dependencies",
+      "community_name": "ProtagonistCustomizerModal.svelte",
       "file_type": "code",
-      "norm_label": "zod",
-      "source_file": "package.json",
-      "source_location": "L29"
+      "norm_label": "boy_reactions",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L152"
+    },
+    {
+      "id": "src_features_customization_customization_catalog_hair_colors",
+      "label": "HAIR_COLORS",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "hair_colors",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L108"
+    },
+    {
+      "id": "src_features_customization_customization_catalog_hair_styles",
+      "label": "HAIR_STYLES",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "hair_styles",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L84"
+    },
+    {
+      "id": "src_features_customization_customization_catalog_outfit_options",
+      "label": "OUTFIT_OPTIONS",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "outfit_options",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L11"
+    },
+    {
+      "id": "src_features_customization_customization_schema",
+      "label": "customization.schema.ts",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "customization.schema.ts",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_customization_customization_schema_backpackenum",
+      "label": "BackpackEnum",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "backpackenum",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L30"
+    },
+    {
+      "id": "src_features_customization_customization_schema_bodyarchetypeenum",
+      "label": "BodyArchetypeEnum",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "bodyarchetypeenum",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L4"
+    },
+    {
+      "id": "src_features_customization_customization_schema_hairstyleenum",
+      "label": "HairStyleEnum",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "hairstyleenum",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L22"
+    },
+    {
+      "id": "src_features_customization_customization_schema_outfitidenum",
+      "label": "OutfitIdEnum",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "outfitidenum",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L14"
+    },
+    {
+      "id": "src_features_customization_customization_schema_protagonistcustomizationschema",
+      "label": "ProtagonistCustomizationSchema",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "protagonistcustomizationschema",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L39"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal",
+      "label": "ProtagonistCustomizerModal.svelte",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "protagonistcustomizermodal.svelte",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_activereactiontext",
+      "label": "activeReactionText",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "activereactiontext",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L70"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_boyprofiles",
+      "label": "boyProfiles",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "boyprofiles",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L75"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_boyreactiontarget",
+      "label": "boyReactionTarget",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "boyreactiontarget",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L38"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_camerafocus",
+      "label": "cameraFocus",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "camerafocus",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L53"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_draftcustomization",
+      "label": "draftCustomization",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "draftcustomization",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L41"
+    },
+    {
+      "id": "src_features_customization_protagonistcustomizermodal_expressionslist",
+      "label": "expressionsList",
+      "_origin": "ast",
+      "community": 3,
+      "community_name": "ProtagonistCustomizerModal.svelte",
+      "file_type": "code",
+      "norm_label": "expressionslist",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L142"
     },
     {
       "id": "tsconfig_node",
@@ -1876,88 +2900,11 @@
       "source_location": "L23"
     },
     {
-      "id": "src_features_dialogue_narrative_schema",
-      "label": "narrative.schema.ts",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "narrative.schema.ts",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L1"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_chapterschema",
-      "label": "ChapterSchema",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "chapterschema",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L49"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_choiceschema",
-      "label": "ChoiceSchema",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "choiceschema",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L20"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_dialoguenodeschema",
-      "label": "DialogueNodeSchema",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "dialoguenodeschema",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L33"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_dresscodecriteriaschema",
-      "label": "DressCodeCriteriaSchema",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "dresscodecriteriaschema",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L59"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_personagemenum",
-      "label": "PersonagemEnum",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "personagemenum",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L6"
-    },
-    {
-      "id": "src_features_dialogue_narrative_schema_tomenum",
-      "label": "TomEnum",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "narrative.schema.ts",
-      "file_type": "code",
-      "norm_label": "tomenum",
-      "source_file": "src/features/dialogue/narrative.schema.ts",
-      "source_location": "L3"
-    },
-    {
       "id": "src_features_stage_charactersprite",
       "label": "CharacterSprite.svelte",
       "_origin": "ast",
       "community": 8,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "charactersprite.svelte",
       "source_file": "src/features/stage/CharacterSprite.svelte",
@@ -1968,55 +2915,66 @@
       "label": "characterProfiles",
       "_origin": "ast",
       "community": 8,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "characterprofiles",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L14"
+      "source_location": "L17"
     },
     {
       "id": "src_features_stage_charactersprite_islight",
       "label": "isLight",
       "_origin": "ast",
       "community": 8,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "islight",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L52"
+      "source_location": "L55"
+    },
+    {
+      "id": "src_features_stage_charactersprite_isprotagonist",
+      "label": "isProtagonist",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "isprotagonist",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L56"
     },
     {
       "id": "src_features_stage_charactersprite_profile",
       "label": "profile",
       "_origin": "ast",
       "community": 8,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "profile",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L51"
+      "source_location": "L54"
+    },
+    {
+      "id": "src_features_stage_charactersprite_protagonistcustomization",
+      "label": "protagonistCustomization",
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "CharacterSprite.svelte",
+      "file_type": "code",
+      "norm_label": "protagonistcustomization",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L59"
     },
     {
       "id": "src_features_stage_charactersprite_speaker_speakername_expression_neutro_timeofday_manha",
       "label": "{ speaker, speakerName = '', expression = 'neutro', timeOfDay = 'manha' }",
       "_origin": "ast",
       "community": 8,
-      "community_name": "narrative.schema.ts",
+      "community_name": "CharacterSprite.svelte",
       "file_type": "code",
       "norm_label": "{ speaker, speakername = '', expression = 'neutro', timeofday = 'manha' }",
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L12"
-    },
-    {
-      "id": "ref_zod",
-      "label": "zod",
-      "_origin": "ast",
-      "community": 8,
-      "community_name": "narrative.schema.ts",
-      "file_type": "concept",
-      "norm_label": "zod",
-      "source_file": "package.json",
-      "source_location": "L29"
+      "source_location": "L15"
     },
     {
       "id": "content_arcs_arco_1_adolescencia_cap_00_prologo",
@@ -2081,6 +3039,54 @@
   ],
   "links": [
     {
+      "source": "src_features_characters_visualnovelactor_triggerblink_step",
+      "target": "src_features_characters_visualnovelactor_schedulenext",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor_triggersingleblink_step",
+      "target": "src_features_characters_visualnovelactor_schedulenext",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor_triggerblink_step",
+      "target": "src_features_customization_protagonistactor_schedulenext",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor_triggersingleblink_step",
+      "target": "src_features_customization_protagonistactor_schedulenext",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_game_state_gamestate_svelte_gamestate_applychoice",
       "target": "src_features_game_state_gamestate_svelte_gamestate_modifyaffinity",
       "relation": "calls",
@@ -2089,7 +3095,31 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L204",
+      "source_location": "L213",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_visualnovelactor_schedulenext",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_schedulenext",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -2297,6 +3327,366 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_characters_character_manifest",
+      "target": "src_features_characters_character_types_charactermanifest",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/character-manifest.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_character_manifest",
+      "target": "src_features_characters_character_types_character_facial_metrics",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/character-manifest.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_character_types_characterid",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_character_types_standardexpression",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_character_manifest_character_manifests",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_game_state_gamestate_svelte_gamestate",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_schema_backpackoption",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_schema_bodyarchetype",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_schema_bodyarchetypeoption",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_schema_haircoloroption",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_schema_hairstyleoption",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_schema_outfitid",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_schema_outfitoption",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_customization_schema_protagonistcustomization",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_customization_catalog_resolvebackpackasset",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_customization_catalog_resolveprotagonistmasterillustration",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_characters_character_types_character_facial_metrics",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_game_state_gamestate_svelte_gamestate",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_game_state_gamestate_svelte_gamestate",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_schema_backpacktype",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_schema_bodyarchetype",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_schema_hairstyle",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_schema_outfitid",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_schema_protagonistcustomization",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_catalog_backpack_options",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_catalog_body_archetypes",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_catalog_boy_reactions",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_catalog_hair_colors",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_catalog_hair_styles",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_catalog_outfit_options",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_dialogue_dialoguebox",
       "target": "src_features_dialogue_narrative_schema_choice",
       "relation": "imports",
@@ -2393,15 +3783,15 @@
       "weight": 1.0
     },
     {
-      "source": "src_layout_dualstage",
-      "target": "src_features_game_state_gamestate_svelte_gamestate",
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_customization_customization_schema_protagonistcustomization",
       "relation": "imports",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "import",
-      "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L2",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -2413,7 +3803,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L9",
+      "source_location": "L10",
       "weight": 1.0
     },
     {
@@ -2425,7 +3815,19 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L9",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
+      "target": "src_features_game_state_gamestate_svelte_gamestate",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L2",
       "weight": 1.0
     },
     {
@@ -2461,6 +3863,203 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/features/campus-map/CampusMapModal.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_character_manifest",
+      "target": "src_features_characters_character_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/character-manifest.ts",
+      "source_location": "L2",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_character_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L2",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_character_manifest",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_game_state_gamestate_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L1",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "ref_zod",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_customization_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L2",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_customization_catalog",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_characters_character_types",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_game_state_gamestate_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_game_state_gamestate_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistactor",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L19",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "ref_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_customization_catalog",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "ref_lucide_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
       "source_location": "L3",
       "weight": 1.0
     },
@@ -2576,6 +4175,56 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_characters_visualnovelactor",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_customization_protagonistactor",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_customization_customization_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L6",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
+      "source": "src_layout_dualstage",
+      "target": "src_features_dialogue_narrative_schema",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "src/layout/DualStage.svelte",
+      "source_location": "L10",
+      "type_only": true,
+      "weight": 1.0
+    },
+    {
       "source": "src_layout_dualstage",
       "target": "ref_lucide_svelte",
       "relation": "imports_from",
@@ -2584,7 +4233,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -2661,7 +4310,7 @@
     },
     {
       "source": "src_layout_dualstage",
-      "target": "content_arcs_arco_1_adolescencia_cap_00_prologo",
+      "target": "src_features_customization_protagonistcustomizermodal",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2673,7 +4322,7 @@
     },
     {
       "source": "src_layout_dualstage",
-      "target": "src_features_dialogue_narrative_schema",
+      "target": "content_arcs_arco_1_adolescencia_cap_00_prologo",
       "relation": "imports_from",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2681,7 +4330,6 @@
       "context": "import",
       "source_file": "src/layout/DualStage.svelte",
       "source_location": "L9",
-      "type_only": true,
       "weight": 1.0
     },
     {
@@ -2765,7 +4413,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L192",
+      "source_location": "L201",
       "weight": 1.0
     },
     {
@@ -2777,7 +4425,7 @@
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L192",
+      "source_location": "L201",
       "weight": 1.0
     },
     {
@@ -3166,6 +4814,754 @@
       "weight": 1.0
     },
     {
+      "source": "src_features_characters_character_manifest",
+      "target": "src_features_characters_character_manifest_character_manifests",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/character-manifest.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_character_types",
+      "target": "src_features_characters_character_types_characterid",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/character.types.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_character_types",
+      "target": "src_features_characters_character_types_facialmetrics",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/character.types.ts",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_character_types",
+      "target": "src_features_characters_character_types_charactermanifest",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/character.types.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_character_types",
+      "target": "src_features_characters_character_types_standardexpression",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/character.types.ts",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_character_types",
+      "target": "src_features_characters_character_types_character_facial_metrics",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/character.types.ts",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_visualnovelactor_facetexture",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L111",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_visualnovelactor_handleimgerror",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L116",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_visualnovelactor_characterid_expression_neutro_scale_1_fliphorizontal_false_customclass",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_visualnovelactor_manifest",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_visualnovelactor_metrics",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_visualnovelactor_eyeblinkprogress",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_visualnovelactor_triggerblink",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_visualnovelactor_triggersingleblink",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_visualnovelactor_props",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor",
+      "target": "src_features_characters_visualnovelactor_mouthopenamount",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L89",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor_triggerblink",
+      "target": "src_features_characters_visualnovelactor_triggerblink_step",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_catalog_hair_colors",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L108",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_catalog_outfit_options",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_catalog_backpack_options",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L121",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_catalog_boy_reactions",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L152",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_catalog_resolveprotagonistmasterillustration",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L178",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_catalog_resolvebackpackasset",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L214",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_catalog_body_archetypes",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_catalog",
+      "target": "src_features_customization_customization_catalog_hair_styles",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.catalog.ts",
+      "source_location": "L84",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_bodyarchetype",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_outfitidenum",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_outfitid",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_hairstyleenum",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_hairstyle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L27",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_backpackenum",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L30",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_backpacktype",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_protagonistcustomizationschema",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_bodyarchetypeenum",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_protagonistcustomization",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_outfitoption",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_bodyarchetypeoption",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_hairstyleoption",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L71",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_backpackoption",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L79",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_customization_schema",
+      "target": "src_features_customization_customization_schema_haircoloroption",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/customization.schema.ts",
+      "source_location": "L87",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_mouthopenamount",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_cameratransform",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L126",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_cameraorigin",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L136",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_handleimgerror",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_customization_camerafocus_corpo_inteiro_scale_1_fliphorizontal_false_customclass",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_masterillustration",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_backpackasset",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L31",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_facetexture",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_eyeblinkprogress",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_triggerblink",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_props",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor",
+      "target": "src_features_customization_protagonistactor_triggersingleblink",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor_triggerblink",
+      "target": "src_features_customization_protagonistactor_triggerblink_step",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L52",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_selectbackpack",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_setexpression",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L110",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_handlereset",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L114",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_handlesaveandcontinue",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L127",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_expressionslist",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L142",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_activetab",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L37",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_boyreactiontarget",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_draftcustomization",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L41",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_camerafocus",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_activereactiontext",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_boyprofiles",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_selectoutfit",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L81",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_selectbody",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L90",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_selecthairstyle",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "src_features_customization_protagonistcustomizermodal_selecthaircolor",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
       "source": "src_features_dialogue_dialoguebox",
       "target": "src_features_dialogue_dialoguebox_node_onselectchoice_ontogglephone_onopenhistory",
       "relation": "contains",
@@ -3415,7 +5811,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L221",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -3635,7 +6031,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L12",
+      "source_location": "L15",
       "weight": 1.0
     },
     {
@@ -3646,18 +6042,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L14",
-      "weight": 1.0
-    },
-    {
-      "source": "src_features_stage_charactersprite",
-      "target": "src_features_stage_charactersprite_props",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L5",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -3668,7 +6053,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L51",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -3679,7 +6064,40 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/stage/CharacterSprite.svelte",
-      "source_location": "L52",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_stage_charactersprite_isprotagonist",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L56",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_stage_charactersprite_protagonistcustomization",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_stage_charactersprite",
+      "target": "src_features_stage_charactersprite_props",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/stage/CharacterSprite.svelte",
+      "source_location": "L8",
       "weight": 1.0
     },
     {
@@ -3734,7 +6152,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0
     },
     {
@@ -3745,7 +6163,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0
     },
     {
@@ -3756,7 +6174,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -3767,7 +6185,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L16",
+      "source_location": "L17",
       "weight": 1.0
     },
     {
@@ -3778,7 +6196,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L29",
+      "source_location": "L30",
       "weight": 1.0
     },
     {
@@ -3789,7 +6207,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L43",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -3800,7 +6218,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -3811,7 +6229,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L66",
+      "source_location": "L67",
       "weight": 1.0
     },
     {
@@ -3822,7 +6240,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L73",
+      "source_location": "L74",
       "weight": 1.0
     },
     {
@@ -3833,7 +6251,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/layout/DualStage.svelte",
-      "source_location": "L79",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -4196,6 +6614,24 @@
       "source_file": "src/features/campus-map/CampusMapModal.svelte"
     },
     {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "lucide_svelte",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte"
+    },
+    {
+      "source": "src_features_customization_protagonistcustomizermodal",
+      "target": "transition",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/customization/ProtagonistCustomizerModal.svelte"
+    },
+    {
       "source": "src_features_dialogue_dialoguebox",
       "target": "lucide_svelte",
       "relation": "imports_from",
@@ -4224,13 +6660,24 @@
     },
     {
       "source": "src_features_game_state_gamestate_svelte_gamestate",
+      "target": "src_features_game_state_gamestate_svelte_gamestate_togglephone",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/features/game-state/GameState.svelte.ts",
+      "source_location": "L105",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_game_state_gamestate_svelte_gamestate",
       "target": "src_features_game_state_gamestate_svelte_gamestate_openphoneapp",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L103",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -4241,7 +6688,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L111",
+      "source_location": "L120",
       "weight": 1.0
     },
     {
@@ -4252,7 +6699,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L119",
+      "source_location": "L128",
       "weight": 1.0
     },
     {
@@ -4263,7 +6710,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L123",
+      "source_location": "L132",
       "weight": 1.0
     },
     {
@@ -4274,7 +6721,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L127",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -4285,7 +6732,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L131",
+      "source_location": "L140",
       "weight": 1.0
     },
     {
@@ -4296,7 +6743,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L139",
+      "source_location": "L148",
       "weight": 1.0
     },
     {
@@ -4307,7 +6754,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L151",
+      "source_location": "L160",
       "weight": 1.0
     },
     {
@@ -4318,7 +6765,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L155",
+      "source_location": "L164",
       "weight": 1.0
     },
     {
@@ -4329,7 +6776,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L159",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -4340,7 +6787,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L163",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -4351,7 +6798,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L167",
+      "source_location": "L176",
       "weight": 1.0
     },
     {
@@ -4362,7 +6809,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L175",
+      "source_location": "L184",
       "weight": 1.0
     },
     {
@@ -4373,7 +6820,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L183",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -4384,21 +6831,130 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L192",
+      "source_location": "L201",
       "weight": 1.0
     },
     {
-      "source": "src_features_game_state_gamestate_svelte_gamestate",
-      "target": "src_features_game_state_gamestate_svelte_gamestate_togglephone",
-      "relation": "method",
+      "source": "src_features_characters_visualnovelactor_schedulenext",
+      "target": "src_features_characters_visualnovelactor_triggerblink",
+      "relation": "indirect_call",
       "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/features/game-state/GameState.svelte.ts",
-      "source_location": "L96",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor_triggerblink",
+      "target": "src_features_characters_visualnovelactor_triggersingleblink_step",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor_triggerblink_step",
+      "target": "src_features_characters_visualnovelactor_triggersingleblink_step",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L44",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor_triggerblink_step",
+      "target": "src_features_characters_visualnovelactor_triggersingleblink",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_characters_visualnovelactor_triggersingleblink",
+      "target": "src_features_characters_visualnovelactor_triggersingleblink_step",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/features/characters/VisualNovelActor.svelte",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor_schedulenext",
+      "target": "src_features_customization_protagonistactor_triggerblink",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L92",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor_triggerblink",
+      "target": "src_features_customization_protagonistactor_triggersingleblink_step",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L70",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor_triggerblink_step",
+      "target": "src_features_customization_protagonistactor_triggersingleblink_step",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor_triggerblink_step",
+      "target": "src_features_customization_protagonistactor_triggersingleblink",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L63",
+      "weight": 1.0
+    },
+    {
+      "source": "src_features_customization_protagonistactor_triggersingleblink",
+      "target": "src_features_customization_protagonistactor_triggersingleblink_step",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "src/features/customization/ProtagonistActor.svelte",
+      "source_location": "L87",
       "weight": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "8379ecca69b816f06f91ad98c5b0604ca003f80f"
+  "built_at_commit": "ca5e4121839f6de50074118e2e7ba8b9b8e1ba3e"
 }

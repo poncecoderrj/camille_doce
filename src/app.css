@@ -114,3 +114,18 @@ html, body {
   pointer-events: none;
   animation: floatParticle 8s infinite linear;
 }
+
+/* Animação de respiração sutil estilo Visual Novel (Live 2D) */
+@keyframes vnBreath {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-0.35%) scale(1.002, 1.004);
+  }
+}
+
+.vn-breath-anim {
+  animation: vnBreath 4.6s ease-in-out infinite;
+  transform-origin: 50% 95%;
+}

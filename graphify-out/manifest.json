@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "src/features/game-state/GameState.svelte.ts": {
-    "mtime": 1792721348.4019892,
-    "seen": 1792721456.5820913,
-    "ast_hash": "ec90b0d545b0a993eaee68b4e00a45ab",
+    "mtime": 1792722261.827984,
+    "seen": 1792722295.7218199,
+    "ast_hash": "ff5c272d5977d03e5cd04c8a95bd98d1",
     "semantic_hash": ""
   },
   "src/features/smartphone/PhoneShell.svelte": {
@@ -60,9 +60,9 @@
     "semantic_hash": ""
   },
   "src/features/stage/CharacterSprite.svelte": {
-    "mtime": 1792721285.7972918,
-    "seen": 1792721456.5820913,
-    "ast_hash": "d5ecb973463d482def7b26a72c1eadd8",
+    "mtime": 1792722224.2672477,
+    "seen": 1792722295.7218199,
+    "ast_hash": "6ee2115f085c79c0a08d667d811db2bf",
     "semantic_hash": ""
   },
   "src/features/stage/SceneryBackground.svelte": {
@@ -72,9 +72,9 @@
     "semantic_hash": ""
   },
   "src/layout/DualStage.svelte": {
-    "mtime": 1792721374.936679,
-    "seen": 1792721456.5820913,
-    "ast_hash": "6f98a5ac87eb00922a334da158226f8a",
+    "mtime": 1792722249.9436588,
+    "seen": 1792722295.7218199,
+    "ast_hash": "5dc84a3d9986c789a21f4ff4c598d6ef",
     "semantic_hash": ""
   },
   "src/main.ts": {
@@ -159,6 +159,354 @@
     "mtime": 1792706224.79769,
     "seen": 1792706431.1903663,
     "ast_hash": "ddc590a8124166a00504694f58ca15c8",
+    "semantic_hash": ""
+  },
+  "src/features/characters/VisualNovelActor.svelte": {
+    "mtime": 1792721882.073027,
+    "seen": 1792722295.7218199,
+    "ast_hash": "3b95bc860c9b4392f9e77e6d1997434e",
+    "semantic_hash": ""
+  },
+  "src/features/characters/character-manifest.ts": {
+    "mtime": 1792721862.8228498,
+    "seen": 1792722295.7218199,
+    "ast_hash": "a5e9b7ab88144d35e9773b6add81d0ef",
+    "semantic_hash": ""
+  },
+  "src/features/characters/character.types.ts": {
+    "mtime": 1792721849.559097,
+    "seen": 1792722295.7218199,
+    "ast_hash": "e7c82246167600c60bbff268a0b3da5e",
+    "semantic_hash": ""
+  },
+  "src/features/customization/ProtagonistActor.svelte": {
+    "mtime": 1792722136.5895693,
+    "seen": 1792722295.7218199,
+    "ast_hash": "9127bab23ac08c5e458531f961b26717",
+    "semantic_hash": ""
+  },
+  "src/features/customization/ProtagonistCustomizerModal.svelte": {
+    "mtime": 1792722205.4881763,
+    "seen": 1792722295.7218199,
+    "ast_hash": "860912381c2e9f2fb854ba5abf731e7b",
+    "semantic_hash": ""
+  },
+  "src/features/customization/customization.catalog.ts": {
+    "mtime": 1792722045.0737858,
+    "seen": 1792722295.7218199,
+    "ast_hash": "82e58c92657f54a6749bba193b09474b",
+    "semantic_hash": ""
+  },
+  "src/features/customization/customization.schema.ts": {
+    "mtime": 1792721899.5168464,
+    "seen": 1792722295.7218199,
+    "ast_hash": "629ab88d087095d0130554767f1d135c",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante/base/corpo_neutro.png": {
+    "mtime": 1792721814.2930176,
+    "seen": 1792722295.7218199,
+    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante/rostos/corado.png": {
+    "mtime": 1792721814.30155,
+    "seen": 1792722295.7218199,
+    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante/rostos/feliz.png": {
+    "mtime": 1792721814.3115559,
+    "seen": 1792722295.7218199,
+    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante/rostos/irritado.png": {
+    "mtime": 1792721814.3205526,
+    "seen": 1792722295.7218199,
+    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante/rostos/melancolico.png": {
+    "mtime": 1792721814.3467658,
+    "seen": 1792722295.7218199,
+    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante/rostos/neutro.png": {
+    "mtime": 1792721814.3637855,
+    "seen": 1792722295.7218199,
+    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante/rostos/smirk.png": {
+    "mtime": 1792721814.376314,
+    "seen": 1792722295.7218199,
+    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante/rostos/sonhador.png": {
+    "mtime": 1792721814.383315,
+    "seen": 1792722295.7218199,
+    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante/rostos/sorriso.png": {
+    "mtime": 1792721814.3923197,
+    "seen": 1792722295.7218199,
+    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante/rostos/surpreso.png": {
+    "mtime": 1792721814.4108431,
+    "seen": 1792722295.7218199,
+    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/dante/rostos/timido.png": {
+    "mtime": 1792721814.4364815,
+    "seen": 1792722295.7218199,
+    "ast_hash": "504695924fed0060dd0ed98fa9aff43f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/acessorios/bolsa_rock.png": {
+    "mtime": 1792721814.457684,
+    "seen": 1792722295.7218199,
+    "ast_hash": "9f73bc9775ba1c8c7d641efe1a74b692",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/acessorios/mochila_lotus.png": {
+    "mtime": 1792721814.4602506,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f25b963217dc22a7211fa3feaeac66a9",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/acessorios/oculos_redondos_dourados.png": {
+    "mtime": 1792721814.4625652,
+    "seen": 1792722295.7218199,
+    "ast_hash": "7ef543562631e08ed82457226e5ddea2",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/acessorios/tote_romantica.png": {
+    "mtime": 1792721814.4665716,
+    "seen": 1792722295.7218199,
+    "ast_hash": "a01f9138f1f09ade5b2770fc95a0b35f",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/base/corpo_atletica_musculosa.png": {
+    "mtime": 1792721814.4745643,
+    "seen": 1792722295.7218199,
+    "ast_hash": "8fdb15ea6816201df03a41d8f6736870",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/base/corpo_curvy_plussize.png": {
+    "mtime": 1792721814.4908295,
+    "seen": 1792722295.7218199,
+    "ast_hash": "509be2b0bcf532cc0203e91a9f354d4b",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/base/corpo_delicada_magra.png": {
+    "mtime": 1792721814.5018797,
+    "seen": 1792722295.7218199,
+    "ast_hash": "9e2380911bdb564906235d4da8fd8590",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/base/corpo_neutro.png": {
+    "mtime": 1792721814.5132923,
+    "seen": 1792722295.7218199,
+    "ast_hash": "d2bf7a4647136fa2f081e61246962eb6",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/base/look_rock.png": {
+    "mtime": 1792721814.5410771,
+    "seen": 1792722295.7218199,
+    "ast_hash": "9827478b96d2e285656c471b9d2048f0",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/base/look_romantico.png": {
+    "mtime": 1792721814.5609515,
+    "seen": 1792722295.7218199,
+    "ast_hash": "de74a14388b6565d2c7071c01364a150",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/base/uniforme_lotus.png": {
+    "mtime": 1792721814.5809088,
+    "seen": 1792722295.7218199,
+    "ast_hash": "d2bf7a4647136fa2f081e61246962eb6",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/rostos/corado.png": {
+    "mtime": 1792721814.5879977,
+    "seen": 1792722295.7218199,
+    "ast_hash": "d2bf7a4647136fa2f081e61246962eb6",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/rostos/feliz.png": {
+    "mtime": 1792721814.5974658,
+    "seen": 1792722295.7218199,
+    "ast_hash": "d2bf7a4647136fa2f081e61246962eb6",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/rostos/neutro.png": {
+    "mtime": 1792721814.6016011,
+    "seen": 1792722295.7218199,
+    "ast_hash": "d2bf7a4647136fa2f081e61246962eb6",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/rostos/smirk.png": {
+    "mtime": 1792721814.6156738,
+    "seen": 1792722295.7218199,
+    "ast_hash": "d2bf7a4647136fa2f081e61246962eb6",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/rostos/sorriso.png": {
+    "mtime": 1792721814.6322198,
+    "seen": 1792722295.7218199,
+    "ast_hash": "d2bf7a4647136fa2f081e61246962eb6",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/rostos/surpreso.png": {
+    "mtime": 1792721814.6477928,
+    "seen": 1792722295.7218199,
+    "ast_hash": "d2bf7a4647136fa2f081e61246962eb6",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/iris/rostos/timido.png": {
+    "mtime": 1792721814.6577942,
+    "seen": 1792722295.7218199,
+    "ast_hash": "d2bf7a4647136fa2f081e61246962eb6",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas/base/corpo_neutro.png": {
+    "mtime": 1792721814.674186,
+    "seen": 1792722295.7218199,
+    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas/rostos/corado.png": {
+    "mtime": 1792721814.6826332,
+    "seen": 1792722295.7218199,
+    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas/rostos/feliz.png": {
+    "mtime": 1792721814.6950612,
+    "seen": 1792722295.7218199,
+    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas/rostos/irritado.png": {
+    "mtime": 1792721814.7038229,
+    "seen": 1792722295.7218199,
+    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas/rostos/melancolico.png": {
+    "mtime": 1792721814.7183483,
+    "seen": 1792722295.7218199,
+    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas/rostos/neutro.png": {
+    "mtime": 1792721814.7284641,
+    "seen": 1792722295.7218199,
+    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas/rostos/smirk.png": {
+    "mtime": 1792721814.7376325,
+    "seen": 1792722295.7218199,
+    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas/rostos/sonhador.png": {
+    "mtime": 1792721814.7466362,
+    "seen": 1792722295.7218199,
+    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas/rostos/sorriso.png": {
+    "mtime": 1792721814.7581584,
+    "seen": 1792722295.7218199,
+    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas/rostos/surpreso.png": {
+    "mtime": 1792721814.7671535,
+    "seen": 1792722295.7218199,
+    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/lucas/rostos/timido.png": {
+    "mtime": 1792721814.7802286,
+    "seen": 1792722295.7218199,
+    "ast_hash": "81c77d3abbe5efaa318c63d091e89c6d",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo/base/corpo_neutro.png": {
+    "mtime": 1792721814.8022296,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo/rostos/corado.png": {
+    "mtime": 1792721814.8142316,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo/rostos/feliz.png": {
+    "mtime": 1792721814.8382847,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo/rostos/irritado.png": {
+    "mtime": 1792721814.8476102,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo/rostos/melancolico.png": {
+    "mtime": 1792721814.8671136,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo/rostos/neutro.png": {
+    "mtime": 1792721814.8881216,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo/rostos/smirk.png": {
+    "mtime": 1792721814.91509,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo/rostos/sonhador.png": {
+    "mtime": 1792721814.9332242,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo/rostos/sorriso.png": {
+    "mtime": 1792721814.9520454,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo/rostos/surpreso.png": {
+    "mtime": 1792721814.9772334,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
+    "semantic_hash": ""
+  },
+  "public/assets/characters/theo/rostos/timido.png": {
+    "mtime": 1792721814.987988,
+    "seen": 1792722295.7218199,
+    "ast_hash": "f3d7b077f20a044bc10562d5edfa35d1",
     "semantic_hash": ""
   }
 }
