@@ -1,12 +1,12 @@
 # Graph Report - entre-sinos  (2026-10-23)
 
 ## Corpus Check
-- 57 files · ~22,063,858 words
+- 57 files · ~19,555,122 words
 - Verdict: corpus is large enough that graph structure adds value.
 - Unclassified: 3 file(s) not represented in the graph (top: (none) 1, .gd 1, .css 1)
 
 ## Summary
-- 457 nodes · 591 edges · 34 communities (28 shown, 6 thin omitted)
+- 450 nodes · 583 edges · 33 communities (27 shown, 6 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
@@ -17,13 +17,12 @@
 
 ## Community Hubs (Navigation)
 - DualStage.svelte
-- DialogueBox.svelte
+- lucide-svelte
 - package.json
 - ProtagonistCustomizerModal.svelte
 - compilerOptions
 - PhoneShell.svelte
 - compilerOptions
-- devDependencies
 - TitleScreen.svelte
 - gameState
 - Svelte + TS + Vite
@@ -32,7 +31,7 @@
 - character_composer.py
 - CharacterProfileModal.svelte
 - audioManager
-- narrative.schema.ts
+- DialogueBox.svelte
 - Pacote de personagens — Academia Lótus
 - Beatriz
 - Caio
@@ -66,23 +65,29 @@
 ## Import Cycles
 - None detected.
 
-## Communities (34 total, 6 thin omitted)
+## Communities (33 total, 6 thin omitted)
 
 ### Community 0 - "DualStage.svelte"
 Cohesion: 0.07
 Nodes (24): ALL_STORY_NODES, CHAPTER_LIST, ChapterMeta, FALLBACK_NODE_ID, getChapterForNode(), getStoryNode(), EnvironmentLighting, LOCATION_PROFILES (+16 more)
 
-### Community 1 - "DialogueBox.svelte"
-Cohesion: 0.13
-Nodes (13): canRollback, CHOICE_LETTERS, displayedText, hasChoices, isAlarmBlocked, isLight, isProtagonistSpeaking, isTyping (+5 more)
+### Community 1 - "lucide-svelte"
+Cohesion: 0.12
+Nodes (14): lucide-svelte, isLight, locations, { onClose }, Props, activeColor, affinity, characterColors (+6 more)
 
 ### Community 2 - "package.json"
-Cohesion: 0.08
-Nodes (26): dependencies, dexie, howler, lucide-svelte, zod, name, private, scripts (+18 more)
+Cohesion: 0.05
+Nodes (38): dependencies, dexie, howler, lucide-svelte, zod, devDependencies, svelte, svelte-check (+30 more)
 
 ### Community 3 - "ProtagonistCustomizerModal.svelte"
-Cohesion: 0.05
-Nodes (40): lucide-svelte, AudioSettings, isLight, locations, { onClose }, Props, BOY_REACTIONS, OUTFIT_OPTIONS (+32 more)
+Cohesion: 0.12
+Nodes (18): zod, BOY_REACTIONS, OUTFIT_OPTIONS, resolveProtagonistLookImage(), OutfitId, OutfitIdEnum, OutfitOption, {
+    outfitId = 'uniforme_lotus',
+    scale = 1,
+    flipHorizontal = false,
+    customClass = '',
+    framing = 'bust'
+  } (+10 more)
 
 ### Community 4 - "compilerOptions"
 Cohesion: 0.12
@@ -96,25 +101,17 @@ Nodes (17): activeWallpaper, backupFeedback, calendarEvents, chatScrollContainer
 Cohesion: 0.14
 Nodes (13): @tsconfig/svelte/tsconfig.json, compilerOptions, allowArbitraryExtensions, allowJs, checkJs, module, moduleDetection, noEmit (+5 more)
 
-### Community 7 - "devDependencies"
-Cohesion: 0.17
-Nodes (12): devDependencies, svelte, svelte-check, @sveltejs/vite-plugin-svelte, tailwindcss, @tailwindcss/vite, @tsconfig/svelte, @types/howler (+4 more)
-
 ### Community 8 - "TitleScreen.svelte"
 Cohesion: 0.12
 Nodes (6): svelte, isAudioSettingsOpen, isCreditsOpen, isProfileModalOpen, profileModalMode, app
-
-### Community 9 - "gameState"
-Cohesion: 0.06
-Nodes (3): Choice, DialogueNode, gameState
 
 ### Community 11 - "Svelte + TS + Vite"
 Cohesion: 0.40
 Nodes (4): Need an official Svelte framework?, Recommended IDE Setup, Svelte + TS + Vite, Technical considerations
 
 ### Community 14 - "VisualNovelActor.svelte"
-Cohesion: 0.09
-Nodes (22): BOYS_EXPRESSIONS, CHARACTER_MANIFESTS, EXPRESSION_ALIASES, IRIS_EXPRESSIONS, CHARACTER_FACIAL_METRICS, CharacterId, CharacterManifest, FacialMetrics (+14 more)
+Cohesion: 0.13
+Nodes (15): BOYS_EXPRESSIONS, CHARACTER_MANIFESTS, EXPRESSION_ALIASES, IRIS_EXPRESSIONS, CHARACTER_FACIAL_METRICS, CharacterId, CharacterManifest, FacialMetrics (+7 more)
 
 ### Community 17 - "character_composer.py"
 Cohesion: 0.18
@@ -122,11 +119,20 @@ Nodes (5): compose(), load_manifest(), main(), open_layer(), tint_preserve_lumin
 
 ### Community 18 - "CharacterProfileModal.svelte"
 Cohesion: 0.05
-Nodes (41): zod, activeAspirationDetails, activeOutfitDetails, activeZodiacDetails, currentStep, draftAspiration, draftName, draftOutfit (+33 more)
+Nodes (39): activeAspirationDetails, activeOutfitDetails, activeZodiacDetails, currentStep, draftAspiration, draftName, draftOutfit, draftTraits (+31 more)
 
-### Community 20 - "narrative.schema.ts"
-Cohesion: 0.09
-Nodes (21): Chapter, ChapterSchema, ChoiceSchema, DialogueNodeSchema, DressCodeCriteria, DressCodeCriteriaSchema, PersonagemEnum, PersonagemId (+13 more)
+### Community 19 - "audioManager"
+Cohesion: 0.13
+Nodes (8): audioManager, AudioSettings, charName, {
+    expression = 'neutro',
+    isSpeaking = false,
+    isChoiceActive = false,
+    customClass = ''
+  }, isAngryPulse, isLight, Props, spriteSrc
+
+### Community 20 - "DialogueBox.svelte"
+Cohesion: 0.05
+Nodes (39): canRollback, CHOICE_LETTERS, displayedText, hasChoices, isAlarmBlocked, isLight, isProtagonistSpeaking, isTyping (+31 more)
 
 ### Community 21 - "Pacote de personagens — Academia Lótus"
 Cohesion: 0.25
@@ -181,24 +187,24 @@ Cohesion: 0.50
 Nodes (3): Próximo fluxo, Status, Theo
 
 ## Knowledge Gaps
-- **240 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+235 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 334 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **234 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+229 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 328 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `gameState` connect `gameState` to `DualStage.svelte`, `DialogueBox.svelte`, `ProtagonistCustomizerModal.svelte`, `PhoneShell.svelte`, `TitleScreen.svelte`, `CharacterProfileModal.svelte`, `narrative.schema.ts`?**
-  _High betweenness centrality (0.151) - this node is a cross-community bridge._
+- **Why does `gameState` connect `gameState` to `DualStage.svelte`, `lucide-svelte`, `ProtagonistCustomizerModal.svelte`, `PhoneShell.svelte`, `TitleScreen.svelte`, `CharacterProfileModal.svelte`, `audioManager`, `DialogueBox.svelte`?**
+  _High betweenness centrality (0.150) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _240 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _234 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `DualStage.svelte` be split into smaller, more focused modules?**
   _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
-- **Why does `lucide-svelte` connect `ProtagonistCustomizerModal.svelte` to `DualStage.svelte`, `DialogueBox.svelte`, `package.json`, `PhoneShell.svelte`, `TitleScreen.svelte`, `CharacterProfileModal.svelte`?**
-  _High betweenness centrality (0.091) - this node is a cross-community bridge._
-- **Should `DialogueBox.svelte` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
-- **Why does `audioManager` connect `audioManager` to `DualStage.svelte`, `DialogueBox.svelte`, `ProtagonistCustomizerModal.svelte`, `TitleScreen.svelte`, `CharacterProfileModal.svelte`?**
+- **Why does `lucide-svelte` connect `lucide-svelte` to `DualStage.svelte`, `package.json`, `ProtagonistCustomizerModal.svelte`, `PhoneShell.svelte`, `TitleScreen.svelte`, `CharacterProfileModal.svelte`, `audioManager`, `DialogueBox.svelte`?**
+  _High betweenness centrality (0.092) - this node is a cross-community bridge._
+- **Should `lucide-svelte` be split into smaller, more focused modules?**
+  _Cohesion score 0.11695906432748537 - nodes in this community are weakly interconnected._
+- **Why does `audioManager` connect `audioManager` to `DualStage.svelte`, `ProtagonistCustomizerModal.svelte`, `TitleScreen.svelte`, `CharacterProfileModal.svelte`, `DialogueBox.svelte`?**
   _High betweenness centrality (0.045) - this node is a cross-community bridge._
 - **Should `package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.07936507936507936 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05384615384615385 - nodes in this community are weakly interconnected._
