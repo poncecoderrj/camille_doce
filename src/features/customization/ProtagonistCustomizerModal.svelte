@@ -16,10 +16,11 @@
   let selectedOutfit = $state<OutfitId>(gameState.currentOutfit);
   let boyReactionTarget = $state<'dante' | 'lucas' | 'theo'>('lucas');
 
-  const boyProfiles = {
+  const boyProfiles: Record<string, { name: string; role: string; color: string; badgeClass: string; }> = {
     dante: { name: 'Dante', role: 'Guitarrista Rebelde', color: '#e11d48', badgeClass: 'bg-rose-500/10 text-rose-400 border-rose-500/30' },
     lucas: { name: 'Lucas', role: 'Presidente do Grêmio', color: '#2563eb', badgeClass: 'bg-blue-500/10 text-blue-400 border-blue-500/30' },
-    theo: { name: 'Theo', role: 'Artista Poético', color: '#059669', badgeClass: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' }
+    theo: { name: 'Theo', role: 'Artista Poético', color: '#059669', badgeClass: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' },
+    geral: { name: 'Todos', role: 'Equilibrado', color: '#f59e0b', badgeClass: 'bg-amber-500/10 text-amber-400 border-amber-500/30' }
   };
 
   let activeReactionText = $derived.by(() => {
@@ -31,7 +32,7 @@
     selectedOutfit = id;
     audioManager.playClick();
     const opt = OUTFIT_OPTIONS.find(o => o.id === id);
-    if (opt) {
+    if (opt && opt.affinityTarget !== 'geral') {
       boyReactionTarget = opt.affinityTarget;
     }
   }
@@ -40,7 +41,7 @@
     audioManager.playChoice();
     gameState.setOutfit(selectedOutfit);
     const opt = OUTFIT_OPTIONS.find(o => o.id === selectedOutfit);
-    if (opt) {
+    if (opt && opt.affinityTarget !== 'geral') {
       gameState.modifyAffinity(opt.affinityTarget, opt.affinityBonus);
     }
     handleClose();
@@ -103,6 +104,7 @@
           <ProtagonistActor 
             outfitId={selectedOutfit}
             scale={1.05}
+            framing="full"
           />
         </div>
 

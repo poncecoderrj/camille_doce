@@ -91,6 +91,17 @@ html, body {
   box-shadow: 0 0 25px -5px rgba(244, 63, 94, 0.35);
 }
 
+/* Animação de sacudir (atenção / erro de validação) */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+.animate-shake {
+  animation: shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
 /* Partículas flutuantes de pétalas/luz */
 @keyframes floatParticle {
   0% {
@@ -130,20 +141,20 @@ html, body {
   transform-origin: 50% 95%;
 }
 
-/* 1. Movimento Lateralizado: Raiva / Irritação / Agitação (Shake X) */
+/* 1. Movimento Lateralizado & Vertical: Raiva / Irritação / Agitação (Shake 2 a 3x no máximo, sem loop infinito) */
 @keyframes vnAngryShake {
-  0%, 100% { transform: translateX(0); }
-  12% { transform: translateX(-7px) rotate(-0.6deg); }
-  25% { transform: translateX(7px) rotate(0.6deg); }
-  37% { transform: translateX(-5px) rotate(-0.4deg); }
-  50% { transform: translateX(6px) rotate(0.4deg); }
-  62% { transform: translateX(-4px); }
-  75% { transform: translateX(3px); }
-  87% { transform: translateX(-1px); }
+  0% { transform: translate(0, 0); }
+  15% { transform: translate(-7px, -3px) rotate(-0.5deg); }
+  30% { transform: translate(7px, 2px) rotate(0.5deg); }
+  45% { transform: translate(-5px, 2px) rotate(-0.3deg); }
+  60% { transform: translate(5px, -2px) rotate(0.3deg); }
+  75% { transform: translate(-3px, 1px); }
+  90% { transform: translate(2px, -1px); }
+  100% { transform: translate(0, 0); }
 }
 
 .vn-angry-shake {
-  animation: vnAngryShake 0.65s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+  animation: vnAngryShake 0.25s cubic-bezier(0.36, 0.07, 0.19, 0.97) 3;
   transform-origin: 50% 95%;
 }
 

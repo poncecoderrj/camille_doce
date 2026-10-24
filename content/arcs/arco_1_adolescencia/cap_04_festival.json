@@ -1,0 +1,189 @@
+{
+  "id": "cap_04_festival",
+  "arc_id": "arco_1_adolescencia",
+  "title": "Capítulo 4: O Festival da Primavera & A Decisão",
+  "description": "O ápice do primeiro mês na Academia Lótus. As luzes e lanternas do Festival da Primavera, a decisão do coração e a conclusão triunfante do Arco 1.",
+  "initial_node_id": "c4_node_01_preparativos_festival",
+  "nodes": {
+    "c4_node_01_preparativos_festival": {
+      "id": "c4_node_01_preparativos_festival",
+      "speaker": "nina",
+      "speaker_name": "Nina",
+      "expression": "happy",
+      "text": "Amiga do céu, olha esse pátio! As lanternas douradas estão todas acesas e o perfume das cerejeiras tá surreal! A banda do Dante acabou de passar o som, o Lucas tá impecável fiscalizando o palco e o Theo fez uma galeria de quadros linda! Com quem você vai curtir o espetáculo dos fogos?",
+      "location": "Pátio Central",
+      "time_of_day": "entardecer",
+      "choices": [
+        {
+          "id": "c4_c01_escolha_dante",
+          "text": "Ir aos bastidores do palco encontrar Dante após o show.",
+          "tipo": "Prioridade",
+          "target_character": "dante",
+          "affinity_delta": 8,
+          "next_node_id": "c4_node_final_dante"
+        },
+        {
+          "id": "c4_c01_escolha_lucas",
+          "text": "Aceitar a mão de Lucas para uma dança sob a pérgula iluminada.",
+          "tipo": "Prioridade",
+          "target_character": "lucas",
+          "affinity_delta": 8,
+          "next_node_id": "c4_node_final_lucas"
+        },
+        {
+          "id": "c4_c01_escolha_theo",
+          "text": "Subir a colina arborizada para ver as estrelas ao lado de Theo.",
+          "tipo": "Prioridade",
+          "target_character": "theo",
+          "affinity_delta": 8,
+          "next_node_id": "c4_node_final_theo"
+        },
+        {
+          "id": "c4_c01_escolha_solo",
+          "text": "Puxar Nina pelo braço e celebrar a própria liberdade e amizade.",
+          "tipo": "Prioridade",
+          "target_character": "nina",
+          "affinity_delta": 8,
+          "next_node_id": "c4_node_final_solo"
+        }
+      ]
+    },
+    "c4_node_final_dante": {
+      "id": "c4_node_final_dante",
+      "speaker": "dante",
+      "speaker_name": "Dante",
+      "expression": "corado",
+      "text": "Você veio mesmo me ver... Achei que ia ficar no camarote dos almofadinhas. Escuta... Essa última música que eu toquei... eu compus pensando em você. Desde aquele primeiro dia que a gente se esbarrou no portão, nada soa do mesmo jeito na minha cabeça.",
+      "location": "Pátio Central",
+      "time_of_day": "noite",
+      "choices": [
+        {
+          "id": "c4_c02_dante_beijo",
+          "text": "Dar um passo à frente, segurar a jaqueta dele e selar esse sentimento com um beijo apaixonado.",
+          "tipo": "Sacrifício",
+          "affinity_delta": 10,
+          "target_character": "dante",
+          "unlock_memory_tag": "beijo_festival_dante",
+          "set_flags": { "rota_final_escolhida": "dante" },
+          "next_node_id": "c4_node_conclusao_arco1"
+        },
+        {
+          "id": "c4_c02_dante_abracar",
+          "text": "Envolver os braços ao redor dele com um sorriso radiante: 'Sua música é a minha favorita, Dante.'",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "affinity_delta": 8,
+          "target_character": "dante",
+          "set_flags": { "rota_final_escolhida": "dante" },
+          "next_node_id": "c4_node_conclusao_arco1"
+        }
+      ]
+    },
+    "c4_node_final_lucas": {
+      "id": "c4_node_final_lucas",
+      "speaker": "lucas",
+      "speaker_name": "Lucas",
+      "expression": "corado",
+      "text": "Pela primeira vez em três anos na Lótus, eu esqueci completamente os relatórios e as atas do Grêmio. Quando você sorriu para mim sob a luz das lanternas, eu compreendi que a ordem mais nobre do universo é a que nos aproxima de quem amamos.",
+      "location": "Pátio Central",
+      "time_of_day": "noite",
+      "choices": [
+        {
+          "id": "c4_c02_lucas_danca",
+          "text": "Apoiar a mão em seu peito e dançar sob a chuva de pétalas com um olhar apaixonado.",
+          "tipo": "Sacrifício",
+          "affinity_delta": 10,
+          "target_character": "lucas",
+          "unlock_memory_tag": "danca_festival_lucas",
+          "set_flags": { "rota_final_escolhida": "lucas" },
+          "next_node_id": "c4_node_conclusao_arco1"
+        },
+        {
+          "id": "c4_c02_lucas_palavras",
+          "text": "Apertar a mão dele com ternura: 'Você é admirável, Lucas. Estou muito feliz aqui ao seu lado.'",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "affinity_delta": 8,
+          "target_character": "lucas",
+          "set_flags": { "rota_final_escolhida": "lucas" },
+          "next_node_id": "c4_node_conclusao_arco1"
+        }
+      ]
+    },
+    "c4_node_final_theo": {
+      "id": "c4_node_final_theo",
+      "speaker": "theo",
+      "speaker_name": "Theo",
+      "expression": "corado",
+      "text": "Olhe... os fogos de artifício pintam o céu de cores que nenhuma aquarela minha jamais conseguiu reproduzir. Mas você... você trouxe luz para a minha vida quando tudo parecia sombra e silêncio. Eu fiz este retrato para você guardar para sempre.",
+      "location": "Estufa Antiga",
+      "time_of_day": "noite",
+      "choices": [
+        {
+          "id": "c4_c02_theo_beijo",
+          "text": "Acariciar o rosto dele com delicadeza e beijá-lo sob o clarão dourado dos fogos.",
+          "tipo": "Sacrifício",
+          "affinity_delta": 10,
+          "target_character": "theo",
+          "unlock_memory_tag": "retrato_festival_theo",
+          "set_flags": { "rota_final_escolhida": "theo" },
+          "next_node_id": "c4_node_conclusao_arco1"
+        },
+        {
+          "id": "c4_c02_theo_emocao",
+          "text": "Abraçar a tela pintada com os olhos marejados de felicidade: 'É o presente mais lindo que já recebi.'",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "affinity_delta": 8,
+          "target_character": "theo",
+          "set_flags": { "rota_final_escolhida": "theo" },
+          "next_node_id": "c4_node_conclusao_arco1"
+        }
+      ]
+    },
+    "c4_node_final_solo": {
+      "id": "c4_node_final_solo",
+      "speaker": "nina",
+      "speaker_name": "Nina",
+      "expression": "happy",
+      "text": "É isso aí, garota! Quem precisa de drama romântico quando se tem a melhor amiga e o futuro inteiro pela frente? Olha aquele céu! A Academia Lótus inteira é nossa para conquistar!",
+      "location": "Pátio Central",
+      "time_of_day": "noite",
+      "choices": [
+        {
+          "id": "c4_c02_solo_triunfo",
+          "text": "Erguer os copos de suco com Nina e brindar à liberdade, aos estudos e à amizade eterna.",
+          "tipo": "Revelação",
+          "affinity_delta": 10,
+          "target_character": "nina",
+          "unlock_memory_tag": "brinde_amizade_nina",
+          "set_flags": { "rota_final_escolhida": "solo" },
+          "next_node_id": "c4_node_conclusao_arco1"
+        }
+      ]
+    },
+    "c4_node_conclusao_arco1": {
+      "id": "c4_node_conclusao_arco1",
+      "speaker": "narrador",
+      "expression": "neutral",
+      "text": "O soar festivo dos sinos da torre encerra a noite do Festival da Primavera. Seu primeiro mês na Academia Lótus foi repleto de escolhas, coragem e memórias inesquecíveis. O Arco 1 (Adolescência) está oficialmente concluído! Parabéns por trilhar essa jornada com autenticidade.",
+      "location": "Pátio Central",
+      "time_of_day": "noite",
+      "choices": [
+        {
+          "id": "c4_c03_concluir_permanecer",
+          "text": "Abrir o Celular para rever as memórias afetivas desbloqueadas e mensagens.",
+          "tipo": "Ação",
+          "set_flags": { "arco_1_concluido": true, "capitulo_04_terminado": true },
+          "next_node_id": "c4_node_conclusao_arco1"
+        },
+        {
+          "id": "c4_c03_recomecar",
+          "text": "Voltar ao Início da História para explorar outras rotas e decisões.",
+          "tipo": "Ação",
+          "next_node_id": "node_00_despertador"
+        }
+      ]
+    }
+  }
+}

@@ -25,7 +25,8 @@
     Plus,
     X,
     Sun,
-    Moon
+    Moon,
+    Smartphone
   } from 'lucide-svelte';
 
   interface Props {
@@ -55,6 +56,7 @@
   };
 
   let activeWallpaper = $derived(wallpapers[gameState.phoneWallpaper] || wallpapers.cherry_sunset);
+  let isWhatsAppScreen = $derived(gameState.phoneActiveScreen === 'chat_room' || gameState.phoneActiveScreen === 'whatsapp');
 
   // Lista de Contatos dos Garotos e Amigos
   const contacts = [
@@ -94,51 +96,56 @@
       role: 'Melhor Amiga',
       status: 'Me liga se for babado do novo ano!',
       onlineStatus: 'Online',
-      color: 'bg-purple-600',
+      color: 'bg-pink-600',
       phone: '+55 (11) 96214-5582',
       avatarText: 'N'
+    },
+    {
+      id: 'caio',
+      name: 'Caio',
+      role: 'Baterista da Banda',
+      status: 'Batendo baqueta até quebrar 🥁',
+      onlineStatus: 'Online',
+      color: 'bg-orange-600',
+      phone: '+55 (11) 98112-9934',
+      avatarText: 'C'
+    },
+    {
+      id: 'melissa',
+      name: 'Melissa Prado',
+      role: 'Vice-Presidente do Grêmio',
+      status: 'Assuntos oficiais via protocolo.',
+      onlineStatus: 'Visto por último 13:40',
+      color: 'bg-sky-600',
+      phone: '+55 (11) 97321-4402',
+      avatarText: 'M'
+    },
+    {
+      id: 'ravi',
+      name: 'Ravi',
+      role: 'Monitor de Botânica',
+      status: 'Respire fundo. A terra ensina tudo 🌿',
+      onlineStatus: 'Online',
+      color: 'bg-teal-600',
+      phone: '+55 (11) 96450-8812',
+      avatarText: 'R'
+    },
+    {
+      id: 'mara',
+      name: 'Sra. Mara',
+      role: 'Biblioteca Histórica',
+      status: 'O silêncio é o templo das palavras.',
+      onlineStatus: 'Visto às 18:00',
+      color: 'bg-violet-600',
+      phone: '+55 (11) 95530-1010',
+      avatarText: 'M'
     }
   ];
 
-  // Histórico do WhatsApp (Com mensagens de texto e áudio simulado)
-  const chatLogs: Record<string, Array<{ from: 'them' | 'me'; text?: string; isAudio?: boolean; audioDuration?: string; time: string }>> = {
-    dante: [
-      { from: 'them', text: 'Ei, você sobreviveu ao portão?', time: '07:44' },
-      { from: 'them', isAudio: true, audioDuration: '0:14', time: '07:45' },
-      { from: 'them', text: 'Se a diretora Helena te perguntar, fala que não me viu passando.', time: '07:45' }
-    ],
-    lucas: [
-      { from: 'them', text: 'Sua guia provisória foi autenticada no sistema da escola.', time: '07:50' },
-      { from: 'them', text: 'Lembre-se: o toque para recolher nos armários é rigorosamente às 08:00.', time: '07:51' }
-    ],
-    theo: [
-      { from: 'them', text: 'O reflexo do vitral do terceiro andar hoje está deslumbrante.', time: '07:30' }
-    ],
-    nina: [
-      { from: 'them', text: 'AMIGA você já viu o presidente do grêmio?! Ele parece um modelo de óculos kkkk', time: '07:48' }
-    ]
-  };
-
-  // Sugestões de Respostas Rápidas Interativas para o Chat do WhatsApp
-  const chatQuickReplies: Record<string, string[]> = {
-    dante: [
-      'Sobrevivi... mas quase quebrei a cara no portão 😅',
-      'Pode deixar, se me perguntarem não vi ninguém.',
-      'Você sempre corre assim pelos corredores?'
-    ],
-    lucas: [
-      'Muito obrigada, Lucas! Protocolo anotado.',
-      'Obrigada pelo aviso sobre o horário dos armários.'
-    ],
-    theo: [
-      'Os vitrais são deslumbrantes mesmo...',
-      'Você passa muito tempo no ateliê?'
-    ],
-    nina: [
-      'Menina, você não tem noção de quem eu já esbarrei!',
-      'Me encontra no intervalo pra fofocar!'
-    ]
-  };
+  // Contagem dinâmica de notificações não lidas no WhatsApp
+  let unreadZapCount = $derived.by(() => {
+    return Object.keys(gameState.whatsappPendingReplies).length + (gameState.unreadNotification ? 1 : 0);
+  });
 
   // LótusGram Posts e Stories
   const stories = [
@@ -218,6 +225,28 @@
     backupFeedback = true;
     setTimeout(() => backupFeedback = false, 2500);
   }
+
+  // Auto-scroll do WhatsApp para nova mensagem e divisor não lido
+  let chatScrollContainer = $state<HTMLDivElement | null>(null);
+
+  $effect(() => {
+    if (gameState.phoneActiveScreen === 'chat_room' && chatScrollContainer) {
+      const _target = gameState.activeChatTarget;
+      const _msgs = gameState.whatsappChats[_target];
+      const _replies = gameState.whatsappPendingReplies[_target];
+      const _typing = gameState.whatsappTyping[_target];
+      setTimeout(() => {
+        if (chatScrollContainer) {
+          const unreadElement = chatScrollContainer.querySelector('.unread-separator');
+          if (unreadElement) {
+            unreadElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            chatScrollContainer.scrollTop = chatScrollContainer.scrollHeight;
+          }
+        }
+      }, 60);
+    }
+  });
 </script>
 
 <!-- CHASSIS FÍSICO DO SMARTPHONE ESTILO GTA V (TITÂNIO PREMIUM) -->
@@ -233,13 +262,15 @@
   <!-- TELA OLED RETINA -->
   <div 
     class="relative w-full h-full rounded-[40px] overflow-hidden flex flex-col justify-between border border-black/40 text-white font-sans-ui"
-    style="background: {activeWallpaper.bg};"
+    style="background: {isWhatsAppScreen ? '#0b141a' : activeWallpaper.bg};"
   >
-    <!-- OVERLAY ESCURO PARA LEGIBILIDADE -->
-    <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px] pointer-events-none"></div>
+    <!-- OVERLAY ESCURO PARA LEGIBILIDADE (APENAS NA TELA INICIAL/OUTROS APPS) -->
+    {#if !isWhatsAppScreen}
+      <div class="absolute inset-0 bg-black/40 backdrop-blur-[2px] pointer-events-none"></div>
+    {/if}
 
     <!-- DYNAMIC ISLAND (PÍLULA DE SENSORES NO TOPO) -->
-    <div class="relative z-30 pt-3 pb-1 px-6 flex items-center justify-between text-[11px] font-semibold text-zinc-100">
+    <div class="relative z-30 pt-3 pb-1.5 px-6 flex items-center justify-between text-[11px] font-semibold transition-colors duration-200 {isWhatsAppScreen ? 'bg-[#1f2c34] text-zinc-100 border-b border-[#2a3942]/40' : 'text-zinc-100'}">
       <span>07:55</span>
 
       <!-- Dynamic Island Central -->
@@ -250,7 +281,9 @@
 
       <div class="flex items-center gap-1.5 text-zinc-200">
         {#if gameState.isHotspotOn}
-          <Radio class="w-3.5 h-3.5 text-emerald-400 animate-pulse" title="Roteador Wi-Fi Ativo" />
+          <span title="Roteador Wi-Fi Ativo">
+            <Radio class="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+          </span>
         {/if}
         <Wifi class="w-3.5 h-3.5" />
         <Battery class="w-4 h-4 text-emerald-400" />
@@ -270,7 +303,7 @@
           </div>
         </div>
         <button 
-          onclick={() => gameState.openPhoneApp('chat_room', 'dante')}
+          onclick={() => gameState.openPhoneApp('chat_room', gameState.activeChatTarget || 'nina')}
           class="px-2 py-1 rounded-lg bg-emerald-600 text-[10px] font-bold text-white uppercase hover:bg-emerald-500"
         >
           Ver
@@ -279,7 +312,7 @@
     {/if}
 
     <!-- ================= CONTEÚDO DA TELA ================= -->
-    <div class="relative z-20 flex-1 overflow-y-auto px-3.5 py-2.5 custom-scrollbar flex flex-col justify-between">
+    <div class="relative z-20 flex-1 overflow-y-auto {isWhatsAppScreen ? 'p-0' : 'px-3.5 py-2.5'} custom-scrollbar flex flex-col justify-between {isWhatsAppScreen ? 'bg-[#0b141a]' : ''}">
       
       <!-- 1. TELA INICIAL (HOME GRID ESTILO GTA V / IOS) -->
       {#if gameState.phoneActiveScreen === 'home'}
@@ -301,9 +334,11 @@
             >
               <div class="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
                 <MessageSquare class="w-6 h-6 text-white" />
-                <span class="absolute -top-1 -right-1 w-4 h-4 bg-rose-500 rounded-full text-[9px] font-bold flex items-center justify-center text-white border-2 border-zinc-900 shadow">
-                  1
-                </span>
+                {#if unreadZapCount > 0}
+                  <span class="absolute -top-1 -right-1 w-4 h-4 bg-rose-500 rounded-full text-[9px] font-bold flex items-center justify-center text-white border-2 border-zinc-900 shadow">
+                    {unreadZapCount}
+                  </span>
+                {/if}
               </div>
               <span class="text-[10px] font-medium text-white drop-shadow">WhatsApp</span>
             </button>
@@ -391,133 +426,264 @@
           </div>
         </div>
 
-      <!-- 2. APP: WHATSAPP -->
+      <!-- 2. APP: WHATSAPP (MENSAGENS CHEGAM CONFORME O JOGO AVANÇA) -->
       {:else if gameState.phoneActiveScreen === 'whatsapp'}
-        <div class="flex flex-col gap-2.5">
-          <!-- Cabeçalho WhatsApp Verde Clássico -->
-          <div class="flex items-center justify-between pb-2 border-b border-emerald-600/40 bg-emerald-900/60 -mx-3.5 -mt-2.5 px-4 pt-3">
+        {@const activeContacts = contacts.filter(c => gameState.whatsappChats[c.id] && gameState.whatsappChats[c.id].length > 0)}
+        <div class="flex flex-col h-full bg-[#0b141a]">
+          <!-- Cabeçalho WhatsApp Verde Clássico Full-Bleed -->
+          <div class="flex items-center justify-between px-4 py-3 bg-[#1f2c34] border-b border-[#2a3942] shrink-0 shadow-md">
             <h2 class="text-sm font-bold text-white tracking-wide">WhatsApp</h2>
-            <span class="text-[10px] text-emerald-200">Conversas</span>
+            <span class="text-[11px] font-semibold text-[#00a884]">Conversas ({activeContacts.length})</span>
           </div>
 
-          <div class="flex flex-col gap-1.5 mt-1">
-            {#each contacts as c}
-              <button 
-                onclick={() => gameState.openPhoneApp('chat_room', c.id)}
-                class="w-full p-2.5 rounded-2xl bg-black/60 hover:bg-black/80 border border-white/8 backdrop-blur-md flex items-center justify-between text-left transition-all active:scale-[0.98]"
-              >
-                <div class="flex items-center gap-2.5">
-                  <div class="w-10 h-10 rounded-full {c.color} flex items-center justify-center font-bold text-white text-xs shadow">
-                    {c.avatarText}
-                  </div>
-                  <div>
-                    <h3 class="text-xs font-bold text-white">{c.name}</h3>
-                    <p class="text-[11px] text-zinc-300 truncate max-w-[150px]">
-                      {(chatLogs[c.id] && chatLogs[c.id][chatLogs[c.id].length - 1]?.text) || '🎵 Mensagem de voz (0:14)'}
-                    </p>
-                  </div>
-                </div>
-
-                <div class="flex flex-col items-end gap-1">
-                  <span class="text-[9px] text-zinc-400">07:50</span>
-                  <div class="flex items-center gap-1 text-[10px] text-emerald-400">
-                    <CheckCheck class="w-3.5 h-3.5" />
-                  </div>
-                </div>
-              </button>
-            {/each}
-          </div>
-        </div>
-
-      <!-- 3. APP: CHAT ROOM DO WHATSAPP (COM ÁUDIO E DIÁLOGO) -->
-      {:else if gameState.phoneActiveScreen === 'chat_room'}
-        {@const char = contacts.find(c => c.id === gameState.activeChatTarget) || contacts[0]}
-        <div class="flex flex-col justify-between h-full gap-2 -mx-2 -my-1">
-          <!-- Topo da Conversa -->
-          <div class="flex items-center justify-between px-3 py-2 bg-emerald-950/80 border-b border-emerald-800/40">
-            <div class="flex items-center gap-2">
-              <button onclick={() => gameState.phoneActiveScreen = 'whatsapp'} class="p-1 text-zinc-300 hover:text-white">
-                <ChevronLeft class="w-5 h-5" />
-              </button>
-              <div class="w-8 h-8 rounded-full {char.color} flex items-center justify-center text-xs font-bold text-white">
-                {char.avatarText}
+          {#if activeContacts.length === 0}
+            <!-- Estado Inicial Zerado Sem Mensagens -->
+            <div class="flex-1 flex flex-col items-center justify-center p-6 text-center text-zinc-300 gap-3">
+              <div class="w-14 h-14 rounded-3xl bg-[#1f2c34] border border-[#00a884]/40 flex items-center justify-center text-[#00a884] shadow-lg">
+                <MessageSquare class="w-7 h-7" />
               </div>
               <div>
-                <h4 class="font-bold text-xs text-white">{char.name}</h4>
-                <p class="text-[9px] text-emerald-300">{char.onlineStatus}</p>
+                <h3 class="text-xs font-bold text-white">Nenhuma conversa ativa</h3>
+                <p class="text-[11px] text-[#8696a0] mt-1 max-w-[210px] leading-relaxed">
+                  Suas mensagens com amigos e colegas da Academia Lótus chegarão aqui conforme a história avança.
+                </p>
               </div>
             </div>
-            <Phone class="w-4 h-4 text-emerald-300 opacity-80" />
-          </div>
-
-          <!-- Balões de Mensagem -->
-          <div class="flex-1 flex flex-col gap-2 overflow-y-auto px-3 py-1">
-            {#each (chatLogs[gameState.activeChatTarget] || []) as msg}
-              <div class="flex {msg.from === 'me' ? 'justify-end' : 'justify-start'}">
-                <div class="max-w-[85%] rounded-2xl px-3 py-2 text-xs {msg.from === 'me' ? 'bg-emerald-700 text-white rounded-br-none' : 'bg-[#1f2c34] text-zinc-100 rounded-bl-none border border-white/10'} shadow-md">
-                  {#if msg.isAudio}
-                    <!-- Áudio do WhatsApp com Play/Pause -->
-                    <div class="flex items-center gap-2.5 py-0.5">
-                      <button 
-                        onclick={toggleAudioPlay}
-                        class="w-7 h-7 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center transition-colors"
-                      >
-                        {#if isPlayingAudio}
-                          <Pause class="w-3.5 h-3.5" />
-                        {:else}
-                          <Play class="w-3.5 h-3.5 ml-0.5" />
-                        {/if}
-                      </button>
-                      <div class="flex-1 flex flex-col gap-1">
-                        <div class="w-24 h-1.5 bg-zinc-600 rounded-full overflow-hidden">
-                          <div class="h-full bg-emerald-400 {isPlayingAudio ? 'w-full animate-pulse' : 'w-1/3'}"></div>
-                        </div>
-                        <span class="text-[9px] text-zinc-300">{msg.audioDuration}</span>
-                      </div>
-                    </div>
-                  {:else}
-                    <p>{msg.text}</p>
-                  {/if}
-                  <span class="block text-[8px] opacity-60 text-right mt-1">{msg.time}</span>
-                </div>
-              </div>
-            {/each}
-
-            <!-- Respostas Enviadas Interativamente pelo Jogador -->
-            {#each (gameState.customChatReplies[gameState.activeChatTarget] || []) as customMsg}
-              <div class="flex justify-end">
-                <div class="max-w-[85%] rounded-2xl px-3 py-2 text-xs bg-emerald-700 text-white rounded-br-none shadow-md">
-                  <p>{customMsg.text}</p>
-                  <div class="flex items-center justify-end gap-1 mt-1">
-                    <span class="text-[8px] opacity-75">{customMsg.time}</span>
-                    <CheckCheck class="w-3 h-3 text-emerald-300" />
-                  </div>
-                </div>
-              </div>
-            {/each}
-          </div>
-
-          <!-- BARRA INTERATIVA DE RESPOSTAS DO WHATSAPP (AÇÃO DIRETA DO JOGADOR) -->
-          <div class="p-2.5 bg-black/80 border-t border-white/10 flex flex-col gap-1.5 shrink-0">
-            <span class="text-[9px] text-emerald-400 font-semibold uppercase tracking-wider flex items-center gap-1">
-              <Send class="w-2.5 h-2.5" />
-              <span>Toque para responder {char.name}:</span>
-            </span>
-            <div class="flex flex-col gap-1 max-h-24 overflow-y-auto custom-scrollbar">
-              {#each (chatQuickReplies[gameState.activeChatTarget] || ['Recebido!', 'Nos vemos depois!']) as reply}
+          {:else}
+            <!-- Lista de Conversas Ativas que já Enviaram Mensagem -->
+            <div class="flex flex-col overflow-y-auto custom-scrollbar flex-1 p-2 gap-1.5">
+              {#each activeContacts as c}
+                {@const msgs = gameState.whatsappChats[c.id] || []}
+                {@const lastMsg = msgs[msgs.length - 1]}
+                {@const hasPending = (gameState.whatsappPendingReplies[c.id] || []).length > 0}
+                {@const hasUnread = msgs.some(m => m.unread)}
+                {@const unreadCount = msgs.filter(m => m.unread).length || (hasPending ? 1 : 0)}
                 <button 
-                  onclick={() => gameState.sendChatMessage(gameState.activeChatTarget, reply)}
-                  class="text-left text-[11px] px-2.5 py-1.5 rounded-xl bg-emerald-950/80 hover:bg-emerald-900 border border-emerald-600/40 text-emerald-100 transition-all active:scale-[0.98] flex items-center justify-between group"
+                  onclick={() => gameState.openPhoneApp('chat_room', c.id)}
+                  class="w-full p-3 rounded-2xl bg-[#1f2c34] hover:bg-[#2a3942] border {hasPending || hasUnread ? 'border-[#00a884]/70 shadow-sm shadow-[#00a884]/20 ring-1 ring-[#00a884]/50' : 'border-white/5'} backdrop-blur-md flex items-center justify-between text-left transition-all active:scale-[0.98]"
                 >
-                  <span class="leading-tight">{reply}</span>
-                  <Send class="w-3 h-3 text-emerald-400 opacity-60 group-hover:opacity-100 shrink-0 ml-1.5 transition-opacity" />
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full {c.color} flex items-center justify-center font-bold text-white text-xs shadow-inner shrink-0">
+                      {c.avatarText}
+                    </div>
+                    <div class="min-w-0">
+                      <div class="flex items-center gap-1.5">
+                        <h3 class="text-xs font-bold text-white">{c.name}</h3>
+                        {#if hasPending || hasUnread}
+                          <span class="w-2 h-2 rounded-full bg-[#00a884] animate-pulse"></span>
+                        {/if}
+                      </div>
+                      <p class="text-[11px] text-[#8696a0] truncate max-w-[150px]">
+                        {lastMsg?.text || (lastMsg?.isAudio ? '🎵 Mensagem de voz' : '...')}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col items-end gap-1 shrink-0">
+                    <span class="text-[10px] text-[#8696a0]">{lastMsg?.time || '07:45'}</span>
+                    <div class="flex items-center gap-1 text-[10px] text-[#00a884]">
+                      {#if lastMsg?.from === 'me'}
+                        <CheckCheck class="w-3.5 h-3.5 text-[#53bdeb]" />
+                      {:else if hasPending || hasUnread}
+                        <span class="px-1.5 py-0.2 rounded-full bg-[#00a884] text-white text-[9px] font-bold">
+                          {unreadCount}
+                        </span>
+                      {/if}
+                    </div>
+                  </div>
                 </button>
               {/each}
             </div>
-          </div>
+          {/if}
         </div>
 
-      <!-- 4. APP: CONTATOS -->
+      <!-- 3. APP: CHAT ROOM DO WHATSAPP (MENSAGENS + ESCOLHAS DE RESPOSTA + IGNORAR) -->
+      {:else if gameState.phoneActiveScreen === 'chat_room'}
+        {@const char = contacts.find(c => c.id === gameState.activeChatTarget) || contacts[0]}
+        {@const msgs = gameState.whatsappChats[gameState.activeChatTarget] || []}
+        {@const pendingReplies = gameState.whatsappPendingReplies[gameState.activeChatTarget] || []}
+
+        <div class="flex flex-col justify-between h-full bg-[#0b141a]">
+          <!-- Topo da Conversa WhatsApp Full-Bleed (Sem margens vermelhas) -->
+          <div class="flex items-center justify-between px-3.5 py-2.5 bg-[#1f2c34] border-b border-[#2a3942] shrink-0 z-10 shadow-md">
+            <div class="flex items-center gap-2.5">
+              <button 
+                onclick={() => gameState.phoneActiveScreen = 'whatsapp'} 
+                class="p-1 -ml-1 text-[#00a884] hover:text-[#25d366] transition-colors flex items-center" 
+                title="Voltar às conversas"
+              >
+                <ChevronLeft class="w-5 h-5" />
+              </button>
+              <div class="w-9 h-9 rounded-full {char.color} flex items-center justify-center text-sm font-bold text-white shadow-inner shrink-0">
+                {char.avatarText}
+              </div>
+              <div class="flex flex-col">
+                <h4 class="font-bold text-xs text-white leading-tight">{char.name}</h4>
+                <p class="text-[10px] text-[#00a884] font-medium leading-tight">
+                  {gameState.whatsappTyping[char.id] ? 'digitando...' : char.onlineStatus}
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3 text-[#00a884]">
+              <Phone class="w-4 h-4 cursor-pointer hover:text-[#25d366] transition-colors" />
+            </div>
+          </div>
+
+          <!-- Balões de Mensagem -->
+          <div 
+            bind:this={chatScrollContainer}
+            class="flex-1 flex flex-col gap-2.5 overflow-y-auto px-3.5 py-3 custom-scrollbar bg-[#0b141a]"
+          >
+            {#if msgs.length === 0}
+              <div class="flex flex-col items-center justify-center h-full text-zinc-400 text-center gap-1.5 py-12">
+                <p class="text-xs">Nenhuma mensagem com {char.name} ainda.</p>
+                <p class="text-[10px] text-[#8696a0]">As conversas surgirão durante os diálogos da história.</p>
+              </div>
+            {:else}
+              {#each msgs as msg, idx}
+                <!-- Separador Visual de "Mensagens não lidas" (padrão WhatsApp Oficial) -->
+                {#if msg.unread && (!msgs[idx - 1] || !msgs[idx - 1].unread)}
+                  <div class="unread-separator flex items-center justify-center my-2 select-none animate-in fade-in">
+                    <div class="h-[1px] bg-[#2a3942] flex-1"></div>
+                    <div class="mx-2.5 px-3 py-0.5 rounded-full bg-[#182229] border border-[#00a884]/40 text-[#00a884] text-[10px] font-semibold tracking-wider uppercase shadow-sm flex items-center gap-1.5">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#00a884] animate-pulse"></span>
+                      <span>Mensagens não lidas</span>
+                    </div>
+                    <div class="h-[1px] bg-[#2a3942] flex-1"></div>
+                  </div>
+                {/if}
+
+                <div class="flex {msg.from === 'me' ? 'justify-end' : 'justify-start'}">
+                  <div class="max-w-[85%] rounded-2xl px-3.5 py-2 text-xs shadow-md {msg.from === 'me' ? 'bg-[#005c4b] text-white rounded-br-none' : 'bg-[#202c33] text-[#e9edef] rounded-bl-none border border-white/5'}">
+                    {#if msg.isAudio}
+                      <!-- Áudio do WhatsApp com Play/Pause -->
+                      <div class="flex items-center gap-2.5 py-0.5">
+                        <button 
+                          onclick={toggleAudioPlay}
+                          class="w-7 h-7 rounded-full bg-[#00a884] hover:bg-[#25d366] text-white flex items-center justify-center transition-colors"
+                        >
+                          {#if isPlayingAudio}
+                            <Pause class="w-3.5 h-3.5" />
+                          {:else}
+                            <Play class="w-3.5 h-3.5 ml-0.5" />
+                          {/if}
+                        </button>
+                        <div class="flex-1 flex flex-col gap-1">
+                          <div class="w-24 h-1.5 bg-zinc-600 rounded-full overflow-hidden">
+                            <div class="h-full bg-[#00a884] {isPlayingAudio ? 'w-full animate-pulse' : 'w-1/3'}"></div>
+                          </div>
+                          <span class="text-[9px] text-zinc-300">{msg.audioDuration || '0:15'}</span>
+                        </div>
+                      </div>
+                    {:else}
+                      <p class="leading-relaxed font-sans-ui">{msg.text}</p>
+                    {/if}
+                    <div class="flex items-center justify-end gap-1 mt-1 opacity-70">
+                      <span class="text-[8px] text-[#8696a0]">{msg.time}</span>
+                      {#if msg.from === 'me'}
+                        <CheckCheck class="w-3.5 h-3.5 text-[#53bdeb]" />
+                      {/if}
+                    </div>
+                  </div>
+                </div>
+              {/each}
+            {/if}
+
+            <!-- Balão de Digitando do NPC -->
+            {#if gameState.whatsappTyping[char.id]}
+              <div class="flex justify-start animate-fade-in">
+                <div class="rounded-2xl rounded-bl-none px-3.5 py-2.5 bg-[#202c33] text-[#00a884] flex items-center gap-1.5 shadow-md border border-white/5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#00a884] animate-bounce"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#00a884] animate-bounce [animation-delay:0.2s]"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-[#00a884] animate-bounce [animation-delay:0.4s]"></span>
+                </div>
+              </div>
+            {/if}
+          </div>
+
+          <!-- BARRA INTERATIVA DE ESCOLHA DE RESPOSTAS (SUPER NÍTIDA, ALTO CONTRASTE E MODERNA) -->
+          {#if pendingReplies.length > 0}
+            <div class="p-3 bg-[#111b21] border-t border-[#222e35] flex flex-col gap-2 shrink-0 shadow-2xl">
+              <div class="flex items-center justify-between px-0.5">
+                <span class="text-[11px] font-bold text-[#00a884] uppercase tracking-wider flex items-center gap-1.5">
+                  <Send class="w-3 h-3 text-[#00a884]" />
+                  <span>Como responder {char.name}:</span>
+                </span>
+                <span class="text-[9px] text-[#8696a0]">Selecione uma resposta</span>
+              </div>
+
+              <div class="flex flex-col gap-2 max-h-44 overflow-y-auto custom-scrollbar pr-0.5">
+                {#each pendingReplies as reply}
+                  <button 
+                    onclick={() => gameState.sendWhatsAppReply(gameState.activeChatTarget, reply)}
+                    class="group relative text-left p-3 rounded-2xl bg-[#202c33] hover:bg-[#2a3942] border-2 border-[#00a884]/60 hover:border-[#00a884] text-white transition-all duration-200 active:scale-[0.98] shadow-md flex items-center justify-between gap-2.5"
+                  >
+                    <div class="flex flex-col gap-1 min-w-0 flex-1">
+                      <!-- TONE TAG COM ALTO CONTRASTE E DESTAQUE -->
+                      <div>
+                        <span class="inline-block px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-[#00a884]/20 border border-[#00a884]/60 text-[#25d366]">
+                          [{reply.toneTag}]
+                        </span>
+                      </div>
+                      <!-- TEXTO DA RESPOSTA CLARO, NÍTIDO E BRANCO -->
+                      <p class="text-white text-[12px] sm:text-[13px] font-medium leading-snug tracking-normal">
+                        {reply.text}
+                      </p>
+                    </div>
+
+                    <!-- BOTÃO DE ENVIAR VERDE WHATSAPP VIBRANTE -->
+                    <div class="w-8 h-8 rounded-full bg-[#00a884] group-hover:bg-[#25d366] text-white flex items-center justify-center shrink-0 shadow-md transition-transform group-hover:scale-110">
+                      <Send class="w-3.5 h-3.5 fill-white text-white ml-0.5" />
+                    </div>
+                  </button>
+                {/each}
+              </div>
+
+              <!-- BOTÃO RESPONDER MAIS TARDE DISCRETO E LEGÍVEL -->
+              <button 
+                onclick={() => gameState.isPhoneRaised = false}
+                class="w-full mt-0.5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 hover:text-white text-[11px] font-semibold transition-all text-center"
+                title="Fechar o telefone e responder mais tarde"
+              >
+                Responder mais tarde (Fechar celular)
+              </button>
+            </div>
+          {:else}
+            <!-- Experiência de Guardar Celular: Quando o NPC não for falar mais nada -->
+            <div class="p-3 bg-[#111b21] border-t border-[#222e35] flex flex-col gap-2 shrink-0 shadow-lg">
+              {#if gameState.whatsappTyping[char.id]}
+                <div class="flex items-center gap-2 text-[#00a884] py-1">
+                  <div class="flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#00a884] animate-bounce"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#00a884] animate-bounce [animation-delay:0.2s]"></span>
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#00a884] animate-bounce [animation-delay:0.4s]"></span>
+                  </div>
+                  <span class="text-xs font-semibold">{char.name} está digitando...</span>
+                </div>
+              {:else}
+                <div class="w-full flex flex-col gap-2">
+                  <div class="flex items-center justify-between text-[11px] text-[#8696a0]">
+                    <span class="flex items-center gap-1.5">
+                      <Check class="w-3.5 h-3.5 text-[#00a884]" />
+                      <span class="text-zinc-300 font-medium">Conversa encerrada</span>
+                    </span>
+                    <span class="text-[10px] text-zinc-500 italic">Guardando telefone...</span>
+                  </div>
+                  <button 
+                    onclick={() => gameState.isPhoneRaised = false}
+                    class="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-cinzel font-bold text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 active:scale-95 transition-all"
+                    title="Guardar o celular e continuar o jogo"
+                  >
+                    <Smartphone class="w-3.5 h-3.5 text-white" />
+                    <span>Guardar Celular</span>
+                  </button>
+                </div>
+              {/if}
+            </div>
+          {/if}
+        </div>
+
+            <!-- 4. APP: CONTATOS -->
       {:else if gameState.phoneActiveScreen === 'contacts'}
         <div class="flex flex-col gap-3">
           <div class="pb-2 border-b border-white/10">
@@ -767,7 +933,7 @@
     </div>
 
     <!-- BARRA INFERIOR DE NAVEGAÇÃO FÍSICA (HOME BAR DO IPHONE) -->
-    <div class="relative z-30 pb-3 pt-1 flex flex-col items-center justify-center">
+    <div class="relative z-30 pb-3 pt-1 flex flex-col items-center justify-center transition-colors duration-200 {isWhatsAppScreen ? 'bg-[#111b21]' : ''}">
       <button 
         onclick={() => gameState.pressPhoneHome()} 
         title="Voltar à Tela Inicial de Aplicativos"

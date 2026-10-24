@@ -1,0 +1,1397 @@
+<main class="max-w-7xl mx-auto p-4 sm:p-8 space-y-8">
+
+    <!-- ================================================================= -->
+    <!-- ABA 1: GRAFO DE POSSIBILIDADES & SIMULADOR DE ESCOLHAS -->
+    <!-- ================================================================= -->
+    <section id="sec-grafo" class="space-y-6 hidden">
+      
+      <!-- CARD DE INTRODUÇÃO DA ARQUITETURA DE GRAFO -->
+      <div class="p-6 rounded-3xl bg-gradient-to-r from-[#141624] via-[#10121d] to-[#141624] border border-amber-500/20 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 max-w-3xl">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-cinzel font-bold">
+            <span>⚡ Topologia Diamante-Colar (Diamond-Hub Architecture)</span>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-cinzel font-black text-white">
+            Garantia Matemática de "Zero Pontas Soltas"
+          </h2>
+          <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+            Para garantir que cada escolha importe profundamente sem que a árvore exploda exponencialmente em becos sem saída, utilizamos a arquitetura de <strong>Nós Hub de Reconvergência</strong>. As escolhas abrem ramificações exclusivas de diálogo, reações de WhatsApp e afinidades, e depois reconvergem organicamente nos grandes eventos da Academia (Aulas, Festival, Queda de Luz), onde os personagens reagem diretamente à forma como foram tratados.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 text-center shrink-0 w-full md:w-auto">
+          <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10">
+            <span class="text-2xl font-cinzel font-black text-amber-400">142</span>
+            <p class="text-[10px] text-zinc-400 uppercase font-cinzel font-bold mt-0.5">Nós Narrativos</p>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10">
+            <span class="text-2xl font-cinzel font-black text-rose-400">328</span>
+            <p class="text-[10px] text-zinc-400 uppercase font-cinzel font-bold mt-0.5">Escolhas Únicas</p>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10">
+            <span class="text-2xl font-cinzel font-black text-blue-400">4</span>
+            <p class="text-[10px] text-zinc-400 uppercase font-cinzel font-bold mt-0.5">Rotas Principais</p>
+          </div>
+          <div class="p-3.5 rounded-2xl bg-black/40 border border-white/10">
+            <span class="text-2xl font-cinzel font-black text-emerald-400">~120 min</span>
+            <p class="text-[10px] text-zinc-400 uppercase font-cinzel font-bold mt-0.5">Gameplay Estimada</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- VISUALIZADOR INTERATIVO DO FLUXO DO GRAFO -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- COLUNA DA ESQUERDA: NÓS E ETAPAS DO GRAFO -->
+        <div class="lg:col-span-2 p-5 rounded-3xl bg-[#0e101a] border border-white/10 flex flex-col gap-4">
+          <div class="flex items-center justify-between pb-3 border-b border-white/10">
+            <h3 class="text-sm font-cinzel font-bold text-amber-300 flex items-center gap-2">
+              <span>🗺️ Mapa Interativo de Nós (Clique para Inspecionar)</span>
+            </h3>
+            <span class="text-[10px] text-zinc-400 font-sans">Selecione um bloco para ver ramificações</span>
+          </div>
+
+          <!-- DIAGRAMA VISUAL COM BLOCOS CONECTADOS -->
+          <div class="space-y-4 max-h-[560px] overflow-y-auto custom-scroll pr-2">
+            
+            <!-- CAPÍTULO 0 -->
+            <div class="p-4 rounded-2xl border border-amber-500/40 bg-amber-950/15 hover:bg-amber-950/25 transition cursor-pointer" onclick="inspectNode('cap0')">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-cinzel font-bold text-amber-400">CAPÍTULO 0 • O DESPERTAR &amp; OS PORTÕES DE FERRO</span>
+                <span class="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-bold">15 MIN</span>
+              </div>
+              <p class="text-xs text-zinc-300 mt-1">Alarme -&gt; Escolha de Look -&gt; WhatsApp Nina (Vácuo ou Resposta) -&gt; Esbarrão Dante -&gt; Grêmio Lucas -&gt; Estufa Theo.</p>
+              <div class="mt-2.5 flex items-center gap-2 text-[10px] font-sans">
+                <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300">Ramo Dante</span>
+                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300">Ramo Lucas</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Ramo Theo</span>
+              </div>
+            </div>
+
+            <!-- CONECTOR -->
+            <div class="flex justify-center -my-2"><span class="text-zinc-600 font-bold">▼ Reconvergência no Sino das 08h00</span></div>
+
+            <!-- CAPÍTULO 1 -->
+            <div class="p-4 rounded-2xl border border-purple-500/40 bg-purple-950/15 hover:bg-purple-950/25 transition cursor-pointer" onclick="inspectNode('cap1')">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-cinzel font-bold text-purple-300">CAPÍTULO 1 • O LABIRINTO DAS AULAS &amp; O PRIMEIRO INCIDENTE</span>
+                <span class="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-bold">25 MIN</span>
+              </div>
+              <p class="text-xs text-zinc-300 mt-1">Sala de Aula 1-A -&gt; Onde Sentar -&gt; Diretora Helena entra -&gt; Partitura Perdida de Dante vs Formulário do Grêmio -&gt; Fofoca Nina no Zap.</p>
+              <div class="mt-2.5 flex items-center gap-2 text-[10px] font-sans">
+                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">Defesa de Dante</span>
+                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300">Apoio a Lucas</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Fuga com Theo</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-500/20 text-zinc-300">Neutralidade Astuta</span>
+              </div>
+            </div>
+
+            <!-- CONECTOR -->
+            <div class="flex justify-center -my-2"><span class="text-zinc-600 font-bold">▼ Reconvergência no Intervalo da Tarde</span></div>
+
+            <!-- CAPÍTULO 2 -->
+            <div class="p-4 rounded-2xl border border-blue-500/40 bg-blue-950/15 hover:bg-blue-950/25 transition cursor-pointer" onclick="inspectNode('cap2')">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-cinzel font-bold text-blue-300">CAPÍTULO 2 • O CLUBE DA TARDE &amp; O CONVITE ESPECIAL</span>
+                <span class="px-2 py-0.5 rounded-full bg-blue-500/20 text-blue-300 text-[10px] font-bold">30 MIN</span>
+              </div>
+              <p class="text-xs text-zinc-300 mt-1">Escolha de Clube Extracurricular (Música / Grêmio / Botânica) -&gt; Conhecendo Caio e Ravi -&gt; Duelo de Mensagens de WhatsApp para o Festival da Primavera.</p>
+              <div class="mt-2.5 flex items-center gap-2 text-[10px] font-sans">
+                <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300">Ensaio Secreto Dante</span>
+                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300">Auditoria Noturna Lucas</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Pintura Noturna Theo</span>
+              </div>
+            </div>
+
+            <!-- CONECTOR -->
+            <div class="flex justify-center -my-2"><span class="text-zinc-600 font-bold">▼ Reconvergência no Início da Tempestade (18h30)</span></div>
+
+            <!-- CAPÍTULO 3 -->
+            <div class="p-4 rounded-2xl border border-rose-500/40 bg-rose-950/15 hover:bg-rose-950/25 transition cursor-pointer" onclick="inspectNode('cap3')">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-cinzel font-bold text-rose-300">CAPÍTULO 3 • A NOITE DOS SINOS &amp; O BLECAUTE</span>
+                <span class="px-2 py-0.5 rounded-full bg-rose-500/20 text-rose-300 text-[10px] font-bold">25 MIN</span>
+              </div>
+              <p class="text-xs text-zinc-300 mt-1">Tempestade violenta -&gt; Queda Total de Energia -&gt; Lanterna do Celular no Escuro -&gt; Presa com o Paquera Favorito -&gt; O Segredo da Torre dos Sinos revelado por Sra. Mara.</p>
+              <div class="mt-2.5 flex items-center gap-2 text-[10px] font-sans">
+                <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300">Vulnerabilidade de Dante</span>
+                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300">Pressão Familiar de Lucas</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Cicatrizes de Theo</span>
+              </div>
+            </div>
+
+            <!-- CONECTOR -->
+            <div class="flex justify-center -my-2"><span class="text-zinc-600 font-bold">▼ Reconvergência no Pátio das Cerejeiras Iluminadas</span></div>
+
+            <!-- CAPÍTULO 4 -->
+            <div class="p-4 rounded-2xl border border-emerald-500/40 bg-emerald-950/15 hover:bg-emerald-950/25 transition cursor-pointer" onclick="inspectNode('cap4')">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-cinzel font-bold text-emerald-300">CAPÍTULO 4 • O FESTIVAL DA PRIMAVERA &amp; A DECISÃO DO CORAÇÃO</span>
+                <span class="px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-bold">25 MIN</span>
+              </div>
+              <p class="text-xs text-zinc-300 mt-1">O Grande Show no Palco Central -&gt; O Confronto de Autorização -&gt; A Decisão Máxima da Protagonista -&gt; O Primeiro Beijo sob as Luzes da Torre dos Sinos.</p>
+              <div class="mt-2.5 flex items-center gap-2 text-[10px] font-sans">
+                <span class="px-2 py-0.5 rounded bg-rose-500/20 text-rose-300">Final Romântico Dante</span>
+                <span class="px-2 py-0.5 rounded bg-blue-500/20 text-blue-300">Final Romântico Lucas</span>
+                <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Final Romântico Theo</span>
+                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">Final Solo Triunfante</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- COLUNA DA DIREITA: DETALHES DO NÓ SELECIONADO -->
+        <div class="p-5 rounded-3xl bg-[#0e101a] border border-white/10 flex flex-col justify-between">
+          <div class="space-y-4" id="node-inspector">
+            <div class="flex items-center gap-2 text-xs font-cinzel font-bold text-amber-400 uppercase tracking-wider">
+              <span>🔍 Inspetor de Nós &amp; Condições</span>
+            </div>
+            <h4 class="text-base font-cinzel font-bold text-white" id="insp-title">
+              Capítulo 0: O Despertar &amp; Portões
+            </h4>
+            <div class="p-3.5 rounded-2xl bg-black/50 border border-white/10 text-xs text-zinc-300 space-y-2">
+              <p><strong>Cenários:</strong> Quarto da Protagonista -&gt; Portões de Entrada -&gt; Pátio Central.</p>
+              <p><strong>Gatilhos Chave:</strong> Resposta ou Vácuo no Zap da Nina; Seleção de Roupa (sem spoiler); Resposta ao Dante nos portões.</p>
+              <p><strong>Variáveis Afetadas:</strong> <code class="text-rose-400">affinity.dante</code>, <code class="text-blue-400">affinity.lucas</code>, <code class="text-emerald-400">flags.zap_ignorado_nina</code>.</p>
+            </div>
+            <div class="space-y-1.5 text-xs text-zinc-300 font-sans-ui">
+              <span class="font-bold text-zinc-200">Impacto em Capítulos Posteriores:</span>
+              <p id="insp-impact" class="leading-relaxed text-zinc-400">
+                Se Nina for ignorada no quarto, ela reclama no Zap e cobra a protagonista pessoalmente nos portões. Se Dante for provocado com sucesso, ele lembra do apelido dela no Capítulo 1 durante a aula.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-white/10 flex items-center justify-between">
+            <span class="text-[10px] text-zinc-500 font-mono">Status: Aprovado para Roteirização</span>
+            <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold">100% Conexo</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- ABA 2: ROTEIRO DETALHADO DOS CAPÍTULOS 0 AO 4 (~2 HORAS) -->
+    <!-- ================================================================= -->
+    <section id="sec-capitulos" class="space-y-6 hidden">
+      <div class="p-6 rounded-3xl bg-[#0e101a] border border-white/10 space-y-6">
+        <div class="border-b border-white/10 pb-4">
+          <h2 class="text-lg sm:text-xl font-cinzel font-bold text-amber-300">
+            Estrutura Completa de Atos e Capítulos (Arco 1: Adolescência / 15 Anos)
+          </h2>
+          <p class="text-xs text-zinc-400 mt-1">
+            Planejamento detalhado com batidas emocionais, pontos de virada e reconvergência. A protagonista não conclui sua vida inteira aqui; ela sela os laços do seu primeiro grande mês na Academia Lótus.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- CAPÍTULO 1 EM DETALHES -->
+          <div class="p-5 rounded-2xl bg-black/40 border border-purple-500/30 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-cinzel font-bold text-purple-400">CAPÍTULO 1 • O LABIRINTO DAS AULAS</span>
+              <span class="text-[10px] text-zinc-500">25 minutos</span>
+            </div>
+            <h3 class="text-sm font-bold text-white">O Primeiro Conflito &amp; A Sala de Aula</h3>
+            <p class="text-xs text-zinc-300 leading-relaxed font-serif-romance">
+              A protagonista entra na Sala 1-A. A escolha de onde sentar define quem se aproxima primeiro:
+            </p>
+            <ul class="text-xs text-zinc-400 space-y-1.5 list-disc list-inside">
+              <li><strong>Fundo perto da janela:</strong> Dante está de fones, fingindo não ver a aula. Ele deixa cair uma palheta perto da sua mesa.</li>
+              <li><strong>Primeira fila ao centro:</strong> Ao lado de Lucas e Melissa Prado. Melissa mede a novata com olhares afiados.</li>
+              <li><strong>Perto da janela lateral do jardim:</strong> Visão direta de Theo desenhando flores na estufa lá embaixo.</li>
+            </ul>
+            <div class="p-3 rounded-xl bg-purple-950/30 border border-purple-500/20 text-[11px] text-purple-200">
+              <strong>O Incidente da Diretora:</strong> A Profª Helena entra e confisca a partitura de Dante. A protagonista pode mentir dizendo que era seu trabalho de arte (+Dante), apoiar a regra da escola (+Lucas), ou criar uma distração com Nina (+Nina).
+            </div>
+          </div>
+
+          <!-- CAPÍTULO 2 EM DETALHES -->
+          <div class="p-5 rounded-2xl bg-black/40 border border-blue-500/30 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-cinzel font-bold text-blue-400">CAPÍTULO 2 • O CLUBE DA TARDE</span>
+              <span class="text-[10px] text-zinc-500">30 minutos</span>
+            </div>
+            <h3 class="text-sm font-bold text-white">Escolha de Atividade &amp; Duelo de WhatsApp</h3>
+            <p class="text-xs text-zinc-300 leading-relaxed font-serif-romance">
+              A Academia Lótus exige um clube obrigatório. A escolha leva a protagonista a um cenário exclusivo:
+            </p>
+            <ul class="text-xs text-zinc-400 space-y-1.5 list-disc list-inside">
+              <li><strong>Clube de Música (Subsolo Acústico):</strong> Dante e Caio ensaiam. Dante pede sua opinião sobre a nova letra.</li>
+              <li><strong>Conselho Estudantil (Gabinete Oeste):</strong> Lucas e Melissa organizam o orçamento do Festival. Você ajuda Lucas a achar uma falha nas contas.</li>
+              <li><strong>Clube de Botânica &amp; Artes (Estufa Antiga):</strong> Theo e Ravi cuidam de lírios raros. Theo ensina a protagonista a misturar tintas naturais.</li>
+            </ul>
+            <div class="p-3 rounded-xl bg-blue-950/30 border border-blue-500/20 text-[11px] text-blue-200">
+              <strong>O Duelo de Mensagens:</strong> À noite, Dante, Lucas e Nina mandam mensagem quase simultaneamente. A ordem de quem você responde ou ignora decide o convite especial para o festival!
+            </div>
+          </div>
+
+          <!-- CAPÍTULO 3 EM DETALHES -->
+          <div class="p-5 rounded-2xl bg-black/40 border border-rose-500/30 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-cinzel font-bold text-rose-400">CAPÍTULO 3 • A NOITE DOS SINOS</span>
+              <span class="text-[10px] text-zinc-500">25 minutos</span>
+            </div>
+            <h3 class="text-sm font-bold text-white">Queda de Energia &amp; Revelações no Escuro</h3>
+            <p class="text-xs text-zinc-300 leading-relaxed font-serif-romance">
+              Uma tempestade torrencial corta a eletricidade da escola inteira. Os portões se fecham automaticamente e a lanterna do celular vira elemento vital:
+            </p>
+            <ul class="text-xs text-zinc-400 space-y-1.5 list-disc list-inside">
+              <li>Presa na sala de música com Dante, ele confessa o medo de não conseguir bolsa sem a aprovação do pai.</li>
+              <li>Presa no arquivo da biblioteca com Lucas, ele remove a postura de líder e desabafa sobre a solidão do cargo.</li>
+              <li>Presa na estufa com Theo, sob o barulho da chuva no teto de vidro, Theo conta a história da irmã que partiu.</li>
+            </ul>
+            <div class="p-3 rounded-xl bg-rose-950/30 border border-rose-500/20 text-[11px] text-rose-200">
+              <strong>O 10º Badalo do Sino:</strong> Às 21h00, o sino da torre bate dez vezes em vez de nove. A Sra. Mara sussurra um aviso misterioso que reverbera no futuro da protagonista.
+            </div>
+          </div>
+
+          <!-- CAPÍTULO 4 EM DETALHES -->
+          <div class="p-5 rounded-2xl bg-black/40 border border-emerald-500/30 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-cinzel font-bold text-emerald-400">CAPÍTULO 4 • O FESTIVAL DA PRIMAVERA</span>
+              <span class="text-[10px] text-zinc-500">25 minutos</span>
+            </div>
+            <h3 class="text-sm font-bold text-white">O Clímax do Arco 1 &amp; O Primeiro Beijo</h3>
+            <p class="text-xs text-zinc-300 leading-relaxed font-serif-romance">
+              O pátio está decorado com lanternas japonesas e flores de cerejeira. A tensão acumulada entre os garotos explode no palco:
+            </p>
+            <ul class="text-xs text-zinc-400 space-y-1.5 list-disc list-inside">
+              <li><strong>Rota Dante:</strong> O solo de guitarra dedicado à protagonista, fuga da diretora e confissão atrás do ginásio.</li>
+              <li><strong>Rota Lucas:</strong> A valsa formal na tenda principal, rompendo com as regras rígidas sob os olhos da escola.</li>
+              <li><strong>Rota Theo:</strong> A entrega do retrato pintado a óleo nas margens da fonte, com declaração poética silenciosa.</li>
+            </ul>
+            <div class="p-3 rounded-xl bg-emerald-950/30 border border-emerald-500/20 text-[11px] text-emerald-200">
+              <strong>Gancho Final:</strong> Os fogos estouram no céu, a promessa de um pacto para os próximos anos é selada, e uma carta anônima sem remetente é deixada na bolsa da protagonista, abrindo o Arco 2.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- ABA 3: MATRIZ DE VÁCUO, TONS & CONSEQUÊNCIAS DE WHATSAPP -->
+    <!-- ================================================================= -->
+    <section id="sec-consequencias" class="space-y-6 hidden">
+      <div class="p-6 rounded-3xl bg-[#0e101a] border border-white/10 space-y-6">
+        <div>
+          <h2 class="text-lg sm:text-xl font-cinzel font-bold text-amber-300">
+            Matriz de Causa e Efeito: Respostas vs. Vácuo (Deixar no Vácuo)
+          </h2>
+          <p class="text-xs text-zinc-400 mt-1">
+            Cada decisão no WhatsApp reverbera nos diálogos presenciais, atitudes corporais dos pretendentes e desbloqueio de cenas exclusivas.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto custom-scroll">
+          <table class="w-full text-left text-xs border-collapse">
+            <thead>
+              <tr class="border-b border-white/15 text-[11px] font-cinzel font-bold uppercase tracking-wider text-amber-400 bg-white/5">
+                <th class="p-3.5">NPC &amp; Momento</th>
+                <th class="p-3.5">Ação: Responder Rápido</th>
+                <th class="p-3.5">Ação: Deixar no Vácuo (Ignorar)</th>
+                <th class="p-3.5">Reação no Zap (Ao Vácuo)</th>
+                <th class="p-3.5">Impacto no Palco Presencial</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/10 text-zinc-300">
+              <tr class="hover:bg-white/5 transition">
+                <td class="p-3.5 font-bold text-purple-300">Nina • Quarto (Cap. 0)</td>
+                <td class="p-3.5 text-emerald-400">+5 Afinidade. Nina te espera feliz na entrada das cerejeiras.</td>
+                <td class="p-3.5 text-rose-400">Flag <code class="text-amber-300 font-mono">zap_ignorado_nina</code> ativa.</td>
+                <td class="p-3.5 italic">"Ué, visualizou e me deixou no vácuo amiga? 🤡 Ficou sem bateria? Te vejo lá!"</td>
+                <td class="p-3.5">Nina puxa a orelha da protagonista rindo no portão e faz perguntas mais incisivas.</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition">
+                <td class="p-3.5 font-bold text-purple-300">Nina • Portões (Cap. 0)</td>
+                <td class="p-3.5 text-emerald-400">+5 Afinidade. Nina chega a tempo de presenciar o esbarrão com Dante.</td>
+                <td class="p-3.5 text-rose-400">Flag <code class="text-amber-300 font-mono">zap_ignorado_nina_portao</code> ativa.</td>
+                <td class="p-3.5 italic">"Visualizou e não respondeu de novo? 🤡 Já vi que tá focada em outra coisa aí!"</td>
+                <td class="p-3.5">Nina chega atrasada e você enfrenta a reação de Dante completamente sozinha.</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition">
+                <td class="p-3.5 font-bold text-blue-300">Lucas • Átrio (Cap. 0)</td>
+                <td class="p-3.5 text-emerald-400">+7 Afinidade Lucas. Trâmite ágil da documentação.</td>
+                <td class="p-3.5 text-rose-400">Flag <code class="text-amber-300 font-mono">zap_ignorado_lucas</code> ativa.</td>
+                <td class="p-3.5 italic">"Constato ciência sem manifestação. O Grêmio manterá os autos arquivados."</td>
+                <td class="p-3.5">Lucas é mais formal e burocrático no primeiro diálogo, exigindo ver todas as vias impressas.</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition">
+                <td class="p-3.5 font-bold text-rose-300">Dante • Sala de Música (Cap. 2)</td>
+                <td class="p-3.5 text-emerald-400">+10 Afinidade Dante. Convite exclusivo para ouvir a intro de guitarra acústica.</td>
+                <td class="p-3.5 text-rose-400">Flag <code class="text-amber-300 font-mono">zap_ignorado_dante</code> ativa.</td>
+                <td class="p-3.5 italic">"Visto às 14h20 e nada. Beleza então 🎸"</td>
+                <td class="p-3.5">Dante fecha a cara quando você entra na sala e você precisa de uma réplica afiada para quebrar o gelo.</td>
+              </tr>
+              <tr class="hover:bg-white/5 transition">
+                <td class="p-3.5 font-bold text-emerald-300">Theo • Estufa (Cap. 2)</td>
+                <td class="p-3.5 text-emerald-400">+10 Afinidade Theo. Desbloqueia poema secreto no Diário do Celular.</td>
+                <td class="p-3.5 text-rose-400">Flag <code class="text-amber-300 font-mono">zap_ignorado_theo</code> ativa.</td>
+                <td class="p-3.5 italic">"Acho que você deve estar ocupada agora... Desculpe incomodar. Fica pra depois."</td>
+                <td class="p-3.5">Theo hesita em mostrar seus desenhos no Capítulo 3 até a protagonista pedir desculpas gentis.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- GUIA DE TONS DE RESPOSTA -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-white/10">
+          <div class="p-4 rounded-2xl bg-rose-950/20 border border-rose-500/30">
+            <h4 class="text-xs font-cinzel font-bold text-rose-400 uppercase">[Provocadora]</h4>
+            <p class="text-[11px] text-zinc-300 mt-1">Ganha afinidade com <strong>Dante</strong>. Desperta interesse por rebeldia e atitude sem filtros, mas pode irritar Lucas se usada em momentos formais.</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-blue-950/20 border border-blue-500/30">
+            <h4 class="text-xs font-cinzel font-bold text-blue-400 uppercase">[Sincera &amp; Cuidadosa]</h4>
+            <p class="text-[11px] text-zinc-300 mt-1">Ganha afinidade com <strong>Lucas</strong> e <strong>Theo</strong>. Mostra maturidade emocional, integridade e constrói laços sólidos de lealdade.</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-amber-950/20 border border-amber-500/30">
+            <h4 class="text-xs font-cinzel font-bold text-amber-400 uppercase">[Descontraída &amp; Empática]</h4>
+            <p class="text-[11px] text-zinc-300 mt-1">Ganha afinidade com <strong>Nina</strong> e novos alunos. Evita conflitos desnecessários e desbloqueia fofocas quentes da escola.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+        <!-- ================================================================= -->
+    <!-- ABA 4: TODOS OS PERSONAGENS & PROMPTS DE IA (12 PERSONAGENS) -->
+    <!-- ================================================================= -->
+        <!-- ================================================================= -->
+    <!-- ABA 4: TODOS OS PERSONAGENS & PROMPTS DE IA (12 PERSONAGENS) -->
+    <!-- ================================================================= -->
+    <section id="sec-npcs" class="space-y-6">
+      <div class="p-6 rounded-3xl bg-[#0e101a] border border-white/10 space-y-6">
+        
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-cinzel font-bold mb-2">
+              <span>🎭 Galeria Completa do Elenco (12 Personagens)</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-cinzel font-black text-amber-200">
+              Dossiê de Personagens, Visual Novels &amp; Prompts de IA
+            </h2>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1 max-w-3xl">
+              Fotos oficiais dos personagens com arte completa integrada e molduras conceituais para os personagens em produção. Cada perfil inclui descrição psicológica, comportamento no WhatsApp, o <strong>Prompt Técnico de Geração de Imagem 2D</strong> (padrão <code class="text-amber-300 font-mono">modular-2d-character</code>) e o <strong>Prompt Mestre de Roteirização</strong>.
+            </p>
+          </div>
+
+          <!-- FILTROS DE PERSONAGENS -->
+          <div class="flex items-center gap-1.5 p-1 rounded-2xl bg-black/50 border border-white/10 text-xs font-cinzel shrink-0">
+            <button onclick="filterCharacters('all')" id="btn-char-all" class="px-3 py-1.5 rounded-xl font-bold transition-all bg-amber-500 text-stone-950 shadow">
+              Todos (12)
+            </button>
+            <button onclick="filterCharacters('paqueras')" id="btn-char-paqueras" class="px-3 py-1.5 rounded-xl font-bold transition-all text-zinc-400 hover:text-white">
+              Paqueras (3)
+            </button>
+            <button onclick="filterCharacters('coadjuvantes')" id="btn-char-coadjuvantes" class="px-3 py-1.5 rounded-xl font-bold transition-all text-zinc-400 hover:text-white">
+              Alunos (5)
+            </button>
+            <button onclick="filterCharacters('mentores')" id="btn-char-mentores" class="px-3 py-1.5 rounded-xl font-bold transition-all text-zinc-400 hover:text-white">
+              Mentores (4)
+            </button>
+          </div>
+        </div>
+
+        <!-- BANNER INFORMATIVO: PADRÃO DA SKILL MODULAR-2D-CHARACTER -->
+        <div class="p-5 rounded-2xl bg-gradient-to-r from-amber-950/40 via-stone-900 to-amber-950/40 border border-amber-500/30 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="space-y-1 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded-md bg-amber-500 text-stone-950 font-cinzel font-black text-[10px] uppercase">Padrão Técnico Integrado</span>
+              <h4 class="font-cinzel font-bold text-amber-200 text-sm">Skill: modular-2d-character (Visual Novel Edition)</h4>
+            </div>
+            <p class="text-zinc-300 text-[11px] leading-relaxed">
+              Todos os prompts de imagem abaixo foram construídos para gerar o <strong>personagem-mestre em proporção natural de visual novel (1536×2304 px)</strong>, fundo isolado e pose ortogonal estável, prontos para a separação em camadas (<code class="text-amber-300">body</code>, <code class="text-amber-300">eyes</code>, <code class="text-amber-300">mouth</code>, <code class="text-amber-300">clothes</code>, <code class="text-amber-300">hair</code>) e integração direta com o visual novel engine.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 shrink-0 text-center font-cinzel font-bold text-[11px]">
+            <div class="px-3 py-2 rounded-xl bg-black/50 border border-white/10 text-amber-300">
+              Canvas: 1536×2304
+            </div>
+            <div class="px-3 py-2 rounded-xl bg-black/50 border border-white/10 text-rose-300">
+              Formato: PNG RGBA
+            </div>
+          </div>
+        </div>
+
+        <!-- GRID DE CARDS DOS 12 PERSONAGENS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- CARD: Íris -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-amber-500/30 flex flex-col justify-between space-y-4" data-group="coadjuvantes">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-amber-950/20 to-black/80 border border-amber-500/20 flex items-center justify-center group mb-4">
+                <img src="assets/characters/iris/base/uniforme_lotus.png" alt="Íris" onerror="this.src='http://localhost:5173/assets/characters/iris/base/uniforme_lotus.png'" class="h-full object-contain object-bottom pointer-events-none drop-shadow-[0_10px_20px_rgba(245,158,11,0.25)] transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-amber-600 text-white text-[10px] font-cinzel font-black uppercase">
+                  Protagonista
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded-lg bg-black/70 backdrop-blur-md text-amber-300 text-[10px] font-mono border border-amber-500/30">
+                  Sprite Oficial 2D
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-amber-300">Íris (15 anos)</h3>
+                  <p class="text-[11px] text-amber-400/80 font-sans">Protagonista • Aluna Transferida • 1º Ano</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-amber-500 shadow-sm shadow-amber-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "Não vim para cá apenas para seguir passos que outros desenharam. Quero descobrir qual é a minha própria melodia entre esses sinos."
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Inteligente, observadora, com paixão por literatura e escrita. É a voz do jogador, capaz de transitar entre sinceridade, atitude desafiadora ou sutileza poética.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-amber-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-amber-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, high school student girl with hazel eyes and chestnut hair, wearing Lotus Academy classic uniform with dark navy blazer, gold embroidery trim, white collared shirt, red ribbon tie, and pleated skirt, standing neutral pose, gentle and confident expression, high quality clean anime cel-shading, Kyoto Animation art style, full body character design, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é Íris, caloura de 15 anos na tradicional Academia Lótus. Seja autêntica, perspicaz e articulada. Não seja passiva: reaja com inteligência e personalidade a cada interação."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD: Dante -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-rose-500/30 flex flex-col justify-between space-y-4" data-group="paqueras">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-rose-950/20 to-black/80 border border-rose-500/20 flex items-center justify-center group mb-4">
+                <img src="assets/characters/dante/base/corpo_neutro.png" alt="Dante" onerror="this.src='http://localhost:5173/assets/characters/dante/base/corpo_neutro.png'" class="h-full object-contain object-bottom pointer-events-none drop-shadow-[0_10px_20px_rgba(245,158,11,0.25)] transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-rose-600 text-white text-[10px] font-cinzel font-black uppercase">
+                  Paquera Principal
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded-lg bg-black/70 backdrop-blur-md text-rose-300 text-[10px] font-mono border border-rose-500/30">
+                  Sprite Oficial 2D
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-rose-300">Dante (17 anos)</h3>
+                  <p class="text-[11px] text-rose-400/80 font-sans">Paquera Rebelde • Guitarrista da Banda • 3º Ano</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-rose-500 shadow-sm shadow-rose-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "Não me venha com discursos prontos de bom comportamento. Se você tem algo a dizer, solte na cara ou toque até estourar uma corda."
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Aparência de durão com guitarra nas costas e jaqueta de couro sobre o uniforme. No fundo, é leal, protetor e esconde medos de infância que abafa com música pesada.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-rose-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-rose-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, 17-year-old male guitarist, messy dark crimson-tinted black hair, piercing amber eyes, wearing rebellious school uniform with loosened tie, unbuttoned blazer collar and black guitar strap over shoulder, confident slight smirk expression, clean lines, anime visual novel art style, full body, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é Dante, guitarrista de 17 anos da banda do subsolo. Fale com ironia descontraída e atitude rock'n'roll. Mostre atração gradual por quem desafia sua pose."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD: Lucas -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-blue-500/30 flex flex-col justify-between space-y-4" data-group="paqueras">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-blue-950/20 to-black/80 border border-blue-500/20 flex items-center justify-center group mb-4">
+                <img src="assets/characters/lucas/base/corpo_neutro.png" alt="Lucas" onerror="this.src='http://localhost:5173/assets/characters/lucas/base/corpo_neutro.png'" class="h-full object-contain object-bottom pointer-events-none drop-shadow-[0_10px_20px_rgba(245,158,11,0.25)] transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-blue-600 text-white text-[10px] font-cinzel font-black uppercase">
+                  Paquera Principal
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded-lg bg-black/70 backdrop-blur-md text-blue-300 text-[10px] font-mono border border-blue-500/30">
+                  Sprite Oficial 2D
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-blue-300">Lucas (17 anos)</h3>
+                  <p class="text-[11px] text-blue-400/80 font-sans">Paquera Formal • Presidente do Grêmio • 3º Ano</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-blue-500 shadow-sm shadow-blue-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "A excelência não é uma obrigação estéril; é a única armadura que protege aqueles que amamos de cometer erros irreparáveis."
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Porte nobre, gestos contidos e olhar atento. Carrega o fardo das expectativas familiares, mas anseia por momentos onde possa baixar a guarda e ser compreendido.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-blue-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-blue-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, 17-year-old male student council president, neat navy blue hair parted neatly, clear grey-blue eyes, wearing pristine Lotus Academy formal blazer with gold council insignia pin, immaculate posture, dignified polite smile, clean anime aesthetic, full body, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é Lucas, Presidente do Grêmio Estudantil. Seu tom é formal, culto e protocolar. Com a protagonista, revele brechas de ternura e timidez comovente."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD: Theo -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-emerald-500/30 flex flex-col justify-between space-y-4" data-group="paqueras">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-emerald-950/20 to-black/80 border border-emerald-500/20 flex items-center justify-center group mb-4">
+                <img src="assets/characters/theo/base/corpo_neutro.png" alt="Theo" onerror="this.src='http://localhost:5173/assets/characters/theo/base/corpo_neutro.png'" class="h-full object-contain object-bottom pointer-events-none drop-shadow-[0_10px_20px_rgba(245,158,11,0.25)] transition-transform duration-300 group-hover:scale-105">
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-emerald-600 text-white text-[10px] font-cinzel font-black uppercase">
+                  Paquera Principal
+                </div>
+                <div class="absolute bottom-3 right-3 px-2 py-0.5 rounded-lg bg-black/70 backdrop-blur-md text-emerald-300 text-[10px] font-mono border border-emerald-500/30">
+                  Sprite Oficial 2D
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-emerald-300">Theo (16 anos)</h3>
+                  <p class="text-[11px] text-emerald-400/80 font-sans">Paquera Melancólico • Pintor &amp; Botânico • 2º Ano</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "As cores nunca mentem... Quando você entrou pela estufa, o tom do silêncio mudou de cinza-ardósia para lavanda transparente."
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Artista sensível de voz mansa e olhar sonhador. Passa os intervalos misturando aquarelas na estufa botânica e enxerga o mundo em metáforas de estações e estações do coração.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-emerald-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-emerald-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, 16-year-old gentle male artist, soft wavy ash-brown hair falling over forehead, kind green eyes, wearing soft forest-green knit sweater over white school shirt, holding a sketchpad and charcoal pencil, shy warm expression, soft watercolor-influenced anime cel-shading, full body, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é Theo, pintor e amante de botânica de 16 anos. Comporte-se com delicadeza poética, timidez e analogias suaves sobre cores e sentimentos."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD: Nina -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-pink-500/30 flex flex-col justify-between space-y-4" data-group="coadjuvantes">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-pink-950/20 to-black/80 border border-pink-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center text-3xl font-cinzel font-black text-white shadow-xl shadow-pink-500/30">
+                  N
+                </div>
+                <span class="mt-4 px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-[11px] font-cinzel font-bold border border-pink-500/40">
+                  Aluna / Coadjuvante
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-2 font-mono">Ilustração em Produção • Especificação Concluída</p>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-pink-300">Nina (15 anos)</h3>
+                  <p class="text-[11px] text-pink-400/80 font-sans">Melhor Amiga • Caloura • 1º Ano</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-pink-500 shadow-sm shadow-pink-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "Se você não me contar como foi o esbarrão com o guitarrista, eu juro que conto pra sala inteira que você dormiu com meia trocada!"
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Animada, espontânea e superprotetora. É o motor social de Íris na Lótus, mandando mensagens sem parar no WhatsApp e cobrando fofocas com figurinhas engraçadas.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-pink-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-pink-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, energetic high school girl, shoulder-length brown hair tied in a cheerful half-ponytail with bright pink clip, sparkling brown eyes, wearing lively customized school uniform with playful cardigan and colorful school bag, joyful beaming smile, expressive anime visual novel sprite, full body, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é Nina, melhor amiga enérgica de 15 anos. Use linguagem informal, gírias adolescentes leves e muito afeto protetor."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD: Profª Helena Vance -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-purple-500/30 flex flex-col justify-between space-y-4" data-group="mentores">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-purple-950/20 to-black/80 border border-purple-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center text-3xl font-cinzel font-black text-white shadow-xl shadow-purple-500/30">
+                  P
+                </div>
+                <span class="mt-4 px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[11px] font-cinzel font-bold border border-purple-500/40">
+                  Mentora / Docente
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-2 font-mono">Ilustração em Produção • Especificação Concluída</p>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-purple-300">Profª Helena Vance (48 anos)</h3>
+                  <p class="text-[11px] text-purple-400/80 font-sans">Diretora Geral &amp; Mestra de Literatura Clássica</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-purple-500 shadow-sm shadow-purple-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "A pontualidade não é uma virtude acessória nesta casa. É a única fronteira que separa a inteligência do desespero."
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Mulher austera, de presença imponente e fala mansa aveludada. Exige rigor absoluto de seus alunos, mas reconhece mérito autêntico sem bajulação.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-purple-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-purple-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, 48-year-old dignified female school director, elegant dark hair styled in a refined updo, silver-rimmed spectacles, sharp observant violet-grey eyes, wearing tailored aristocratic dark plum blazer with high Victorian collar and long skirt, carrying leather document folder, composed authoritative demeanor, anime aesthetic, full body, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é a Diretora Helena Vance, 48 anos. Fale com erudição, postura aristocrática e disciplina rigorosa."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD: Melissa Prado -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-sky-500/30 flex flex-col justify-between space-y-4" data-group="coadjuvantes">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-sky-950/20 to-black/80 border border-sky-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-sky-500 to-sky-700 flex items-center justify-center text-3xl font-cinzel font-black text-white shadow-xl shadow-sky-500/30">
+                  M
+                </div>
+                <span class="mt-4 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-[11px] font-cinzel font-bold border border-sky-500/40">
+                  Aluna / Coadjuvante
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-2 font-mono">Ilustração em Produção • Especificação Concluída</p>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-sky-300">Melissa Prado (17 anos)</h3>
+                  <p class="text-[11px] text-sky-400/80 font-sans">Vice-Presidente do Grêmio • 3º Ano</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-sky-500 shadow-sm shadow-sky-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "Lucas tem responsabilidades que calouros não são capazes de dimensionar. Certifique-se de que sua simpatia não atrase a pauta do conselho."
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Elegante, estratégica e ciumenta da parceria com Lucas. Usa cortesia impecável como escudo para testar a novata e proteger a ordem da instituição.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-sky-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-sky-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, 17-year-old female vice-president of student council, sleek straight blonde hair in a precise high ponytail, sharp ice-blue eyes, wearing immaculate school uniform with council armband, holding a clipboard, composed and slightly haughty polite expression, anime visual novel art, full body, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é Melissa Prado, vice-presidente do grêmio. Fale com cortesia gélida e refinada, defendendo os protocolos da escola."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD: Caio -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-orange-500/30 flex flex-col justify-between space-y-4" data-group="coadjuvantes">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-orange-950/20 to-black/80 border border-orange-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center text-3xl font-cinzel font-black text-white shadow-xl shadow-orange-500/30">
+                  C
+                </div>
+                <span class="mt-4 px-3 py-1 rounded-full bg-orange-500/20 text-orange-300 text-[11px] font-cinzel font-bold border border-orange-500/40">
+                  Aluna / Coadjuvante
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-2 font-mono">Ilustração em Produção • Especificação Concluída</p>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-orange-300">Caio (17 anos)</h3>
+                  <p class="text-[11px] text-orange-400/80 font-sans">Baterista da Banda • Melhor Amigo do Dante • 3º Ano</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-orange-500 shadow-sm shadow-orange-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "Se o Dante falar que tá 'só praticando escala', mente que nem sente. Aquele solo de guitarra tem nome e sobrenome, novata!"
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Extrovertido, barulhento e fofoqueiro de bom coração. Bate baquetas em qualquer superfície e ajuda a aproximar a protagonista do mundo da música.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-orange-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-orange-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, 17-year-old male band drummer, spiky unruly honey-brown hair with orange headband, energetic amber eyes, wearing casual sporty version of school uniform with rolled-up sleeves and wristbands, holding drumsticks, broad grinning friendly expression, dynamic anime character sprite, full body, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é Caio, baterista divertido da banda. Fale de modo caloroso e cômico, revelando os segredos do Dante para a protagonista."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD: Ravi -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-teal-500/30 flex flex-col justify-between space-y-4" data-group="coadjuvantes">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-teal-950/20 to-black/80 border border-teal-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-teal-500 to-teal-700 flex items-center justify-center text-3xl font-cinzel font-black text-white shadow-xl shadow-teal-500/30">
+                  R
+                </div>
+                <span class="mt-4 px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-[11px] font-cinzel font-bold border border-teal-500/40">
+                  Aluna / Coadjuvante
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-2 font-mono">Ilustração em Produção • Especificação Concluída</p>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-teal-300">Ravi (16 anos)</h3>
+                  <p class="text-[11px] text-teal-400/80 font-sans">Monitor de Botânica • Confidente de Theo • 2º Ano</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-teal-500 shadow-sm shadow-teal-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "Você não precisa forçar uma planta a crescer puxando suas folhas. Basta garantir a terra úmida e a presença serena da luz."
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Sereno, paciente e sábio. Cuida da estufa com reverência e ajuda a protagonista a entender o ritmo contemplativo e delicado de Theo.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-teal-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-teal-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, 16-year-old male botanical club monitor, calm warm skin, dark wavy hair tucked behind ear, gentle hazel eyes, wearing school shirt with a dark green canvas gardening apron with pockets, small blooming sprig behind ear, serene peaceful smile, warm natural lighting anime style, full body, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é Ravi, monitor zen de botânica. Fale com mansidão, serenidade e metáforas sobre plantas e empatia."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD: Sra. Mara -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-violet-500/30 flex flex-col justify-between space-y-4" data-group="mentores">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-violet-950/20 to-black/80 border border-violet-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-violet-500 to-violet-700 flex items-center justify-center text-3xl font-cinzel font-black text-white shadow-xl shadow-violet-500/30">
+                  S
+                </div>
+                <span class="mt-4 px-3 py-1 rounded-full bg-violet-500/20 text-violet-300 text-[11px] font-cinzel font-bold border border-violet-500/40">
+                  Mentora / Docente
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-2 font-mono">Ilustração em Produção • Especificação Concluída</p>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-violet-300">Sra. Mara (62 anos)</h3>
+                  <p class="text-[11px] text-violet-400/80 font-sans">Curadora da Biblioteca Histórica &amp; Guardiã dos Sinos</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-violet-500 shadow-sm shadow-violet-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "Os sinos desta torre têm memória viva. Quando a décima badalada ressoa no escuro, o destino cobra o preço da verdade de quem ouve."
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Presença mística e afetuosa na biblioteca. Serve chá fumegante e conhece todas as crônicas e segredos fundacionais da Academia Lótus.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-violet-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-violet-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, 62-year-old gentle female head librarian, soft silver-grey hair tied in a loose braided bun, kind wrinkled eyes behind reading glasses on a beaded cord, wearing warm knitted mauve shawl over vintage dark velvet dress, holding an ancient leather-bound book, benevolent mysterious smile, detailed anime visual novel sprite, full body, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é a Sra. Mara, guardiã histórica. Fale com sabedoria, ternura de avó e enigmas poéticos sobre a fundação da escola."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD: Rafael -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-amber-500/30 flex flex-col justify-between space-y-4" data-group="mentores">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-amber-950/20 to-black/80 border border-amber-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-3xl font-cinzel font-black text-white shadow-xl shadow-amber-500/30">
+                  R
+                </div>
+                <span class="mt-4 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-[11px] font-cinzel font-bold border border-amber-500/40">
+                  Mentora / Docente
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-2 font-mono">Ilustração em Produção • Especificação Concluída</p>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-amber-300">Rafael (22 anos)</h3>
+                  <p class="text-[11px] text-amber-400/80 font-sans">Irmão Mais Velho &amp; Universitário de Direito</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-amber-500 shadow-sm shadow-amber-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "Se algum veterano ou guitarrista marrento da Lótus pisar no seu pé, você me liga que eu apareço aí pra puxar o freio deles."
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Estudante maduro e protetor. Apesar de morar fora, liga com frequência, manda mesadas no jogo e serve de âncora de bom senso para Íris.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-amber-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-amber-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, 22-year-old male university law student, neat short dark brown hair, warm protective brown eyes, wearing smart casual college attire with beige trench coat over a crewneck sweater and messenger bag, friendly older brother smile, mature anime character sprite, full body, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é Rafael, 22 anos, irmão mais velho de Íris. Seja protetor, afetuoso, com piadas de irmão e conselhos práticos."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD: Beatriz -->
+          <div class="char-card p-5 rounded-3xl bg-[#121422] border border-fuchsia-500/30 flex flex-col justify-between space-y-4" data-group="mentores">
+            <div>
+              <div class="relative w-full h-72 rounded-2xl overflow-hidden bg-gradient-to-b from-fuchsia-950/20 to-black/80 border border-fuchsia-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-br from-fuchsia-500 to-fuchsia-700 flex items-center justify-center text-3xl font-cinzel font-black text-white shadow-xl shadow-fuchsia-500/30">
+                  B
+                </div>
+                <span class="mt-4 px-3 py-1 rounded-full bg-fuchsia-500/20 text-fuchsia-300 text-[11px] font-cinzel font-bold border border-fuchsia-500/40">
+                  Mentora / Docente
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-2 font-mono">Ilustração em Produção • Especificação Concluída</p>
+              </div>
+
+              <div class="flex items-center justify-between">
+                <div>
+                  <h3 class="text-base font-cinzel font-bold text-fuchsia-300">Beatriz (18 anos)</h3>
+                  <p class="text-[11px] text-fuchsia-400/80 font-sans">Prima Confidente &amp; Produtora de Moda / LótusGram</p>
+                </div>
+                <span class="w-3 h-3 rounded-full bg-fuchsia-500 shadow-sm shadow-fuchsia-500"></span>
+              </div>
+
+              <p class="text-xs text-zinc-300 font-serif-romance italic mt-2.5 leading-relaxed">
+                "O look do primeiro dia não é vaidade boba, prima: é a sua declaração de guerra de estilo. Vista aquilo que faz você se sentir dona do roteiro!"
+              </p>
+
+              <div class="space-y-1.5 text-xs text-zinc-400 mt-3">
+                <p><strong>Descrição:</strong> Conectada com tendências e autoconfiança. Orienta os visuais do Closet da protagonista (Rock, Romântico, Acadêmico Chic) e avalia posts no LótusGram.</p>
+              </div>
+            </div>
+
+            <div class="space-y-2 mt-2">
+              <!-- PROMPT TÉCNICO DE GERAÇÃO DE SPRITE 2D (SKILL MODULAR-2D-CHARACTER) -->
+              <div class="p-3 rounded-2xl bg-black/70 border border-fuchsia-500/30 text-[10px] text-zinc-300 font-mono space-y-1.5">
+                <div class="flex items-center justify-between text-fuchsia-400 font-bold uppercase tracking-wider">
+                  <span>🎨 Prompt de Geração de Imagem 2D (Sprite)</span>
+                  <span class="text-zinc-500">1536×2304 px</span>
+                </div>
+                <p class="text-zinc-300 select-all bg-black/40 p-2 rounded-xl border border-white/5 leading-relaxed">
+                  Master character sprite for visual novel, 18-year-old female fashion student, trendy wavy lavender-tinted hair, stylish cat-eye glasses, expressive hazel eyes, wearing chic tailored preppy outfit with pastel blazer, layered jewelry and designer tote bag, confident fashionable smile, stylish modern anime character design, full body, isolated on white background --ar 2:3
+                </p>
+              </div>
+
+              <!-- PROMPT DE PERSONALIDADE / ROTEIRO (LLM PERSONA) -->
+              <div class="p-2.5 rounded-xl bg-black/40 border border-white/10 text-[10px] text-zinc-400 font-mono space-y-1">
+                <span class="text-zinc-400 font-bold block uppercase tracking-wider text-[9px]">Prompt de Roteiro (Persona IA):</span>
+                <p class="text-zinc-300 italic text-[10px]">
+                  "Você é Beatriz, 18 anos, prima apaixonada por moda. Fale com energia estética, incentivo à autoestima e muito estilo."
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- ABA 5: CATÁLOGO DE CENÁRIOS, FOTOS & PROMPTS DE ARTE (9 CENÁRIOS) -->
+    <!-- ================================================================= -->
+    <section id="sec-cenarios" class="hidden space-y-6">
+      <div class="p-6 rounded-3xl bg-[#0e101a] border border-white/10 space-y-6">
+        
+        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-cinzel font-bold mb-2">
+              <span>🏛️ Arquitetura &amp; Paisagens da Academia Lótus</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-cinzel font-black text-amber-200">
+              Cenários do Jogo, Fotografias &amp; Prompts para Gerador de Imagens
+            </h2>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1 max-w-3xl">
+              Cenários oficiais renderizados em alta definição no jogo e especificações de arte para os novos cenários a serem gerados. Inclui iluminação dinâmica (Manhã, Tarde, Entardecer, Noite &amp; Blecaute) e o <strong>Prompt Completo em Inglês</strong> para geradores de imagem (Midjourney, DALL-E 3, SDXL).
+            </p>
+          </div>
+
+          <!-- FILTROS DE CENÁRIOS -->
+          <div class="flex items-center gap-1.5 p-1 rounded-2xl bg-black/50 border border-white/10 text-xs font-cinzel shrink-0">
+            <button onclick="filterSceneries('all')" id="btn-scen-all" class="px-3 py-1.5 rounded-xl font-bold transition-all bg-amber-500 text-stone-950 shadow">
+              Todos (9)
+            </button>
+            <button onclick="filterSceneries('ativos')" id="btn-scen-ativos" class="px-3 py-1.5 rounded-xl font-bold transition-all text-zinc-400 hover:text-white">
+              Oficiais (4)
+            </button>
+            <button onclick="filterSceneries('producao')" id="btn-scen-producao" class="px-3 py-1.5 rounded-xl font-bold transition-all text-zinc-400 hover:text-white">
+              Em Produção (5)
+            </button>
+          </div>
+        </div>
+
+        <!-- GRID DE CENÁRIOS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- 1. QUARTO DA PROTAGONISTA -->
+          <div class="scen-card p-5 rounded-3xl bg-[#121422] border border-amber-500/30 flex flex-col justify-between space-y-4" data-group="ativos">
+            <div>
+              <div class="relative w-full h-56 rounded-2xl overflow-hidden bg-black/60 border border-amber-500/20 group mb-4">
+                <img src="assets/backgrounds/quarto_protagonista.png" alt="Quarto da Protagonista" onerror="this.src='http://localhost:5173/assets/backgrounds/quarto_protagonista.png'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-amber-500 text-stone-950 text-[10px] font-cinzel font-black uppercase">
+                  Imagem Oficial
+                </div>
+                <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md text-amber-300 text-[10px] font-mono border border-amber-500/30">
+                  Prólogo &amp; Noites
+                </div>
+              </div>
+
+              <h3 class="text-base font-cinzel font-bold text-amber-300">1. Quarto da Protagonista</h3>
+              <p class="text-[11px] text-zinc-400 mt-1">Dormitório Privado • Ala Oeste das Calouras</p>
+              
+              <p class="text-xs text-zinc-300 mt-2.5 leading-relaxed">
+                Ambiente acolhedor com cama de ferro forjado, escrivaninha de madeira com diário aberto, closet interativo e grande janela em arco voltada para os pinheiros da colina.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/30 text-[10px]">Manhã Dourada</span>
+                <span class="px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-300 border border-blue-500/30 text-[10px]">Noite Acolhedora</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-black/60 border border-amber-500/20 text-[10px] text-zinc-300 font-mono space-y-1">
+              <span class="text-amber-400 font-bold block uppercase tracking-wider">Prompt de Renderização de Arte:</span>
+              <p class="text-zinc-400 leading-relaxed">
+                "Anime visual novel background, a cozy teenage girl bedroom in a historic European boarding school, wooden vintage study desk with diary, soft morning sunlight casting long rays through arched window, pastel curtains, bed with warm quilt, detailed anime background art style, Makoto Shinkai lighting --ar 16:9"
+              </p>
+            </div>
+          </div>
+
+          <!-- 2. PORTÕES DE FERRO & TORRE -->
+          <div class="scen-card p-5 rounded-3xl bg-[#121422] border border-amber-500/30 flex flex-col justify-between space-y-4" data-group="ativos">
+            <div>
+              <div class="relative w-full h-56 rounded-2xl overflow-hidden bg-black/60 border border-amber-500/20 group mb-4">
+                <img src="assets/backgrounds/portao_escola.png" alt="Portões da Escola" onerror="this.src='http://localhost:5173/assets/backgrounds/portao_escola.png'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-amber-500 text-stone-950 text-[10px] font-cinzel font-black uppercase">
+                  Imagem Oficial
+                </div>
+                <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md text-amber-300 text-[10px] font-mono border border-amber-500/30">
+                  Prólogo &amp; Chegadas
+                </div>
+              </div>
+
+              <h3 class="text-base font-cinzel font-bold text-amber-300">2. Portões de Ferro &amp; Torre dos Sinos</h3>
+              <p class="text-[11px] text-zinc-400 mt-1">Entrada Principal • Paralelepípedos &amp; Cerejeiras</p>
+              
+              <p class="text-xs text-zinc-300 mt-2.5 leading-relaxed">
+                Grandiosos portões de ferro forjado negro com brasões dourados de flor de lótus. Alameda de cerejeiras floridas com pétalas caindo ao vento e a imponente torre de sinos ao fundo.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/30 text-[10px]">Manhã Fresca</span>
+                <span class="px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-300 border border-rose-500/30 text-[10px]">Pétalas Rosadas</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-black/60 border border-amber-500/20 text-[10px] text-zinc-300 font-mono space-y-1">
+              <span class="text-amber-400 font-bold block uppercase tracking-wider">Prompt de Renderização de Arte:</span>
+              <p class="text-zinc-400 leading-relaxed">
+                "Anime visual novel background, monumental ornate black iron school gates with gold lotus insignia, blooming cherry blossom trees with falling pink petals, historic cobblestone walkway, distant grand gothic clock tower with bells, clear morning sky, Kyoto Animation aesthetic --ar 16:9"
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. PÁTIO CENTRAL -->
+          <div class="scen-card p-5 rounded-3xl bg-[#121422] border border-amber-500/30 flex flex-col justify-between space-y-4" data-group="ativos">
+            <div>
+              <div class="relative w-full h-56 rounded-2xl overflow-hidden bg-black/60 border border-amber-500/20 group mb-4">
+                <img src="assets/backgrounds/patio_central.png" alt="Pátio Central" onerror="this.src='http://localhost:5173/assets/backgrounds/patio_central.png'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-amber-500 text-stone-950 text-[10px] font-cinzel font-black uppercase">
+                  Imagem Oficial
+                </div>
+                <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md text-amber-300 text-[10px] font-mono border border-amber-500/30">
+                  Palco Principal &amp; Festival
+                </div>
+              </div>
+
+              <h3 class="text-base font-cinzel font-bold text-amber-300">3. Pátio Central &amp; Jardins Nobres</h3>
+              <p class="text-[11px] text-zinc-400 mt-1">Coração da Academia • Pérgula &amp; Fontes</p>
+              
+              <p class="text-xs text-zinc-300 mt-2.5 leading-relaxed">
+                Esplanada ampla cercada por galerias de arcos de pedra, bancos de ferro sob glicínias e fontes de mármore com espelho d'água. É onde ocorrem os intervalos e a feira de clubes.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/30 text-[10px]">Tarde Iluminada</span>
+                <span class="px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/30 text-[10px]">Lanternas Noturnas</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-black/60 border border-amber-500/20 text-[10px] text-zinc-300 font-mono space-y-1">
+              <span class="text-amber-400 font-bold block uppercase tracking-wider">Prompt de Renderização de Arte:</span>
+              <p class="text-zinc-400 leading-relaxed">
+                "Anime visual novel background, grand European boarding school courtyard, gothic stone colonnades, marble fountains reflecting the sky, wisteria pergolas with purple blossoms, manicured green lawns, students benches, vibrant cinematic atmosphere --ar 16:9"
+              </p>
+            </div>
+          </div>
+
+          <!-- 4. GABINETE DO GRÊMIO -->
+          <div class="scen-card p-5 rounded-3xl bg-[#121422] border border-blue-500/30 flex flex-col justify-between space-y-4" data-group="ativos">
+            <div>
+              <div class="relative w-full h-56 rounded-2xl overflow-hidden bg-black/60 border border-blue-500/20 group mb-4">
+                <img src="assets/backgrounds/sala_gremio.png" alt="Gabinete do Grêmio" onerror="this.src='http://localhost:5173/assets/backgrounds/sala_gremio.png'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-blue-600 text-white text-[10px] font-cinzel font-black uppercase">
+                  Imagem Oficial
+                </div>
+                <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-lg bg-black/80 backdrop-blur-md text-blue-300 text-[10px] font-mono border border-blue-500/30">
+                  QG Lucas &amp; Melissa
+                </div>
+              </div>
+
+              <h3 class="text-base font-cinzel font-bold text-blue-300">4. Gabinete do Grêmio Estudantil</h3>
+              <p class="text-[11px] text-zinc-400 mt-1">Pavilhão Administrativo • Sala Nobre Oeste</p>
+              
+              <p class="text-xs text-zinc-300 mt-2.5 leading-relaxed">
+                Mesa imponente de mogno com bandeiras de veludo e arquivos históricos encadernados em couro. Relógio de pêndulo antigo e luz refinada entrando pelas vitrines decoradas.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-300 border border-blue-500/30 text-[10px]">Ordem &amp; Método</span>
+                <span class="px-2 py-0.5 rounded-md bg-slate-500/10 text-slate-300 border border-slate-500/30 text-[10px]">Blecaute a Luz de Vela</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-black/60 border border-blue-500/20 text-[10px] text-zinc-300 font-mono space-y-1">
+              <span class="text-blue-400 font-bold block uppercase tracking-wider">Prompt de Renderização de Arte:</span>
+              <p class="text-zinc-400 leading-relaxed">
+                "Anime visual novel background, prestigious high school student council office, rich mahogany executive desk with stacked paperwork, leather armchairs, large bookshelf with golden awards and plaques, brass pendulum clock, dignified and formal ambiance --ar 16:9"
+              </p>
+            </div>
+          </div>
+
+          <!-- 5. SALA DE AULA 1-A -->
+          <div class="scen-card p-5 rounded-3xl bg-[#121422] border border-purple-500/30 flex flex-col justify-between space-y-4" data-group="producao">
+            <div>
+              <div class="relative w-full h-56 rounded-2xl overflow-hidden bg-gradient-to-b from-purple-950/20 to-black/80 border border-purple-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-14 h-14 rounded-2xl bg-purple-600/20 border border-purple-500/40 flex items-center justify-center text-2xl mb-2">
+                  📚
+                </div>
+                <span class="px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-[11px] font-cinzel font-bold border border-purple-500/40">
+                  Conceito em Produção
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-1 font-mono">Sem Imagem Oficial / Ativo no Cap. 1</p>
+              </div>
+
+              <h3 class="text-base font-cinzel font-bold text-purple-300">5. Sala de Aula 1-A</h3>
+              <p class="text-[11px] text-zinc-400 mt-1">Ala Acadêmica Norte • Carteiras de Carvalho</p>
+              
+              <p class="text-xs text-zinc-300 mt-2.5 leading-relaxed">
+                Fileiras organizadas de carteiras clássicas de madeira escura com tinteiros embutidos, quadro negro gigante em moldura de bronze e imensas janelas com vista para o pátio.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="px-2 py-0.5 rounded-md bg-purple-500/10 text-purple-300 border border-purple-500/30 text-[10px]">Solenidade</span>
+                <span class="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/30 text-[10px]">Luz da Manhã</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-black/60 border border-purple-500/20 text-[10px] text-zinc-300 font-mono space-y-1">
+              <span class="text-purple-400 font-bold block uppercase tracking-wider">Prompt de Renderização de Arte:</span>
+              <p class="text-zinc-400 leading-relaxed">
+                "Anime visual novel background, classical Japanese-European academy classroom, rows of polished dark oak desks, chalkboard on podium, large arched windows with sunny morning view of school courtyard, dust motes dancing in warm sunlight, high-end anime aesthetic --ar 16:9"
+              </p>
+            </div>
+          </div>
+
+          <!-- 6. SUBSOLO ACÚSTICO (CAVERNA DA BANDA) -->
+          <div class="scen-card p-5 rounded-3xl bg-[#121422] border border-rose-500/30 flex flex-col justify-between space-y-4" data-group="producao">
+            <div>
+              <div class="relative w-full h-56 rounded-2xl overflow-hidden bg-gradient-to-b from-rose-950/20 to-black/80 border border-rose-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-14 h-14 rounded-2xl bg-rose-600/20 border border-rose-500/40 flex items-center justify-center text-2xl mb-2">
+                  🎸
+                </div>
+                <span class="px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 text-[11px] font-cinzel font-bold border border-rose-500/40">
+                  Conceito em Produção
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-1 font-mono">Sem Imagem Oficial / QG Dante &amp; Caio</p>
+              </div>
+
+              <h3 class="text-base font-cinzel font-bold text-rose-300">6. Subsolo de Música Acústica</h3>
+              <p class="text-[11px] text-zinc-400 mt-1">Porão do Pavilhão de Artes • A Caverna do Rock</p>
+              
+              <p class="text-xs text-zinc-300 mt-2.5 leading-relaxed">
+                Paredes de tijolos aparentes revestidas com espumas acústicas pretas, amplificadores valvulados empilhados, bateria reluzente de Caio e cabos espalhados no chão com iluminação quente.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-300 border border-rose-500/30 text-[10px]">Underground</span>
+                <span class="px-2 py-0.5 rounded-md bg-orange-500/10 text-orange-300 border border-orange-500/30 text-[10px]">Neon &amp; Lâmpadas Quentes</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-black/60 border border-rose-500/20 text-[10px] text-zinc-300 font-mono space-y-1">
+              <span class="text-rose-400 font-bold block uppercase tracking-wider">Prompt de Renderização de Arte:</span>
+              <p class="text-zinc-400 leading-relaxed">
+                "Anime visual novel background, underground high school band rehearsal studio, exposed brick walls with soundproofing foam, vintage tube amplifiers, drum kit under spotlight, electric guitar on stand, tangled cables on floor, moody warm ambient lighting, indie rock aesthetic --ar 16:9"
+              </p>
+            </div>
+          </div>
+
+          <!-- 7. ESTUFA BOTÂNICA ANTIGA -->
+          <div class="scen-card p-5 rounded-3xl bg-[#121422] border border-emerald-500/30 flex flex-col justify-between space-y-4" data-group="producao">
+            <div>
+              <div class="relative w-full h-56 rounded-2xl overflow-hidden bg-gradient-to-b from-emerald-950/20 to-black/80 border border-emerald-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-600/20 border border-emerald-500/40 flex items-center justify-center text-2xl mb-2">
+                  🌿
+                </div>
+                <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-cinzel font-bold border border-emerald-500/40">
+                  Conceito em Produção
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-1 font-mono">Sem Imagem Oficial / QG Theo &amp; Ravi</p>
+              </div>
+
+              <h3 class="text-base font-cinzel font-bold text-emerald-300">7. Estufa Histórica de Botânica</h3>
+              <p class="text-[11px] text-zinc-400 mt-1">Jardim de Inverno de Vidro • Ateliê Secreto</p>
+              
+              <p class="text-xs text-zinc-300 mt-2.5 leading-relaxed">
+                Estrutura vitoriana de ferro verde e vidros martelados, samambaias gigantescas, orquídeas raras, tanque central com flores de lótus aquáticas e o cavalete de pintura a óleo de Theo.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="px-2 py-0.5 rounded-md bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 text-[10px]">Bruma Verde</span>
+                <span class="px-2 py-0.5 rounded-md bg-teal-500/10 text-teal-300 border border-teal-500/30 text-[10px]">Gotas de Chuva no Vidro</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-black/60 border border-emerald-500/20 text-[10px] text-zinc-300 font-mono space-y-1">
+              <span class="text-emerald-400 font-bold block uppercase tracking-wider">Prompt de Renderização de Arte:</span>
+              <p class="text-zinc-400 leading-relaxed">
+                "Anime visual novel background, lush vintage Victorian glass greenhouse botanical garden, wrought iron frames, hanging exotic ferns, blooming lotus pond with water reflections, artist wooden easel with paint tubes, humid gentle mist, cinematic poetic atmosphere --ar 16:9"
+              </p>
+            </div>
+          </div>
+
+          <!-- 8. BIBLIOTECA HISTÓRICA & ARQUIVOS -->
+          <div class="scen-card p-5 rounded-3xl bg-[#121422] border border-violet-500/30 flex flex-col justify-between space-y-4" data-group="producao">
+            <div>
+              <div class="relative w-full h-56 rounded-2xl overflow-hidden bg-gradient-to-b from-violet-950/20 to-black/80 border border-violet-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-14 h-14 rounded-2xl bg-violet-600/20 border border-violet-500/40 flex items-center justify-center text-2xl mb-2">
+                  📖
+                </div>
+                <span class="px-3 py-1 rounded-full bg-violet-500/20 text-violet-300 text-[11px] font-cinzel font-bold border border-violet-500/40">
+                  Conceito em Produção
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-1 font-mono">Sem Imagem Oficial / Domínio Sra. Mara</p>
+              </div>
+
+              <h3 class="text-base font-cinzel font-bold text-violet-300">8. Biblioteca Histórica &amp; Sala dos Arquivos</h3>
+              <p class="text-[11px] text-zinc-400 mt-1">Torre Leste • Guardiã dos Segredos dos Sinos</p>
+              
+              <p class="text-xs text-zinc-300 mt-2.5 leading-relaxed">
+                Estantes de dois andares com escadarias espirais de bronze, globos celestes, vitrais góticos filtrando luz azul e mesas de leitura com abajures verdes clássicos de banqueiro.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="px-2 py-0.5 rounded-md bg-violet-500/10 text-violet-300 border border-violet-500/30 text-[10px]">Mistério &amp; Segredos</span>
+                <span class="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/30 text-[10px]">Velas no Blecaute</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-black/60 border border-violet-500/20 text-[10px] text-zinc-300 font-mono space-y-1">
+              <span class="text-violet-400 font-bold block uppercase tracking-wider">Prompt de Renderização de Arte:</span>
+              <p class="text-zinc-400 leading-relaxed">
+                "Anime visual novel background, grand two-story gothic library with spiral brass staircases, tall towering wooden bookshelves overflowing with ancient grimoires, celestial globe, stained glass windows casting mystical indigo and amber light, cozy reading alcove, dark academia aesthetic --ar 16:9"
+              </p>
+            </div>
+          </div>
+
+          <!-- 9. TERRAÇO DO PALCO DO FESTIVAL -->
+          <div class="scen-card p-5 rounded-3xl bg-[#121422] border border-pink-500/30 flex flex-col justify-between space-y-4" data-group="producao">
+            <div>
+              <div class="relative w-full h-56 rounded-2xl overflow-hidden bg-gradient-to-b from-pink-950/20 to-black/80 border border-pink-500/20 flex flex-col items-center justify-center p-6 text-center mb-4">
+                <div class="w-14 h-14 rounded-2xl bg-pink-600/20 border border-pink-500/40 flex items-center justify-center text-2xl mb-2">
+                  🎆
+                </div>
+                <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 text-[11px] font-cinzel font-bold border border-pink-500/40">
+                  Conceito em Produção
+                </span>
+                <p class="text-[10px] text-zinc-400 mt-1 font-mono">Sem Imagem Oficial / Clímax do Cap. 4</p>
+              </div>
+
+              <h3 class="text-base font-cinzel font-bold text-pink-300">9. Palco do Festival da Primavera &amp; Mirante</h3>
+              <p class="text-[11px] text-zinc-400 mt-1">Colina dos Sinos • Clímax Romântico &amp; Fogos</p>
+              
+              <p class="text-xs text-zinc-300 mt-2.5 leading-relaxed">
+                Palanque festivo decorado com milhares de lanternas orientais vermelhas e douradas suspensas nas cerejeiras, vista panorâmica das montanhas e céu estrelado iluminado por fogos de artifício.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 mt-3">
+                <span class="px-2 py-0.5 rounded-md bg-pink-500/10 text-pink-300 border border-pink-500/30 text-[10px]">Noite Festiva</span>
+                <span class="px-2 py-0.5 rounded-md bg-amber-500/10 text-amber-300 border border-amber-500/30 text-[10px]">Fogos de Artifício &amp; Beijo</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-2xl bg-black/60 border border-pink-500/20 text-[10px] text-zinc-300 font-mono space-y-1">
+              <span class="text-pink-400 font-bold block uppercase tracking-wider">Prompt de Renderização de Arte:</span>
+              <p class="text-zinc-400 leading-relaxed">
+                "Anime visual novel background, outdoor spring festival stage at night in a grand academy, hundreds of glowing red and golden paper lanterns hanging from blossoming cherry trees, fireworks bursting in the starry night sky, celebratory romantic climax atmosphere, breathtaking detail --ar 16:9"
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>

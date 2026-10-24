@@ -1,4 +1,19 @@
-export type CharacterId = 'dante' | 'lucas' | 'theo' | 'iris' | 'protagonista';
+export type CharacterId = 
+  | 'dante' 
+  | 'lucas' 
+  | 'theo' 
+  | 'iris' 
+  | 'protagonista'
+  | 'nina'
+  | 'helena'
+  | 'helena_vance'
+  | 'melissa'
+  | 'melissa_prado'
+  | 'caio'
+  | 'ravi'
+  | 'mara'
+  | 'rafael'
+  | 'beatriz';
 
 export type StandardExpression = 
   | 'neutro'

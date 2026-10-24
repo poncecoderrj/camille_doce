@@ -1,0 +1,93 @@
+{
+  "characters": [
+    {
+      "slug": "iris",
+      "name": "Íris",
+      "age": "15 anos",
+      "status": "pending_own_master"
+    },
+    {
+      "slug": "dante",
+      "name": "Dante",
+      "age": "17 anos",
+      "status": "pending_own_master"
+    },
+    {
+      "slug": "lucas",
+      "name": "Lucas",
+      "age": "17 anos",
+      "status": "pending_own_master"
+    },
+    {
+      "slug": "theo",
+      "name": "Theo",
+      "age": "16 anos",
+      "status": "pending_own_master"
+    },
+    {
+      "slug": "nina",
+      "name": "Nina",
+      "age": "15 anos",
+      "status": "pending_own_master"
+    },
+    {
+      "slug": "helena_vance",
+      "name": "Profª Helena Vance",
+      "age": "48 anos",
+      "status": "pending_own_master"
+    },
+    {
+      "slug": "melissa_prado",
+      "name": "Melissa Prado",
+      "age": "17 anos",
+      "status": "pending_own_master"
+    },
+    {
+      "slug": "caio",
+      "name": "Caio",
+      "age": "17 anos",
+      "status": "pending_own_master"
+    },
+    {
+      "slug": "ravi",
+      "name": "Ravi",
+      "age": "16 anos",
+      "status": "pending_own_master"
+    },
+    {
+      "slug": "mara",
+      "name": "Sra. Mara",
+      "age": "62 anos",
+      "status": "pending_own_master"
+    },
+    {
+      "slug": "rafael",
+      "name": "Rafael",
+      "age": "22 anos",
+      "status": "pending_own_master"
+    },
+    {
+      "slug": "beatriz",
+      "name": "Beatriz",
+      "age": "18 anos",
+      "status": "pending_own_master"
+    }
+  ],
+  "approved_masters": [
+    "assembled/approved/personagem_mestre_masculino_v1.png",
+    "assembled/approved/personagem_recomposto_proporcional_v1.png"
+  ],
+  "expressions": [
+    "neutro",
+    "felicidade",
+    "raiva",
+    "tristeza",
+    "nojo",
+    "surpresa_medo",
+    "ciumes"
+  ],
+  "canvas_master": [
+    1536,
+    2304
+  ]
+}

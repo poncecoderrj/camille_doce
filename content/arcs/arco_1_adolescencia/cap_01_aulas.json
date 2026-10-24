@@ -1,0 +1,244 @@
+{
+  "id": "cap_01_aulas",
+  "arc_id": "arco_1_adolescencia",
+  "title": "Capítulo 1: O Labirinto das Aulas & O Conflito",
+  "description": "O primeiro dia letivo na Academia Lótus. A escolha crucial da carteira, o olhar austero da Diretora Helena Vance e os primeiros conflitos nos corredores.",
+  "initial_node_id": "c1_node_01_corredor_aulas",
+  "nodes": {
+    "c1_node_01_corredor_aulas": {
+      "id": "c1_node_01_corredor_aulas",
+      "speaker": "nina",
+      "speaker_name": "Nina",
+      "expression": "happy",
+      "text": "Amiga, corre! O sino acabou de soar a terceira badalada! A Profª Helena Vance não tolera nem meio segundo de atraso na Sala 1-A!",
+      "location": "Corredores Principais",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c1_c01_acelerar",
+          "text": "Apertar o passo ao lado de Nina e segurar firme a mochila.",
+          "tipo": "Ação",
+          "affinity_delta": 2,
+          "target_character": "nina",
+          "next_node_id": "c1_node_02_sala_1a_entrada"
+        },
+        {
+          "id": "c1_c01_calma",
+          "text": "Pedir calma: 'Respira, Nina! O primeiro dia mal começou e você já tá em pânico.'",
+          "tipo": "Tom",
+          "tom": "cuidadoso",
+          "affinity_delta": 1,
+          "target_character": "nina",
+          "next_node_id": "c1_node_02_sala_1a_entrada"
+        }
+      ]
+    },
+    "c1_node_02_sala_1a_entrada": {
+      "id": "c1_node_02_sala_1a_entrada",
+      "speaker": "narrador",
+      "expression": "neutral",
+      "text": "A Sala 1-A é ampla, banhada pela luz dourada da manhã que entra pelas imensas janelas de arco gótico. As carteiras de carvalho polido ainda têm alguns lugares vagos, distribuídos em pontos estratégicos do ambiente.",
+      "location": "Sala de Aula 1-A",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c1_c02_sentar_dante",
+          "text": "Sentar no fundo, perto da janela, ao lado de Dante que rabisca uma partitura.",
+          "tipo": "Prioridade",
+          "target_character": "dante",
+          "affinity_delta": 5,
+          "set_flags": { "escolheu_carteira_dante": true },
+          "next_node_id": "c1_node_03_dante_banco"
+        },
+        {
+          "id": "c1_c02_sentar_lucas",
+          "text": "Sentar na primeira fileira, perto de Lucas e da exigente Melissa.",
+          "tipo": "Prioridade",
+          "target_character": "lucas",
+          "affinity_delta": 5,
+          "set_flags": { "escolheu_carteira_lucas": true },
+          "next_node_id": "c1_node_03_lucas_banco"
+        },
+        {
+          "id": "c1_c02_sentar_theo",
+          "text": "Sentar na fileira lateral, próxima a Theo que contempla o jardim.",
+          "tipo": "Prioridade",
+          "target_character": "theo",
+          "affinity_delta": 5,
+          "set_flags": { "escolheu_carteira_theo": true },
+          "next_node_id": "c1_node_03_theo_banco"
+        }
+      ]
+    },
+    "c1_node_03_dante_banco": {
+      "id": "c1_node_03_dante_banco",
+      "speaker": "dante",
+      "speaker_name": "Dante",
+      "expression": "smirk",
+      "text": "Olha só quem decidiu sentar na zona de perigo. Achou que aqui no fundo o professor não enxerga, novata... ou veio só pra espiar meus acordes?",
+      "location": "Sala de Aula 1-A",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c1_c03_dante_desafio",
+          "text": "Devolver o sorriso de canto: 'Talvez eu só queira ver se você toca tão bem quanto fala.'",
+          "tipo": "Tom",
+          "tom": "provocador",
+          "affinity_delta": 4,
+          "target_character": "dante",
+          "next_node_id": "c1_node_04_helena_chegada"
+        },
+        {
+          "id": "c1_c03_dante_sincero",
+          "text": "Dizer com sinceridade: 'A vista da janela é linda e gosto da energia do fundo.'",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "affinity_delta": 3,
+          "target_character": "dante",
+          "next_node_id": "c1_node_04_helena_chegada"
+        }
+      ]
+    },
+    "c1_node_03_lucas_banco": {
+      "id": "c1_node_03_lucas_banco",
+      "speaker": "lucas",
+      "speaker_name": "Lucas",
+      "expression": "sorriso",
+      "text": "Bom dia. Excelente escolha de assento. A primeira fileira garante acústica perfeita e demonstra respeito ao compromisso acadêmico da Lótus.",
+      "location": "Sala de Aula 1-A",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c1_c03_lucas_formal",
+          "text": "Agradecer com polidez: 'Pretendo absorver cada detalhe das disciplinas.'",
+          "tipo": "Tom",
+          "tom": "cuidadoso",
+          "affinity_delta": 4,
+          "target_character": "lucas",
+          "next_node_id": "c1_node_04_helena_chegada"
+        },
+        {
+          "id": "c1_c03_lucas_provocador",
+          "text": "Sorrir: 'Espero não desconcentrar o Presidente com tantas perguntas difíceis.'",
+          "tipo": "Tom",
+          "tom": "provocador",
+          "affinity_delta": 3,
+          "target_character": "lucas",
+          "next_node_id": "c1_node_04_helena_chegada"
+        }
+      ]
+    },
+    "c1_node_03_theo_banco": {
+      "id": "c1_node_03_theo_banco",
+      "speaker": "theo",
+      "speaker_name": "Theo",
+      "expression": "timido",
+      "text": "Ah... olá. Desculpe se espalhei minhas folhas de rascunho por aqui... A luz dessa janela tem uma transparência rara pela manhã.",
+      "location": "Sala de Aula 1-A",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c1_c03_theo_elogio",
+          "text": "Olhar o caderno com encanto: 'Seus desenhos em carvão têm uma delicadeza impressionante.'",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "affinity_delta": 5,
+          "target_character": "theo",
+          "unlock_memory_tag": "theo_carvao_aula",
+          "next_node_id": "c1_node_04_helena_chegada"
+        },
+        {
+          "id": "c1_c03_theo_conforto",
+          "text": "Sorrir gentilmente: 'Não precisa pedir desculpas. Gosto de folhas de arte.'",
+          "tipo": "Tom",
+          "tom": "cuidadoso",
+          "affinity_delta": 3,
+          "target_character": "theo",
+          "next_node_id": "c1_node_04_helena_chegada"
+        }
+      ]
+    },
+    "c1_node_04_helena_chegada": {
+      "id": "c1_node_04_helena_chegada",
+      "speaker": "helena",
+      "speaker_name": "Profª Helena Vance",
+      "expression": "neutral",
+      "text": "Silêncio na Sala 1-A. Na Academia Lótus, a pontualidade não é uma virtude opcional, mas o pilar que sustenta o intelecto. Sejam todos bem-vindos.",
+      "location": "Sala de Aula 1-A",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c1_c04_respeito",
+          "text": "Postar-se com atenção e abrir o caderno de anotações.",
+          "tipo": "Ação",
+          "set_flags": { "respeitou_helena": true },
+          "next_node_id": "c1_node_05_helena_pergunta"
+        },
+        {
+          "id": "c1_c04_curiosidade",
+          "text": "Observar a postura nobre da diretora enquanto ela ajusta os óculos com armação de prata.",
+          "tipo": "Ação",
+          "next_node_id": "c1_node_05_helena_pergunta"
+        }
+      ]
+    },
+    "c1_node_05_helena_pergunta": {
+      "id": "c1_node_05_helena_pergunta",
+      "speaker": "helena",
+      "speaker_name": "Profª Helena Vance",
+      "expression": "neutral",
+      "text": "Uma questão inaugural para os recém-chegados: Os três sinos da torre histórica foram fundidos para marcar tanto o tempo quanto a alma. O que define a grandeza de um indivíduo: a liberdade irrefreável das paixões ou a disciplina inflexível do caráter?",
+      "location": "Sala de Aula 1-A",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c1_c05_resposta_paixao",
+          "text": "Defender a liberdade: 'Sem paixão e expressão autêntica, a disciplina vira uma jaula vazia.'",
+          "tipo": "Tom",
+          "tom": "provocador",
+          "affinity_delta": 5,
+          "target_character": "dante",
+          "set_flags": { "defendeu_liberdade": true },
+          "next_node_id": "c1_node_06_reacao_turma"
+        },
+        {
+          "id": "c1_c05_resposta_disciplina",
+          "text": "Defender o método: 'A disciplina direciona o talento e constrói legados duradouros.'",
+          "tipo": "Tom",
+          "tom": "cuidadoso",
+          "affinity_delta": 5,
+          "target_character": "lucas",
+          "set_flags": { "defendeu_disciplina": true },
+          "next_node_id": "c1_node_06_reacao_turma"
+        },
+        {
+          "id": "c1_c05_resposta_sintese",
+          "text": "Propor o equilíbrio: 'A disciplina é a tela em branco; a paixão é a tinta que dá vida à obra.'",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "affinity_delta": 4,
+          "target_character": "theo",
+          "set_flags": { "defendeu_sintese": true },
+          "next_node_id": "c1_node_06_reacao_turma"
+        }
+      ]
+    },
+    "c1_node_06_reacao_turma": {
+      "id": "c1_node_06_reacao_turma",
+      "speaker": "narrador",
+      "expression": "neutral",
+      "text": "A resposta reverbera pela sala. Dante dá uma risadinha discreta aprovando a coragem, Lucas anota o raciocínio na margem do fichário e Theo ergue os olhos brilhando com empatia. A Profª Helena assente friamente, concedendo seu primeiro vislumbre de aprovação.",
+      "location": "Sala de Aula 1-A",
+      "time_of_day": "manha",
+      "choices": [
+        {
+          "id": "c1_c06_concluir_manha",
+          "text": "Guardar o material ao soar do sino do meio-dia e ir ao encontro de Nina.",
+          "tipo": "Ação",
+          "set_flags": { "capitulo_01_terminado": true },
+          "next_node_id": "c2_node_01_intervalo"
+        }
+      ]
+    }
+  }
+}

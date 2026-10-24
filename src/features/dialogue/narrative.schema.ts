@@ -7,12 +7,16 @@ export const PersonagemEnum = z.enum([
   'dante',
   'lucas',
   'theo',
+  'iris',
+  'protagonista',
   'rafael',
   'beatriz',
   'nina',
   'mara',
   'caio',
   'helena',
+  'melissa',
+  'ravi',
   'narrador'
 ]);
 export type PersonagemId = z.infer<typeof PersonagemEnum>;
@@ -24,7 +28,7 @@ export const ChoiceSchema = z.object({
   tom: TomEnum.optional(),
   target_character: PersonagemEnum.optional(),
   affinity_delta: z.number().int().min(-20).max(20).default(0),
-  set_flags: z.record(z.union([z.boolean(), z.number(), z.string()])).optional(),
+  set_flags: z.record(z.string(), z.union([z.boolean(), z.number(), z.string()])).optional(),
   unlock_memory_tag: z.string().optional(),
   next_node_id: z.string()
 });
@@ -41,7 +45,7 @@ export const DialogueNodeSchema = z.object({
   bg_music: z.string().optional(),
   sfx: z.string().optional(),
   requires_memory: z.string().optional(),
-  requires_flags: z.record(z.union([z.boolean(), z.number(), z.string()])).optional(),
+  requires_flags: z.record(z.string(), z.union([z.boolean(), z.number(), z.string()])).optional(),
   choices: z.array(ChoiceSchema).min(1).max(4)
 });
 export type DialogueNode = z.infer<typeof DialogueNodeSchema>;
@@ -52,7 +56,7 @@ export const ChapterSchema = z.object({
   title: z.string(),
   description: z.string(),
   initial_node_id: z.string(),
-  nodes: z.record(DialogueNodeSchema)
+  nodes: z.record(z.string(), DialogueNodeSchema)
 });
 export type Chapter = z.infer<typeof ChapterSchema>;
 

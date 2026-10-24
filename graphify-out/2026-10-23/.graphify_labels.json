@@ -1,6 +1,6 @@
 {
   "0": "DualStage.svelte",
-  "1": "GameState.svelte.ts",
+  "1": "DialogueBox.svelte",
   "2": "package.json",
   "3": "ProtagonistCustomizerModal.svelte",
   "4": "compilerOptions",
@@ -16,8 +16,21 @@
   "14": "VisualNovelActor.svelte",
   "15": "numpy",
   "16": "os",
-  "17": "pil",
+  "17": "character_composer.py",
   "18": "CharacterProfileModal.svelte",
   "19": "audioManager",
-  "20": "DialogueBox.svelte"
+  "20": "narrative.schema.ts",
+  "21": "Pacote de personagens — Academia Lótus",
+  "22": "Beatriz",
+  "23": "Caio",
+  "24": "Dante",
+  "25": "Profª Helena Vance",
+  "26": "Íris",
+  "27": "Lucas",
+  "28": "Sra. Mara",
+  "29": "Melissa Prado",
+  "30": "Nina",
+  "31": "Rafael",
+  "32": "Ravi",
+  "33": "Theo"
 }

@@ -35,7 +35,7 @@
   import { audioManager } from '../audio/audio-manager';
   import ProtagonistActor from '../customization/ProtagonistActor.svelte';
   import type { OutfitId } from '../customization/customization.schema';
-  import { OUTFIT_OPTIONS, BOY_REACTIONS } from '../customization/customization.catalog';
+  import { OUTFIT_OPTIONS } from '../customization/customization.catalog';
   import { ZODIAC_SIGNS, PERSONALITY_TRAITS, ASPIRATIONS } from './personality.catalog';
   import type { ZodiacId, TraitCategory } from './personality.schema';
 
@@ -54,11 +54,17 @@
   let currentStep = $state<number>(1);
 
   // Estado local editável
-  let draftName = $state<string>(gameState.protagonistProfile?.name || 'Íris');
+  let draftName = $state<string>(gameState.protagonistProfile?.name || '');
   let draftZodiac = $state<ZodiacId>(gameState.protagonistProfile.zodiac);
   let draftTraits = $state<string[]>([...gameState.protagonistProfile.traits]);
   let draftAspiration = $state<string>(gameState.protagonistProfile.aspiration);
   let draftOutfit = $state<OutfitId>(gameState.currentOutfit);
+
+  // Validação de Nome Obrigatório
+  let nameWarning = $state<string | null>(null);
+  let isNameInputShaking = $state<boolean>(false);
+  let nameInputRef: HTMLInputElement | null = $state(null);
+  const PRESET_NAMES = ['Íris', 'Aurora', 'Maya', 'Luna', 'Clara', 'Elena', 'Lívia'];
 
   // Traço atualmente inspecionado na coluna da direita da Etapa 2
   let focusedTraitId = $state<string>(
@@ -67,6 +73,7 @@
 
   let traitCategoryFilter = $state<'Todas' | TraitCategory>('Todas');
   let traitLimitWarning = $state<string | null>(null);
+  let isTraitShaking = $state<boolean>(false);
 
   // Mapeador de Ícones Seguros
   const iconMap: Record<string, any> = {
@@ -106,7 +113,7 @@
   );
 
   let FocusedTraitIcon = $derived(
-    iconMap[focusedTraitDetails.icon] || Sparkles
+    iconMap[focusedTraitDetails.iconName] || Sparkles
   );
 
   let isFocusedSelected = $derived(
@@ -124,13 +131,6 @@
     OUTFIT_OPTIONS.find(o => o.id === draftOutfit) || OUTFIT_OPTIONS[0]
   );
 
-  const boyAccents = {
-    dante: { name: 'Dante', color: '#e11d48' },
-    lucas: { name: 'Lucas', color: '#2563eb' },
-    theo: { name: 'Theo', color: '#059669' },
-    geral: { name: 'Amigos & Campus', color: '#d97706' }
-  };
-
   function selectZodiac(id: ZodiacId) {
     draftZodiac = id;
     audioManager.playClick();
@@ -146,18 +146,15 @@
     focusedTraitId = id;
     const idx = draftTraits.indexOf(id);
     if (idx >= 0) {
-      if (draftTraits.length > 1) {
-        draftTraits = draftTraits.filter(t => t !== id);
-        audioManager.playClick();
-      } else {
-        traitLimitWarning = 'A personagem precisa ter ao menos 1 traço ativo!';
-      }
+      draftTraits = draftTraits.filter(t => t !== id);
+      audioManager.playClick();
     } else {
       if (draftTraits.length < 5) {
         draftTraits = [...draftTraits, id];
         audioManager.playClick();
       } else {
-        traitLimitWarning = 'Limite de 5 traços atingido! Desmarque um para selecionar outro.';
+        traitLimitWarning = 'Limite máximo de 5 traços atingido! Desmarque um para selecionar outro.';
+        audioManager.playNotification();
       }
     }
   }
@@ -172,10 +169,46 @@
     audioManager.playClick();
   }
 
+  function validateName(): boolean {
+    const trimmed = draftName.trim();
+    if (!trimmed) {
+      nameWarning = 'Por favor, digite seu nome ou escolha uma das opções sugeridas abaixo para continuar!';
+      isNameInputShaking = true;
+      setTimeout(() => { isNameInputShaking = false; }, 500);
+      audioManager.playNotification();
+      nameInputRef?.focus();
+      return false;
+    }
+    if (trimmed.length < 2) {
+      nameWarning = 'O nome da personagem deve ter no mínimo 2 caracteres!';
+      isNameInputShaking = true;
+      setTimeout(() => { isNameInputShaking = false; }, 500);
+      audioManager.playNotification();
+      nameInputRef?.focus();
+      return false;
+    }
+    nameWarning = null;
+    return true;
+  }
+
+  function selectPresetName(name: string) {
+    draftName = name;
+    nameWarning = null;
+    audioManager.playClick();
+  }
+
   function goToStep(step: number) {
-    // Validação para avançar
-    if (step > 2 && draftTraits.length < 5) {
-      traitLimitWarning = 'Por favor, selecione os 5 traços de personalidade antes de avançar!';
+    // Validação obrigatória: impede avançar sem nome definido
+    if (step > 1 && !validateName()) {
+      currentStep = 1;
+      return;
+    }
+    // Validação para avançar além da Etapa 2 (mínimo de 3 traços obrigatórios)
+    if (step > 2 && draftTraits.length < 3) {
+      traitLimitWarning = `Por favor, selecione pelo menos 3 traços de personalidade (você escolheu ${draftTraits.length}/3) antes de avançar!`;
+      isTraitShaking = true;
+      setTimeout(() => { isTraitShaking = false; }, 500);
+      audioManager.playNotification();
       currentStep = 2;
       return;
     }
@@ -185,14 +218,18 @@
 
   function nextStep() {
     if (currentStep === 1) {
+      if (!validateName()) return;
       currentStep = 2;
       audioManager.playClick();
     } else if (currentStep === 2) {
-      if (draftTraits.length < 5) {
-        traitLimitWarning = 'Selecione exatamente 5 traços de personalidade para avançar!';
-        audioManager.playClick();
+      if (draftTraits.length < 3) {
+        traitLimitWarning = `Selecione pelo menos 3 traços de personalidade para avançar (você escolheu ${draftTraits.length}/3)!`;
+        isTraitShaking = true;
+        setTimeout(() => { isTraitShaking = false; }, 500);
+        audioManager.playNotification();
         return;
       }
+      traitLimitWarning = null;
       currentStep = 3;
       audioManager.playClick();
     } else if (currentStep === 3) {
@@ -213,11 +250,18 @@
   }
 
   function handleSaveProfile() {
-    const finalName = draftName.trim() || 'Íris';
-    if (draftTraits.length < 5) {
-      traitLimitWarning = 'Por favor, selecione 5 traços de personalidade para definir a personagem!';
+    if (!validateName()) {
+      currentStep = 1;
+      return;
+    }
+
+    const finalName = draftName.trim();
+    if (draftTraits.length < 3) {
+      traitLimitWarning = `Por favor, selecione pelo menos 3 traços de personalidade para definir a personagem (você escolheu ${draftTraits.length}/3)!`;
+      isTraitShaking = true;
+      setTimeout(() => { isTraitShaking = false; }, 500);
       currentStep = 2;
-      audioManager.playClick();
+      audioManager.playNotification();
       return;
     }
 
@@ -238,7 +282,7 @@
 
   const stepTitles = [
     { num: 1, label: 'Nome & Signo' },
-    { num: 2, label: 'Personalidade (5 Traços)' },
+    { num: 2, label: 'Personalidade (3 a 5 Traços)' },
     { num: 3, label: 'Inspiração de Vida' },
     { num: 4, label: 'Look Oficial' }
   ];
@@ -310,38 +354,96 @@
       {#if currentStep === 1}
         <div class="p-4 sm:p-6 md:p-8 flex flex-col gap-6" in:fade={{ duration: 200 }}>
           
-          <!-- SEÇÃO DO NOME DA PERSONAGEM -->
-          <div class="p-4 sm:p-5 rounded-3xl bg-[#141624] border border-amber-500/20 flex flex-col gap-3 shadow-lg">
-            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-              <label for="char-name-input-step1" class="text-xs sm:text-sm font-cinzel font-bold text-amber-400 flex items-center gap-2">
+          <!-- SEÇÃO DO NOME DA PERSONAGEM (OBRIGATÓRIO: DIGITAR OU ESCOLHER PRÉ-DEFINIDO) -->
+          <div class="p-4 sm:p-5 rounded-3xl bg-[#141624] border transition-all duration-300 flex flex-col gap-4 shadow-lg {nameWarning ? 'border-rose-500/70 shadow-rose-950/40 ring-1 ring-rose-500/30' : 'border-amber-500/20'}">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2">
+              <label for="char-name-input-step1" class="text-xs sm:text-sm font-cinzel font-bold flex items-center gap-2 {nameWarning ? 'text-rose-300' : 'text-amber-400'}">
                 <User class="w-4 h-4" />
                 <span>Como você quer se chamar na Academia Lótus?</span>
+                <span class="text-[10px] px-2 py-0.5 rounded-full font-sans font-semibold {nameWarning ? 'bg-rose-500/30 text-rose-200 border border-rose-500/50' : 'bg-amber-500/20 text-amber-300 border border-amber-500/30'}">
+                  Obrigatório
+                </span>
               </label>
 
-              <!-- Sugestões Rápidas de Nome -->
-              <div class="flex items-center gap-1.5 flex-wrap">
-                <span class="text-[10px] text-zinc-400 font-sans">Sugestões:</span>
-                {#each ['Íris', 'Maya', 'Aurora', 'Luna', 'Clara'] as suggestion}
+              {#if draftName.trim().length >= 2}
+                <span class="text-xs font-sans text-emerald-400 flex items-center gap-1 font-semibold">
+                  <Check class="w-3.5 h-3.5" /> Nome definido: "{draftName.trim()}"
+                </span>
+              {:else}
+                <span class="text-[11px] font-sans text-amber-300/70 italic">
+                  Escolha um pré-definido ou digite o seu
+                </span>
+              {/if}
+            </div>
+
+            <!-- Campo de Texto com Animação de Shake caso tente avançar vazio -->
+            <div class="relative w-full max-w-lg {isNameInputShaking ? 'animate-shake' : ''}">
+              <div class="relative flex items-center">
+                <input 
+                  id="char-name-input-step1"
+                  bind:this={nameInputRef}
+                  type="text"
+                  bind:value={draftName}
+                  oninput={() => { if (draftName.trim().length >= 2) nameWarning = null; }}
+                  maxlength="20"
+                  placeholder="Escreva seu nome aqui..."
+                  class="w-full pl-4 pr-10 py-3 rounded-2xl bg-black/60 font-cinzel text-sm sm:text-base text-white transition-all duration-200 focus:outline-none {nameWarning ? 'border-2 border-rose-500 ring-4 ring-rose-500/30 bg-rose-950/20 text-rose-100 placeholder-rose-300/50' : 'border border-amber-500/40 focus:border-amber-400 focus:ring-2 focus:ring-amber-500/40'}"
+                />
+                {#if draftName}
                   <button
-                    onclick={() => { draftName = suggestion; audioManager.playClick(); }}
-                    class="px-2.5 py-0.5 rounded-lg border text-xs font-cinzel transition-all {draftName === suggestion ? 'bg-amber-500/25 border-amber-500 text-amber-300 font-bold' : 'bg-white/5 border-white/10 text-zinc-400 hover:text-white'}"
+                    type="button"
+                    onclick={() => { draftName = ''; nameWarning = null; nameInputRef?.focus(); }}
+                    class="absolute right-3 p-1 rounded-full text-zinc-400 hover:text-white hover:bg-white/10 transition-colors"
+                    title="Limpar nome"
                   >
-                    {suggestion}
+                    <X class="w-4 h-4" />
+                  </button>
+                {/if}
+              </div>
+            </div>
+
+            <!-- Alerta Visual Chamativo Apontando a Obrigação de Definir Nome -->
+            {#if nameWarning}
+              <div 
+                class="p-3.5 rounded-2xl bg-rose-950/60 border border-rose-500/70 text-rose-200 text-xs font-sans-ui flex items-start sm:items-center gap-3 shadow-lg shadow-rose-950/60"
+                in:fade={{ duration: 150 }}
+              >
+                <AlertCircle class="w-5 h-5 text-rose-400 shrink-0 mt-0.5 sm:mt-0 animate-bounce" />
+                <div class="flex-1">
+                  <p class="font-bold text-rose-300 text-xs sm:text-sm">{nameWarning}</p>
+                  <p class="text-[11px] text-rose-200/90 mt-0.5">
+                    Digite um nome no campo acima ou clique em uma das sugestões abaixo para continuar:
+                  </p>
+                </div>
+              </div>
+            {/if}
+
+            <!-- Sugestões Rápidas de Nome Pré-definidas -->
+            <div class="flex flex-col gap-2 pt-1">
+              <span class="text-[11px] text-zinc-400 font-sans flex items-center gap-1.5">
+                <Sparkles class="w-3.5 h-3.5 text-amber-400" />
+                <span>Nomes Pré-definidos Sugeridos:</span>
+              </span>
+              <div class="flex items-center gap-2 flex-wrap">
+                {#each PRESET_NAMES as suggestion}
+                  {@const isSelected = draftName === suggestion}
+                  <button
+                    type="button"
+                    onclick={() => selectPresetName(suggestion)}
+                    class="px-3.5 py-1.5 rounded-xl border text-xs font-cinzel transition-all active:scale-95 flex items-center gap-1.5 {isSelected ? 'bg-amber-500/30 border-amber-400 text-amber-200 font-bold shadow-md shadow-amber-500/20 ring-1 ring-amber-400/50' : 'bg-white/5 border-white/10 text-zinc-300 hover:text-white hover:bg-white/10 hover:border-white/20'}"
+                  >
+                    {#if isSelected}
+                      <Check class="w-3 h-3 text-amber-400 stroke-[3]" />
+                    {/if}
+                    <span>{suggestion}</span>
+                    {#if suggestion === 'Íris'}
+                      <span class="text-[9px] px-1 py-0.2 rounded bg-amber-500/20 text-amber-300 ml-0.5">Canônico</span>
+                    {/if}
                   </button>
                 {/each}
               </div>
             </div>
 
-            <div class="relative w-full max-w-md">
-              <input 
-                id="char-name-input-step1"
-                type="text"
-                bind:value={draftName}
-                maxlength="20"
-                placeholder="Digite o nome da personagem..."
-                class="w-full px-4 py-2.5 rounded-2xl bg-black/60 border border-amber-500/40 focus:border-amber-400 text-white font-cinzel text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-amber-500/40"
-              />
-            </div>
           </div>
 
           <!-- SEÇÃO DO SIGNO DO ZODÍACO -->
@@ -353,7 +455,7 @@
                   <span>Escolha o Signo do Zodíaco</span>
                 </h3>
                 <p class="text-xs text-zinc-400 font-sans-ui mt-0.5">
-                  O signo rege a personalidade cósmica e determina afinidades imediatas com Dante, Lucas e Theo.
+                  O signo rege a sua essência astral e expressa traços naturais de temperamento e sensibilidade na Academia Lótus.
                 </p>
               </div>
 
@@ -397,31 +499,18 @@
               {/each}
             </div>
 
-            <!-- Painel de Sinastria do Signo com os 3 Rapazes -->
-            <div class="p-4 rounded-3xl bg-[#141624] border border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-2">
-              <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-xl">
-                  {activeZodiacDetails.symbol}
-                </div>
-                <div>
-                  <h4 class="text-xs font-cinzel font-bold text-amber-300">
-                    Sinastria Amorosa de {activeZodiacDetails.name}:
-                  </h4>
-                  <p class="text-[11px] text-zinc-400 font-sans-ui mt-0.5">
-                    {activeZodiacDetails.description}
-                  </p>
-                </div>
+            <!-- Painel da Essência Cósmica do Signo (Sem revelar afinidades ou spoilers) -->
+            <div class="p-4 rounded-3xl bg-[#141624] border border-white/10 flex items-center gap-3.5 mt-2">
+              <div class="w-11 h-11 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-2xl shrink-0">
+                {activeZodiacDetails.symbol}
               </div>
-
-              <!-- Medidores Rápidos de Afinidade dos Garotos -->
-              <div class="flex items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end">
-                {#each Object.entries(activeZodiacDetails.synastry) as [boyKey, score]}
-                  {@const boy = boyAccents[boyKey as keyof typeof boyAccents]}
-                  <div class="flex flex-col items-center px-3 py-1.5 rounded-xl bg-black/40 border border-white/10 text-[10px] font-cinzel">
-                    <span class="font-bold" style="color: {boy?.color};">{boy?.name}</span>
-                    <span class="text-zinc-200 font-sans font-semibold mt-0.5">+{score} afinidade</span>
-                  </div>
-                {/each}
+              <div>
+                <h4 class="text-xs font-cinzel font-bold text-amber-300">
+                  Essência de {activeZodiacDetails.name}:
+                </h4>
+                <p class="text-[11px] text-zinc-300 font-sans-ui mt-0.5 leading-relaxed">
+                  {activeZodiacDetails.essence}
+                </p>
               </div>
             </div>
 
@@ -439,22 +528,30 @@
           <!-- COLUNA ESQUERDA: LISTA DE TRAÇOS COM ÍCONES -->
           <div class="w-full md:w-5/12 lg:w-4/9 border-b md:border-b-0 md:border-r border-white/10 flex flex-col bg-[#0e101a]/70 shrink-0">
             
-            <!-- Barra Superior: Contagem dos 5 Traços & Filtros -->
+            <!-- Barra Superior: Contagem dos Traços & Filtros -->
             <div class="p-3.5 sm:p-4 border-b border-white/10 flex flex-col gap-2.5">
               <div class="flex items-center justify-between">
                 <span class="text-xs font-cinzel font-bold text-amber-300 flex items-center gap-1.5">
                   <Brain class="w-4 h-4 text-amber-400" />
-                  <span>Escolha 5 Traços ({draftTraits.length}/5):</span>
+                  <span>Escolha de 3 a 5 Traços ({draftTraits.length}/5):</span>
                 </span>
-                <span class="text-[11px] font-sans font-semibold {draftTraits.length === 5 ? 'text-emerald-400' : 'text-amber-400'}">
-                  {draftTraits.length === 5 ? '✓ 5 Traços Definidos' : `Faltam ${5 - draftTraits.length}`}
+                <span class="text-[11px] font-sans font-semibold {draftTraits.length >= 3 ? 'text-emerald-400' : 'text-amber-400'}">
+                  {#if draftTraits.length === 0}
+                    Mínimo 3 traços obrigatórios
+                  {:else if draftTraits.length < 3}
+                    Faltam {3 - draftTraits.length} para o mínimo
+                  {:else if draftTraits.length === 5}
+                    ✓ 5 Traços Máximos Definidos
+                  {:else}
+                    ✓ Mínimo atingido ({draftTraits.length}/5)
+                  {/if}
                 </span>
               </div>
 
               <!-- Barra de Progresso Visual de 5 Pontos -->
               <div class="grid grid-cols-5 gap-1.5 h-1.5 w-full bg-black/40 rounded-full p-0.5 border border-white/5">
                 {#each Array(5) as _, i}
-                  <div class="h-full rounded-full transition-all {i < draftTraits.length ? 'bg-gradient-to-r from-amber-500 to-amber-300 shadow-sm' : 'bg-white/10'}"></div>
+                  <div class="h-full rounded-full transition-all {i < draftTraits.length ? 'bg-gradient-to-r from-amber-500 to-amber-300 shadow-sm' : i < 3 ? 'bg-rose-500/25' : 'bg-white/10'}"></div>
                 {/each}
               </div>
 
@@ -476,7 +573,7 @@
               {#each filteredTraits as trait}
                 {@const isSelected = draftTraits.includes(trait.id)}
                 {@const isFocused = focusedTraitId === trait.id}
-                {@const IconComponent = iconMap[trait.icon] || Sparkles}
+                {@const IconComponent = iconMap[trait.iconName] || Sparkles}
 
                 <button
                   onclick={() => toggleTrait(trait.id)}
@@ -564,28 +661,46 @@
                   Impacto na História:
                 </span>
                 <p class="text-xs text-zinc-300 font-sans-ui">
-                  Desbloqueia reações personalizadas de Dante, Lucas e Theo, e libera opções de resposta exclusivas durante momentos de conflito ou romance.
+                  Desbloqueia caminhos únicos de diálogo, percepções intuitivas e reações especiais durante sua convivência na Academia Lótus.
                 </p>
               </div>
 
               {#if traitLimitWarning}
-                <div class="p-3 rounded-2xl bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs font-sans-ui flex items-center gap-2" in:fade>
-                  <AlertCircle class="w-4 h-4 shrink-0" />
-                  <span>{traitLimitWarning}</span>
+                <div class="p-3.5 rounded-2xl bg-rose-950/60 border border-rose-500/60 text-rose-200 text-xs font-sans-ui flex items-center gap-2.5 shadow-lg shadow-rose-950/50" in:fade={{ duration: 150 }}>
+                  <AlertCircle class="w-5 h-5 shrink-0 text-rose-400 animate-bounce" />
+                  <div class="flex-1">
+                    <p class="font-bold text-rose-300">{traitLimitWarning}</p>
+                    {#if draftTraits.length < 3}
+                      <p class="text-[11px] text-rose-200/80 mt-0.5">
+                        Escolha mais {3 - draftTraits.length} {3 - draftTraits.length === 1 ? 'traço' : 'traços'} na lista à esquerda para poder avançar.
+                      </p>
+                    {/if}
+                  </div>
                 </div>
               {/if}
 
             </div>
 
-            <!-- Resumo dos 5 Traços Ativos Selecionados -->
-            <div class="p-4 rounded-3xl bg-[#121420] border border-white/10 flex flex-col gap-2.5">
-              <span class="text-[10px] font-cinzel font-bold text-zinc-400 uppercase tracking-wider">
-                Seus 5 Traços de Personalidade Selecionados:
-              </span>
+            <!-- Resumo dos Traços Ativos Selecionados -->
+            <div class="p-4 rounded-3xl bg-[#121420] border transition-all duration-300 {draftTraits.length < 3 ? 'border-amber-500/30' : 'border-emerald-500/30'} {isTraitShaking ? 'animate-shake' : ''} flex flex-col gap-2.5">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-cinzel font-bold text-zinc-400 uppercase tracking-wider">
+                  Seus Traços de Personalidade ({draftTraits.length}/5 - mínimo 3):
+                </span>
+                {#if draftTraits.length >= 3}
+                  <span class="text-xs text-emerald-400 font-sans font-semibold flex items-center gap-1">
+                    <Check class="w-3.5 h-3.5" /> Mínimo atingido ({draftTraits.length}/5)
+                  </span>
+                {:else}
+                  <span class="text-xs text-rose-400 font-sans font-semibold">
+                    Faltam {3 - draftTraits.length} para liberar
+                  </span>
+                {/if}
+              </div>
               <div class="flex items-center gap-2 flex-wrap">
                 {#each draftTraits as traitId}
                   {@const trait = PERSONALITY_TRAITS.find(t => t.id === traitId)}
-                  {@const TIcon = iconMap[trait?.icon || ''] || Sparkles}
+                  {@const TIcon = iconMap[trait?.iconName || ''] || Sparkles}
                   {#if trait}
                     <div class="px-3 py-1.5 rounded-xl bg-amber-500/20 border border-amber-400/50 text-amber-200 text-xs font-cinzel font-semibold flex items-center gap-2 shadow-sm">
                       <TIcon class="w-3.5 h-3.5 text-amber-400" />
@@ -601,11 +716,12 @@
                   {/if}
                 {/each}
 
-                <!-- Slots Vazios Pontilhados -->
+                <!-- Slots Vazios Pontilhados (Obrigatórios 1 a 3 vs Opcionais 4 e 5) -->
                 {#each Array(Math.max(0, 5 - draftTraits.length)) as _, i}
-                  <div class="px-3 py-1.5 rounded-xl border border-dashed border-white/20 text-zinc-500 text-xs font-sans italic flex items-center gap-1.5">
+                  {@const slotIndex = draftTraits.length + i + 1}
+                  <div class="px-3 py-1.5 rounded-xl border border-dashed text-xs font-sans italic flex items-center gap-1.5 {slotIndex <= 3 ? 'border-rose-400/40 text-rose-300/80 bg-rose-950/20' : 'border-white/20 text-zinc-500'}">
                     <Plus class="w-3 h-3 opacity-40" />
-                    <span>Slot {draftTraits.length + i + 1} Vazio</span>
+                    <span>Slot {slotIndex} {slotIndex <= 3 ? '(Obrigatório)' : '(Opcional)'}</span>
                   </div>
                 {/each}
               </div>
@@ -635,7 +751,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
             {#each ASPIRATIONS as aspiration}
               {@const isSelected = draftAspiration === aspiration.id}
-              {@const IconComp = iconMap[aspiration.icon] || Star}
+              {@const IconComp = iconMap[aspiration.iconName] || Star}
               <button
                 onclick={() => selectAspiration(aspiration.id)}
                 class="p-4 sm:p-5 rounded-3xl border text-left transition-all duration-200 active:scale-[0.99] flex flex-col justify-between gap-3 relative group {isSelected ? 'bg-amber-500/20 border-amber-400 shadow-xl shadow-amber-500/15' : 'bg-black/40 hover:bg-white/5 border-white/10 hover:border-white/20'}"
@@ -661,10 +777,6 @@
                   <p class="text-xs text-zinc-300 font-sans-ui leading-relaxed mt-2">
                     {aspiration.description}
                   </p>
-                </div>
-
-                <div class="pt-2 border-t border-white/10 text-[10px] text-zinc-400 font-cinzel">
-                  Afinidade temática: <span class="text-amber-300 font-bold">{aspiration.targetAffinity}</span>
                 </div>
               </button>
             {/each}
@@ -696,17 +808,18 @@
               <ProtagonistActor 
                 outfitId={draftOutfit}
                 scale={1}
+                framing="full"
               />
             </div>
 
-            <!-- Reações dos Garotos sobre o Look Selecionado -->
-            <div class="w-full mt-2 p-3 rounded-2xl bg-[#141624] border border-white/10 flex flex-col gap-1.5 text-xs text-zinc-300">
+            <!-- Detalhes do Estilo Selecionado (Sem expor reações ou preferências de pretendentes) -->
+            <div class="w-full mt-2 p-3 rounded-2xl bg-[#141624] border border-white/10 flex flex-col gap-1 text-xs text-zinc-300">
               <div class="flex items-center gap-2 text-[10px] font-cinzel font-bold text-amber-400 uppercase tracking-wider">
-                <Heart class="w-3.5 h-3.5" />
-                <span>Reação dos Rapazes:</span>
+                <Sparkles class="w-3.5 h-3.5" />
+                <span>Sensação do Visual:</span>
               </div>
-              <p class="font-serif-romance italic text-[11px] leading-relaxed text-zinc-200">
-                "{BOY_REACTIONS[draftOutfit]?.dante || 'Um visual autêntico e marcante para seu primeiro dia.'}"
+              <p class="font-sans-ui text-[11px] leading-relaxed text-zinc-300">
+                {activeOutfitDetails.description}
               </p>
             </div>
 
@@ -720,7 +833,7 @@
                 Selecione seu Look Inicial (5 Opções Disponíveis):
               </h3>
               <p class="text-xs text-zinc-400 font-sans-ui mt-0.5">
-                O visual influencia a primeira impressão no portão da Lótus e garante bônus de relacionamento.
+                Escolha o estilo que melhor expressa quem você é ao cruzar os portões da Academia Lótus.
               </p>
             </div>
 
@@ -728,7 +841,6 @@
             <div class="flex flex-col gap-2.5">
               {#each OUTFIT_OPTIONS as outfit}
                 {@const isSelected = draftOutfit === outfit.id}
-                {@const boy = boyAccents[outfit.affinityTarget]}
 
                 <button
                   onclick={() => selectOutfit(outfit.id)}
@@ -756,11 +868,8 @@
                     </p>
 
                     <div class="mt-1.5 flex items-center gap-2 text-[10px] font-sans font-semibold">
-                      <span class="px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-zinc-400">
+                      <span class="px-2.5 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300">
                         {outfit.styleTag}
-                      </span>
-                      <span style="color: {boy?.color};">
-                        ♥ +{outfit.affinityBonus} com {boy?.name}
                       </span>
                     </div>
                   </div>
@@ -780,11 +889,19 @@
       
       <!-- Resumo Rápido da Identidade Escolhida -->
       <div class="hidden sm:flex items-center gap-2 text-xs text-zinc-400 font-sans-ui">
-        <span class="font-bold text-white">{draftName.trim() || 'Íris'}</span>
+        {#if draftName.trim()}
+          <span class="font-bold text-white">{draftName.trim()}</span>
+        {:else}
+          <span class="text-rose-400 font-semibold italic flex items-center gap-1">
+            <AlertCircle class="w-3.5 h-3.5" /> Nome pendente
+          </span>
+        {/if}
         <span>•</span>
         <span class="text-amber-300">{activeZodiacDetails?.symbol} {activeZodiacDetails?.name}</span>
         <span>•</span>
-        <span class="text-zinc-300">{draftTraits.length}/5 Traços</span>
+        <span class="{draftTraits.length >= 3 ? 'text-zinc-300' : 'text-amber-400 font-semibold'}">
+          {draftTraits.length}/5 Traços {draftTraits.length < 3 ? '(mín. 3)' : ''}
+        </span>
         <span>•</span>
         <span class="text-amber-200">{activeAspirationDetails?.title.split('&')[0]}</span>
       </div>

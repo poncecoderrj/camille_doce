@@ -1,0 +1,15 @@
+{
+  "canvas": {"width": 1536, "height": 2304},
+  "layers": [
+    {"role": "body", "z": 0, "file": "body.png"},
+    {"role": "hair_back", "z": 10, "file": "hair_back/hair_01.png"},
+    {"role": "eye_white", "z": 30, "file": "eyes_white/neutral.png"},
+    {"role": "iris", "z": 40, "file": "eyes_iris/neutral.png"},
+    {"role": "pupil", "z": 50, "file": "eyes_pupil/neutral.png"},
+    {"role": "eyebrow", "z": 60, "file": "eyebrows/neutral.png"},
+    {"role": "mouth", "z": 70, "file": "mouths/neutral.png"},
+    {"role": "hair_front", "z": 80, "file": "hair_front/hair_01.png"},
+    {"role": "clothes", "z": 90, "file": "clothes/default.png"},
+    {"role": "accessories", "z": 100, "file": "accessories/none.png"}
+  ]
+}

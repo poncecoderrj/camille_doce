@@ -1,13 +1,16 @@
 <script lang="ts">
   import { gameState } from '../features/game-state/GameState.svelte';
+  import { audioManager } from '../features/audio/audio-manager';
   import CharacterSprite from '../features/stage/CharacterSprite.svelte';
+  import LuvometroVertical from '../features/stage/LuvometroVertical.svelte';
+  import StageSpeechBubble from '../features/stage/StageSpeechBubble.svelte';
   import DialogueBox from '../features/dialogue/DialogueBox.svelte';
   import PhoneShell from '../features/smartphone/PhoneShell.svelte';
   import SceneryBackground from '../features/stage/SceneryBackground.svelte';
   import CampusMapModal from '../features/campus-map/CampusMapModal.svelte';
   import { resolveEnvironmentLighting } from '../features/stage/environment-lighting';
   import type { TimeOfDay } from '../features/stage/environment-lighting';
-  import cap00Data from '../../content/arcs/arco_1_adolescencia/cap_00_prologo.json';
+  import { ALL_STORY_NODES, getStoryNode, getChapterForNode, CHAPTER_LIST } from '../features/dialogue/story-manifest';
   import type { DialogueNode, Choice } from '../features/dialogue/narrative.schema';
   import { 
     Smartphone, 
@@ -22,10 +25,15 @@
     Compass 
   } from 'lucide-svelte';
 
-  const nodes = cap00Data.nodes as unknown as Record<string, DialogueNode>;
-  let currentNode = $derived(nodes[gameState.currentNodeId] || nodes['node_01_portao']);
+  let currentNode = $derived(getStoryNode(gameState.currentNodeId));
 
-  const knownBoyIds = ['dante', 'lucas', 'theo', 'nina', 'rafael', 'beatriz'];
+  let currentChapterTitle = $derived.by(() => {
+    const chId = getChapterForNode(currentNode.id);
+    const ch = CHAPTER_LIST.find(c => c.id === chId);
+    return ch ? ch.title : 'Arco 1: Adolescência';
+  });
+
+  const knownBoyIds = ['dante', 'lucas', 'theo', 'nina', 'helena', 'melissa', 'caio', 'ravi', 'mara', 'rafael', 'beatriz'];
 
   // Detecta se há um interlocutor presente na cena (Dante, Lucas, Theo, etc.)
   let interlocutorId = $derived.by(() => {
@@ -78,8 +86,23 @@
     gameState.currentNodeId = 'node_00_despertador';
     gameState.currentLocation = 'Quarto da Protagonista';
     gameState.flags.alarme_desligado = false;
+    gameState.flags.msg_nina_mochila_enviada = false;
+    gameState.flags.msg_nina_portao_enviada = false;
+    gameState.flags.msg_lucas_atrio_enviada = false;
+    gameState.flags.msg_nina_aula_enviada = false;
+    gameState.flags.msg_convite_noite_enviada = false;
+    delete gameState.flags.zap_ignorado_nina;
+    delete gameState.flags.ignorou_zap_nina;
+    delete gameState.flags.deixou_no_vacuo_nina;
+    delete gameState.flags.zap_ignorado_lucas;
+    delete gameState.flags.ignorou_zap_lucas;
+    delete gameState.flags.deixou_no_vacuo_lucas;
     gameState.currentInterlocutorId = null;
     gameState.history = [];
+    gameState.unreadNotification = null;
+    gameState.whatsappChats = {};
+    gameState.whatsappPendingReplies = {};
+    gameState.whatsappTyping = {};
     audioManager.playBell();
   }
 
@@ -135,13 +158,23 @@
       </div>
       <span class="opacity-30 hidden sm:inline">•</span>
       <span class="text-xs font-serif-romance italic hidden sm:inline {isLight ? 'text-[#68594b]' : 'text-zinc-400'}">
-        {cap00Data.title}
+        {currentChapterTitle}
       </span>
     </div>
 
     <!-- Indicador de Afinidade dos Rapazes & Alternador de Tema -->
     <div class="flex items-center gap-1.5 sm:gap-3">
       
+      <!-- CARD DA PROTAGONISTA (ESTILO AMOR DOCE: AVATAR + NOME + ANO) -->
+      <div class="hidden md:flex items-center gap-2 px-3 py-1 rounded-full border backdrop-blur-md text-xs transition-all {isLight ? 'bg-[#e4dbca]/90 border-[#c5b8a0] text-[#332b23]' : 'bg-[#14161f]/80 border-white/8 text-zinc-200'}">
+        <div class="w-5 h-5 rounded-full overflow-hidden border border-amber-500/50 bg-amber-500/20 flex items-center justify-center shrink-0">
+          <span class="text-[10px]">🌸</span>
+        </div>
+        <span class="font-cinzel font-bold text-amber-500">{gameState.protagonistProfile?.name || 'Íris'}</span>
+        <span class="opacity-25">•</span>
+        <span class="text-[10px] font-sans-ui opacity-75">1º Ano</span>
+      </div>
+
       <!-- Luvômetro Resumo no Topo -->
       <div class="hidden md:flex items-center gap-2 sm:gap-3 px-3 py-1.5 rounded-full border backdrop-blur-md text-xs font-cinzel font-bold {isLight ? 'bg-[#e4dbca]/90 border-[#c5b8a0] text-[#332b23]' : 'bg-[#14161f]/80 border-white/8 text-zinc-300'}">
         <span class="text-rose-500 flex items-center gap-1">Dante {gameState.affinity.dante}</span>
@@ -253,28 +286,37 @@
       </div>
     {/if}
 
-    <!-- NOTIFICAÇÃO FLUTUANTE DE WHATSAPP NO PALCO (COM AÇÃO OBRIGATÓRIA) -->
-    {#if gameState.unreadNotification && !gameState.isPhoneRaised}
-      <div class="absolute top-16 left-1/2 -translate-x-1/2 z-35 pointer-events-auto w-11/12 max-w-md animate-bounce">
-        <div class="p-3 rounded-2xl bg-[#0f111a]/95 backdrop-blur-xl border border-emerald-500/40 shadow-2xl flex items-center justify-between gap-3 text-white">
+    <!-- NOTIFICAÇÃO FLUTUANTE DE WHATSAPP NO PALCO (CHEGA NO TOPO E AUTO-DESVANECE) -->
+    {#if gameState.unreadNotification}
+      <div class="absolute top-16 left-1/2 -translate-x-1/2 z-40 pointer-events-auto w-11/12 max-w-md transition-all duration-300 animate-in fade-in slide-in-from-top-4">
+        <div class="p-3 rounded-2xl bg-[#0f111a]/95 backdrop-blur-xl border border-emerald-500/50 shadow-2xl flex items-center justify-between gap-3 text-white">
           <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-xl bg-emerald-600 flex items-center justify-center text-white shadow">
               <Smartphone class="w-5 h-5" />
             </div>
             <div>
               <p class="text-[10px] font-sans text-emerald-400 font-semibold uppercase tracking-wider">WhatsApp • Nova Mensagem</p>
-              <p class="text-xs font-sans-ui text-zinc-100 font-medium truncate max-w-[210px]">{gameState.unreadNotification}</p>
+              <p class="text-xs font-sans-ui text-zinc-100 font-medium truncate max-w-[200px]">{gameState.unreadNotification}</p>
             </div>
           </div>
-          <button 
-            onclick={() => {
-              gameState.isPhoneRaised = true;
-              gameState.openPhoneApp('chat_room', 'dante');
-            }}
-            class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-cinzel font-bold text-xs uppercase tracking-wider shadow-lg active:scale-95 transition-all"
-          >
-            Responder
-          </button>
+          <div class="flex items-center gap-1.5">
+            <button 
+              onclick={() => {
+                gameState.isPhoneRaised = true;
+                gameState.openPhoneApp('chat_room', gameState.activeChatTarget);
+              }}
+              class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-cinzel font-bold text-xs uppercase tracking-wider shadow-md active:scale-95 transition-all"
+            >
+              Ver
+            </button>
+            <button 
+              onclick={() => gameState.dismissWhatsAppNotification()}
+              class="p-1.5 rounded-xl border border-white/10 hover:border-white/20 text-zinc-400 hover:text-white transition-all text-xs"
+              title="Ignorar notificação"
+            >
+              ✕
+            </button>
+          </div>
         </div>
       </div>
     {/if}
@@ -287,30 +329,31 @@
       ></div>
     {/if}
 
-    <!-- CAMADA DOS PERSONAGENS (CANTO ESQUERDO: PROTAGONISTA | CANTO DIREITO: INTERLOCUTOR) -->
-    <div class="absolute inset-x-0 bottom-0 top-10 flex items-end justify-between px-2 sm:px-6 md:px-10 pointer-events-none z-10 overflow-hidden">
-      
-      <!-- PERSONAGEM PROTAGONISTA (SEMPRE NO CANTO ESQUERDO) -->
-      <div class="flex items-end {interlocutorId ? 'w-1/2 justify-start' : 'w-full justify-center sm:justify-start sm:pl-10'}">
-        <CharacterSprite 
-          speaker="protagonista"
-          position="left"
-          isActive={currentNode.speaker === 'protagonista' || currentNode.speaker === 'iris' || !interlocutorId}
-          isSpeaking={(currentNode.speaker === 'protagonista' || currentNode.speaker === 'iris') && gameState.isSpeaking}
-          expression={currentNode.speaker === 'protagonista' || currentNode.speaker === 'iris' ? currentNode.expression : 'neutral'}
-          timeOfDay={currentNode.time_of_day}
-        />
-      </div>
+    <!-- BALÃO DE FALA ESTILO AMOR DOCE QUANDO O INTERLOCUTOR ESTIVER FALANDO -->
+    {#if interlocutorId && currentNode.speaker === interlocutorId && !gameState.isPhoneRaised}
+      <StageSpeechBubble 
+        text={currentNode.text}
+        speakerName={currentNode.speaker_name || (interlocutorId === 'dante' ? 'Dante' : interlocutorId === 'lucas' ? 'Lucas' : interlocutorId === 'theo' ? 'Theo' : interlocutorId)}
+        accentColor={interlocutorId === 'dante' ? '#e11d48' : interlocutorId === 'lucas' ? '#2563eb' : '#059669'}
+      />
+    {/if}
 
-      <!-- INTERLOCUTOR (SE HOUVER: DANTE, LUCAS, THEO, ETC. NO CANTO DIREITO) -->
+    <!-- LUVÔMETRO VERTICAL NA BORDA DIREITA (ESTILO AMOR DOCE) -->
+    <LuvometroVertical characterId={interlocutorId} />
+
+    <!-- CAMADA DOS PERSONAGENS (INTERLOCUTOR NO PALCO ESTILO AMOR DOCE) -->
+    <div class="absolute inset-x-0 bottom-0 top-4 flex items-end justify-center sm:justify-end px-4 sm:px-12 md:px-16 pointer-events-none z-10 overflow-hidden">
+      
+      <!-- INTERLOCUTOR (DANTE, LUCAS, THEO NO PALCO PRINCIPAL) -->
       {#if interlocutorId}
-        <div class="flex items-end justify-end w-1/2">
+        <div class="flex items-end justify-center sm:justify-end">
           <CharacterSprite 
             speaker={interlocutorId}
             speakerName={currentNode.speaker === interlocutorId ? currentNode.speaker_name : undefined}
             position="right"
-            isActive={currentNode.speaker === interlocutorId}
+            isActive={currentNode.speaker === interlocutorId || true}
             isSpeaking={currentNode.speaker === interlocutorId && gameState.isSpeaking}
+            currentSpeaker={currentNode.speaker}
             expression={currentNode.speaker === interlocutorId ? currentNode.expression : 'neutral'}
             timeOfDay={currentNode.time_of_day}
           />

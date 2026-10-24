@@ -1,0 +1,210 @@
+{
+  "id": "cap_02_clubes",
+  "arc_id": "arco_1_adolescencia",
+  "title": "Capítulo 2: O Clube da Tarde & O Convite Especial",
+  "description": "A feira de clubes extracurriculares da Academia Lótus. Escolhas de caminhos com novos amigos e a disputa noturna de convites para o Festival da Primavera.",
+  "initial_node_id": "c2_node_01_intervalo",
+  "nodes": {
+    "c2_node_01_intervalo": {
+      "id": "c2_node_01_intervalo",
+      "speaker": "nina",
+      "speaker_name": "Nina",
+      "expression": "happy",
+      "text": "Sobrevivemos à primeira manhã da Helena! Agora vem a melhor parte: a Feira de Clubes no Pátio! Todo calouro é obrigado a se inscrever em uma atividade. Qual faz seu coração bater mais forte?",
+      "location": "Pátio Central",
+      "time_of_day": "tarde",
+      "choices": [
+        {
+          "id": "c2_c01_escolha_musica",
+          "text": "Seguir o som de guitarra potente vindo do subsolo acústico.",
+          "tipo": "Prioridade",
+          "target_character": "dante",
+          "affinity_delta": 4,
+          "set_flags": { "clube_escolhido": "musica" },
+          "next_node_id": "c2_node_02_musica"
+        },
+        {
+          "id": "c2_c01_escolha_gremio",
+          "text": "Subir as escadarias de mármore até o imponente Gabinete do Grêmio.",
+          "tipo": "Prioridade",
+          "target_character": "lucas",
+          "affinity_delta": 4,
+          "set_flags": { "clube_escolhido": "gremio" },
+          "next_node_id": "c2_node_02_gremio"
+        },
+        {
+          "id": "c2_c01_escolha_estufa",
+          "text": "Caminhar entre os canteiros floridos rumo à Estufa Histórica de Botânica.",
+          "tipo": "Prioridade",
+          "target_character": "theo",
+          "affinity_delta": 4,
+          "set_flags": { "clube_escolhido": "botanica" },
+          "next_node_id": "c2_node_02_estufa"
+        }
+      ]
+    },
+    "c2_node_02_musica": {
+      "id": "c2_node_02_musica",
+      "speaker": "caio",
+      "speaker_name": "Caio",
+      "expression": "neutral",
+      "text": "Uma visitante na nossa caverna! Eu sou o Caio, o cara que impede o Dante de explodir os amplificadores. Você veio pro teste da banda ou só veio admirar a nossa barulheira?",
+      "location": "Subsolo de Música",
+      "time_of_day": "tarde",
+      "choices": [
+        {
+          "id": "c2_c02_musica_provocar",
+          "text": "Brincar: 'Vim conferir se o Dante sabe mesmo solar sem errar as palhetadas.'",
+          "tipo": "Tom",
+          "tom": "provocador",
+          "affinity_delta": 4,
+          "target_character": "dante",
+          "next_node_id": "c2_node_03_musica_dante"
+        },
+        {
+          "id": "c2_c02_musica_elogio",
+          "text": "Elogiar o ritmo: 'O groove da bateria de vocês tem uma pegada incrível!'",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "affinity_delta": 3,
+          "target_character": "caio",
+          "next_node_id": "c2_node_03_musica_dante"
+        }
+      ]
+    },
+    "c2_node_03_musica_dante": {
+      "id": "c2_node_03_musica_dante",
+      "speaker": "dante",
+      "speaker_name": "Dante",
+      "expression": "sorriso",
+      "text": "Caio, para de assustar a garota. Aqui a gente não cobra perfeição burocrática, novata. A gente toca o que arde no peito. Pega aquela panderola ou só escuta o ensaio... você é bem-vinda aqui.",
+      "location": "Subsolo de Música",
+      "time_of_day": "tarde",
+      "choices": [
+        {
+          "id": "c2_c03_musica_aceitar",
+          "text": "Sentar na caixa de som e acompanhar o ensaio com um brilho no olhar.",
+          "tipo": "Ação",
+          "affinity_delta": 5,
+          "target_character": "dante",
+          "unlock_memory_tag": "ensaio_subsolo_dante",
+          "next_node_id": "c2_node_04_noite_quarto"
+        }
+      ]
+    },
+    "c2_node_02_gremio": {
+      "id": "c2_node_02_gremio",
+      "speaker": "melissa",
+      "speaker_name": "Melissa Prado",
+      "expression": "neutral",
+      "text": "Com licença. O Grêmio Estudantil não é um passatempo recreativo, novata. Gerenciamos orçamentos, eventos e o protocolo de honra da instituição. Você possui perfil analítico ou veio apenas por curiosidade?",
+      "location": "Gabinete do Grêmio",
+      "time_of_day": "tarde",
+      "choices": [
+        {
+          "id": "c2_c02_gremio_firme",
+          "text": "Manter a postura altiva: 'Tenho dedicação, responsabilidade e vontade de colaborar.'",
+          "tipo": "Tom",
+          "tom": "cuidadoso",
+          "affinity_delta": 4,
+          "target_character": "lucas",
+          "next_node_id": "c2_node_03_gremio_lucas"
+        },
+        {
+          "id": "c2_c02_gremio_descontrair",
+          "text": "Sorrir com serenidade: 'Curiosidade é o primeiro passo para grandes realizações.'",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "affinity_delta": 3,
+          "target_character": "lucas",
+          "next_node_id": "c2_node_03_gremio_lucas"
+        }
+      ]
+    },
+    "c2_node_03_gremio_lucas": {
+      "id": "c2_node_03_gremio_lucas",
+      "speaker": "lucas",
+      "speaker_name": "Lucas",
+      "expression": "sorriso",
+      "text": "Obrigado pela recepção, Melissa, mas eu posso conduzir a orientação. Seja muito bem-vinda ao Grêmio. Precisamos de pessoas com a sua sensibilidade para a comissão organizadora do Festival da Primavera.",
+      "location": "Gabinete do Grêmio",
+      "time_of_day": "tarde",
+      "choices": [
+        {
+          "id": "c2_c03_gremio_aceitar",
+          "text": "Aceitar o fichário da comissão e trocar um olhar de cumplicidade com Lucas.",
+          "tipo": "Ação",
+          "affinity_delta": 5,
+          "target_character": "lucas",
+          "unlock_memory_tag": "comissao_gremio_lucas",
+          "next_node_id": "c2_node_04_noite_quarto"
+        }
+      ]
+    },
+    "c2_node_02_estufa": {
+      "id": "c2_node_02_estufa",
+      "speaker": "ravi",
+      "speaker_name": "Ravi",
+      "expression": "neutral",
+      "text": "Paz na mente e pés descalços na terra. Bem-vinda ao santuário botânico. As plantas não julgam ninguém pelo uniforme; elas só respondem ao cuidado e à paciência.",
+      "location": "Estufa Antiga",
+      "time_of_day": "tarde",
+      "choices": [
+        {
+          "id": "c2_c02_estufa_sensivel",
+          "text": "Respirar o aroma de terra úmida: 'Esse lugar transmite uma paz rara.'",
+          "tipo": "Tom",
+          "tom": "sincero",
+          "affinity_delta": 3,
+          "target_character": "ravi",
+          "next_node_id": "c2_node_03_estufa_theo"
+        },
+        {
+          "id": "c2_c02_estufa_curiosa",
+          "text": "Aproximar-se do cavalete de pintura onde Theo prepara suas tintas.",
+          "tipo": "Ação",
+          "affinity_delta": 4,
+          "target_character": "theo",
+          "next_node_id": "c2_node_03_estufa_theo"
+        }
+      ]
+    },
+    "c2_node_03_estufa_theo": {
+      "id": "c2_node_03_estufa_theo",
+      "speaker": "theo",
+      "speaker_name": "Theo",
+      "expression": "corado",
+      "text": "Você veio... Fico feliz. Eu estava misturando pigmento de pétalas secas para tentar capturar a cor exata da névoa da manhã. Quer me ajudar a catalogar as mudas de lótus?",
+      "location": "Estufa Antiga",
+      "time_of_day": "tarde",
+      "choices": [
+        {
+          "id": "c2_c03_estufa_aceitar",
+          "text": "Pegar o regador de cobre e sentar ao lado de Theo sob as videiras de vidro.",
+          "tipo": "Ação",
+          "affinity_delta": 5,
+          "target_character": "theo",
+          "unlock_memory_tag": "estufa_lotus_theo",
+          "next_node_id": "c2_node_04_noite_quarto"
+        }
+      ]
+    },
+    "c2_node_04_noite_quarto": {
+      "id": "c2_node_04_noite_quarto",
+      "speaker": "narrador",
+      "expression": "neutral",
+      "text": "A noite cai sobre os dormitórios da Academia Lótus. No silêncio do seu quarto, a tela do celular se ilumina com mensagens no WhatsApp. Os laços que você começou a construir hoje estão florescendo.",
+      "location": "Quarto da Protagonista",
+      "time_of_day": "noite",
+      "choices": [
+        {
+          "id": "c2_c04_dormir_preparar",
+          "text": "Anotar as lembranças do dia no Diário e se preparar para o dia de amanhã.",
+          "tipo": "Ação",
+          "set_flags": { "capitulo_02_terminado": true },
+          "next_node_id": "c3_node_01_tempestade"
+        }
+      ]
+    }
+  }
+}

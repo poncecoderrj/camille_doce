@@ -57,15 +57,9 @@ export interface Aspiration {
 
 // PERFIL COMPLETO DA PERSONAGEM
 export const ProtagonistProfileSchema = z.object({
-  name: z.string().default('Íris'),
+  name: z.string().default(''),
   zodiac: ZodiacIdEnum.default('libra'),
-  traits: z.array(z.string()).min(1).max(5).default([
-    'romantica_incuravel',
-    'curiosa_insaciavel',
-    'intuitiva_astuta',
-    'sarcastica_ironica',
-    'criativa_sonhadora'
-  ]),
+  traits: z.array(z.string()).min(0).max(5).default([]),
   aspiration: z.string().default('romancista')
 });
 

@@ -385,10 +385,10 @@
       "choices": [
         {
           "id": "c8_concluir",
-          "text": "Concluir Prólogo e abrir o Painel Principal",
+          "text": "Concluir Prólogo e avançar para a primeira aula com Nina",
           "tipo": "Ação",
           "set_flags": { "capitulo_00_terminado": true },
-          "next_node_id": "node_00_despertador"
+          "next_node_id": "c1_node_01_corredor_aulas"
         }
       ]
     }
